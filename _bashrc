@@ -17,6 +17,15 @@ source ~/dot_files/bash_git_ps1.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 # -------------
+# Git
+# -------------
+
+# Completion
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash  ]; then
+  . `brew --prefix`/etc/bash_completion.d/git-completion.bash 
+fi
+
+# -------------
 # Aliases
 # -------------
 
