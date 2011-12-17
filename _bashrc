@@ -33,22 +33,35 @@ fi
 alias ls="ls -G"
 alias la='ls -alh'
 
+# ------
 # Git
+# ------
 alias g='git'
+# Branch
 alias gb='git branch'
 alias gba='git branch -a'
+# Commit
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit -a'
-alias gcam='git commit -a -m'
-alias gd='git diff'
+alias gcam='git commit -am'
+# Log
 alias gl='git log'
 alias glg="git log --graph --pretty=format:'%Cblue%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+# Remotes
+alias gr='git remote'
+alias grl='git remote -v'  # List branches
+alias gra='git remote add'
+alias grrm='git remote rm'
+# Status
+alias gs='git status'
+alias gss='git status -s'  # Simple status
+# Misc
 alias gpl='git pull'
 alias gps='git push'
-alias gs='git status'
 alias ga='git add'
 alias gco='git checkout'
+alias gd='git diff'
 
 # Ruby
 alias gems='gem search'
