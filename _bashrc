@@ -68,6 +68,7 @@ alias gems='gem search'
 alias geml='gem list'
 alias gemi='gem install'
 alias gemu='gem uninstall'
+alias irbe='irb -r ./environment.rb'
  
 # MacBook Specific
 # Code Directories
