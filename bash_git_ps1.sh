@@ -266,10 +266,20 @@ __git_timestr_relformat() {
 __git_prompt() {
     local last_exit="$?" # keep here.. so we get the last command
 
+    root=$(groups | egrep "root")
+    admin=$(groups | egrep "wheel|admin")
+    local color_user=$GREEN
+    if [ -n "$root" ] ; then
+      local color_user=$RED
+    elif [ -n "$admin" ] ; then
+      local color_user=$YELLOW
+    fi
+    
+
     # setup PS1
     local host="${GREY}\h:${RESET}"
-    local dir="${CYAN}\W${RESET}" 
-    PS1="[$host $dir]"
+    local dir="${CYAN}\w${RESET}" 
+    PS1="[$color_user\u@$host $dir]"
 
     # when in git repository
     local gitdir="$(__git_dirname)"
@@ -325,6 +335,6 @@ __git_prompt() {
         marker="$RED"
     fi
     marker="${marker}\$${RESET}"
-    PS1="${PS1} → \n\n${marker} "
+    PS1="${PS1} → \n${marker} "
 }
 PROMPT_COMMAND=__git_prompt
