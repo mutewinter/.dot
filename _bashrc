@@ -33,6 +33,9 @@ fi
 alias ls="ls -G"
 alias la='ls -alh'
 
+# Grep
+alias grep='grep --color'
+
 # ------
 # Git
 # ------
@@ -69,10 +72,14 @@ alias geml='gem list'
 alias gemi='gem install'
 alias gemu='gem uninstall'
 alias irbe='irb -r ./environment.rb'
- 
+
+# -------------
 # MacBook Specific
+# -------------
 # Code Directories
 alias cgitego='cd ~/code/gitego'
-alias cshowbotj='cd ~/code/showbot'
+alias cshowbot='cd ~/code/showbot'
 alias clibsio='cd ~/code/libsio'
 alias ccheckout='cd ~/code/checkout_code'
+alias cdotfiles='cd ~/dot_files'
+alias cvim='cd ~/.vim'
