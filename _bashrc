@@ -30,8 +30,12 @@ fi
 # -------------
 
 # LS
-alias ls="ls -G"
-alias la='ls -alh'
+if ( dircolors --help && ls --color ) &> /dev/null; then
+  alias ls="ls --color=auto"
+else
+  alias ls="ls -G"
+  alias la='ls -alh'
+fi
 
 # Grep
 alias grep='grep --color'
