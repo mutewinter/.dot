@@ -89,9 +89,11 @@ alias cdotfiles='cd ~/dot_files'
 alias cvim='cd ~/.vim'
 
 # -------------
-# Environment Variables
+# Global Environment Variables
 # -------------
-export EDITOR='vim'
+if [ -f ~/dot_files/environment.sh ]; then
+  source ~/dot_files/environment.sh
+fi
 
 # -------------
 # System-Specific Environment Variables
