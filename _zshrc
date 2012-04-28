@@ -1,3 +1,7 @@
+# .zshrc of Second Place Finishers
+#
+# vim: set filetype=sh :
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
