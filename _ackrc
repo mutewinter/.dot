@@ -1,3 +1,4 @@
 --type-set=haml=.haml
 --type-set=scss=.scss
 --type-set=coffee=.coffee
+--type-set=eco=.eco
