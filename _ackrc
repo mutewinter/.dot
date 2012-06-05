@@ -2,3 +2,5 @@
 --type-set=scss=.scss
 --type-set=coffee=.coffee
 --type-set=eco=.eco
+--type-set=hbs=.hbs
+--type-set=jbuilder=.jbuilder
