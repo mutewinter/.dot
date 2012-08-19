@@ -49,3 +49,5 @@ fi
 if [ -f ~/dot_files/system_environment.sh ]; then
   source ~/dot_files/system_environment.sh
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
