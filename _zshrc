@@ -24,6 +24,13 @@ plugins=(git rails3 ruby rvm brew gem cdcode)
 source $ZSH/oh-my-zsh.sh
 
 # -------------
+# ZSH-Specific aliases
+# -------------
+
+# Allows arguments to be passed to rake, ala rake task[derp, herp].
+alias rake='noglob rake'
+
+# -------------
 # Brought in from Bash
 # -------------
 
