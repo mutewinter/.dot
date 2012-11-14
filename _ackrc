@@ -4,3 +4,4 @@
 --type-set=eco=.eco
 --type-set=hbs=.hbs
 --type-set=jbuilder=.jbuilder
+--type-set=stylus=.styl
