@@ -59,3 +59,4 @@ if [ -f ~/dot_files/system_environment.sh ]; then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/share/npm/bin
