@@ -27,8 +27,10 @@ source $ZSH/oh-my-zsh.sh
 # ZSH-Specific aliases
 # -------------
 
-# Allows arguments to be passed to rake, ala rake task[derp, herp].
+# Allows bracket arguments to be passed to the command.
+#   e.g. rake task[derp, herp].
 alias rake='noglob rake'
+alias mina='noglob mina'
 
 # -------------
 # Brought in from Bash
