@@ -1,6 +1,12 @@
 # Dot Files
 
-Yep that's them.
+ * `_ackrc` configuration for [Ack](http://betterthangrep.com/).
+ * `_bashrc` configuration for [Bash](http://www.gnu.org/software/bash/).
+ * `_irbrc` configuration for the [Interactive Ruby
+ REPL](http://en.wikipedia.org/wiki/Interactive_Ruby_Shell).
+ * `_tmux.conf` configuration for [tmux](http://tmux.sourceforge.net/).
+ * `_zshrc` configuration for [ZSH](http://www.zsh.org/), which uses [Oh My
+ ZSH](https://github.com/robbyrussell/oh-my-zsh).
 
 ## Setup
 
