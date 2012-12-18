@@ -7,12 +7,14 @@ task :link do
   begin
     dot_files = Dir['_*']
     dot_files.each do |file|
-      dot_file ="~/.#{file.gsub(/^_/,'')}"
-      if File.exists? dot_file
-        File.symlink("#{Dir.pwd}/#{file}", File.expand_path(dot_file))
-        puts "Made symlink in home for #{file}"
+      source_file = File.expand_path file
+      target_file = File.expand_path "~/.#{file.gsub(/^_/,'')}"
+
+      if not File.exists? target_file
+        File.symlink(source_file, target_file)
+        puts "Made symlink in home for #{File.basename target_file}"
       else
-        puts "#{dot_file} already exists, skipping"
+        puts "#{target_file} already exists, skipping"
       end
     end
 
