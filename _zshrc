@@ -30,34 +30,3 @@ source $ZSH/oh-my-zsh.sh
 # Allows bracket arguments to be passed to the command.
 #   e.g. mina task[derp, herp].
 alias mina='noglob mina'
-
-# -------------
-# Brought in from Bash
-# -------------
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
-# -------------
-# Global Environment Variables
-# -------------
-if [ -f ~/dot_files/environment.sh ]; then
-  source ~/dot_files/environment.sh
-fi
-
-# -------------
-# Global Aliases
-# -------------
-if [ -f ~/dot_files/aliases.sh ]; then
-  source ~/dot_files/aliases.sh
-fi
-
-# -------------
-# System-Specific Environment Variables
-# -------------
-if [ -f ~/dot_files/system_environment.sh ]; then
-  source ~/dot_files/system_environment.sh
-fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/usr/local/share/npm/bin
