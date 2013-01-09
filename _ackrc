@@ -5,3 +5,4 @@
 --type-set=hbs=.hbs
 --type-set=jbuilder=.jbuilder
 --type-set=stylus=.styl
+--type-set=markdown=.md,.markdown
