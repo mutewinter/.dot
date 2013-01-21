@@ -31,15 +31,14 @@ desc 'Create symlinks for all zsh plugins'
 task :zsh_plugins do
   if File.exists? 'zsh'
     # Make the plugins folder if it isn't there.
-    puts ZSH_PLUGINS
     Dir.mkdir ZSH_PLUGINS unless File.exists? ZSH_PLUGINS
 
     Dir['zsh/*'].select { |d| File.directory? d }.each do |directory|
       directory = File.expand_path directory
       destination = File.join ZSH_PLUGINS, File.basename(directory)
       if !File.exists?(destination)
+        puts "Creating symlink for zsh plugin #{directory}"
         File.symlink("#{directory}", destination)
-        puts "Created symlink for zsh plugin #{directory}"
       else
         puts "#{directory} zsh plugin already exists, skipping"
       end
