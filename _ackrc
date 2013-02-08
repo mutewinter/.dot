@@ -1,6 +1,6 @@
 --ignore-case
 --type-set=haml=.haml
---type-set=scss=.scss
+--type-set=sass=.scss,.sass
 --type-set=coffee=.coffee
 --type-set=eco=.eco
 --type-set=hbs=.hbs
