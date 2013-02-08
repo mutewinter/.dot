@@ -30,3 +30,6 @@ source $ZSH/oh-my-zsh.sh
 # Allows bracket arguments to be passed to the command.
 #   e.g. mina task[derp, herp].
 alias mina='noglob mina'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

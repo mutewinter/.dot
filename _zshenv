@@ -2,8 +2,12 @@
 #
 # vim: set filetype=sh :
 
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# -------------
+# Global Aliases
+# -------------
+if [ -f ~/dot_files/aliases.sh ]; then
+  source ~/dot_files/aliases.sh
+fi
 
 # -------------
 # Global Environment Variables
@@ -13,18 +17,8 @@ if [ -f ~/dot_files/environment.sh ]; then
 fi
 
 # -------------
-# Global Aliases
-# -------------
-if [ -f ~/dot_files/aliases.sh ]; then
-  source ~/dot_files/aliases.sh
-fi
-
-# -------------
 # System-Specific Environment Variables
 # -------------
 if [ -f ~/dot_files/system_environment.sh ]; then
   source ~/dot_files/system_environment.sh
 fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:/usr/local/share/npm/bin
