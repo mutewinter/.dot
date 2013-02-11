@@ -5,6 +5,8 @@ if [ -x /usr/local/bin/mvim ]; then
   alias vim="mvim -v"
 fi
 
+export EDITOR="vim"
+
 # Commands
 alias zshrc="$EDITOR ~/dot_files/_zshrc"
 alias vimrc="$EDITOR ~/.vim/vimrc"
