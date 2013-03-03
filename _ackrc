@@ -3,7 +3,9 @@
 --type-set=sass=.scss,.sass
 --type-set=coffee=.coffee
 --type-set=eco=.eco
---type-set=hbs=.hbs,.handlebars
+--type-set=handlebars=.hbs,.handlebars
 --type-set=jbuilder=.jbuilder
 --type-set=stylus=.styl
 --type-set=markdown=.md,.markdown
+--type-set=less=.less
+--type-set=log=.log
