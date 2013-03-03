@@ -10,6 +10,7 @@ export EDITOR="vim"
 # Commands
 alias zshrc="$EDITOR ~/dot_files/_zshrc"
 alias vimrc="$EDITOR ~/.vim/vimrc"
+alias vundle="$EDITOR ~/.vim/vundle.vim"
 alias ag="ag --smart-case"
 
 # Colors the things that are different, win.
