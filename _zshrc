@@ -15,11 +15,9 @@ ZSH_THEME="wedisagree"
 # Red dots will be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in
-# ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails3 ruby rvm brew gem cdcode rake github)
+# ZSH Plugins I'm Using.
+# Custom plugins are in the zsh folder of this repo.
+plugins=(git rails3 ruby rvm brew gem cdcode rake github gitfast)
 
 source $ZSH/oh-my-zsh.sh
 
