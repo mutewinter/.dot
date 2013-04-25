@@ -8,10 +8,12 @@ fi
 export EDITOR="vim"
 
 # Commands
-alias zshrc="$EDITOR ~/dot_files/_zshrc"
+alias ezsh="$EDITOR ~/dot_files/_zshrc"
 alias vimrc="$EDITOR ~/.vim/vimrc"
 alias vundle="$EDITOR ~/.vim/vundle.vim"
 alias ag="ag --smart-case"
+alias l="ls -1"
+alias v="$EDITOR"
 
 # Colors the things that are different, win.
 alias gdc="git diff --color-words"
