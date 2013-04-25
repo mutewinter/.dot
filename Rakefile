@@ -1,6 +1,7 @@
 # Rake tasks for my dot files
 
 ZSH_PLUGINS = File.expand_path File.join %w{~ .oh-my-zsh custom plugins}
+ZSH_THEMES = File.expand_path File.join %w{~ .oh-my-zsh custom themes}
 
 desc 'Create symlinks for files beginning with _ in home directory'
 task :link do
@@ -27,21 +28,27 @@ task :link do
   end
 end
 
-desc 'Create symlinks for all zsh plugins'
-task :zsh_plugins do
-  if File.exists? 'zsh'
-    # Make the plugins folder if it isn't there.
-    Dir.mkdir ZSH_PLUGINS unless File.exists? ZSH_PLUGINS
+namespace :zsh do
+  desc 'Create symlink for all custom zsh files'
+  task :all => [:plugins, :themes]
 
-    Dir['zsh/*'].select { |d| File.directory? d }.each do |directory|
-      directory = File.expand_path directory
-      destination = File.join ZSH_PLUGINS, File.basename(directory)
-      if !File.exists?(destination)
-        puts "Creating symlink for zsh plugin #{directory}"
-        File.symlink("#{directory}", destination)
-      else
-        puts "#{directory} zsh plugin already exists, skipping"
-      end
+  desc 'Create symlink for custom zsh plugins'
+  task :plugins do
+    if File.exists? ZSH_PLUGINS
+      puts "#{ZSH_PLUGINS} zsh plugin already exists, skipping"
+    else
+      puts 'Making symlink for custom zsh plugins'
+      File.symlink(File.expand_path('zsh/plugins'), ZSH_PLUGINS)
+    end
+  end
+
+  desc 'Create symlink for custom zsh themes'
+  task :themes do
+    if File.exists? ZSH_THEMES
+      puts "#{ZSH_THEMES} zsh themes already exists, skipping"
+    else
+      puts 'Making symlink for custom zsh themes'
+      File.symlink(File.expand_path('zsh/themes'), ZSH_THEMES)
     end
   end
 end

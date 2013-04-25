@@ -17,5 +17,5 @@ Run `rake link` to link the dot fils in the root of this repo prefixed with a
 
 **Linking ZSH Plugins**
 
-Run `rake zsh_plugins` to link the plugin folders from the `zsh` directory to
-the `.oh-my-zsh` folder.
+Run `rake zsh:all` to link all of the custom zsh files to the
+`.oh-my-zsh/custom` folder.
