@@ -26,3 +26,5 @@ alias cdot="cd ~/dot_files"
 # of duplicates in the Open With submenu.
 # from: http://www.leancrew.com/all-this/2013/02/getting-rid-of-open-with-duplicates/
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+
+man() { open dash://manpages:$1 }
