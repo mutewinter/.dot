@@ -12,3 +12,8 @@ compdef _ck ck
 sb() { cd ~/code/sb/$1; }
 _sb() { _files -W ~/code/sb -/; }
 compdef _sb sb
+
+# Dropbox Folder
+db() { cd ~/Dropbox/$1; }
+_db() { _files -W ~/Dropbox -/; }
+compdef _db db
