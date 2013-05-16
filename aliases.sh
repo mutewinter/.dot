@@ -22,6 +22,9 @@ alias gdc="git diff --color-words"
 alias cvim="cd ~/.vim"
 alias cdot="cd ~/dot_files"
 
+# Annotate Rails models
+alias rails-annotate="annotate --exclude tests,fixtures,factories -p after"
+
 # Quick way to rebuild the Launch Services database and get rid
 # of duplicates in the Open With submenu.
 # from: http://www.leancrew.com/all-this/2013/02/getting-rid-of-open-with-duplicates/
