@@ -17,6 +17,7 @@ alias v="$EDITOR"
 
 # Colors the things that are different, win.
 alias gdc="git diff --color-words"
+alias glpp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Directories
 alias cvim="cd ~/.vim"
