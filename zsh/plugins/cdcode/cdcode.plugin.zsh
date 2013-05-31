@@ -17,3 +17,8 @@ compdef _sb sb
 db() { cd ~/Dropbox/$1; }
 _db() { _files -W ~/Dropbox -/; }
 compdef _db db
+
+# Pull Request Folder
+pr() { cd ~/code/pull_requests/$1; }
+_pr() { _files -W ~/code/pull_requests -/; }
+compdef _pr pr
