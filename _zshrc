@@ -29,5 +29,8 @@ source $ZSH/oh-my-zsh.sh
 #   e.g. mina task[derp, herp].
 alias mina='noglob mina'
 
+# An easier key to search backwards
+bindkey '^j' history-incremental-search-backward
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
