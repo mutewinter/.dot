@@ -10,6 +10,10 @@
 
 ## Setup
 
+`git clone --recursive https://github.com/mutewinter/dot_files`
+
+_note: the --recursive ensures submodules are installed_
+
 **Linking Dot Files**
 
 Run `rake link` to link the dot fils in the root of this repo prefixed with a
