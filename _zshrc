@@ -24,6 +24,27 @@ source $ZSH/oh-my-zsh.sh
 # Format file completion with LS_COLORS
 eval $(gdircolors ~/dot_files/LS_COLORS/LS_COLORS)
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+ZSH_HIGHLIGHT_STYLES+=(
+  default                       'none'
+  unknown-token                 'fg=red,bold'
+  reserved-word                 'fg=yellow'
+  alias                         'fg=none,bold'
+  builtin                       'fg=none,bold'
+  function                      'fg=none,bold'
+  command                       'fg=none,bold'
+  hashed-command                'fg=none,bold'
+  path                          'fg=cyan'
+  globbing                      'fg=cyan'
+  history-expansion             'fg=blue'
+  single-hyphen-option          'fg=magenta'
+  double-hyphen-option          'fg=magenta'
+  back-quoted-argument          'fg=magenta,bold'
+  single-quoted-argument        'fg=green'
+  double-quoted-argument        'fg=green'
+  dollar-double-quoted-argument 'fg=cyan'
+  back-double-quoted-argument   'fg=cyan'
+  assign                        'none'
+)
 
 # Better LS colors.
 export LSCOLORS=gxfxcxdxbxegedabagacad
