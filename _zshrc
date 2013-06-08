@@ -21,6 +21,13 @@ plugins=(git rails3 ruby rvm brew gem cdcode rake gitfast vundle zeus zsh-syntax
 
 source $ZSH/oh-my-zsh.sh
 
+# Format file completion with LS_COLORS
+eval $(gdircolors ~/dot_files/LS_COLORS/LS_COLORS)
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# Better LS colors.
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
 # -------------
 # ZSH-Specific aliases
 # -------------
