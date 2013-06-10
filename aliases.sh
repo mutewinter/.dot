@@ -7,32 +7,32 @@ fi
 
 export EDITOR="vim"
 
+# Directories
+alias cvim="cd ~/.vim"
+alias cdot="cd ~/dot_files"
+
+# Edit Files
+alias v="$EDITOR"
+alias vimrc="cd ~/.vim; v ~/.vim/vimrc"
+alias vundle="v ~/.vim/vundle.vim"
+alias mappings="v ~/.vim/mappings.vim"
+alias plugins="v ~/.vim/plugin_config.vim"
+alias vzsh="v ~/dot_files/_zshrc"
+alias aliases="v ~/dot_files/aliases.sh"
+alias vdot="cdot; v ."
+
 # Commands
-alias ezsh="$EDITOR ~/dot_files/_zshrc"
-alias vimrc="$EDITOR ~/.vim/vimrc"
-alias vundle="$EDITOR ~/.vim/vundle.vim"
-alias mappings="$EDITOR ~/.vim/mappings.vim"
-alias plugins="$EDITOR ~/.vim/plugin_config.vim"
-alias aliases="$EDITOR ~/dot_files/aliases.sh"
 alias ag="ag --smart-case"
 alias l="ls -1"
-alias v="$EDITOR"
 
 # Colors the things that are different, win.
 alias gdc="git diff --color-words"
 alias glpp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-# Directories
-alias cvim="cd ~/.vim"
-alias cdot="cd ~/dot_files"
-
 # Annotate Rails models
-alias rails-annotate="annotate --exclude tests,fixtures,factories -p after"
+alias annotate-rails="annotate --exclude tests,fixtures,factories -p after"
 
 # Quick way to rebuild the Launch Services database and get rid
 # of duplicates in the Open With submenu.
 # from: http://www.leancrew.com/all-this/2013/02/getting-rid-of-open-with-duplicates/
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-
-# Open man pages in Dash.app
-man() { open dash://manpages:$1 }
