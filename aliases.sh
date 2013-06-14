@@ -27,7 +27,9 @@ alias l="ls -1"
 
 # Colors the things that are different, win.
 alias gdc="git diff --color-words"
+# From https://coderwall.com/p/euwpig
 alias glpp="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glppf="git log -p --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Annotate Rails models
 alias annotate-rails="annotate --exclude tests,fixtures,factories -p after"
