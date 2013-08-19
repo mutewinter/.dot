@@ -10,3 +10,6 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # For Homebrew
 PATH=$PATH:/usr/local/sbin
 PATH="/usr/local/bin:$PATH"
+
+# My own programs
+PATH=$PATH:~/programs
