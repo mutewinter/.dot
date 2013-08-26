@@ -122,6 +122,8 @@ build_prompt() {
   prompt_end
 }
 
+time="%(?..)%*"
+
 PROMPT='%{%f%b%k%}$(build_prompt) '
 
 RPROMPT='%{$fg[yellow]%}$(~/.rvm/bin/rvm-prompt)%{$reset_color%} ${time} %{$reset_color%}'
