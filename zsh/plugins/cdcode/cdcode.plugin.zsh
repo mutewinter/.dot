@@ -22,3 +22,8 @@ compdef _db db
 pr() { cd ~/code/pull_requests/$1; }
 _pr() { _files -W ~/code/pull_requests -/; }
 compdef _pr pr
+
+# Personal Folder
+p() { cd ~/code/personal/$1; }
+_p() { _files -W ~/code/personal -/; }
+compdef _p p
