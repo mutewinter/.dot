@@ -20,6 +20,7 @@ alias plugins="v ~/.vim/plugin_config.vim"
 alias vzsh="v ~/dot_files/_zshrc"
 alias aliases="v ~/dot_files/aliases.sh"
 alias vdot="cdot; v ."
+alias pomo="pomojs -t"
 
 # Commands
 alias ag="ag --smart-case"
