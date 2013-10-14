@@ -13,3 +13,6 @@ PATH="/usr/local/bin:$PATH"
 
 # My own programs
 PATH=$PATH:~/programs
+
+# Silence Coveralls
+export COVERALLS_SILENT=true
