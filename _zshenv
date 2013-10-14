@@ -3,22 +3,29 @@
 # vim: set filetype=sh :
 
 # -------------
-# Global Aliases
+# Aliases
 # -------------
 if [ -f ~/dot_files/aliases.sh ]; then
   source ~/dot_files/aliases.sh
 fi
 
-# -------------
-# Global Environment Variables
-# -------------
+# ---------
+# Functions
+# ---------
+if [ -f ~/dot_files/functions.sh ]; then
+  source ~/dot_files/functions.sh
+fi
+
+# ---------------------
+# Environment Variables
+# ---------------------
 if [ -f ~/dot_files/environment.sh ]; then
   source ~/dot_files/environment.sh
 fi
 
-# -------------
+# -------------------------------------
 # System-Specific Environment Variables
-# -------------
+# -------------------------------------
 if [ -f ~/dot_files/system_environment.sh ]; then
   source ~/dot_files/system_environment.sh
 fi

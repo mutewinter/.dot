@@ -88,18 +88,25 @@ alias ccheckout='cd ~/code/checkout_code'
 alias cdotfiles='cd ~/dot_files'
 alias cvim='cd ~/.vim'
 
-# -------------
-# Global Environment Variables
-# -------------
+# ---------------------
+# Environment Variables
+# ---------------------
 if [ -f ~/dot_files/environment.sh ]; then
   source ~/dot_files/environment.sh
 fi
 
-# -------------
-# Global Aliases
-# -------------
+# -------
+# Aliases
+# -------
 if [ -f ~/dot_files/aliases.sh ]; then
   source ~/dot_files/aliases.sh
+fi
+
+# ---------
+# Functions
+# ---------
+if [ -f ~/dot_files/functions.sh ]; then
+  source ~/dot_files/functions.sh
 fi
 
 # -------------
