@@ -1,0 +1,13 @@
+# .zprofile - Loaded after .zshrc
+#
+# vim: set filetype=sh :
+
+# ------
+# Heroku
+# ------
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# ---
+# RVM
+# ---
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"

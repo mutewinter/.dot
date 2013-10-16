@@ -29,7 +29,3 @@ fi
 if [ -f ~/dot_files/system_environment.sh ]; then
   source ~/dot_files/system_environment.sh
 fi
-
-# Load RVM function. This is required for vim to use the proper version of
-# Ruby. See https://rvm.io/integration/vim/ for more information.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
