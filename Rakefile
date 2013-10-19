@@ -23,7 +23,7 @@ task :link do
     puts "File.symlink not supported, you must do it manually."
     if RUBY_PLATFORM.downcase =~ /(mingw|win)(32|64)/
       puts 'Windows 7 use mklink, e.g.'
-      puts '  mklink .dot_file dot_files\_dot_file'
+      puts '  mklink .dot_file .dot\_dot_file'
     end
   end
 end

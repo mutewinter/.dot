@@ -10,20 +10,9 @@
 
 ## Setup
 
-`git clone --recursive https://github.com/mutewinter/dot_files`
-
-_note: the --recursive ensures submodules are installed_
-
-**Linking Dot Files**
-
-Run `rake link` to link the dot fils in the root of this repo prefixed with a
-`_`.
-
-**Linking ZSH Plugins**
-
-Run `rake zsh:all` to link all of the custom zsh files to the
-`.oh-my-zsh/custom` folder.
-
+1. `git clone --recursive https://github.com/mutewinter/.dot`
+1. `rake link`
+1. `rake zsh:all`
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/dot_files/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

@@ -9,7 +9,7 @@ export EDITOR="vim"
 
 # Directories
 alias cvim="cd ~/.vim"
-alias cdot="cd ~/dot_files"
+alias cdot="cd ~/.dot"
 
 # Edit Files
 alias v="$EDITOR"
@@ -17,8 +17,8 @@ alias vimrc="cd ~/.vim; v ~/.vim/vimrc"
 alias vundle="v ~/.vim/vundle.vim"
 alias mappings="v ~/.vim/mappings.vim"
 alias plugins="v ~/.vim/plugin_config.vim"
-alias vzsh="v ~/dot_files/_zshrc"
-alias aliases="v ~/dot_files/aliases.sh"
+alias vzsh="v ~/.dot/_zshrc"
+alias aliases="v ~/.dot/aliases.sh"
 alias vdot="cdot; v ."
 alias pomo="pomojs -t"
 

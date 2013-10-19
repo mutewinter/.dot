@@ -5,27 +5,27 @@
 # -------------
 # Aliases
 # -------------
-if [ -f ~/dot_files/aliases.sh ]; then
-  source ~/dot_files/aliases.sh
+if [ -f ~/.dot/aliases.sh ]; then
+  source ~/.dot/aliases.sh
 fi
 
 # ---------
 # Functions
 # ---------
-if [ -f ~/dot_files/functions.sh ]; then
-  source ~/dot_files/functions.sh
+if [ -f ~/.dot/functions.sh ]; then
+  source ~/.dot/functions.sh
 fi
 
 # ---------------------
 # Environment Variables
 # ---------------------
-if [ -f ~/dot_files/environment.sh ]; then
-  source ~/dot_files/environment.sh
+if [ -f ~/.dot/environment.sh ]; then
+  source ~/.dot/environment.sh
 fi
 
 # -------------------------------------
 # System-Specific Environment Variables
 # -------------------------------------
-if [ -f ~/dot_files/system_environment.sh ]; then
-  source ~/dot_files/system_environment.sh
+if [ -f ~/.dot/system_environment.sh ]; then
+  source ~/.dot/system_environment.sh
 fi

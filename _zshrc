@@ -23,7 +23,7 @@ zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Format file completion with LS_COLORS
-eval $(gdircolors ~/dot_files/LS_COLORS/LS_COLORS)
+eval $(gdircolors ~/.dot/LS_COLORS/LS_COLORS)
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # Better zsh-syntax-highlighting colors
