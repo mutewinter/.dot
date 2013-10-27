@@ -2,6 +2,13 @@
 #
 # vim: set filetype=sh :
 
+# ---------------------
+# Environment Variables
+# ---------------------
+if [ -f ~/.dot/environment.sh ]; then
+  source ~/.dot/environment.sh
+fi
+
 # -------------
 # Aliases
 # -------------
@@ -14,13 +21,6 @@ fi
 # ---------
 if [ -f ~/.dot/functions.sh ]; then
   source ~/.dot/functions.sh
-fi
-
-# ---------------------
-# Environment Variables
-# ---------------------
-if [ -f ~/.dot/environment.sh ]; then
-  source ~/.dot/environment.sh
 fi
 
 # -------------------------------------
