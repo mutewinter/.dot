@@ -2,7 +2,7 @@
 
 # Use MacVim for the terminal if it's installed.
 if [ -x /usr/local/bin/mvim ]; then
-  function mvimf() { mvim -v }
+  function mvimf() { mvim -v "$@" }
   export EDITOR=mvimf
   alias view="mvim -v"
   alias vim=mvimf
