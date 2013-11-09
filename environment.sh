@@ -28,7 +28,7 @@ fi
 # ---------------
 hostname
 
-if hash tmux 2>/dev/null; then
+if { hash tmux 2>/dev/null; } && ! { [ -n "$TMUX" ]; } then
   echo '\ntmux sessions'
   echo '-------------'
   tmux list-sessions -F " #{?session_attached,⚙, } #S"
