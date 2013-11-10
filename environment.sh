@@ -29,9 +29,14 @@ fi
 hostname
 
 if { hash tmux 2>/dev/null; } && ! { [ -n "$TMUX" ]; } then
-  echo '\ntmux sessions'
-  echo '-------------'
-  tmux list-sessions -F " #{?session_attached,⚙, } #S"
+  if { tmux list-sessions 2>/dev/null; } then
+    echo '\ntmux sessions'
+    echo '-------------'
+    tmux list-sessions -F " #{?session_attached,⚙, } #S"
+  else
+    echo '\nno tmux sessions'
+    echo '----------------'
+  fi
 fi
 
 PATH=$PATH:/usr/local/share/npm/bin
