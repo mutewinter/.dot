@@ -29,7 +29,7 @@ fi
 hostname
 
 if { hash tmux 2>/dev/null; } && ! { [ -n "$TMUX" ]; } then
-  if { tmux list-sessions 2>/dev/null; } then
+  if { tmux list-sessions > /dev/null 2>&1; } then
     echo '\ntmux sessions'
     echo '-------------'
     tmux list-sessions -F " #{?session_attached,⚙, } #S"
