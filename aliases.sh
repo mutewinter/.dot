@@ -27,7 +27,6 @@ alias vdot="cdot; v ."
 alias pomo="pomojs -t"
 
 # Commands
-alias ag="ag --smart-case"
 alias l="ls -1"
 
 # Colors the things that are different, win.
