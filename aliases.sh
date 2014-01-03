@@ -24,8 +24,6 @@ alias mappings="v ~/.vim/mappings.vim"
 alias plugins="v ~/.vim/plugins.vim"
 alias vzsh="v ~/.dot/_zshrc"
 alias aliases="v ~/.dot/aliases.sh"
-alias vdot="cdot; v ."
-alias pomo="pomojs -t"
 
 # Commands
 alias l="ls -1"
