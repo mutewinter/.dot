@@ -7,6 +7,7 @@ if [ -x /usr/local/bin/mvim ]; then
   alias view="mvim -v"
   alias vim=mvimf
   alias vimdiff="mvim -vd"
+  alias gvim=mvim
 else
   export EDITOR="vim"
 fi
