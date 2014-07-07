@@ -42,4 +42,7 @@ alias annotate-rails="annotate --exclude tests,fixtures,factories -p after"
 # from: http://www.leancrew.com/all-this/2013/02/getting-rid-of-open-with-duplicates/
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 
-alias stripwhitespace='find . -not \( -name .svn -prune -o -name .git -prune -name tmp -prune \) -type f -print0 | xargs -0 sed -i '' -E "s/[[:space:]]*$//"'
+# Tapas with Ember
+alias cs='cake server'
+alias cb='cake build'
+alias cbdp='cake build; divshot push'
