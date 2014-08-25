@@ -13,6 +13,3 @@
 1. `git clone --recursive https://github.com/mutewinter/.dot`
 1. `rake link`
 1. `rake zsh:all`
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mutewinter/dot_files/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
