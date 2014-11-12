@@ -8,10 +8,10 @@ ck() { cd ~/code/checkout_code/$1; }
 _ck() { _files -W ~/code/checkout_code -/; }
 compdef _ck ck
 
-# Sparkbox Folder
-sb() { cd ~/code/sb/$1; }
-_sb() { _files -W ~/code/sb -/; }
-compdef _sb sb
+# Bp Folder
+bp() { cd ~/code/bp/$1; }
+_bp() { _files -W ~/code/bp -/; }
+compdef _bp bp
 
 # Dropbox Folder
 db() { cd ~/Dropbox/$1; }
