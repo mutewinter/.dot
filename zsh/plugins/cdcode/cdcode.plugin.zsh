@@ -3,15 +3,15 @@ c() { cd ~/code/$1; }
 _c() { _files -W ~/code -/; }
 compdef _c c
 
-# Checkout Code Folder
-ck() { cd ~/code/checkout_code/$1; }
-_ck() { _files -W ~/code/checkout_code -/; }
-compdef _ck ck
+# Reference Folder
+re() { cd ~/code/reference/$1; }
+_re() { _files -W ~/code/reference -/; }
+compdef _re re
 
 # Bp Folder
-bp() { cd ~/code/bp/$1; }
-_bp() { _files -W ~/code/bp -/; }
-compdef _bp bp
+b() { cd ~/code/bp/$1; }
+_b() { _files -W ~/code/bp -/; }
+compdef _b b
 
 # Dropbox Folder
 db() { cd ~/Dropbox/$1; }
@@ -27,3 +27,8 @@ compdef _pr pr
 p() { cd ~/code/personal/$1; }
 _p() { _files -W ~/code/personal -/; }
 compdef _p p
+
+# Forks Folder
+forks() { cd ~/code/forks/$1; }
+_forks() { _files -W ~/code/forks -/; }
+compdef _forks forks
