@@ -22,7 +22,7 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH Plugins I'm Using.
 # Custom plugins are in the zsh folder of this repo.
 plugins=(heroku git rails ruby rbenv brew gem cdcode rake gitfast vundle zeus
-zsh-syntax-highlighting bower npm-completion tmuxinator nvm)
+zsh-syntax-highlighting bower npm-completion tmuxinator nvm z)
 
 source $ZSH/oh-my-zsh.sh
 
