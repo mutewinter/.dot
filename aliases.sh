@@ -50,5 +50,6 @@ alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/
 
 # Tapas with Ember
 alias cs='cake server'
-alias cb='cake build'
-alias cbdp='cake build; divshot push'
+
+# Ember CLI
+alias e=ember
