@@ -1,7 +1,13 @@
 # Bash aliases shared between zsh and bashrc config.
 
 # Use MacVim for the terminal if it's installed.
-if [ -x /usr/local/bin/mvim ]; then
+if [ -x /usr/local/bin/nvim ]; then
+  export EDITOR=nvim
+  alias view="nvim -v"
+  alias vim=nvim
+  alias vimdiff="nvim -vd"
+  alias gvim=nvim
+elif [ -x /usr/local/bin/mvim ]; then
   function mvimf() { mvim -v "$@" }
   export EDITOR=mvimf
   alias view="mvim -v"
