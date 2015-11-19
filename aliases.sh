@@ -53,3 +53,6 @@ alias cs='cake server'
 
 # Ember CLI
 alias e=ember
+
+# NPM
+alias n=npm
