@@ -89,3 +89,5 @@ alias spring='nocorrect spring'
 
 # An easier key to search backwards
 bindkey '^j' history-incremental-search-backward
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
