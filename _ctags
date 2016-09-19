@@ -1,11 +1,12 @@
---exclude="\.git"
+--recurse=yes
+--exclude=.git
+--exclude=vendor/*
+--exclude=node_modules/*
+--exclude=db/*
+--exclude=log/*
 --totals=yes
 --tag-relative=yes
 --sort=yes
 --langdef=css
 --langmap=css:.css
 --regex-css=/^[ \t]*([^\t {][^{]{1,100})(\t| )*{/\1/d,definition/
---langdef=scss
---langmap=scss:.scss
---regex-scss=/^[ \t]*([^\t {][^{]{1,100})(\t| )*\{/ \1/d,definition/
---regex-scss=/^[@]mixin ([^ (]+).*/\1/m,mixing/1/d,definition/
