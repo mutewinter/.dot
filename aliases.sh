@@ -19,11 +19,12 @@ else
 fi
 
 # Directories
-alias cvim="cd ~/.vim"
+alias cvim="cd ~/.config/nvim"
 alias cdot="cd ~/.dot"
 
 # Edit Files
 alias v="$EDITOR"
+alias vf="$EDITOR \$(fzf)"
 alias vimrc="cd ~/.vim; v ~/.vim/vimrc"
 alias vundle="v ~/.vim/vundle.vim"
 alias mappings="v ~/.vim/mappings.vim"
@@ -56,3 +57,8 @@ alias e=ember
 
 # NPM
 alias n=npm
+alias nide='npm i --save-dev --save-exact'
+alias nie='npm i --save --save-exact'
+
+# Tmux
+alias tm="tmux attach || tmux new"
