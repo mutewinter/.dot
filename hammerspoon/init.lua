@@ -33,12 +33,10 @@ for _,key in ipairs(controlBindings) do
 end
 
 -- Hyper+=: Reload config
-ofun = function()
+k:bind({}, '=', nil, function()
   hs.reload()
-  hs.alert.show("Config loaded")
   k.triggered = true
-end
-k:bind({}, '=', nil, ofun)
+end)
 
 
 -- ----------------------------
