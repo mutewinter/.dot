@@ -28,7 +28,6 @@ git
 rails
 ruby
 rbenv
-brew
 gem
 cdcode
 rake
@@ -40,6 +39,7 @@ bower
 npm-completion
 tmuxinator
 nvm
+yarn
 z
 )
 
