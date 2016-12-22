@@ -2,14 +2,18 @@
 -- Config
 -- ------
 
+-- Disable animation for window resizing so it's instant.
 hs.window.animationDuration = 0
+
+-- Global boolean to track triggered state of Hyper.
+local hyperTriggered = false
 
 -- --------
 -- Bindings
 -- --------
 
 -- A global variable for the Hyper Mode
-local k = hs.hotkey.modal.new({}, "F17")
+local k = hs.hotkey.modal.new({}, 'F17')
 
 -- Create passthroughs to hyper (all modifers) + the keys below.
 local hyperBindings = {'n', 'return', 'space', 'd', 'f'}
@@ -18,7 +22,7 @@ local hyperModifiers = {'cmd', 'alt', 'shift', 'ctrl'}
 for _,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function()
     hs.eventtap.keyStroke(hyperModifiers, key)
-    k.triggered = true
+    hyperTriggered = true
   end)
 end
 
@@ -28,14 +32,14 @@ local controlBindings = {'l', 'j', 'k', 'c'}
 for _,key in ipairs(controlBindings) do
   k:bind({}, key, nil, function()
     hs.eventtap.keyStroke({'ctrl'}, key)
-    k.triggered = true
+    hyperTriggered = true
   end)
 end
 
 -- Hyper+=: Reload config
 k:bind({}, '=', nil, function()
   hs.reload()
-  k.triggered = true
+  hyperTriggered = true
 end)
 
 
@@ -57,9 +61,9 @@ k:bind({}, ';', function()
     f.h = max.h
     win:setFrame(f)
   else
-    hs.alert.show("No active window")
+    hs.alert.show('No active window')
   end
-  k.triggered = true
+  hyperTriggered = true
 end)
 
 -- HYPER+': for right one half window
@@ -76,9 +80,9 @@ k:bind({}, '\'', function()
     f.h = max.h
     win:setFrame(f)
   else
-    hs.alert.show("No active window")
+    hs.alert.show('No active window')
   end
-  k.triggered = true
+  hyperTriggered = true
 end)
 
 -- HYPER+o: Full screen.
@@ -95,9 +99,9 @@ k:bind({}, 'o', function()
     f.h = max.h
     win:setFrame(f)
   else
-    hs.alert.show("No active window")
+    hs.alert.show('No active window')
   end
-  k.triggered = true
+  hyperTriggered = true
 end)
 
 -- HYPER+i: Center on screen.
@@ -114,7 +118,7 @@ k:bind({}, 'i', function()
     f.h = max.h
     win:setFrame(f)
   else
-    hs.alert.show("No active window")
+    hs.alert.show('No active window')
   end
 end)
 
@@ -124,7 +128,7 @@ end)
 
 -- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
 local pressedF18 = function()
-  k.triggered = false
+  hyperTriggered = false
   k:enter()
 end
 
@@ -132,7 +136,7 @@ end
 --   send ESCAPE if no other keys are pressed.
 local releasedF18 = function()
   k:exit()
-  if not k.triggered then
+  if not hyperTriggered then
     hs.eventtap.keyStroke({}, 'escape')
   end
 end
