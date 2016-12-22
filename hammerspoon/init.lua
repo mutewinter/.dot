@@ -21,7 +21,7 @@ local hyperTriggered = false
 local k = hs.hotkey.modal.new({}, 'F17')
 
 -- Create passthroughs to hyper (all modifers) + the keys below.
-local hyperBindings = {'n', 'return', 'space', 'd', 'f'}
+local hyperBindings = {'n', 'return', 'space', 'd', 'f', '5'}
 
 for _,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function()
@@ -39,6 +39,18 @@ for _,key in ipairs(controlBindings) do
     hyperTriggered = true
   end)
 end
+
+-- Hyper+\: Lock screen.
+k:bind({}, '\\', nil, function()
+  hs.caffeinate.lockScreen()
+  hyperTriggered = true
+end)
+
+-- Hyper+4: Screenshot.
+k:bind({}, '4', nil, function()
+  hs.eventtap.keyStroke({'cmd', 'shift'}, '4')
+  hyperTriggered = true
+end)
 
 -- Hyper+=: Reload config
 k:bind({}, '=', nil, function()
