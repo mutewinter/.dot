@@ -42,6 +42,9 @@ yarn
 z
 )
 
+# Rely on my own method of enabling LS_COLORS
+export DISABLE_LS_COLORS=true
+
 source $ZSH/oh-my-zsh.sh
 
 # Format file completion with LS_COLORS

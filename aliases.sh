@@ -33,6 +33,7 @@ alias vzsh="v ~/.dot/_zshrc"
 alias aliases="v ~/.dot/aliases.sh"
 
 # Commands
+alias ls="ls --color"
 alias l="ls -1"
 
 # Colors the things that are different, win.
