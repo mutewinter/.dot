@@ -59,6 +59,7 @@ k:bind(hyper, ';', function()
   else
     hs.alert.show("No active window")
   end
+  k.triggered = true
 end)
 
 -- HYPER+': for right one half window
@@ -77,6 +78,7 @@ k:bind(hyper, '\'', function()
   else
     hs.alert.show("No active window")
   end
+  k.triggered = true
 end)
 
 -- HYPER+o: Full screen.
@@ -95,6 +97,7 @@ k:bind(hyper, 'o', function()
   else
     hs.alert.show("No active window")
   end
+  k.triggered = true
 end)
 
 -- HYPER+i: Center on screen.
