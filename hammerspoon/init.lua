@@ -12,7 +12,7 @@ local hyperTriggered = false
 -- Bindings
 -- --------
 
--- A global variable for the Hyper Mode
+-- A hotkey modal to emulate the hyper key.
 local k = hs.hotkey.modal.new({}, 'F17')
 
 -- Create passthroughs to hyper (all modifers) + the keys below.
