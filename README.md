@@ -4,3 +4,4 @@
 1. `rake link`
 1. `rake zsh:all`
 1. `rake hammerspoon`
+1. `rake karabiner`

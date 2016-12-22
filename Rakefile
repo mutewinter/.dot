@@ -3,6 +3,7 @@
 ZSH_PLUGINS = File.expand_path File.join %w{~ .oh-my-zsh custom plugins}
 ZSH_THEMES = File.expand_path File.join %w{~ .oh-my-zsh custom themes}
 HAMMERSPOON = File.expand_path File.join %w{~ .hammerspoon init.lua}
+KARABINER = File.expand_path File.join %w{~ .karabiner.d configuration karabiner.json}
 
 desc 'Create symlinks for files beginning with _ in home directory'
 task :link do
@@ -61,5 +62,15 @@ task :hammerspoon do
   else
     puts 'Making symlink for hammerspoon'
     File.symlink(File.expand_path('hammerspoon/init.lua'), HAMMERSPOON)
+  end
+end
+
+desc 'Create symlink for Karabiner'
+task :karabiner do
+  if File.exists? KARABINER
+    puts "#{KARABINER} already exists, skipping"
+  else
+    puts 'Making symlink for karabiner'
+    File.symlink(File.expand_path('karabiner/configuration.json'), KARABINER)
   end
 end
