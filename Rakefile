@@ -2,6 +2,7 @@
 
 ZSH_PLUGINS = File.expand_path File.join %w{~ .oh-my-zsh custom plugins}
 ZSH_THEMES = File.expand_path File.join %w{~ .oh-my-zsh custom themes}
+HAMMERSPOON = File.expand_path File.join %w{~ .hammerspoon init.lua}
 
 desc 'Create symlinks for files beginning with _ in home directory'
 task :link do
@@ -50,5 +51,15 @@ namespace :zsh do
       puts 'Making symlink for custom zsh themes'
       File.symlink(File.expand_path('zsh/themes'), ZSH_THEMES)
     end
+  end
+end
+
+desc 'Create symlink for hammerspoon'
+task :hammerspoon do
+  if File.exists? HAMMERSPOON
+    puts "#{HAMMERSPOON} already exists, skipping"
+  else
+    puts 'Making symlink for hammerspoon'
+    File.symlink(File.expand_path('hammerspoon/init.lua'), HAMMERSPOON)
   end
 end
