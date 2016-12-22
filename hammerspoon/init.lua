@@ -17,11 +17,10 @@ local k = hs.hotkey.modal.new({}, 'F17')
 
 -- Create passthroughs to hyper (all modifers) + the keys below.
 local hyperBindings = {'n', 'return', 'space', 'd', 'f'}
-local hyperModifiers = {'cmd', 'alt', 'shift', 'ctrl'}
 
 for _,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function()
-    hs.eventtap.keyStroke(hyperModifiers, key)
+    hs.eventtap.keyStroke({'cmd', 'alt', 'shift', 'ctrl'}, key)
     hyperTriggered = true
   end)
 end
