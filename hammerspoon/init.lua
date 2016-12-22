@@ -44,7 +44,7 @@ end)
 -- ----------------------------
 
 -- HYPER+;: for left one half window
-k:bind(hyper, ';', function()
+k:bind({}, ';', function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -63,7 +63,7 @@ k:bind(hyper, ';', function()
 end)
 
 -- HYPER+': for right one half window
-k:bind(hyper, '\'', function()
+k:bind({}, '\'', function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -82,7 +82,7 @@ k:bind(hyper, '\'', function()
 end)
 
 -- HYPER+o: Full screen.
-k:bind(hyper, 'o', function()
+k:bind({}, 'o', function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -101,7 +101,7 @@ k:bind(hyper, 'o', function()
 end)
 
 -- HYPER+i: Center on screen.
-k:bind(hyper, 'i', function()
+k:bind({}, 'i', function()
   if hs.window.focusedWindow() then
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -123,14 +123,14 @@ end)
 -- -----------
 
 -- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
-pressedF18 = function()
+local pressedF18 = function()
   k.triggered = false
   k:enter()
 end
 
 -- Leave Hyper Mode when F18 (Hyper/Capslock) is pressed,
 --   send ESCAPE if no other keys are pressed.
-releasedF18 = function()
+local releasedF18 = function()
   k:exit()
   if not k.triggered then
     hs.eventtap.keyStroke({}, 'escape')
@@ -138,4 +138,4 @@ releasedF18 = function()
 end
 
 -- Bind the Hyper key
-f18 = hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
+hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
