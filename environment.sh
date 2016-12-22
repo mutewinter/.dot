@@ -53,3 +53,7 @@ PATH=$PATH:~/programs
 
 # Silence Coveralls
 export COVERALLS_SILENT=true
+
+# Setup NVM
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
