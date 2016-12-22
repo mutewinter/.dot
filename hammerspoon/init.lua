@@ -9,56 +9,28 @@ hs.window.animationDuration = 0
 -- --------
 
 -- A global variable for the Hyper Mode
-k = hs.hotkey.modal.new({}, "F17")
+local k = hs.hotkey.modal.new({}, "F17")
 
--- Hyper N: Passthrough
-nfun = function()
-  k.triggered = true
-  hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, 'n')
-end
-k:bind({}, 'n', nil, nfun)
+-- Create passthroughs to hyper (all modifers) + the keys below.
+local hyperBindings = {'n', 'return', 'space', 'd', 'f'}
+local hyperModifiers = {'cmd', 'alt', 'shift', 'ctrl'}
 
--- Hyper+Return: Passthrough
-returnfun = function()
-  k.triggered = true
-  hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, 'return')
+for _,key in ipairs(hyperBindings) do
+  k:bind({}, key, nil, function()
+    hs.eventtap.keyStroke(hyperModifiers, key)
+    k.triggered = true
+  end)
 end
-k:bind({}, 'RETURN', nil, returnfun)
 
--- Hyper+Space: Passthrough
-spacefun = function()
-  k.triggered = true
-  hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, 'space')
-end
-k:bind({}, 'space', nil, spacefun)
+-- Create passthroughs to control + the keys below.
+local controlBindings = {'l', 'j', 'k', 'c'}
 
--- HYPER+L: Act like ⌃l.
-lfun = function()
-  hs.eventtap.keyStroke({'⌃'}, 'l')
-  k.triggered = true
+for _,key in ipairs(controlBindings) do
+  k:bind({}, key, nil, function()
+    hs.eventtap.keyStroke({'ctrl'}, key)
+    k.triggered = true
+  end)
 end
-k:bind({}, 'l', nil, lfun)
-
--- HYPER+J: Act like ⌃j.
-jfun = function()
-  hs.eventtap.keyStroke({'⌃'}, 'j')
-  k.triggered = true
-end
-k:bind({}, 'j', nil, jfun)
-
--- HYPER+K: Act like ⌃k.
-kfun = function()
-  hs.eventtap.keyStroke({'⌃'}, 'k')
-  k.triggered = true
-end
-k:bind({}, 'k', nil, kfun)
-
--- HYPER+C: Act like ⌃c and move to beginning of line.
-cfun = function()
-  hs.eventtap.keyStroke({'⌃'}, 'c')
-  k.triggered = true
-end
-k:bind({}, 'c', nil, cfun)
 
 -- Hyper+=: Reload config
 ofun = function()
