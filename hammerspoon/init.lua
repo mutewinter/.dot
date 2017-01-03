@@ -13,6 +13,10 @@ hs.grid.MARGINY = 0
 -- Global boolean to track triggered state of Hyper.
 local hyperTriggered = false
 
+-- Seconds to wait for a modifier before exiting hyper and assuming escape.
+-- This is needed to ensure quick presses of hyper and a modifier still work.
+local hyperDelayBeforeEscape = 0.1
+
 -- --------
 -- Bindings
 -- --------
@@ -21,12 +25,12 @@ local hyperTriggered = false
 local k = hs.hotkey.modal.new({}, 'F17')
 
 -- Create passthroughs to hyper (all modifers) + the keys below.
-local hyperBindings = {'n', 'return', 'space', 'd', 'f', '5'}
+local hyperBindings = {'n', 'return', 'space', 'd', 'f', '5', 'p'}
 
 for _,key in ipairs(hyperBindings) do
   k:bind({}, key, nil, function()
-    hs.eventtap.keyStroke({'cmd', 'alt', 'shift', 'ctrl'}, key)
     hyperTriggered = true
+    hs.eventtap.keyStroke({'cmd', 'alt', 'shift', 'ctrl'}, key)
   end)
 end
 
@@ -35,15 +39,15 @@ local controlBindings = {'l', 'j', 'k', 'c'}
 
 for _,key in ipairs(controlBindings) do
   k:bind({}, key, nil, function()
-    hs.eventtap.keyStroke({'ctrl'}, key)
     hyperTriggered = true
+    hs.eventtap.keyStroke({'ctrl'}, key)
   end)
 end
 
 -- Hyper+\: Lock screen.
 k:bind({}, '\\', nil, function()
-  hs.caffeinate.lockScreen()
   hyperTriggered = true
+  hs.caffeinate.lockScreen()
 end)
 
 -- Hyper+4: Screenshot.
@@ -54,8 +58,8 @@ end)
 
 -- Hyper+=: Reload config
 k:bind({}, '=', nil, function()
-  hs.reload()
   hyperTriggered = true
+  hs.reload()
 end)
 
 
@@ -176,13 +180,24 @@ local pressedF18 = function()
   k:enter()
 end
 
+local previousExitTimer = nil
+
 -- Leave Hyper Mode when F18 (Hyper/Capslock) is pressed,
---   send ESCAPE if no other keys are pressed.
+--   send ESCAPE if no other keys are pressed within the delay.
 local releasedF18 = function()
-  k:exit()
-  if not hyperTriggered then
-    hs.eventtap.keyStroke({}, 'escape')
+
+  -- Clean up after the previous timer.
+  if previousExitTimer then
+    previousExitTimer:stop()
+    previousExitTimer = nil
   end
+
+  previousExitTimer = hs.timer.doAfter(hyperDelayBeforeEscape, function()
+    k:exit()
+    if not hyperTriggered then
+      hs.eventtap.keyStroke({}, 'escape')
+    end
+  end)
 end
 
 -- Bind the Hyper key
