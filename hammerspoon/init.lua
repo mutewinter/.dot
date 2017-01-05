@@ -15,7 +15,7 @@ local hyperTriggered = false
 
 -- Seconds to wait for a modifier before exiting hyper and assuming escape.
 -- This is needed to ensure quick presses of hyper and a modifier still work.
-local hyperDelayBeforeEscape = 0.1
+local hyperDelayBeforeEscape = 0.2
 
 -- --------
 -- Bindings
@@ -173,25 +173,28 @@ k:bind({}, 'o', chain({
 -- -----------
 -- Hyper Setup
 -- -----------
-
--- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
-local pressedF18 = function()
-  hyperTriggered = false
-  k:enter()
-end
-
 local previousExitTimer = nil
 
--- Leave Hyper Mode when F18 (Hyper/Capslock) is pressed,
---   send ESCAPE if no other keys are pressed within the delay.
-local releasedF18 = function()
-
-  -- Clean up after the previous timer.
+local clearPreviousExitTimer = function()
   if previousExitTimer then
     previousExitTimer:stop()
     previousExitTimer = nil
   end
+end
 
+
+-- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
+local pressedF18 = function()
+  -- The user may have pressed F18 before the previous timer finished.
+  clearPreviousExitTimer()
+  hyperTriggered = false
+  k:enter()
+end
+
+-- Leave Hyper Mode when F18 (Hyper/Capslock) is pressed,
+--   send ESCAPE if no other keys are pressed within the delay.
+local releasedF18 = function()
+  clearPreviousExitTimer()
   previousExitTimer = hs.timer.doAfter(hyperDelayBeforeEscape, function()
     k:exit()
     if not hyperTriggered then
