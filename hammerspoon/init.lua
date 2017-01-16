@@ -35,7 +35,7 @@ for _,key in ipairs(hyperBindings) do
 end
 
 -- Create passthroughs to control + the keys below.
-local controlBindings = {'l', 'j', 'k', 'c'}
+local controlBindings = {'l', 'v', 'j', 'k', 'g', 'c', 'y'}
 
 for _,key in ipairs(controlBindings) do
   k:bind({}, key, nil, function()
