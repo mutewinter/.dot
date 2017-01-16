@@ -13,24 +13,31 @@ hs.grid.MARGINY = 0
 -- Global boolean to track triggered state of Hyper.
 local hyperTriggered = false
 
--- Seconds to wait for a modifier before exiting hyper and assuming escape.
--- This is needed to ensure quick presses of hyper and a modifier still work.
-local hyperDelayBeforeEscape = 0.2
-
 -- --------
 -- Bindings
 -- --------
 
 -- A hotkey modal to emulate the hyper key.
-local k = hs.hotkey.modal.new({}, 'F17')
+local hyperMode = hs.hotkey.modal.new({}, 'F17')
 
--- Create passthroughs to hyper (all modifers) + the keys below.
+-- A custom keyStroke for ensuring that hyper's state is triggered and that
+-- there is no delay.
+-- https://github.com/Hammerspoon/hammerspoon/issues/1082
+local keyStroke = function(modifiers, key, wasHyperTriggered)
+  wasHyperTriggered = wasHyperTriggered or true
+  hyperTriggered = wasHyperTriggered
+
+  -- The 0 removes the delay between key up and down
+  hs.eventtap.keyStroke(modifiers, key, 0)
+end
+
+-- Create passthroughs to hyper (all modifiers) + the keys below.
 local hyperBindings = {'n', 'return', 'space', 'd', 'f', '5', 'p'}
 
 for _,key in ipairs(hyperBindings) do
-  k:bind({}, key, nil, function()
+  hyperMode:bind({}, key, nil, function()
     hyperTriggered = true
-    hs.eventtap.keyStroke({'cmd', 'alt', 'shift', 'ctrl'}, key)
+    keyStroke({'cmd', 'alt', 'shift', 'ctrl'}, key)
   end)
 end
 
@@ -38,27 +45,23 @@ end
 local controlBindings = {'l', 'v', 'j', 'k', 'g', 'c', 'y'}
 
 for _,key in ipairs(controlBindings) do
-  k:bind({}, key, nil, function()
-    hyperTriggered = true
-    hs.eventtap.keyStroke({'ctrl'}, key)
+  hyperMode:bind({}, key, nil, function()
+    keyStroke({'ctrl'}, key)
   end)
 end
 
 -- Hyper+\: Lock screen.
-k:bind({}, '\\', nil, function()
-  hyperTriggered = true
+hyperMode:bind({}, '\\', nil, function()
   hs.caffeinate.lockScreen()
 end)
 
 -- Hyper+4: Screenshot.
-k:bind({}, '4', nil, function()
-  hs.eventtap.keyStroke({'cmd', 'shift'}, '4')
-  hyperTriggered = true
+hyperMode:bind({}, '4', nil, function()
+  keyStroke({'cmd', 'shift'}, '4')
 end)
 
 -- Hyper+=: Reload config
-k:bind({}, '=', nil, function()
-  hyperTriggered = true
+hyperMode:bind({}, '=', nil, function()
   hs.reload()
 end)
 
@@ -133,38 +136,38 @@ local grid = {
   centeredSmall = '2,2 8x8',
 }
 
-k:bind({}, ';', chain({
+hyperMode:bind({}, ';', chain({
   grid.leftHalf,
   grid.leftThird,
   grid.leftTwoThirds,
 }))
 
-k:bind({}, '\'', chain({
+hyperMode:bind({}, '\'', chain({
   grid.rightHalf,
   grid.rightThird,
   grid.rightTwoThirds,
 }))
 
-k:bind({}, 'up', chain({
+hyperMode:bind({}, 'up', chain({
   grid.topHalf,
   grid.topThird,
   grid.topTwoThirds,
 }))
 
-k:bind({}, 'down', chain({
+hyperMode:bind({}, 'down', chain({
   grid.bottomHalf,
   grid.bottomThird,
   grid.bottomTwoThirds,
 }))
 
-k:bind({}, 'i', chain({
+hyperMode:bind({}, 'i', chain({
   grid.topLeft,
   grid.topRight,
   grid.bottomRight,
   grid.bottomLeft,
 }))
 
-k:bind({}, 'o', chain({
+hyperMode:bind({}, 'o', chain({
   grid.fullScreen,
   grid.centeredBig,
   grid.centeredSmall,
@@ -173,34 +176,20 @@ k:bind({}, 'o', chain({
 -- -----------
 -- Hyper Setup
 -- -----------
-local previousExitTimer = nil
-
-local clearPreviousExitTimer = function()
-  if previousExitTimer then
-    previousExitTimer:stop()
-    previousExitTimer = nil
-  end
-end
-
 
 -- Enter Hyper Mode when F18 (Hyper/Capslock) is pressed
 local pressedF18 = function()
-  -- The user may have pressed F18 before the previous timer finished.
-  clearPreviousExitTimer()
   hyperTriggered = false
-  k:enter()
+  hyperMode:enter()
 end
 
 -- Leave Hyper Mode when F18 (Hyper/Capslock) is pressed,
 --   send ESCAPE if no other keys are pressed within the delay.
 local releasedF18 = function()
-  clearPreviousExitTimer()
-  previousExitTimer = hs.timer.doAfter(hyperDelayBeforeEscape, function()
-    k:exit()
-    if not hyperTriggered then
-      hs.eventtap.keyStroke({}, 'escape')
-    end
-  end)
+  hyperMode:exit()
+  if not hyperTriggered then
+    keyStroke({}, 'escape', false)
+  end
 end
 
 -- Bind the Hyper key
