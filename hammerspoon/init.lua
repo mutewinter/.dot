@@ -23,9 +23,8 @@ local hyperMode = hs.hotkey.modal.new({}, 'F17')
 -- A custom keyStroke for ensuring that hyper's state is triggered and that
 -- there is no delay.
 -- https://github.com/Hammerspoon/hammerspoon/issues/1082
-local keyStroke = function(modifiers, key, wasHyperTriggered)
-  wasHyperTriggered = wasHyperTriggered or true
-  hyperTriggered = wasHyperTriggered
+local keyStroke = function(modifiers, key)
+  hyperTriggered = true
 
   -- The 0 removes the delay between key up and down
   hs.eventtap.keyStroke(modifiers, key, 0)
@@ -188,7 +187,7 @@ end
 local releasedF18 = function()
   hyperMode:exit()
   if not hyperTriggered then
-    keyStroke({}, 'escape', false)
+    keyStroke({}, 'escape')
   end
 end
 
