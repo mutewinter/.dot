@@ -24,6 +24,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
 aws
 heroku
+gitignore
 git
 rails
 ruby
