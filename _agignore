@@ -2,3 +2,4 @@ log/
 logs/
 tags
 tmp/
+yarn.lock
