@@ -133,7 +133,8 @@ local grid = {
   bottomLeft = '0,6 6x6',
   fullScreen = '0,0 12x12',
   centeredBig = '2,0 8x12',
-  centeredSmall = '2,2 8x8',
+  centeredSmall = '3,0 6x12',
+  centeredSmaller = '4,0 4x12',
 }
 
 hyperMode:bind({}, ';', chain({
@@ -171,6 +172,7 @@ hyperMode:bind({}, 'o', chain({
   grid.fullScreen,
   grid.centeredBig,
   grid.centeredSmall,
+  grid.centeredSmaller,
 }))
 
 -- -----------
