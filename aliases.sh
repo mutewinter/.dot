@@ -63,3 +63,6 @@ alias nie='npm i --save --save-exact'
 
 # Tmux
 alias tm="tmux attach || tmux new"
+
+# Yarn
+alias y=yarn
