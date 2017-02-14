@@ -89,6 +89,7 @@ local chain = (function(movements)
   local lastSeenAt = 0
 
   return function()
+    hyperTriggered = true
     local win = hs.window.frontmostWindow()
     local id = win:id()
     local now = hs.timer.secondsSinceEpoch()
