@@ -31,7 +31,7 @@ local keyStroke = function(modifiers, key)
 end
 
 -- Create passthroughs to hyper (all modifiers) + the keys below.
-local hyperBindings = {'n', 'return', 'space', 'd', 'f', '5', 'p'}
+local hyperBindings = {'n', 'return', 'space', 'd', 'f', '5', 'p', 't'}
 
 for _,key in ipairs(hyperBindings) do
   hyperMode:bind({}, key, nil, function()
