@@ -8,11 +8,6 @@ re() { cd ~/code/reference/$1; }
 _re() { _files -W ~/code/reference -/; }
 compdef _re re
 
-# Bp Folder
-b() { cd ~/code/bp/$1; }
-_b() { _files -W ~/code/bp -/; }
-compdef _b b
-
 # Dropbox Folder
 db() { cd ~/Dropbox/$1; }
 _db() { _files -W ~/Dropbox -/; }
