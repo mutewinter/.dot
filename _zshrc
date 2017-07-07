@@ -89,12 +89,10 @@ alias mina='noglob mina'
 # ZSH doesn't like spring rspec
 alias spring='nocorrect spring'
 
-# An easier key to search backwards
-bindkey '^j' history-incremental-search-backward
-
 # ---
 # fzf
 # ---
+
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
   export PATH="$PATH:/usr/local/opt/fzf/bin"
 fi
@@ -104,6 +102,10 @@ if [[ ! "$MANPATH" == */usr/local/opt/fzf/man* && -d "/usr/local/opt/fzf/man" ]]
 fi
 # Auto-completion
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+# Key bindings
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+# Use CTRL+J because it's easier for me to hit
+bindkey '^J' fzf-history-widget
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
