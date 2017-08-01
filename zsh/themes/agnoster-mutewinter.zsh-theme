@@ -130,7 +130,7 @@ build_prompt() {
   prompt_end
 }
 
-time="%(?..)%*"
+time="%D{%m/%f/%y} %t"
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
 
@@ -142,6 +142,5 @@ nvm_prompt_info() {
   nvm_ls current
 }
 
-RPROMPT='%{$fg[red]%}$(rbenv_prompt_info) '
-RPROMPT+='%{$fg[green]%}$(nvm_prompt_info)'
+RPROMPT='%{$fg[green]%}$(nvm_prompt_info)'
 RPROMPT+='%{$reset_color%} ${time} %{$reset_color%}'
