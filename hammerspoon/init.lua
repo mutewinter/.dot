@@ -175,6 +175,13 @@ hyperMode:bind({}, 'o', chain({
   grid.centeredSmaller,
 }))
 
+local moveActiveWindowToNextScreen = function()
+  local win = hs.window.frontmostWindow()
+  local screen = win:screen()
+  win:moveToScreen(screen:next())
+end
+
+hyperMode:bind({}, 'p', nil, moveActiveWindowToNextScreen)
 -- -----------
 -- Hyper Setup
 -- -----------
