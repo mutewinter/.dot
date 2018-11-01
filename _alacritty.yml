@@ -162,14 +162,14 @@ colors:
 
   # Normal colors
   normal:
-    black:   '0x3b3b3b'
-    red:     '0xcf6a4c'
-    green:   '0x99ad6a'
-    yellow:  '0xd8ad4c'
-    blue:    '0x597bc5'
-    magenta: '0xa037b0'
-    cyan:    '0x71b9f8'
-    white:   '0xadadad'
+    black:   '0x4c4c4c'
+    red:     '0xda7f5e'
+    green:   '0x19c200'
+    yellow:  '0xc7c400'
+    blue:    '0x6b90d0'
+    magenta: '0xc930c8'
+    cyan:    '0x1cc6c7'
+    white:   '0xbbbbbb'
 
   # Indexed Colors
   #
