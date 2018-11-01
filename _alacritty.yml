@@ -1,18 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty itself.
-env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use 'alacritty' if it is
-  # available, otherwise 'xterm-256color' is used.
-  #
-  # TERM: xterm-256color
-
 window:
   # Window dimensions (changes require restart)
   #
@@ -170,6 +157,19 @@ colors:
     magenta: '0xc930c8'
     cyan:    '0x1cc6c7'
     white:   '0xbbbbbb'
+
+
+  # Bright colors
+  bright:
+    black:   '0x686868'
+    red:     '0xfd6e68'
+    green:   '0x5ffa67'
+    yellow:  '0xfffb68'
+    blue:    '0x6971ff'
+    magenta: '0xfd76ff'
+    cyan:    '0x60fdff'
+    white:   '0xffffff'
+
 
   # Indexed Colors
   #
@@ -471,4 +471,4 @@ key_bindings:
   - { key: Z,        mods: Alt,     chars: "\x1bz"                       }
   - { key: Backslash,mods: Alt,     chars: "\x1b\\"                      }
   - { key: Minus,    mods: Alt,     chars: "\x1b-"                       }
-  - { key: Semicolon,    mods: Alt, chars: "\x1b;"                      }
+  - { key: Semicolon,mods: Alt,     chars: "\x1b;"                       }
