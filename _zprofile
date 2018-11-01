@@ -11,3 +11,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # RVM
 # ---
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+export PATH="$HOME/.cargo/bin:$PATH"
