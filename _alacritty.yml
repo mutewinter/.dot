@@ -466,7 +466,6 @@ key_bindings:
   - { key: J,        mods: Alt,     chars: "\x1bj"                       }
   - { key: K,        mods: Alt,     chars: "\x1bk"                       }
   - { key: L,        mods: Alt,     chars: "\x1bl"                       }
-  - { key: L,        mods: Alt,     chars: "\x1bl"                       }
   - { key: M,        mods: Alt,     chars: "\x1bm"                       }
   - { key: V,        mods: Alt,     chars: "\x1bv"                       }
   - { key: Z,        mods: Alt,     chars: "\x1bz"                       }
