@@ -179,56 +179,27 @@ end
 
 hyperMode:bind({}, 'p', nil, moveActiveWindowToNextScreen)
 
--- --------------------------
--- Alert When App Not Focused
--- --------------------------
-
-local alertInSeconds = 60 * 20
-local alertAppName = nil
-
-local alertTimer
-
-local function stopTimerAlertTimer()
-  if alertTimer then
-    alertTimer.stop()
-    alertTimer = nil
+-- Focus or launch application
+local function toggleApplication(name)
+  local app = hs.application.find(name)
+  if not app or app:isHidden() then
+    hs.application.launchOrFocus(name)
+  elseif hs.application.frontmostApplication() ~= app then
+    app:activate()
   end
 end
 
-local function notificationClicked()
-  hs.application.launchOrFocus(alertAppName)
-end
+hyperMode:bind({}, ',', nil, function()
+  toggleApplication('Google Chrome')
+end)
 
-local function sendNotification()
-  local notification = hs.notify.new(notificationClicked,
-    {
-      title = 'Time to focus ' .. alertAppName,
-      informativeText = 'Click to return',
-      soundName = 'Glass.aiff'
-    })
-  notification:send()
-end
+hyperMode:bind({}, '.', nil, function()
+  toggleApplication('Alacritty')
+end)
 
-local function appFocused(appName, eventType)
-  if appName ~= alertAppName then
-    return
-  end
-
-  if eventType == hs.application.watcher.activated then
-    stopTimerAlertTimer()
-    hs.alert.show('Welcome back to ' .. alertAppName)
-  elseif eventType == hs.application.watcher.deactivated then
-    stopTimerAlertTimer()
-    alertTimer = hs.timer.delayed.new(alertInSeconds, sendNotification)
-    alertTimer:start()
-    hs.alert.show(alertInSeconds / 60 .. ' minute return timer started for ' .. alertAppName)
-  end
-end
-
-if alertAppName then
-  local watcher = hs.application.watcher.new(appFocused)
-  watcher:start()
-end
+hyperMode:bind({}, '/', nil, function()
+  toggleApplication('Safari')
+end)
 
 -- -----------
 -- Hyper Setup
