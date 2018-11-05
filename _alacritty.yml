@@ -460,7 +460,6 @@ key_bindings:
   - { key: Key4,     mods: Alt,     chars: "\x1b4"                       }
   - { key: Key8,     mods: Alt,     chars: "\x1b8"                       }
   - { key: Key9,     mods: Alt,     chars: "\x1b9"                       }
-  - { key: Key0,     mods: Alt,     chars: "\x1b0"                       }
   - { key: H,        mods: Alt,     chars: "\x1bh"                       }
   - { key: I,        mods: Alt,     chars: "\x1bi"                       }
   - { key: J,        mods: Alt,     chars: "\x1bj"                       }
