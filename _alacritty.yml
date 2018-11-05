@@ -468,6 +468,7 @@ key_bindings:
   - { key: L,        mods: Alt,     chars: "\x1bl"                       }
   - { key: M,        mods: Alt,     chars: "\x1bm"                       }
   - { key: V,        mods: Alt,     chars: "\x1bv"                       }
+  - { key: W,        mods: Alt,     chars: "\x1bw"                       }
   - { key: Z,        mods: Alt,     chars: "\x1bz"                       }
   - { key: Backslash,mods: Alt,     chars: "\x1b\\"                      }
   - { key: Minus,    mods: Alt,     chars: "\x1b-"                       }
