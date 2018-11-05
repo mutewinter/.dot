@@ -214,14 +214,17 @@ local function toggleApplication(name)
 end
 
 hyperMode:bind({}, ',', nil, function()
+  hyperTriggered = true
   toggleApplication('Google Chrome')
 end)
 
 hyperMode:bind({}, '.', nil, function()
+  hyperTriggered = true
   toggleApplication('Alacritty')
 end)
 
 hyperMode:bind({}, '/', nil, function()
+  hyperTriggered = true
   toggleApplication('Safari')
 end)
 
