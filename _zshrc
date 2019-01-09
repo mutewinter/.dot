@@ -40,6 +40,7 @@ bower
 npm-completion
 tmuxinator
 z
+nvm
 )
 
 # Rely on my own method of enabling LS_COLORS
