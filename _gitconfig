@@ -1,0 +1,7 @@
+[user]
+	name = Jeremy Mack
+	email = hi@mutewinter.com
+[pull]
+	rebase = true
+[alias]
+	up = pull --rebase --autostash
