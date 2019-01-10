@@ -30,14 +30,61 @@ local keyStroke = function(modifiers, key)
   hs.eventtap.keyStroke(modifiers, key, 0)
 end
 
+-- Hyper keys that launch, focus, or hide a specific app
+local hyperKeysToAppNames = {
+  e = 'nvAlt',
+  f = 'Alacritty',
+  g = 'Google Chrome',
+  s = 'Safari',
+}
+
 -- Create passthroughs to hyper (all modifiers) + the keys below.
 local hyperBindings = {
+  'd',      -- Dash
   '5',      -- Record GIF
   '6',      -- Modify GIF
-  'd',      -- Dash
-  'n',      -- nvAlt
   'return', -- Clipboard
   'space',  -- 2Do
+
+  -- ------
+  -- Unused
+  -- ------
+  -- Row 1
+  '1',
+  '2',
+  '7',
+  '8',
+  '9',
+  '0',
+  '-',
+  '=',
+  'delete',
+  -- Row 2
+  'tab',
+  'q',
+  'w',
+  'e',
+  'r',
+  't',
+  'y',
+  'u',
+  '[',
+  ']',
+  -- Row 3
+  'a',
+  ';',
+  '\'',
+  -- Row 4
+  'z',
+  'x',
+  'c',
+  'v',
+  'b',
+  'n',
+  'm',
+  ',',
+  '.',
+  '/',
 }
 
 for _,key in ipairs(hyperBindings) do
@@ -47,29 +94,36 @@ for _,key in ipairs(hyperBindings) do
   end)
 end
 
--- Create passthroughs to control + the keys below.
-local controlBindings = {
-  'a', -- Tmux prefix
-  'c', -- Kill signal
-  'j', -- Search history / Expand ultisnips
-  'l', -- Clear window
-  'r', -- Search history
-  'v', -- Visual block
-  'y', -- Emmet-vim
-}
+-- Launch, focus, or hide an application
+local function toggleApplication(name)
+  local app = hs.application.find(name)
+  if not app or app:isHidden() then
+    hs.application.launchOrFocus(name)
+  elseif hs.application.frontmostApplication() ~= app then
+    app:activate()
+  else
+    app:hide()
+  end
+end
 
-for _,key in ipairs(controlBindings) do
-  hyperMode:bind({}, key, nil, function()
-    keyStroke({'ctrl'}, key)
+for hyperKey, appName in pairs(hyperKeysToAppNames) do
+  hyperMode:bind({}, hyperKey, nil, function()
+    hyperTriggered = true
+    toggleApplication(appName)
   end)
 end
 
--- Hyper+\: Lock screen.
+-- Hyper+\: Lock screen
 hyperMode:bind({}, '\\', nil, function()
   hs.caffeinate.lockScreen()
 end)
 
--- Hyper+4: Screenshot.
+-- Hyper+3: Full screen screenshot
+hyperMode:bind({}, '3', nil, function()
+  keyStroke({'cmd', 'shift'}, '3')
+end)
+
+-- Hyper+4: Screenshot
 hyperMode:bind({}, '4', nil, function()
   keyStroke({'cmd', 'shift'}, '4')
 end)
@@ -147,25 +201,25 @@ local grid = {
   centeredSmaller = '4,0 4x12',
 }
 
-hyperMode:bind({}, ';', chain({
+hyperMode:bind({}, 'h', chain({
   grid.leftHalf,
   grid.leftThird,
   grid.leftTwoThirds,
 }))
 
-hyperMode:bind({}, '\'', chain({
+hyperMode:bind({}, 'l', chain({
   grid.rightHalf,
   grid.rightThird,
   grid.rightTwoThirds,
 }))
 
-hyperMode:bind({}, 'up', chain({
+hyperMode:bind({}, 'k', chain({
   grid.topHalf,
   grid.topThird,
   grid.topTwoThirds,
 }))
 
-hyperMode:bind({}, 'down', chain({
+hyperMode:bind({}, 'j', chain({
   grid.bottomHalf,
   grid.bottomThird,
   grid.bottomTwoThirds,
@@ -192,31 +246,6 @@ local moveActiveWindowToNextScreen = function()
 end
 
 hyperMode:bind({}, 'p', nil, moveActiveWindowToNextScreen)
-
--- Focus or launch application
-local function toggleApplication(name)
-  local app = hs.application.find(name)
-  if not app or app:isHidden() then
-    hs.application.launchOrFocus(name)
-  elseif hs.application.frontmostApplication() ~= app then
-    app:activate()
-  end
-end
-
-hyperMode:bind({}, 'g', nil, function()
-  hyperTriggered = true
-  toggleApplication('Google Chrome')
-end)
-
-hyperMode:bind({}, 'f', nil, function()
-  hyperTriggered = true
-  toggleApplication('Alacritty')
-end)
-
-hyperMode:bind({}, 't', nil, function()
-  hyperTriggered = true
-  toggleApplication('Safari')
-end)
 
 -- -----------
 -- Hyper Setup
