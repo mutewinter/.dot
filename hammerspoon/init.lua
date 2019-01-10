@@ -64,31 +64,6 @@ hyperMode:bind({}, '=', nil, function()
   hs.reload()
 end)
 
-local volumeIncrement = 3
-local volumeMax = 40
-local volumeMin = 3
-
--- Hyper+F11: iTunes Volume Down
-hyperMode:bind({}, 'F11', nil, function()
-  if (hs.itunes.getVolume() - volumeIncrement) <= volumeMin then
-    hs.itunes.setVolume(volumeMin)
-  else
-    hs.itunes.setVolume(hs.itunes.getVolume() - volumeIncrement)
-  end
-  hs.alert.show('iTunes ' .. hs.itunes.getVolume() .. '% 🔊')
-end)
-
--- Hyper+F11: iTunes Volume Up
-hyperMode:bind({}, 'F12', nil, function()
-  if (hs.itunes.getVolume() + volumeIncrement) >= volumeMax then
-    hs.itunes.setVolume(volumeMax)
-  else
-    hs.itunes.setVolume(hs.itunes.getVolume() + volumeIncrement)
-  end
-  hs.alert.show('iTunes ' .. hs.itunes.getVolume() .. '% 🔊')
-end)
-
-
 -- ----------------------------
 -- Window Resizing and Movement
 -- ----------------------------
