@@ -31,7 +31,14 @@ local keyStroke = function(modifiers, key)
 end
 
 -- Create passthroughs to hyper (all modifiers) + the keys below.
-local hyperBindings = {'n', 'return', 'space', 's', 'd', 'f', '5', '6', 't'}
+local hyperBindings = {
+  '5',      -- Record GIF
+  '6',      -- Modify GIF
+  'd',      -- Dash
+  'n',      -- nvAlt
+  'return', -- Clipboard
+  'space',  -- 2Do
+}
 
 for _,key in ipairs(hyperBindings) do
   hyperMode:bind({}, key, nil, function()
@@ -41,7 +48,15 @@ for _,key in ipairs(hyperBindings) do
 end
 
 -- Create passthroughs to control + the keys below.
-local controlBindings = {'l', 'v', 'j', 'k', 'g', 'c', 'y', 'r'}
+local controlBindings = {
+  'a', -- Tmux prefix
+  'c', -- Kill signal
+  'j', -- Search history / Expand ultisnips
+  'l', -- Clear window
+  'r', -- Search history
+  'v', -- Visual block
+  'y', -- Emmet-vim
+}
 
 for _,key in ipairs(controlBindings) do
   hyperMode:bind({}, key, nil, function()
@@ -188,17 +203,17 @@ local function toggleApplication(name)
   end
 end
 
-hyperMode:bind({}, ',', nil, function()
+hyperMode:bind({}, 'g', nil, function()
   hyperTriggered = true
   toggleApplication('Google Chrome')
 end)
 
-hyperMode:bind({}, '.', nil, function()
+hyperMode:bind({}, 'f', nil, function()
   hyperTriggered = true
   toggleApplication('Alacritty')
 end)
 
-hyperMode:bind({}, '/', nil, function()
+hyperMode:bind({}, 't', nil, function()
   hyperTriggered = true
   toggleApplication('Safari')
 end)
