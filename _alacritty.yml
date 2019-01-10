@@ -478,3 +478,4 @@ key_bindings:
   - { key: Backslash,mods: Alt,     chars: "\x1b\\"                      }
   - { key: Minus,    mods: Alt,     chars: "\x1b-"                       }
   - { key: Semicolon,mods: Alt,     chars: "\x1b;"                       }
+  - { key: Period,   mods: Alt,     chars: "\x1b."                       }
