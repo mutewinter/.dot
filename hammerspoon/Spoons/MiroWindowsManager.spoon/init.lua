@@ -108,18 +108,14 @@ function obj:_nextFullScreenStep()
     local nextSize = self.fullScreenSizes[1]
     for i=1,#self.fullScreenSizes do
       if cell.w == self.GRID.w / self.fullScreenSizes[i] and
-         cell.h == self.GRID.h / self.fullScreenSizes[i] and
-         cell.x == (self.GRID.w - self.GRID.w / self.fullScreenSizes[i]) / 2 and
-         cell.y == (self.GRID.h - self.GRID.h / self.fullScreenSizes[i]) / 2 then
+         cell.x == (self.GRID.w - self.GRID.w / self.fullScreenSizes[i]) / 2 then
         nextSize = self.fullScreenSizes[(i % #self.fullScreenSizes) + 1]
         break
       end
     end
 
     cell.w = self.GRID.w / nextSize
-    cell.h = self.GRID.h / nextSize
     cell.x = (self.GRID.w - self.GRID.w / nextSize) / 2
-    cell.y = (self.GRID.h - self.GRID.h / nextSize) / 2
 
     hs.grid.set(win, cell, screen)
   end

@@ -3,6 +3,7 @@ hs.loadSpoon('ModalMgr')
 hs.loadSpoon('MiroWindowsManager')
 
 local utils = require 'utils'
+local modalWrapper = require 'modal-wrapper'
 
 -- Disable animation for window resizing so it's instant.
 hs.window.animationDuration = 0
@@ -25,14 +26,14 @@ local MODES = {
         description = 'Exit',
         key = 'space',
         modifiers = 'command',
-        onEnter = utils.deactivateModal(LAUNCHER_ID),
+        onEnter = modalWrapper.deactivateModal(LAUNCHER_ID),
       },
       {
         description = 'Toggle cheatsheet',
         key = '/',
         modifiers = 'shift',
         keepModalActive = true,
-        onEnter = utils.toggleCheatsheet,
+        onEnter = modalWrapper.toggleCheatsheet,
       },
       {
         description = 'Reload hammerspoon',
@@ -47,18 +48,18 @@ local MODES = {
       {
         description = 'Alfred',
         key = 'space',
-        onEnter = utils.launchApp('Alfred 3'),
+        onEnter = utils.showApp('Alfred 3'),
       },
       {
         description = 'Alacritty',
         -- Pneumonic, "[f]ast terminal"
         key = 'f',
-        onEnter = utils.launchApp('Alacritty'),
+        onEnter = utils.showApp('Alacritty'),
       },
       {
         description = 'Safari',
         key = 's',
-        onEnter = utils.launchApp('Safari'),
+        onEnter = utils.showApp('Safari'),
       },
       {
         description = 'Dash',
@@ -69,7 +70,7 @@ local MODES = {
       {
         description = 'Chrome',
         key = 'c',
-        onEnter = utils.launchApp('Chrome'),
+        onEnter = utils.showApp('Chrome'),
       },
       {
         description = 'Finder',
@@ -128,7 +129,7 @@ local MODES = {
   }
 }
 
-utils.bindModes(MODES, spoon.ModalMgr.supervisor)
+modalWrapper.bindModes(MODES, spoon.ModalMgr.supervisor)
 spoon.ModalMgr.supervisor:enter()
 
 -- So we can easily tell when Hammerspoon loads successfully
