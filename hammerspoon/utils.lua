@@ -38,16 +38,31 @@ function utils.keyStroke(modifiers, key)
   end
 end
 
+function utils.moveActiveWindowToNextScreen()
+  local win = hs.window.frontmostWindow()
+  local screen = win:screen()
+  win:moveToScreen(screen:next())
+end
+
 function utils.toggleCheatsheet()
   spoon.ModalMgr:toggleCheatsheet()
 end
 
-function utils.bindModes(modes)
+function utils.bindModes(modes, modalManager)
   for _, mode in ipairs(modes) do
     -- Create the mode and register it with the supervisor
     spoon.ModalMgr:new(mode.id)
-    local modalManager = spoon.ModalMgr.modal_list[mode.id]
-    spoon.ModalMgr.supervisor:bind(
+    local newModalManager = spoon.ModalMgr.modal_list[mode.id]
+
+    local exitCallbacks = {}
+
+    newModalManager.exited = function()
+      for _, onExit in ipairs(exitCallbacks) do
+        onExit()
+      end
+    end
+
+    modalManager:bind(
       mode.modifiers,
       mode.key,
       mode.description,
@@ -55,14 +70,22 @@ function utils.bindModes(modes)
     )
 
     for _, binding in ipairs(mode.bindings) do
-      modalManager:bind(
+      if binding.onExit then
+        table.insert(exitCallbacks, binding.onExit)
+      end
+
+      newModalManager:bind(
         binding.modifiers,
         binding.key,
         binding.description,
         function()
-          binding.callback()
-          spoon.ModalMgr:deactivate({ mode.id })
-        end
+          binding.onEnter()
+
+          if not binding.keepModalActive then
+            spoon.ModalMgr:deactivate({ mode.id })
+          end
+        end,
+        binding.onRelease
       )
     end
   end
