@@ -182,7 +182,11 @@ end
 ---
 
 function obj:deactivateAll()
-    obj:deactivate(obj.active_list)
+    local active_list_keys = {}
+    for key, _ in pairs(obj.active_list) do
+      table.insert(active_list_keys, key)
+    end
+    obj:deactivate(active_list_keys)
 end
 
 return obj

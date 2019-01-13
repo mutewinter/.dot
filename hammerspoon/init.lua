@@ -13,6 +13,7 @@ hs.window.animationDuration = 0
 -- -----------------
 
 local LAUNCHER_ID = 'LAUNCHER'
+local WINDOW_MANAGEMENT_ID = 'WINDOW_MANAGEMENT'
 local HYPER = { 'ctrl', 'alt', 'cmd', 'shift' }
 
 local MODES = {
@@ -87,43 +88,68 @@ local MODES = {
       -- Window Management
       -- -----------------
       {
-        description = 'Window: Left',
-        key = 'h',
-        onEnter = function() spoon.MiroWindowsManager:left() end,
-        onRelease = function() spoon.MiroWindowsManager:leftRelease() end,
-        onExit = function() spoon.MiroWindowsManager:releaseAll() end,
-      },
-      {
-        description = 'Window: Down',
-        key = 'j',
-        onEnter = function() spoon.MiroWindowsManager:down() end,
-        onRelease = function() spoon.MiroWindowsManager:downRelease() end,
-        onExit = function() spoon.MiroWindowsManager:releaseAll() end,
-      },
-      {
-        description = 'Window: Up',
-        key = 'k',
-        onEnter = function() spoon.MiroWindowsManager:up() end,
-        onRelease = function() spoon.MiroWindowsManager:upRelease() end,
-        onExit = function() spoon.MiroWindowsManager:releaseAll() end,
-      },
-      {
-        description = 'Window: Right',
-        key = 'l',
-        onEnter = function() spoon.MiroWindowsManager:right() end,
-        onRelease = function() spoon.MiroWindowsManager:rightRelease() end,
-        onExit = function() spoon.MiroWindowsManager:releaseAll() end,
-      },
-      {
-        description = 'Window: Full Screen',
-        key = 'o',
-        onEnter = function() spoon.MiroWindowsManager:fullscreen() end,
-        onExit = function() spoon.MiroWindowsManager:releaseAll() end,
-      },
-      {
-        description = 'Window: Next Screen',
-        key = 'p',
-        onEnter = utils.moveActiveWindowToNextScreen,
+        id = WINDOW_MANAGEMENT_ID,
+        color = '#0000FF',
+        key = ';',
+        description = 'Window Management',
+        bindings = {
+          {
+            description = 'Exit',
+            key = ';',
+            onEnter = modalWrapper.deactivateModal(WINDOW_MANAGEMENT_ID),
+          },
+          {
+            description = 'Exit',
+            key = 'space',
+            modifiers = 'command',
+            onEnter = modalWrapper.deactivateModal(WINDOW_MANAGEMENT_ID),
+          },
+          {
+            description = 'Window: Left',
+            key = 'h',
+            keepModalActive = true,
+            onEnter = function() spoon.MiroWindowsManager:left() end,
+            onRelease = function() spoon.MiroWindowsManager:leftRelease() end,
+            onExit = function() spoon.MiroWindowsManager:releaseAll() end,
+          },
+          {
+            description = 'Window: Down',
+            key = 'j',
+            keepModalActive = true,
+            onEnter = function() spoon.MiroWindowsManager:down() end,
+            onRelease = function() spoon.MiroWindowsManager:downRelease() end,
+            onExit = function() spoon.MiroWindowsManager:releaseAll() end,
+          },
+          {
+            description = 'Window: Up',
+            key = 'k',
+            keepModalActive = true,
+            onEnter = function() spoon.MiroWindowsManager:up() end,
+            onRelease = function() spoon.MiroWindowsManager:upRelease() end,
+            onExit = function() spoon.MiroWindowsManager:releaseAll() end,
+          },
+          {
+            description = 'Window: Right',
+            key = 'l',
+            keepModalActive = true,
+            onEnter = function() spoon.MiroWindowsManager:right() end,
+            onRelease = function() spoon.MiroWindowsManager:rightRelease() end,
+            onExit = function() spoon.MiroWindowsManager:releaseAll() end,
+          },
+          {
+            description = 'Window: Full Screen',
+            key = 'o',
+            keepModalActive = true,
+            onEnter = function() spoon.MiroWindowsManager:fullscreen() end,
+            onExit = function() spoon.MiroWindowsManager:releaseAll() end,
+          },
+          {
+            description = 'Window: Next Screen',
+            key = 'p',
+            keepModalActive = true,
+            onEnter = utils.moveActiveWindowToNextScreen,
+          },
+        },
       },
     }
   }

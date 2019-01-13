@@ -1,7 +1,7 @@
 local function activateModal(id, color)
   return function()
     spoon.ModalMgr:deactivateAll()
-    spoon.ModalMgr:activate({ id }, color, true)
+    spoon.ModalMgr:activate({ id }, color, false)
   end
 end
 
@@ -43,20 +43,23 @@ function modalWrapper.bindModes(modes, modalManager)
         table.insert(exitCallbacks, binding.onExit)
       end
 
-      newModalManager:bind(
-        binding.modifiers,
-        binding.key,
-        binding.description,
-        function()
-          binding.onEnter()
+      if binding.id then
+        modalWrapper.bindModes({ binding }, newModalManager)
+      else
+        newModalManager:bind(
+          binding.modifiers,
+          binding.key,
+          binding.description,
+          function()
+            binding.onEnter()
 
-          if not binding.keepModalActive then
-            if hs.eventtap.checkKeyboardModifiers().cmd then print('CMD!', binding.key) end
-            spoon.ModalMgr:deactivate({ mode.id })
-          end
-        end,
-        binding.onRelease
-      )
+            if not binding.keepModalActive then
+              spoon.ModalMgr:deactivate({ mode.id })
+            end
+          end,
+          binding.onRelease
+        )
+      end
     end
   end
 end
