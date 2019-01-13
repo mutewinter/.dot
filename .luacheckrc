@@ -1,2 +1,2 @@
 -- vim: syntax=lua
-globals = { 'hs' }
+globals = { 'hs', 'spoon' }
