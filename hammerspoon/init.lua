@@ -6,6 +6,16 @@ hs.loadSpoon('MiroWindowsManager')
 local utils = require 'utils'
 local modalWrapper = require 'modal-wrapper'
 
+-- --------
+-- Settings
+-- --------
+hs.autoLaunch(true)
+hs.automaticallyCheckForUpdates(true)
+hs.consoleOnTop(true)
+hs.dockIcon(false)
+hs.menuIcon(true)
+hs.uploadCrashData(false)
+
 -- Disable animation for window resizing so it's instant.
 hs.window.animationDuration = 0
 
