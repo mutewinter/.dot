@@ -22,7 +22,7 @@ hs.window.animationDuration = 0
 -- ---------------
 -- Global Bindings
 -- ---------------
-hs.hotkey.bind({ 'alt' }, '\\', 'Locking', hs.caffeinate.lockScreen)
+hs.hotkey.bind({ 'alt' }, '\\', 'Lock', hs.caffeinate.lockScreen)
 
 -- --------------
 -- Modal Bindings
@@ -102,7 +102,7 @@ local MODES = {
         onEnter = utils.launchOrHideApp('nvAlt'),
       },
       {
-        description = '1Password 7',
+        description = '1Password',
         key = '1',
         onEnter = utils.launchOrHideApp('1Password 7'),
       },
