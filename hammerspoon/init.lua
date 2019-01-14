@@ -57,18 +57,18 @@ local MODES = {
       {
         description = 'Alfred',
         key = 'space',
-        onEnter = utils.showApp('Alfred 3'),
+        onEnter = utils.launchOrFocusApp('Alfred 3'),
       },
       {
         description = 'Alacritty',
         -- Pneumonic, "[f]ast terminal"
         key = 'f',
-        onEnter = utils.showApp('Alacritty'),
+        onEnter = utils.launchOrFocusApp('Alacritty'),
       },
       {
         description = 'Safari',
         key = 's',
-        onEnter = utils.showApp('Safari'),
+        onEnter = utils.launchOrFocusApp('Safari'),
       },
       {
         description = 'Dash',
@@ -79,7 +79,7 @@ local MODES = {
       {
         description = 'Chrome',
         key = 'c',
-        onEnter = utils.showApp('Chrome'),
+        onEnter = utils.launchOrFocusApp('Chrome'),
       },
       {
         description = 'Finder',
@@ -94,12 +94,12 @@ local MODES = {
       {
         description = '1Password 7',
         key = '1',
-        onEnter = utils.showApp('1Password 7'),
+        onEnter = utils.launchOrHideApp('1Password 7'),
       },
       {
         description = '2Do',
         key = '2',
-        onEnter = utils.showApp('2Do'),
+        onEnter = utils.launchOrFocusApp('2Do'),
       },
       {
         description = 'New 2Do',
@@ -110,7 +110,7 @@ local MODES = {
       {
         description = 'Tower',
         key = 't',
-        onEnter = utils.showApp('Tower'),
+        onEnter = utils.launchOrFocusApp('Tower'),
       },
 
       -- --------------

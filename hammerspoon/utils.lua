@@ -13,7 +13,7 @@ function utils.launchOrHideApp(name)
   end
 end
 
-function utils.showApp(name)
+function utils.launchOrFocusApp(name)
   return function()
     hs.application.launchOrFocus(name)
   end
