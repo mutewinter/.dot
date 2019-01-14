@@ -23,7 +23,7 @@ hs.window.animationDuration = 0
 -- ---------------
 -- Global Bindings
 -- ---------------
-hs.hotkey.bind({ 'alt' }, '\\', 'Lock', hs.caffeinate.lockScreen)
+hs.hotkey.bind({ 'ctrl' }, '\\', 'Lock', hs.caffeinate.lockScreen)
 
 -- --------------
 -- Modal Bindings
