@@ -5,6 +5,7 @@ hs.loadSpoon('MiroWindowsManager')
 
 local utils = require 'utils'
 local modalWrapper = require 'modal-wrapper'
+local AppBinding = require 'app-binding'
 
 -- --------
 -- Settings
@@ -195,6 +196,23 @@ local MODES = {
 
 modalWrapper.bindModes(MODES, spoon.ModalMgr.supervisor)
 spoon.ModalMgr.supervisor:enter()
+
+-- ---------------------
+-- App-Specific Bindings
+-- ---------------------
+
+AppBinding:new('Dash', {
+  {
+    key = 'j',
+    modifiers = 'command',
+    onEnter = utils.keyStroke(nil, 'down'),
+  },
+  {
+    key = 'k',
+    modifiers = 'command',
+    onEnter = utils.keyStroke(nil, 'up'),
+  },
+})
 
 -- So we can easily tell when Hammerspoon loads successfully
 hs.alert.show('Hammerspoon loaded')
