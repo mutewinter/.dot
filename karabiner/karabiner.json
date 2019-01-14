@@ -122,7 +122,7 @@
                         "key_code": "caps_lock"
                     },
                     "to": {
-                        "key_code": "vk_none"
+                        "key_code": "escape"
                     }
                 },
                 {
@@ -135,10 +135,10 @@
                 },
                 {
                     "from": {
-                        "key_code": "right_command"
+                        "key_code": "left_control"
                     },
                     "to": {
-                        "key_code": "f18"
+                        "key_code": "vk_none"
                     }
                 }
             ],
