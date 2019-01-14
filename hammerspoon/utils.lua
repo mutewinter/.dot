@@ -31,4 +31,25 @@ function utils.moveActiveWindowToNextScreen()
   win:moveToScreen(screen:next())
 end
 
+-- Adapted from https://git.io/fhcJq
+function utils.screenCapture(interactive)
+  return function()
+    local filename = hs.fs.pathToAbsolute('~') ..
+      '/Desktop/Screen Capture at ' ..
+      os.date('!%Y-%m-%d-%T')..'.png'
+
+    local args = ''
+
+    if interactive then
+      args = 'i'
+    end
+
+    -- u flag enables screen capture UI in macOS 10.14 or later
+    args = '-' .. args .. 'u'
+
+    print(hs.inspect(args))
+    hs.task.new('/usr/sbin/screencapture', nil, {args, filename}):start()
+  end
+end
+
 return utils

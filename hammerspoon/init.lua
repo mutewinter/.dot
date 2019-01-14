@@ -1,5 +1,6 @@
--- Spoon (https://git.io/fhn6H) that handles modal key bindings
+-- Bug-fixed Spoon that handles modal key bindings
 hs.loadSpoon('ModalMgr')
+-- Modified Spoon that manages modal state and UI.
 hs.loadSpoon('MiroWindowsManager')
 
 local utils = require 'utils'
@@ -8,9 +9,14 @@ local modalWrapper = require 'modal-wrapper'
 -- Disable animation for window resizing so it's instant.
 hs.window.animationDuration = 0
 
--- -----------------
--- Modal Keybindings
--- -----------------
+-- ---------------
+-- Global Bindings
+-- ---------------
+hs.hotkey.bind({ 'alt' }, '\\', 'Locking', hs.caffeinate.lockScreen)
+
+-- --------------
+-- Modal Bindings
+-- --------------
 
 local LAUNCHER_ID = 'LAUNCHER'
 local HYPER = { 'ctrl', 'alt', 'cmd', 'shift' }
@@ -22,6 +28,9 @@ local MODES = {
     key = 'space',
     modifiers = {'cmd'},
     bindings = {
+      -- ------------
+      -- Meta Hotkeys
+      -- ------------
       {
         description = 'Exit',
         key = 'space',
@@ -82,11 +91,55 @@ local MODES = {
         key = 'n',
         onEnter = utils.launchOrHideApp('nvAlt'),
       },
+      {
+        description = '1Password 7',
+        key = '1',
+        onEnter = utils.showApp('1Password 7'),
+      },
+      {
+        description = '2Do',
+        key = '2',
+        onEnter = utils.showApp('2Do'),
+      },
+      {
+        description = 'New 2Do',
+        key = '2',
+        modifiers = { 'shift' },
+        onEnter = utils.keyStroke(HYPER, '2'),
+      },
+      {
+        description = 'Tower',
+        key = 't',
+        onEnter = utils.showApp('Tower'),
+      },
+
+      -- --------------
+      -- Screen Capture
+      -- --------------
+      {
+        description = 'Screenshot',
+        key = '3',
+        onEnter = utils.screenCapture(),
+      },
+      {
+        description = 'Screenshot Selection',
+        key = '4',
+        onEnter = utils.screenCapture(true),
+      },
+      {
+        description = 'GIF Selection',
+        key = '5',
+        onEnter = utils.keyStroke(HYPER, '5'),
+      },
+      {
+        description = 'GIF Window',
+        key = '6',
+        onEnter = utils.keyStroke(HYPER, '6'),
+      },
 
       -- -----------------
       -- Window Management
       -- -----------------
-
       {
         description = 'Window: Left',
         key = 'h',
