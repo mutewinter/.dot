@@ -82,6 +82,20 @@ local MODES = {
         onEnter = utils.launchOrFocusApp('Safari'),
       },
       {
+        description = 'Safari - New Window',
+        key = 's',
+        modifiers = 'shift',
+        onEnter = function()
+          local app = hs.application.find('Safari')
+          if app then
+            app:activate()
+            app:selectMenuItem('New Window')
+          else
+            hs.application.launchOrFocus('Safari')
+          end
+        end,
+      },
+      {
         description = 'Dash',
         key = 'd',
         -- Dash doesn't do well with app-based activation, so use a hotkey.
