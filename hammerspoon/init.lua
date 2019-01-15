@@ -103,7 +103,8 @@ local MODES = {
       },
       {
         description = 'Chrome',
-        key = 'c',
+        -- Pneumonic [G]o to Chrome. "g" because it's on the home row.
+        key = 'g',
         onEnter = utils.launchOrFocusApp('Chrome'),
       },
       {
@@ -160,6 +161,11 @@ local MODES = {
         description = 'GIF Window',
         key = '6',
         onEnter = utils.keyStroke(HYPER, '6'),
+      },
+      {
+        description = 'Color Dropper',
+        key = 'c',
+        onEnter = utils.keyStroke(HYPER, 'c'),
       },
 
       -- -----------------
