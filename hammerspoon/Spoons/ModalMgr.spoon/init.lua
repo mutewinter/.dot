@@ -144,8 +144,8 @@ function obj:activate(idList, trayColor, showKeys)
         local cscreen = hs.screen.mainScreen()
         local cres = cscreen:fullFrame()
         obj.modal_tray:frame({
-            x = cres.w - math.ceil(cres.w / 32),
-            y = cres.h - math.ceil(cres.w / 32),
+            x = cres.w - math.ceil(cres.w / 1.9),
+            y = math.ceil(cres.h / 16),
             w = math.ceil(cres.w / 32 / 2),
             h = math.ceil(cres.w / 32 / 2)
         })
