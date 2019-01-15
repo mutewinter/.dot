@@ -138,6 +138,12 @@ local MODES = {
         key = 't',
         onEnter = utils.launchOrFocusApp('Tower'),
       },
+      {
+        description = 'Slack',
+        -- a is first letter unused in a binding from "Slack"
+        key = 'a',
+        onEnter = utils.launchOrFocusApp('Slack'),
+      },
 
       -- --------------
       -- Screen Capture
