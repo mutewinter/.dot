@@ -35,7 +35,7 @@ local HYPER = { 'ctrl', 'alt', 'cmd', 'shift' }
 local MODES = {
   {
     id = LAUNCHER_ID,
-    color = '#FF0000',
+    color = '#00ff00',
     key = 'space',
     modifiers = {'cmd'},
     bindings = {
