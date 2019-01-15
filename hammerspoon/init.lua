@@ -102,10 +102,10 @@ local MODES = {
         onEnter = utils.keyStroke(HYPER, 'd'),
       },
       {
-        description = 'Chrome',
+        description = 'Google Chrome',
         -- Pneumonic [G]o to Chrome. "g" because it's on the home row.
         key = 'g',
-        onEnter = utils.launchOrFocusApp('Chrome'),
+        onEnter = utils.launchOrFocusApp('Google Chrome'),
       },
       {
         description = 'Finder',
@@ -206,7 +206,7 @@ local MODES = {
         onExit = function() spoon.MiroWindowsManager:releaseAll() end,
       },
       {
-        description = 'Window: Full Screen',
+        description = 'Window: Center',
         key = 'o',
         onEnter = function() spoon.MiroWindowsManager:fullscreen() end,
         onExit = function() spoon.MiroWindowsManager:releaseAll() end,
