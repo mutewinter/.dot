@@ -51,11 +51,10 @@ function modalWrapper.bindModes(modes, modalManager)
           binding.key,
           binding.description,
           function()
-            binding.onEnter()
-
             if not binding.keepModalActive then
               spoon.ModalMgr:deactivate({ mode.id })
             end
+            binding.onEnter()
           end,
           binding.onRelease
         )
