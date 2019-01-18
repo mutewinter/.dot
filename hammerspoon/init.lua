@@ -103,7 +103,7 @@ local MODES = {
       },
       {
         description = 'Google Chrome',
-        -- Pneumonic [G]o to Chrome. "g" because it's on the home row.
+        -- [G]oogle Chrome
         key = 'g',
         onEnter = utils.launchOrFocusApp('Google Chrome'),
       },
@@ -120,7 +120,7 @@ local MODES = {
       {
         description = '1Password',
         key = '1',
-        onEnter = utils.launchOrHideApp('1Password 7'),
+        onEnter = utils.launchOrFocusApp('1Password 7'),
       },
       {
         description = '2Do',
