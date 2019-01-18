@@ -45,7 +45,11 @@ function utils.screenCapture(interactive)
     end
 
     -- u flag enables screen capture UI in macOS 10.14 or later
-    args = '-' .. args .. 'u'
+    if hs.host.operatingSystemVersion().minor >= 14 then
+      args = '-' .. args .. 'u'
+    else
+      args = '-' .. args
+    end
 
     print(hs.inspect(args))
     hs.task.new('/usr/sbin/screencapture', nil, {args, filename}):start()
