@@ -170,8 +170,9 @@ local MODES = {
       },
       {
         description = 'Color Dropper',
-        key = 'c',
-        onEnter = utils.keyStroke(HYPER, 'c'),
+        -- x marks the spot
+        key = 'x',
+        onEnter = utils.keyStroke(HYPER, 'x'),
       },
 
       -- -----------------
