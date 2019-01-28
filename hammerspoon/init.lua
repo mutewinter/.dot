@@ -38,6 +38,7 @@ local MODES = {
     color = '#00ff00',
     key = 'space',
     modifiers = {'cmd'},
+    exitAfter = 1,
     bindings = {
       -- ------------
       -- Meta Hotkeys

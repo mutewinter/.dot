@@ -1,7 +1,13 @@
-local function activateModal(id, color)
-  return function()
-    spoon.ModalMgr:deactivateAll()
-    spoon.ModalMgr:activate({ id }, color, false)
+local function activateModal(id, color, exitAfter)
+  spoon.ModalMgr:deactivateAll()
+  spoon.ModalMgr:activate({ id }, color, false)
+
+  if exitAfter ~= nil then
+    local delayed = hs.timer.delayed.new(exitAfter, function()
+      spoon.ModalMgr:deactivate({ id })
+    end)
+    delayed:start()
+    return delayed
   end
 end
 
@@ -24,10 +30,14 @@ function modalWrapper.bindModes(modes, modalManager)
     local newModalManager = spoon.ModalMgr.modal_list[mode.id]
 
     local exitCallbacks = {}
+    local delayedExits = {}
 
     newModalManager.exited = function()
       for _, onExit in ipairs(exitCallbacks) do
         onExit()
+      end
+      for _, delayedExit in ipairs(delayedExits) do
+        delayedExit:stop()
       end
     end
 
@@ -35,7 +45,12 @@ function modalWrapper.bindModes(modes, modalManager)
       mode.modifiers,
       mode.key,
       mode.description,
-      activateModal(mode.id, mode.color)
+      function()
+        local delayedExit = activateModal(mode.id, mode.color, mode.exitAfter)
+        if delayedExit then
+          table.insert(delayedExits, delayedExit)
+        end
+      end
     )
 
     for _, binding in ipairs(mode.bindings) do
