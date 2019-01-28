@@ -44,6 +44,7 @@ function modalWrapper.bindModes(modes, modalManager)
       end
 
       if binding.id then
+        -- Allow sub-modes
         modalWrapper.bindModes({ binding }, newModalManager)
       else
         newModalManager:bind(
