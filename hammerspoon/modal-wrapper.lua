@@ -51,10 +51,13 @@ function modalWrapper.bindModes(modes, modalManager)
           binding.key,
           binding.description,
           function()
+            local delayed = hs.timer.delayed.new(0.001, function()
+              binding.onEnter()
+            end)
+            delayed:start()
             if not binding.keepModalActive then
               spoon.ModalMgr:deactivate({ mode.id })
             end
-            binding.onEnter()
           end,
           binding.onRelease
         )
