@@ -38,6 +38,7 @@ function obj:setupModifierWatcher()
 
       local flags = event:getFlags()
       if not flags.cmd and self._exitOnReleaseCommand then
+        self._exitOnReleaseCommand = false
         self:deactivate()
       end
     end)
