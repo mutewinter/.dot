@@ -48,7 +48,9 @@ window:
   #     - none: Neither borders nor title bar
   #     - buttonless: Title bar, transparent background and title bar buttons
   #     - transparent: Title bar, transparent background, but no title bar buttons
-  decorations: none
+  #
+  # TODO restore to "none" once the Alacritty click to focus bug is fixed
+  decorations: full
 
   # When true, alacritty starts maximized.
   start_maximized: true
@@ -244,8 +246,7 @@ background_opacity: 1.0
 #
 # All available `mods` and `action` values are documented in the key binding
 # section.
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
+mouse_bindings: []
 
 mouse:
   # Click settings
