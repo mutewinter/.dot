@@ -183,7 +183,7 @@ local BINDINGS = {
   -- Window Management
   -- -----------------
   {
-    description = 'Window: Left',
+    description = '⬅️',
     key = 'h',
     keepModalActiveWithCommand = true,
     onEnter = function() spoon.MiroWindowsManager:left() end,
@@ -191,7 +191,7 @@ local BINDINGS = {
     onExit = function() spoon.MiroWindowsManager:releaseAll() end,
   },
   {
-    description = 'Window: Down',
+    description = '⬇️',
     key = 'j',
     keepModalActiveWithCommand = true,
     onEnter = function() spoon.MiroWindowsManager:down() end,
@@ -199,7 +199,7 @@ local BINDINGS = {
     onExit = function() spoon.MiroWindowsManager:releaseAll() end,
   },
   {
-    description = 'Window: Up',
+    description = '⬆️',
     key = 'k',
     keepModalActiveWithCommand = true,
     onEnter = function() spoon.MiroWindowsManager:up() end,
@@ -207,7 +207,7 @@ local BINDINGS = {
     onExit = function() spoon.MiroWindowsManager:releaseAll() end,
   },
   {
-    description = 'Window: Right',
+    description = '➡️',
     key = 'l',
     keepModalActiveWithCommand = true,
     onEnter = function() spoon.MiroWindowsManager:right() end,
@@ -215,14 +215,14 @@ local BINDINGS = {
     onExit = function() spoon.MiroWindowsManager:releaseAll() end,
   },
   {
-    description = 'Window: Center',
+    description = '↔️',
     key = 'o',
     keepModalActiveWithCommand = true,
     onEnter = function() spoon.MiroWindowsManager:fullscreen() end,
     onExit = function() spoon.MiroWindowsManager:releaseAll() end,
   },
   {
-    description = 'Window: Next Screen',
+    description = '⏩',
     key = 'p',
     keepModalActiveWithCommand = true,
     onEnter = utils.moveActiveWindowToNextScreen,
