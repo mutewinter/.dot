@@ -54,6 +54,7 @@ end
 
 
 function obj:startDelayedExit()
+  print('starting delayed exit')
   self:stopDelayedExit()
   self._delayedExit = hs.timer.delayed.new(self._exitAfter, function()
     self:deactivate()
@@ -149,7 +150,7 @@ function obj:bindKey(binding, keepModalActiveWithCommand)
       delayed:start()
 
       if binding.keepModalActive then
-        self:startDelayedExit()
+        self:stopDelayedExit()
       elseif keepModalActiveWithCommand then
         self:stopDelayedExit()
         self._exitOnReleaseCommand = true
