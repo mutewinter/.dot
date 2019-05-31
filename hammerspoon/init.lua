@@ -75,6 +75,13 @@ local BINDINGS = {
     onEnter = utils.launchOrFocusApp('Alfred 3'),
   },
   {
+    description = 'Alfred',
+    key = 'space',
+    modifiers = { K.alt },
+    noAdditionalCommandBinding = true,
+    onEnter = utils.launchOrFocusApp('Alfred 3'),
+  },
+  {
     description = 'Alacritty',
     -- Pneumonic, "[f]ast terminal"
     key = 'f',
