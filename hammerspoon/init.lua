@@ -52,6 +52,11 @@ local BINDINGS = {
     onEnter = function() end,
   },
   {
+    description = 'Exit',
+    key = 'escape',
+    onEnter = function() end,
+  },
+  {
     description = 'Toggle cheatsheet',
     key = '/',
     modifiers = { K.shift },
