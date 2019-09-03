@@ -40,7 +40,6 @@ bower
 npm-completion
 tmuxinator
 z
-nvm
 )
 
 # Rely on my own method of enabling LS_COLORS
@@ -108,6 +107,5 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 # Use CTRL+J because it's easier for me to hit
 bindkey '^J' fzf-history-widget
 
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-[[ -f ~/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . ~/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
+# fnm (fast node manager) https://github.com/Schniz/fnm
+eval "$(fnm env --multi)"

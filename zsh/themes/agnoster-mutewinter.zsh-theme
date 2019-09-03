@@ -134,13 +134,9 @@ time="%D{%m/%f/%y}%t"
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
 
-rbenv_prompt_info() {
-  rbenv version-name
+node_prompt_info() {
+  [ -x "$(command -v node)" ] && node -v || echo 'node not found'
 }
 
-nvm_prompt_info() {
-  nvm_ls current
-}
-
-RPROMPT='%{$fg[green]%}$(nvm_prompt_info)'
+RPROMPT='%{$fg[green]%}$(node_prompt_info)'
 RPROMPT+='%{$reset_color%} ${time} %{$reset_color%}'
