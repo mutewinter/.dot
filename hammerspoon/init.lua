@@ -160,6 +160,18 @@ local BINDINGS = {
     key = 'a',
     onEnter = utils.launchOrFocusApp('Slack'),
   },
+  -- Open Google Meet in Firefox
+  {
+    description = 'Firefox Meet',
+    key = 'm',
+    modifiers = { K.shift },
+    onEnter = function()
+      hs.urlevent.openURLWithBundle(
+        'https://meet.google.com/', 'org.mozilla.firefox'
+      )
+      -- TODO Resize Firefox, resize nvAlt
+    end,
+  },
 
   -- --------------
   -- Screen Capture
