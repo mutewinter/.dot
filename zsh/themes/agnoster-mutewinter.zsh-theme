@@ -135,7 +135,7 @@ time="%D{%m/%f/%y}%t"
 PROMPT='%{%f%b%k%}$(build_prompt) '
 
 node_prompt_info() {
-  [ -x "$(command -v node)" ] && node -v || echo 'node not found'
+  [ -x "$(command -v node)" ] && node -v || echo 'none'
 }
 
 RPROMPT='%{$fg[green]%}$(node_prompt_info)'
