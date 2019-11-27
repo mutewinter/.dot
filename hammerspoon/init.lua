@@ -65,7 +65,7 @@ local BINDINGS = {
   },
   {
     description = 'Reload hammerspoon',
-    key = 'r',
+    key = 'h',
     modifiers = { K.shift },
     onEnter = function() hs.reload() end,
   },
@@ -77,14 +77,14 @@ local BINDINGS = {
     description = 'Alfred',
     key = 'space',
     noAdditionalCommandBinding = true,
-    onEnter = utils.launchOrFocusApp('Alfred 3'),
+    onEnter = utils.launchOrFocusApp('Alfred 4'),
   },
   {
     description = 'Alfred',
     key = 'space',
     modifiers = { K.alt },
     noAdditionalCommandBinding = true,
-    onEnter = utils.launchOrFocusApp('Alfred 3'),
+    onEnter = utils.launchOrFocusApp('Alfred 4'),
   },
   {
     description = 'Alacritty',
@@ -153,6 +153,18 @@ local BINDINGS = {
     description = 'Tower',
     key = 't',
     onEnter = utils.launchOrFocusApp('Tower'),
+  },
+  -- T[r]ello
+  {
+    description = 'Trello',
+    key = 'r',
+    onEnter = utils.launchOrFocusApp('Trello'),
+  },
+  {
+    description = 'New Trello Card',
+    key = 'r',
+    modifiers = { K.shift },
+    onEnter = utils.keyStroke({ K.ctrl, K.alt, K.cmd }, 'space'),
   },
   {
     description = 'Slack',
