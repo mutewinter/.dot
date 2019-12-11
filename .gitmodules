@@ -4,3 +4,6 @@
 [submodule "LS_COLORS"]
 	path = LS_COLORS
 	url = git://github.com/trapd00r/LS_COLORS
+[submodule "tmux/plugins/tpm"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = git://github.com/tmux-plugins/tpm.git
