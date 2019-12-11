@@ -39,6 +39,7 @@ zsh-syntax-highlighting
 bower
 npm-completion
 tmuxinator
+yarn
 z
 )
 
