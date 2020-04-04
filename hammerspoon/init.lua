@@ -66,7 +66,7 @@ local BINDINGS = {
   {
     description = 'Reload hammerspoon',
     key = 'h',
-    modifiers = { K.shift },
+    modifiers = { K.alt },
     onEnter = function() hs.reload() end,
   },
 
