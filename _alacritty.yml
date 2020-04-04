@@ -50,7 +50,7 @@ window:
   #     - transparent: Title bar, transparent background, but no title bar buttons
   #
   # TODO restore to "none" once the Alacritty click to focus bug is fixed
-  decorations: full
+  decorations: none
 
   # When true, alacritty starts maximized.
   startup_mode: Maximized
