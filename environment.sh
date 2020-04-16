@@ -53,3 +53,6 @@ PATH=$PATH:~/programs
 
 # Silence Coveralls
 export COVERALLS_SILENT=true
+
+# What a world
+export SCARF_ANALYTICS=false
