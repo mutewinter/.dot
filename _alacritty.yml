@@ -520,3 +520,7 @@ key_bindings:
   - { key: Minus,    mods: Alt,     chars: "\x1b-"                       }
   - { key: Semicolon,mods: Alt,     chars: "\x1b;"                       }
   - { key: Period,   mods: Alt,     chars: "\x1b."                       }
+  - { key: LBracket, mods: Shift|Alt,     chars: "\x1b{"                 }
+  - { key: RBracket, mods: Shift|Alt,     chars: "\x1b}"                 }
+  - { key: LBracket, mods: Alt,           chars: "\x1b["                 }
+  - { key: RBracket, mods: Alt,           chars: "\x1b]"                 }
