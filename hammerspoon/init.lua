@@ -17,6 +17,12 @@ hs.consoleOnTop(true)
 hs.dockIcon(false)
 hs.menuIcon(true)
 hs.uploadCrashData(false)
+hs.alert.defaultStyle.textSize = 14
+hs.alert.defaultStyle.radius = 14
+hs.alert.defaultStyle.atScreenEdge = 1
+hs.alert.defaultStyle.fadeInDuration = 0
+hs.alert.defaultStyle.fadeOutDuration = 0
+hs.alert.defaultStyle.fillColor = { white = 0, alpha = 1 }
 
 -- Disable animation for window resizing so it's instant.
 hs.window.animationDuration = 0
