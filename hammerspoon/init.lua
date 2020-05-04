@@ -296,17 +296,5 @@ AppBinding:new('Dash', {
   },
 })
 
--- Change layout for Alacritty to prevent special characters from being input
--- by meta+hotkeys
-local alacrittyWatcher = hs.application.watcher.new(function(appName, eventType, _)
-  if appName == 'Alacritty' then
-    if eventType == hs.application.watcher.activated then
-      print('Alacritty keyboard mode activated')
-      hs.keycodes.setLayout('No Modifier Keys')
-    end
-  end
-end)
-alacrittyWatcher:start()
-
 -- So we can easily tell when Hammerspoon loads successfully
 hs.alert.show('Hammerspoon loaded')
