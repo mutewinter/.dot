@@ -14,7 +14,7 @@ obj.author = "ashfinal <ashfinal@gmail.com>"
 obj.homepage = "https://github.com/Hammerspoon/Spoons"
 obj.license = "MIT - https://opensource.org/licenses/MIT"
 
-obj.modal_tray = nil
+obj.alertUuid = nil
 obj.which_key = nil
 obj.modal_list = {}
 obj.active_list = {}
@@ -26,13 +26,6 @@ function obj:init()
     obj.supervisor:bind(hsupervisor_keys[1], hsupervisor_keys[2], "Reset Modal Environment", function() obj.supervisor:exit() end)
     hshelp_keys = hshelp_keys or {{"alt", "shift"}, "/"}
     obj.supervisor:bind(hshelp_keys[1], hshelp_keys[2], "Toggle Help Panel", function() obj:toggleCheatsheet({all=obj.supervisor}) end)
-    obj.modal_tray = hs.canvas.new({x = 0, y = 0, w = 0, h = 0})
-    obj.modal_tray:level(hs.canvas.windowLevels.tornOffMenu)
-    obj.modal_tray[1] = {
-        type = "circle",
-        action = "fill",
-        fillColor = {hex = "#FFFFFF", alpha = 0.7},
-    }
     obj.which_key = hs.canvas.new({x = 0, y = 0, w = 0, h = 0})
     obj.which_key:level(hs.canvas.windowLevels.tornOffMenu)
     obj.which_key[1] = {
@@ -141,16 +134,7 @@ function obj:activate(idList, trayColor, showKeys)
         obj.active_list[val] = obj.modal_list[val]
     end
     if trayColor then
-        local cscreen = hs.screen.mainScreen()
-        local cres = cscreen:fullFrame()
-        obj.modal_tray:frame({
-            x = cres.w - math.ceil(cres.w / 1.9),
-            y = math.ceil(cres.h / 16),
-            w = math.ceil(cres.w / 32 / 2),
-            h = math.ceil(cres.w / 32 / 2)
-        })
-        obj.modal_tray[1].fillColor = {hex = trayColor, alpha = 0.7}
-        obj.modal_tray:show()
+        obj.alertUuid = hs.alert.show('💚', hs.alert.defaultStyle, 10)
     end
     if showKeys then
         obj:toggleCheatsheet(idList, true)
@@ -169,7 +153,9 @@ function obj:deactivate(idList)
         obj.modal_list[val]:exit()
         obj.active_list[val] = nil
     end
-    obj.modal_tray:hide()
+    if obj.alertUuid then
+      hs.alert.closeSpecific(obj.alertUuid)
+    end
     for i = 2, #obj.which_key do
         obj.which_key:removeElement(2)
     end

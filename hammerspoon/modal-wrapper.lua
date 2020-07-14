@@ -54,7 +54,6 @@ end
 
 
 function obj:startDelayedExit()
-  print('starting delayed exit')
   self:stopDelayedExit()
   self._delayedExit = hs.timer.delayed.new(self._exitAfter, function()
     self:deactivate()
