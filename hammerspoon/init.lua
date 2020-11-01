@@ -160,11 +160,11 @@ local BINDINGS = {
     key = 't',
     onEnter = utils.launchOrFocusApp('Tower'),
   },
-  -- T[r]ello
+  -- D[r]afts
   {
-    description = 'Trello',
+    description = 'Drafts',
     key = 'r',
-    onEnter = utils.launchOrFocusApp('Trello'),
+    onEnter = utils.launchOrFocusApp('Drafts'),
   },
   {
     description = 'New Trello Card',
