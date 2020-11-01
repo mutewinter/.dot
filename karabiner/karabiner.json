@@ -282,6 +282,14 @@
                     "to": {
                         "key_code": "right_control"
                     }
+                },
+                {
+                    "from": {
+                        "consumer_key_code": "play_or_pause"
+                    },
+                    "to": {
+                        "key_code": "vk_none"
+                    }
                 }
             ],
             "virtual_hid_keyboard": {
