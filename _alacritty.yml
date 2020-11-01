@@ -53,7 +53,7 @@ window:
   decorations: none
 
   # When true, alacritty starts maximized.
-  startup_mode: Maximized
+  startup_mode: SimpleFullscreen
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -193,7 +193,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
