@@ -14,7 +14,6 @@ function obj:new(options)
   self._color = options.color
   self._key = options.key
   self._modifiers = options.modifiers
-  self._exitAfter = options.exitAfter
 
   return newObj
 end
@@ -44,21 +43,6 @@ function obj:setupModifierWatcher()
     end)
 
   self._modifierWatcher:start()
-end
-
-function obj:stopDelayedExit()
-  if self._delayedExit then
-    self._delayedExit:stop()
-  end
-end
-
-
-function obj:startDelayedExit()
-  self:stopDelayedExit()
-  self._delayedExit = hs.timer.delayed.new(self._exitAfter, function()
-    self:deactivate()
-  end)
-  self._delayedExit:start()
 end
 
 function obj:activateModal()
@@ -92,10 +76,6 @@ function obj:bindKeys(bindings)
     self._key,
     self._description,
     function()
-      if self._exitAfter ~= nil then
-        self:startDelayedExit()
-      end
-
       self:activateModal()
     end)
 
@@ -138,20 +118,10 @@ function obj:bindKey(binding, keepModalActiveWithCommand)
     binding.key,
     binding.description,
     function()
-      local delayed = hs.timer.delayed.new(0.001, function()
-        if binding.onEnter == 'string' then
-          self[binding.onEnter]()
-        else
-          binding.onEnter()
-        end
-      end)
-
-      delayed:start()
+      binding.onEnter()
 
       if binding.keepModalActive then
-        self:stopDelayedExit()
       elseif keepModalActiveWithCommand then
-        self:stopDelayedExit()
         self._exitOnReleaseCommand = true
       else
         self:deactivate()
