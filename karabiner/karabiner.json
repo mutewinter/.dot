@@ -75,65 +75,25 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 34304,
+                        "product_id": 513,
+                        "vendor_id": 10429
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 635,
                         "vendor_id": 1452
                     },
-                    "ignore": true,
+                    "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "consumer_key_code": "play_or_pause"
-                            },
-                            "to": {
-                                "key_code": "f13"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 8455,
-                        "vendor_id": 16701
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "consumer_key_code": "play_or_pause"
-                            },
-                            "to": {
-                                "key_code": "f15"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 57382,
-                        "vendor_id": 6790
-                    },
-                    "ignore": false,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "b"
-                            },
-                            "to": {
-                                "key_code": "f19"
-                            }
-                        }
-                    ]
+                    "simple_modifications": []
                 },
                 {
                     "disable_built_in_keyboard_if_exists": false,
@@ -147,6 +107,68 @@
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
                     "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 301,
+                        "vendor_id": 9494
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": {
+                                "key_code": "c"
+                            },
+                            "to": {
+                                "key_code": "left_control"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "d"
+                            },
+                            "to": {
+                                "key_code": "left_shift"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "f"
+                            },
+                            "to": {
+                                "key_code": "left_command"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "grave_accent_and_tilde"
+                            },
+                            "to": {
+                                "key_code": "escape"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "s"
+                            },
+                            "to": {
+                                "key_code": "spacebar"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "x"
+                            },
+                            "to": {
+                                "key_code": "left_option"
+                            }
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [
@@ -263,6 +285,14 @@
                 },
                 {
                     "from": {
+                        "consumer_key_code": "play_or_pause"
+                    },
+                    "to": {
+                        "key_code": "vk_none"
+                    }
+                },
+                {
+                    "from": {
                         "key_code": "caps_lock"
                     },
                     "to": {
@@ -271,26 +301,10 @@
                 },
                 {
                     "from": {
-                        "key_code": "left_control"
-                    },
-                    "to": {
-                        "key_code": "vk_none"
-                    }
-                },
-                {
-                    "from": {
                         "key_code": "right_option"
                     },
                     "to": {
                         "key_code": "right_control"
-                    }
-                },
-                {
-                    "from": {
-                        "consumer_key_code": "play_or_pause"
-                    },
-                    "to": {
-                        "key_code": "vk_none"
                     }
                 }
             ],
