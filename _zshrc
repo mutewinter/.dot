@@ -108,4 +108,12 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 bindkey '^J' fzf-history-widget
 
 # fnm (fast node manager) https://github.com/Schniz/fnm
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
+
+# Homebrew completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
