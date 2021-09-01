@@ -1,2 +1,3 @@
 .DS_Store
 system_environment.sh
+*.log
