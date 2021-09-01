@@ -130,7 +130,7 @@ build_prompt() {
   prompt_end
 }
 
-time="%D{%m/%f/%y}%t"
+time="%W%t"
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
 
