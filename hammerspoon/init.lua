@@ -27,6 +27,10 @@ hs.alert.defaultStyle.fillColor = { white = 0, alpha = 1 }
 -- Disable animation for window resizing so it's instant.
 hs.window.animationDuration = 0
 
+-- via https://github.com/Hammerspoon/hammerspoon/issues/2605#issuecomment-735042645
+hs.osascript = "DO NOT USE. MEMORY LEAK."
+hs.itunes = "DO NOT USE. MEMORY LEAK." -- it uses osascript
+
 -- ---------------
 -- Global Bindings
 -- ---------------
@@ -135,9 +139,10 @@ local BINDINGS = {
     onEnter = utils.launchOrHideApp('Finder'),
   },
   {
-    description = 'nvAlt',
+    description = 'Obsidian',
+    -- Obsidia[n]
     key = 'n',
-    onEnter = utils.launchOrHideApp('nvAlt'),
+    onEnter = utils.launchOrHideApp('Obsidian'),
   },
   {
     description = '1Password',
@@ -183,6 +188,12 @@ local BINDINGS = {
     description = 'Figma',
     key = 'm',
     onEnter = utils.launchOrFocusApp('Figma'),
+  },
+  -- Sizz[y]
+  {
+    description = 'Sizzy',
+    key = 'y',
+    onEnter = utils.launchOrFocusApp('Sizzy'),
   },
 
   -- --------------
