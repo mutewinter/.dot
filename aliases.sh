@@ -66,3 +66,6 @@ alias tm="tmux attach || tmux new"
 
 # Yarn
 alias y=yarn
+
+# CW
+alias cwselect="cw tail -f -n -t \$(cw ls groups | fzf -m | tr '\n' ' ')"
