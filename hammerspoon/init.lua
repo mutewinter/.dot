@@ -161,9 +161,9 @@ local BINDINGS = {
     onEnter = utils.keyStroke(HYPER, '2'),
   },
   {
-    description = 'Tower',
+    description = 'Gi[t]Hub Desktop',
     key = 't',
-    onEnter = utils.launchOrFocusApp('Tower'),
+    onEnter = utils.launchOrFocusApp('GitHub Desktop'),
   },
   -- D[r]afts
   {
