@@ -2,14 +2,8 @@
 #
 # vim: set filetype=sh :
 
-# ------
-# Heroku
-# ------
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# ---
-# RVM
-# ---
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-
+# cargo Rust toolchain
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# pyenv python version manager
+eval "$(pyenv init --path)"

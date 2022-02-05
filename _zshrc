@@ -40,6 +40,7 @@ npm-completion
 tmuxinator
 yarn
 z
+poetry
 )
 
 # Rely on my own method of enabling LS_COLORS
@@ -117,3 +118,9 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+
+# pyenv python version manager
+eval "$(pyenv init -)"
+
+# poetry python package manager
+export PATH="$HOME/.local/bin:$PATH"
