@@ -20,10 +20,8 @@ function obj:setupWatcher()
   self._appWatcher = hs.application.watcher.new(function(appName, eventType, _)
     if appName == self._appName then
       if eventType == ACTIVATED then
-        print(self._appName .. ' modal activated')
         self._modal:enter()
       else
-        print(self._appName .. ' modal deactivated')
         self._modal:exit()
       end
     end
