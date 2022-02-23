@@ -142,7 +142,7 @@ local BINDINGS = {
     description = 'Obsidian',
     -- Obsidia[n]
     key = 'n',
-    onEnter = utils.launchOrHideApp('Obsidian'),
+    onEnter = utils.launchOrFocusApp('Obsidian'),
   },
   {
     description = '1Password',
