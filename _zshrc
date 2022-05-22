@@ -109,7 +109,7 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 bindkey '^J' fzf-history-widget
 
 # fnm (fast node manager) https://github.com/Schniz/fnm
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd)"
 
 # Homebrew completions
 if type brew &>/dev/null; then
