@@ -1,6 +1,7 @@
 [user]
 	name = Jeremy Mack
 	email = mutewinter@users.noreply.github.com
+	signingkey = 698EFAA1322BD49E92A28D27798E0A2DF0A7B636
 [pull]
 	rebase = true
 [alias]
