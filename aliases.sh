@@ -18,12 +18,6 @@ alias cdot="cd ~/.dot"
 # Edit Files
 alias v="$EDITOR"
 alias vf="$EDITOR \$(fzf)"
-alias vimrc="cd ~/.vim; v ~/.vim/vimrc"
-alias vundle="v ~/.vim/vundle.vim"
-alias mappings="v ~/.vim/mappings.vim"
-alias plugins="v ~/.vim/plugins.vim"
-alias vzsh="v ~/.dot/_zshrc"
-alias aliases="v ~/.dot/aliases.sh"
 
 # Commands
 alias ls="ls --color"
