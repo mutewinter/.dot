@@ -4,6 +4,7 @@ ZSH_PLUGINS = File.expand_path File.join %w{~ .oh-my-zsh custom plugins}
 ZSH_THEMES = File.expand_path File.join %w{~ .oh-my-zsh custom themes}
 HAMMERSPOON = File.expand_path File.join %w{~ .hammerspoon}
 KARABINER = File.expand_path File.join %w{~ .config karabiner karabiner.json}
+LAZYGIT = File.expand_path File.join %w{~ Library Application\ Support lazygit config.yml}
 
 desc 'Create symlinks for files beginning with _ in home directory'
 task :link do
@@ -72,5 +73,22 @@ task :karabiner do
   else
     puts 'Making symlink for karabiner'
     File.symlink(File.expand_path('karabiner/karabiner.json'), KARABINER)
+  end
+end
+
+desc 'Create symlink for Lazygit'
+task :lazygit do
+  if File.exists? LAZYGIT
+    puts "#{LAZYGIT} already exists, skipping"
+  else
+    # Get folder for lazygit config file
+    lazygit_folder = File.dirname LAZYGIT
+    # Check if lazygit directory exists and if not, create it
+    if not File.exists? lazygit_folder
+      puts "Making directory #{lazygit_folder}"
+      Dir.mkdir lazygit_folder
+    end
+    puts 'Making symlink for lazygit'
+    File.symlink(File.expand_path('lazygit/config.yml'), LAZYGIT)
   end
 end

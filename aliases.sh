@@ -44,6 +44,8 @@ alias glppf="git log -p --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cr
 
 # Annotate Rails models
 alias annotate-rails="annotate --exclude tests,fixtures,factories -p after"
+# Lazygit
+alias lg="lazygit"
 
 # Quick way to rebuild the Launch Services database and get rid
 # of duplicates in the Open With submenu.
