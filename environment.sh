@@ -51,8 +51,8 @@ PATH="/usr/local/bin:$PATH"
 # My own programs
 PATH=$PATH:~/programs
 
-# Silence Coveralls
-export COVERALLS_SILENT=true
-
 # What a world
 export SCARF_ANALYTICS=false
+
+# Disable automatic upgrade of Homebrew packages
+HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
