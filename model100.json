@@ -589,17 +589,17 @@
         "categories": ["blanks"]
       },
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
-      },
-      {
         "code": 2097,
         "label": {"hint": null, "base": "|"},
         "categories": ["with-modifiers", "shift"],
         "baseCode": 49
       },
       {"code": 49, "label": {"base": "\\", "shifted": "|"}},
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
+      },
       {
         "code": 65535,
         "label": {"base": {"full": "Transparent", "1u": " "}},
