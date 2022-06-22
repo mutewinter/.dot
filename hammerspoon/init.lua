@@ -220,11 +220,6 @@ local BINDINGS = {
     onEnter = utils.keyStroke(HYPER, '6'),
   },
   {
-    description = 'Configure Record Movie',
-    key = '8',
-    onEnter = utils.keyStroke(HYPER, '8'),
-  },
-  {
     description = 'Color Dropper',
     -- x marks the spot
     key = 'x',
