@@ -438,8 +438,12 @@ key_bindings:
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
   - { key: NumpadEnter,             chars: "\n"                          }
+  # Allow shift enter to work in vim
   - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
+  # Allow control enter to work in vim
   - { key: Return,   mods: Control, chars: "\x1b[13;5u" }
+  # Allow shift space to work in vim
+  - { key: Space,    mods: Shift,   chars: "\x5c\x08 " }
   # Alt to Meta keys
   - { key: Key1,     mods: Alt,     chars: "\x1b1"                       }
   - { key: Key2,     mods: Alt,     chars: "\x1b2"                       }
