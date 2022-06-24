@@ -23,24 +23,20 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins are in the zsh folder of this repo.
 plugins=(
 aws
-heroku
 gitignore
 git
 ruby
-rbenv
-gem
 cdcode
 rake
 gitfast
-vundle
 zeus
 zsh-syntax-highlighting
-bower
 npm-completion
-tmuxinator
 yarn
 z
 poetry
+fzf
+fnm
 )
 
 # Rely on my own method of enabling LS_COLORS
@@ -79,48 +75,5 @@ ZSH_HIGHLIGHT_STYLES+=(
 # Better LS colors when dircolors isn't available.
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-# -------------
-# ZSH-Specific aliases
-# -------------
-
-# Allows bracket arguments to be passed to the command.
-#   e.g. mina task[derp, herp].
-alias mina='noglob mina'
-
-# ZSH doesn't like spring rspec
-alias spring='nocorrect spring'
-
-# ---
-# fzf
-# ---
-
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  export PATH="$PATH:/usr/local/opt/fzf/bin"
-fi
-# Man path
-if [[ ! "$MANPATH" == */usr/local/opt/fzf/man* && -d "/usr/local/opt/fzf/man" ]]; then
-  export MANPATH="$MANPATH:/usr/local/opt/fzf/man"
-fi
-# Auto-completion
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-# Key bindings
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-# Use CTRL+J because it's easier for me to hit
-bindkey '^J' fzf-history-widget
-
-# fnm (fast node manager) https://github.com/Schniz/fnm
-eval "$(fnm env --use-on-cd)"
-
-# Homebrew completions
-if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  autoload -Uz compinit
-  compinit
-fi
-
 # pyenv python version manager
 eval "$(pyenv init -)"
-
-# poetry python package manager
-export PATH="$HOME/.local/bin:$PATH"

@@ -4,6 +4,3 @@
 
 # cargo Rust toolchain
 export PATH="$HOME/.cargo/bin:$PATH"
-
-# pyenv python version manager
-eval "$(pyenv init --path)"
