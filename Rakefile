@@ -5,6 +5,7 @@ ZSH_THEMES = File.expand_path File.join %w{~ .oh-my-zsh custom themes}
 HAMMERSPOON = File.expand_path File.join %w{~ .hammerspoon}
 KARABINER = File.expand_path File.join %w{~ .config karabiner karabiner.json}
 LAZYGIT = File.expand_path File.join %w{~ Library Application\ Support lazygit config.yml}
+FISH = File.expand_path File.join %w{~ .config fish}
 
 desc 'Create symlinks for files beginning with _ in home directory'
 task :link do
@@ -90,5 +91,15 @@ task :lazygit do
     end
     puts 'Making symlink for lazygit'
     File.symlink(File.expand_path('lazygit/config.yml'), LAZYGIT)
+  end
+end
+
+desc 'Create symlink for Fish'
+task :fish do
+  if File.exists? FISH
+    puts "#{FISH} already exists, skipping"
+  else
+    puts 'Making symlink for fish'
+    File.symlink(File.expand_path('fish'), FISH)
   end
 end

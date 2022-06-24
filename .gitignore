@@ -1,3 +1,5 @@
 .DS_Store
 system_environment.sh
 *.log
+fish/fish_variables
+fish/fish_history
