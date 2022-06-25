@@ -1,4 +1,6 @@
 set -g theme_display_node yes
+set -g theme_newline_cursor yes
+
 
 function bobthefish_colors -S -d 'Define a custom bobthefish color scheme'
 
