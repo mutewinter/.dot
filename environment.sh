@@ -43,7 +43,7 @@ fi
 export SCARF_ANALYTICS=false
 
 # Disable automatic upgrade of Homebrew packages
-HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 
 # Use opt location for Homebrew first (from ARM Mac)
 if [ -d /opt/homebrew/bin ]; then
