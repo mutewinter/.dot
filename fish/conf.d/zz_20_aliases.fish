@@ -11,6 +11,8 @@ abbr gca git commit -v -a
 abbr gcm git commit -m
 abbr gss git status -sb
 abbr gd git diff
+abbr gp git push
+abbr gb git branch
 alias glpp "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Tmux
