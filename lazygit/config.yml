@@ -5,7 +5,7 @@ gui:
       - reverse
     selectedRangeBgColor:
       - reverse
-  showIcons: true # available after 0.34
+  showIcons: true
 git:
   paging:
     colorArg: always
