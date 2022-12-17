@@ -654,8 +654,8 @@
       {"code": 63, "label": {"base": "F6"}},
       {"code": 64, "label": {"base": "F7"}},
       {"code": 65, "label": {"base": "F8"}},
-      {"code": 38, "label": {"base": "9", "shifted": "("}},
-      {"code": 39, "label": {"base": "0", "shifted": ")"}},
+      {"code": 66, "label": {"base": "F9"}},
+      {"code": 67, "label": {"base": "F10"}},
       {"code": 68, "label": {"base": "F11"}},
       {
         "code": 65535,
