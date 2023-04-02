@@ -8,7 +8,6 @@
 1. `rake link`
 1. `rm -rf ~/.oh-my-zsh/custom/plugins && rm -rf ~/.oh-my-zsh/custom/themes`
 1. `rake zsh:all`
-1. `rake hammerspoon`
 1. `rake karabiner`
 1. `rake lazygit`
 1. may be covered by recursive clone `git clone https://github.com/tmux-plugins/tpm ~/.dot/tmux/plugins/tpm`

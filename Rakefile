@@ -2,7 +2,6 @@
 
 ZSH_PLUGINS = File.expand_path File.join %w{~ .oh-my-zsh custom plugins}
 ZSH_THEMES = File.expand_path File.join %w{~ .oh-my-zsh custom themes}
-HAMMERSPOON = File.expand_path File.join %w{~ .hammerspoon}
 KARABINER = File.expand_path File.join %w{~ .config karabiner karabiner.json}
 LAZYGIT = File.expand_path File.join %w{~ Library Application\ Support lazygit config.yml}
 FISH = File.expand_path File.join %w{~ .config fish}
@@ -54,16 +53,6 @@ namespace :zsh do
       puts 'Making symlink for custom zsh themes'
       File.symlink(File.expand_path('zsh/themes'), ZSH_THEMES)
     end
-  end
-end
-
-desc 'Create symlink for hammerspoon'
-task :hammerspoon do
-  if File.exists? HAMMERSPOON
-    puts "#{HAMMERSPOON} already exists, skipping"
-  else
-    puts 'Making symlink for hammerspoon'
-    File.symlink(File.expand_path('hammerspoon'), HAMMERSPOON)
   end
 end
 
