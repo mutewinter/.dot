@@ -12,6 +12,7 @@ git:
     pager: delta --dark --paging=never
   skipHookPrefix: 'wip: '
   overrideGpg: true # prevents lazygit from spawning a separate process when using GPG
+  parseEmoji: true # for use with https://gitmoji.dev
 os:
   editCommand: 'nvim'
   editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
