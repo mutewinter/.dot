@@ -786,11 +786,7 @@
         "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
-      {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
-      },
+      {"code": 104, "label": {"base": "F13"}},
       {"code": 77, "label": {"base": "End"}},
       {"code": 70, "label": {"base": {"full": "Print Screen", "1u": "PrSc"}}},
       {
@@ -853,11 +849,7 @@
         "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
-      {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
-      }
+      {"code": 105, "label": {"base": "F14"}}
     ],
     [
       {
