@@ -12,3 +12,4 @@
 1. `rake lazygit`
 1. may be covered by recursive clone `git clone https://github.com/tmux-plugins/tpm ~/.dot/tmux/plugins/tpm`
 1. Run `tmux` then type `<C-a> I` to install tpm plugins
+1. Copy settings from `./linearmouse.json` manually into UI or `~/.config/linearmouse` (someday may automate) in Rake
