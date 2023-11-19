@@ -38,4 +38,4 @@ abbr y yarn
 alias cwselect="cw tail -f -n -t \$(cw ls groups | fzf -m | tr '\n' ' ')"
 
 # Copilot CLI
-abbr wts github-copilot-cli what-the-shell
+abbr wts gh copilot suggest
