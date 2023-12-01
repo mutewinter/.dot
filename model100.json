@@ -11,12 +11,7 @@
       {"code": 32, "label": {"base": "3", "shifted": "#"}},
       {"code": 33, "label": {"base": "4", "shifted": "$"}},
       {"code": 34, "label": {"base": "5", "shifted": "%"}},
-      {
-        "code": 6921,
-        "label": {"hint": {"full": "Hyper+", "1u": "H+"}, "base": "f"},
-        "categories": ["with-modifiers", "ctrl", "shift", "alt", "gui"],
-        "baseCode": 9
-      },
+      {"code": 53, "label": {"base": "`", "shifted": "~"}},
       {
         "code": 224,
         "label": {"base": {"full": "Control", "1u": "Ctrl"}},
@@ -40,7 +35,11 @@
         "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
-      {"code": 53, "label": {"base": "`", "shifted": "~"}},
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
+      },
       {"code": 20, "label": {"base": "q", "shifted": "Q"}},
       {"code": 26, "label": {"base": "w", "shifted": "W"}},
       {"code": 8, "label": {"base": "e", "shifted": "E"}},
@@ -181,9 +180,13 @@
         "baseCode": 34
       },
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
+        "code": 4873,
+        "label": {
+          "hint": {"full": "Ctrl+Alt+Command+", "1u": "C+A+Cm+"},
+          "base": "f"
+        },
+        "categories": ["with-modifiers", "ctrl", "alt", "gui"],
+        "baseCode": 9
       },
       {
         "code": 224,
@@ -257,13 +260,9 @@
         "baseCode": 49
       },
       {
-        "code": 4917,
-        "label": {
-          "hint": {"full": "Ctrl+Alt+Command+", "1u": "C+A+Cm+"},
-          "base": "`"
-        },
-        "categories": ["with-modifiers", "ctrl", "alt", "gui"],
-        "baseCode": 53
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
       },
       {
         "code": 4884,
@@ -630,9 +629,10 @@
       {"code": 61, "label": {"base": "F4"}},
       {"code": 62, "label": {"base": "F5"}},
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
+        "code": 6921,
+        "label": {"hint": {"full": "Hyper+", "1u": "H+"}, "base": "f"},
+        "categories": ["with-modifiers", "ctrl", "shift", "alt", "gui"],
+        "baseCode": 9
       },
       {
         "code": 224,
