@@ -24,6 +24,7 @@ vmap <Down> 15gj
 
 " Easier command mode
 nmap ; :
+vmap ; :
 
 " Doesn't work currently, not sure how to do leader
 " Quickly remove search highlights
@@ -43,18 +44,23 @@ nmap Y y$
 exmap followLink :obcommand editor:follow-link
 nmap gf :followLink
 
-" Go forward and back with gp / gn
-exmap forward obcommand app:go-forward
-nmap gn :forward
-
+" Go back and forward with Ctrl+i and Ctrl+o
+" (make sure to remove default Obsidian shortcuts for these to work)
 exmap back obcommand app:go-back
-nmap gp :back
+nmap <C-o> :back
+
+exmap forward obcommand app:go-forward
+nmap <C-i> :forward
 
 exmap jumpToLink obcommand mrj-jump-to-link:activate-jump-to-link
 nmap <C-f> :jumpToLink
 
 exmap jumpToAnywhere obcommand mrj-jump-to-link:activate-jump-to-anywhere
 nmap s :jumpToAnywhere
+
+" Create newlines without entering insert mode
+nnoremap go moo<Esc>`o
+nnoremap gO moO<Esc>`o
 
 " Window navigation
 " Try again once https://github.com/esm7/obsidian-vimrc-support/issues/78
