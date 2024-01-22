@@ -14,10 +14,7 @@ git:
   overrideGpg: true # prevents lazygit from spawning a separate process when using GPG
   parseEmoji: true # for use with https://gitmoji.dev
 os:
-  editCommand: 'nvim'
-  editCommandTemplate: '{{editor}} +{{line}} -- {{filename}}'
-  openCommand: open {{filename}}
-  openLinkCommand: open {{link}}
+  editPreset: 'nvim'
 keybinding:
   universal:
     undo: '<c-u>'
