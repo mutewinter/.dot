@@ -1,3 +1,4 @@
-function lt --wraps='exa $EXA_STANDARD_OPTIONS $EXA_LT_OPTIONS' --description 'alias lt exa $EXA_STANDARD_OPTIONS $EXA_LT_OPTIONS'
-  exa $EXA_STANDARD_OPTIONS $EXA_LT_OPTIONS $argv; 
+function lt --wraps='eza $EZA_STANDARD_OPTIONS $EZA_LT_OPTIONS' --description 'alias lt eza $EZA_STANDARD_OPTIONS $EZA_LT_OPTIONS'
+  eza $EZA_STANDARD_OPTIONS $EZA_LT_OPTIONS $argv
+        
 end
