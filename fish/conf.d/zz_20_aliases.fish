@@ -21,6 +21,7 @@ alias tm="tmux attach || tmux new"
 # Directories
 alias cvim="cd ~/.config/nvim"
 alias cdot="cd ~/.dot"
+alias ccode="cd ~/code"
 
 abbr personal cd ~/code/personal
 abbr reference cd ~/code/reference
