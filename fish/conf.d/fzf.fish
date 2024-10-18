@@ -10,7 +10,7 @@ end
 set --global _fzf_search_vars_command '_fzf_search_variables (set --show | psub) (set --names | psub)'
 
 # Remove --layout reverse
-set -x FZF_DEFAULT_OPTS '--cycle --border --height=90% --preview-window=wrap --marker="*"'
+set -x FZF_DEFAULT_OPTS '--color=hl:#a45ead,hl+:#ff5cf7 --cycle --border --height=90% --preview-window=wrap --marker="*"'
 
 
 # Install the default bindings, which are mnemonic and minimally conflict with fish's preset bindings
