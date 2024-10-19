@@ -127,7 +127,13 @@
   },
   {
     "command": "find-it-faster.findFiles",
-    "key": "shift+enter"
+    "key": "shift+enter",
+    "when": "neovim.mode != 'insert'"
+  },
+  {
+    "command": "editor.action.triggerSuggest",
+    "key": "shift+enter",
+    "when": "neovim.mode == 'insert'"
   },
   {
     "command": "-find-it-faster.findFiles",
