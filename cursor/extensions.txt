@@ -1,0 +1,13 @@
+asvetliakov.vscode-neovim
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+fill-labs.dependi
+joshmu.periscope
+kricsleo.vscode-package-json-inspector
+ms-vsliveshare.vsliveshare
+siwatts.jellybeans-vim-theme
+streetsidesoftware.code-spell-checker
+tompollak.lazygit-vscode
+tomrijndorp.find-it-faster
+usernamehw.errorlens
+yoavbls.pretty-ts-errors

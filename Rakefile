@@ -4,6 +4,7 @@ ZSH_PLUGINS = File.expand_path File.join %w{~ .oh-my-zsh custom plugins}
 ZSH_THEMES = File.expand_path File.join %w{~ .oh-my-zsh custom themes}
 KARABINER = File.expand_path File.join %w{~ .config karabiner karabiner.json}
 LAZYGIT = File.expand_path File.join %w{~ Library Application\ Support lazygit config.yml}
+CURSOR = File.expand_path File.join %w{~ Library Application\ Support Cursor User}
 FISH = File.expand_path File.join %w{~ .config fish}
 
 desc 'Create symlinks for files beginning with _ in home directory'
@@ -90,5 +91,28 @@ task :fish do
   else
     puts 'Making symlink for fish'
     File.symlink(File.expand_path('fish'), FISH)
+  end
+end
+
+cursor_files_and_folders = %w{keybindings.json settings.json snippets}
+
+desc 'Create symlink for Cursor'
+task :cursor do
+  # Get folder for cursor config file
+  cursor_folder = File.dirname CURSOR
+  # Check if cursor directory exists and if not, create it
+  if not File.exists? cursor_folder
+    puts "Making directory #{cursor_folder}"
+    Dir.mkdir cursor_folder
+  end
+  puts 'Making symlink for cursor'
+  for file_or_folder_name in cursor_files_and_folders
+    file_or_folder = File.expand_path("cursor/#{file_or_folder_name}")
+    if File.exists? File.join(CURSOR, file_or_folder_name)
+      puts "#{file_or_folder} already exists, skipping"
+    else
+      File.symlink(file_or_folder, File.join(CURSOR, file_or_folder_name))
+      puts "Made symlink in cursor for #{file_or_folder_name}"
+    end
   end
 end
