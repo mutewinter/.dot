@@ -2,238 +2,238 @@
 // Place your key bindings in this file to override the defaults
 [
   {
-    "key": "f3",
     "command": "-editor.action.nextMatchFindAction",
+    "key": "f3",
     "when": "editorFocus"
   },
   {
-    "key": "f3",
     "command": "-workbench.action.terminal.findNext",
+    "key": "f3",
     "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
   },
   {
-    "key": "f3",
     "command": "-list.find",
+    "key": "f3",
     "when": "listFocus && listSupportsFind"
   },
   {
-    "key": "f3",
     "command": "-list.find.replInputFocus",
+    "key": "f3",
     "when": "view == 'workbench.panel.repl.view'"
   },
   {
-    "key": "f4",
     "command": "-references-view.next",
+    "key": "f4",
     "when": "reference-list.hasResult && references-view.canNavigate"
   },
   {
-    "key": "f4",
     "command": "-search.action.focusNextSearchResult",
+    "key": "f4",
     "when": "hasSearchResult || inSearchEditor"
   },
   {
-    "key": "f4",
     "command": "-goToNextReference",
+    "key": "f4",
     "when": "inReferenceSearchEditor || referenceSearchVisible"
   },
   {
-    "key": "cmd+down",
     "command": "-workbench.action.terminal.focus",
+    "key": "cmd+down",
     "when": "accessibilityModeEnabled && accessibleViewOnLastLine && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewOnLastLine && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
   },
   {
-    "key": "f3",
     "command": "workbench.action.focusActiveEditorGroup",
+    "key": "f3",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+escape",
     "command": "-workbench.action.focusActiveEditorGroup",
+    "key": "ctrl+escape",
     "when": "terminalFocus"
   },
   {
-    "key": "f4",
     "command": "workbench.action.terminal.focusAtIndex1",
+    "key": "f4",
     "when": "terminal.active"
   },
   {
-    "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal",
+    "key": "ctrl+`",
     "when": "terminal.active"
   },
   {
-    "key": "alt+w",
-    "command": "workbench.action.closeEditorsInGroup"
+    "command": "workbench.action.closeEditorsInGroup",
+    "key": "alt+w"
   },
   {
-    "key": "alt+k",
     "command": "-editor.action.accessibilityHelpConfigureKeybindings",
+    "key": "alt+k",
     "when": "accessibilityHelpIsShown && accessibleViewHasUnassignedKeybindings"
   },
   {
-    "key": "alt+k",
     "command": "workbench.action.navigateUp",
+    "key": "alt+k",
     "when": "neovim.mode != 'cmdline'"
   },
   {
-    "key": "ctrl+w up",
     "command": "-workbench.action.navigateUp",
+    "key": "ctrl+w up",
     "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
   },
   {
-    "key": "alt+j",
     "command": "workbench.action.navigateDown",
+    "key": "alt+j",
     "when": "neovim.mode != 'cmdline'"
   },
   {
-    "key": "ctrl+w down",
     "command": "-workbench.action.navigateDown",
+    "key": "ctrl+w down",
     "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
   },
   {
-    "key": "alt+h",
     "command": "-editor.action.accessibilityHelpOpenHelpLink",
+    "key": "alt+h",
     "when": "accessibilityHelpIsShown"
   },
   {
-    "key": "alt+h",
     "command": "-testing.toggleTestingPeekHistory",
+    "key": "alt+h",
     "when": "testing.isPeekVisible"
   },
   {
-    "key": "alt+h",
     "command": "workbench.action.navigateLeft",
+    "key": "alt+h",
     "when": "neovim.mode != 'cmdline'"
   },
   {
-    "key": "ctrl+w left",
     "command": "-workbench.action.navigateLeft",
+    "key": "ctrl+w left",
     "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
   },
   {
-    "key": "alt+l",
     "command": "workbench.action.navigateRight",
+    "key": "alt+l",
     "when": "neovim.mode != 'cmdline'"
   },
   {
-    "key": "ctrl+w right",
     "command": "-workbench.action.navigateRight",
+    "key": "ctrl+w right",
     "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
   },
   {
-    "key": "shift+enter",
     "command": "-editor.action.previousMatchFindAction",
+    "key": "shift+enter",
     "when": "editorFocus && findInputFocussed"
   },
   {
-    "key": "shift+enter",
-    "command": "find-it-faster.findFiles"
+    "command": "find-it-faster.findFiles",
+    "key": "shift+enter"
   },
   {
-    "key": "shift+cmd+j",
-    "command": "-find-it-faster.findFiles"
+    "command": "-find-it-faster.findFiles",
+    "key": "shift+cmd+j"
   },
   {
-    "key": "alt+o",
     "command": "workbench.action.togglePanel",
+    "key": "alt+o",
     "when": "editorFocus"
   },
   {
-    "key": "alt+o",
     "command": "workbench.action.toggleMaximizedPanel",
+    "key": "alt+o",
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+r cmd+m",
     "command": "-workbench.action.toggleMaximizeEditorGroup",
+    "key": "cmd+r cmd+m",
     "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
   },
   {
-    "key": "alt+j",
     "command": "workbench.action.terminal.focusNextPane",
+    "key": "alt+j",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
+    "command": "-workbench.action.terminal.focusNextPane",
     "key": "alt+cmd+down",
-    "command": "-workbench.action.terminal.focusNextPane",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "alt+k",
     "command": "workbench.action.terminal.focusPreviousPane",
+    "key": "alt+k",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
+    "command": "-workbench.action.terminal.focusPreviousPane",
     "key": "alt+cmd+up",
-    "command": "-workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
+    "command": "workbench.action.terminal.split",
     "key": "ctrl+a h",
-    "command": "workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
   {
+    "command": "workbench.action.terminal.split",
     "key": "ctrl+a v",
-    "command": "workbench.action.terminal.split",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
   {
-    "key": "cmd+\\",
     "command": "-workbench.action.terminal.split",
+    "key": "cmd+\\",
     "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
   },
   {
-    "key": "alt+cmd+right",
     "command": "-workbench.action.terminal.focusNextPane",
+    "key": "alt+cmd+right",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "alt+cmd+left",
     "command": "-workbench.action.terminal.focusPreviousPane",
+    "key": "alt+cmd+left",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "alt+left",
     "command": "-breadcrumbs.focusPrevious",
+    "key": "alt+left",
     "when": "breadcrumbsActive && breadcrumbsVisible"
   },
   {
-    "key": "alt+left",
     "command": "-breadcrumbs.focusPreviousWithPicker",
+    "key": "alt+left",
     "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused"
   },
   {
-    "key": "alt+left",
     "command": "-cursorWordLeft",
+    "key": "alt+left",
     "when": "textInputFocus"
   },
   {
-    "key": "alt+left",
-    "command": "workbench.action.increaseViewWidth"
+    "command": "workbench.action.increaseViewWidth",
+    "key": "alt+left"
   },
   {
-    "key": "shift+alt+f5",
     "command": "-workbench.action.editor.previousChange",
+    "key": "shift+alt+f5",
     "when": "editorTextFocus && !textCompareEditorActive"
   },
   {
-    "key": "f5",
     "command": "-workbench.action.debug.start",
+    "key": "f5",
     "when": "debuggersAvailable && debugState == 'inactive'"
   },
   {
-    "key": "f5",
     "command": "workbench.action.terminal.focusAtIndex2",
+    "key": "f5",
     "when": "terminal.active"
   },
   {
-    "key": "f6",
     "command": "workbench.action.terminal.focusAtIndex3",
+    "key": "f6",
     "when": "terminal.active"
   },
   {
-    "key": "f6",
-    "command": "-workbench.action.focusNextPart"
+    "command": "-workbench.action.focusNextPart",
+    "key": "f6"
   }
 ]
