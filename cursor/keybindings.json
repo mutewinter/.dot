@@ -119,5 +119,18 @@
     "key": "ctrl+w right",
     "command": "-workbench.action.navigateRight",
     "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "shift+enter",
+    "command": "find-it-faster.findFiles"
+  },
+  {
+    "key": "shift+cmd+j",
+    "command": "-find-it-faster.findFiles"
   }
 ]
