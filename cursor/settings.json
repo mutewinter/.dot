@@ -142,5 +142,5 @@
   "workbench.activityBar.location": "top",
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorTheme": "Jellybeans+",
-  "workbench.editor.showTabs": "single"
+  "workbench.editor.showTabs": "none"
 }
