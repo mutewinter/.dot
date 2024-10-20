@@ -139,9 +139,43 @@
     "key": "shift+cmd+j"
   },
   {
-    "command": "workbench.action.togglePanel",
+    "args": {
+      "commands": [
+        "workbench.action.togglePanel",
+        {
+          "args": {
+            "command": "workbench.action.focusActiveEditorGroup",
+            // Delay needed or else focus happens too soon
+            "delay": 50
+          },
+          "command": "delayedcommand.run"
+        }
+      ]
+    },
+    // Toggle display of panel while maintaining focus on editor
+    "command": "runCommands",
     "key": "alt+o",
     "when": "editorFocus"
+  },
+  {
+    "args": {
+      "commands": [
+        "workbench.action.togglePanel",
+        "workbench.action.toggleAuxiliaryBar",
+        {
+          "args": {
+            "command": "workbench.action.focusActiveEditorGroup",
+            // Delay needed or else focus happens too soon
+            "delay": 50
+          },
+          "command": "delayedcommand.run"
+        }
+      ]
+    },
+    // Toggle display of panel and auxiliary bar (AI chat) while maintaining focus on editor
+    "command": "runCommands",
+    "key": "alt+o",
+    "when": "editorFocus && auxiliaryBarVisible"
   },
   {
     "command": "workbench.action.toggleMaximizedPanel",
@@ -240,5 +274,17 @@
   {
     "command": "-workbench.action.focusNextPart",
     "key": "f6"
+  },
+  {
+    "command": "workbench.action.openView",
+    "key": "alt+i"
+  },
+  {
+    "command": "-workbench.action.chat.open",
+    "key": "ctrl+cmd+i"
+  },
+  {
+    "command": "aichat.focuschatpaneaction",
+    "key": "f7"
   }
 ]
