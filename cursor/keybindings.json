@@ -43,8 +43,7 @@
   },
   {
     "command": "workbench.action.focusActiveEditorGroup",
-    "key": "f3",
-    "when": "terminalFocus"
+    "key": "f3"
   },
   {
     "command": "-workbench.action.focusActiveEditorGroup",
