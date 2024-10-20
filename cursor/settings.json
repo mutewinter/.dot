@@ -120,12 +120,16 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
+  "editor.smoothScrolling": true,
   "editor.tabSize": 2,
+  "explorer.autoReveal": "focusNoScroll",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.experimental.affinity": {
@@ -145,9 +149,5 @@
   "workbench.activityBar.location": "top",
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorTheme": "Jellybeans+",
-  "workbench.editor.showTabs": "none",
-  "explorer.autoReveal": "focusNoScroll",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.smoothScrolling": true,
-  "editor.cursorBlinking": "solid"
+  "workbench.editor.showTabs": "none"
 }
