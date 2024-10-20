@@ -39,7 +39,7 @@ abbr y yarn
 alias cwselect="cw tail -f -n -t \$(cw ls groups | fzf -m | tr '\n' ' ')"
 
 # Aider
-alias aider="python -m aider"
+alias aider="python -m aider --env-file ~/.dot/.aider.env"
 
 # Copilot CLI
 abbr wts gh copilot suggest
