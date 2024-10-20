@@ -38,5 +38,8 @@ abbr y yarn
 # CW
 alias cwselect="cw tail -f -n -t \$(cw ls groups | fzf -m | tr '\n' ' ')"
 
+# Aider
+alias aider="python -m aider"
+
 # Copilot CLI
 abbr wts gh copilot suggest
