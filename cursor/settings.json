@@ -81,6 +81,7 @@
     "sourcecodepro",
     "sourcemap",
     "sparkline",
+    "sqltools",
     "statelyai",
     "stylelint",
     "submodule",
@@ -144,6 +145,13 @@
   "find-it-faster.general.shellPathForTerminal": "/bin/bash",
   "find-it-faster.general.useTerminalInEditor": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "search.exclude": {
+    "**/*.code-search": true,
+    "**/bower_components": true,
+    "**/node_modules": true,
+    "**/.yarn/releases/*": true,
+    "**/yarn.lock": true
+  },
   "sqltools.useNodeRuntime": true,
   "tailwindCSS.experimental.classRegex": [
     ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
