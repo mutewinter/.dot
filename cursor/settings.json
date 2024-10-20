@@ -144,6 +144,10 @@
   "find-it-faster.general.shellPathForTerminal": "/bin/bash",
   "find-it-faster.general.useTerminalInEditor": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "sqltools.useNodeRuntime": true,
+  "tailwindCSS.experimental.classRegex": [
+    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
   "terminal.integrated.fontSize": 15,
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
