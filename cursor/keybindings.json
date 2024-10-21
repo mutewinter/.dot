@@ -284,7 +284,17 @@
     "key": "ctrl+cmd+i"
   },
   {
-    "command": "aichat.focuschatpaneaction",
+    "command": "workbench.action.toggleAuxiliaryBar",
     "key": "f7"
+  },
+  {
+    "command": "workbench.action.chat.newChat",
+    "key": "cmd+n",
+    "when": "chatIsEnabled && inChat"
+  },
+  {
+    "command": "-workbench.action.chat.newChat",
+    "key": "ctrl+l",
+    "when": "chatIsEnabled && inChat"
   }
 ]
