@@ -288,13 +288,21 @@
     "key": "f7"
   },
   {
-    "command": "workbench.action.chat.newChat",
-    "key": "cmd+n",
-    "when": "chatIsEnabled && inChat"
+    // Focus the terminal when in editor and auxiliary pane not open
+    "command": "workbench.action.terminal.focus",
+    "key": "alt+,",
+    "when": "editorFocus && !auxiliaryBarVisible"
   },
   {
-    "command": "-workbench.action.chat.newChat",
-    "key": "ctrl+l",
-    "when": "chatIsEnabled && inChat"
+    // Focus the terminal when in editor
+    "command": "workbench.action.focusAuxiliaryBar",
+    "key": "alt+,",
+    "when": "editorFocus && auxiliaryBarVisible"
+  },
+  {
+    // Focus the editor when terminal has focus
+    "command": "workbench.action.focusLastEditorGroup",
+    "key": "alt+,",
+    "when": "terminalFocus"
   }
 ]
