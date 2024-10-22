@@ -169,6 +169,12 @@
   "window.commandCenter": true,
   "workbench.activityBar.location": "top",
   "workbench.activityBar.orientation": "vertical",
+  "workbench.colorCustomizations": {
+    // Visible current line
+    "editor.lineHighlightBackground": "#ffffff0A",
+    // Stop the overbearing highlight of entire strings
+    "editor.wordHighlightBackground": "#00000000"
+  },
   "workbench.colorTheme": "Jellybeans+",
   "workbench.editor.showTabs": "none",
   "workbench.panel.defaultLocation": "right"
