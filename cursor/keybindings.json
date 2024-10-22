@@ -301,7 +301,7 @@
   },
   {
     // Focus the editor when terminal has focus
-    "command": "workbench.action.focusLastEditorGroup",
+    "command": "workbench.action.focusActiveEditorGroup",
     "key": "alt+,",
     "when": "terminalFocus"
   }
