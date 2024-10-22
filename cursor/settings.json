@@ -153,9 +153,9 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "search.exclude": {
     "**/*.code-search": true,
+    "**/.yarn/releases/*": true,
     "**/bower_components": true,
     "**/node_modules": true,
-    "**/.yarn/releases/*": true,
     "**/yarn.lock": true
   },
   "sqltools.useNodeRuntime": true,
@@ -170,5 +170,6 @@
   "workbench.activityBar.location": "top",
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorTheme": "Jellybeans+",
-  "workbench.editor.showTabs": "none"
+  "workbench.editor.showTabs": "none",
+  "workbench.panel.defaultLocation": "right"
 }
