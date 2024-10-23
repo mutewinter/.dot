@@ -125,6 +125,7 @@
     "zustand"
   ],
   "chat.editor.fontSize": 15,
+  "cursor.cmdk.useThemedDiffBackground": true,
   "debug.console.fontSize": 15,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.accessibilitySupport": "off",
