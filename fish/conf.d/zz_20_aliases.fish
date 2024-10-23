@@ -35,6 +35,9 @@ abbr n npm
 # Yarn
 abbr y yarn
 
+# pnpm
+abbr p pnpm
+
 # CW
 alias cwselect="cw tail -f -n -t \$(cw ls groups | fzf -m | tr '\n' ' ')"
 
