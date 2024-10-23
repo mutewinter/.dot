@@ -284,8 +284,16 @@
     "key": "ctrl+cmd+i"
   },
   {
+    // If already open, just focus it
+    "command": "workbench.action.focusAuxiliaryBar",
+    "key": "f7",
+    "when": "auxiliaryBarVisible"
+  },
+  {
+    // If not open, toggle it
     "command": "workbench.action.toggleAuxiliaryBar",
-    "key": "f7"
+    "key": "f7",
+    "when": "!auxiliaryBarVisible"
   },
   {
     // Focus the terminal when in editor and auxiliary pane not open
