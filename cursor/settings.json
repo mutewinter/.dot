@@ -169,6 +169,7 @@
   "terminal.integrated.fontSize": 15,
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "vscode_custom_css.imports": ["file://${userHome}/.dot/cursor/styles.css"],
   "window.commandCenter": true,
   "workbench.activityBar.location": "top",
   "workbench.activityBar.orientation": "vertical",

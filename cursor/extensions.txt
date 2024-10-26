@@ -1,4 +1,5 @@
 asvetliakov.vscode-neovim
+be5invis.vscode-custom-css
 bradlc.vscode-tailwindcss
 dbaeumer.vscode-eslint
 esbenp.prettier-vscode

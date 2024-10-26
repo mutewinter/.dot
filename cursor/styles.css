@@ -1,0 +1,26 @@
+:root {
+  --active-focus-border-color: #8197bf;
+}
+
+.terminal {
+  border-bottom: 3px solid var(--active-focus-border-color);
+}
+
+.terminal:not(.focus) {
+  border-color: transparent;
+}
+
+:is(
+  .editor-group-container,
+  #workbench\.parts\.sidebar,
+  #workbench\.parts\.activitybar,
+):has(:focus):before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-bottom: 3px solid var(--active-focus-border-color);
+  pointer-events: none;
+}
