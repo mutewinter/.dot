@@ -7,6 +7,7 @@ esbenp.prettier-vscode
 fill-labs.dependi
 github.vscode-github-actions
 github.vscode-pull-request-github
+johnpapa.vscode-peacock
 joshmu.periscope
 kricsleo.vscode-package-json-inspector
 ms-vsliveshare.vsliveshare

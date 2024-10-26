@@ -158,6 +158,20 @@
   "find-it-faster.general.shellPathForTerminal": "/bin/bash",
   "find-it-faster.general.useTerminalInEditor": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "peacock.favoriteColors": [
+    {
+      "name": "Dark Yellow",
+      "value": "#281e07"
+    },
+    {
+      "name": "Black",
+      "value": "#000000"
+    },
+    {
+      "name": "Dark Green",
+      "value": "#3b4c15"
+    }
+  ],
   "search.exclude": {
     "**/*.code-search": true,
     "**/.yarn/releases/*": true,
