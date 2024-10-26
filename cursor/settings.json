@@ -1,6 +1,8 @@
 // vim: ft=jsonc
 {
   "[markdown]": {
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.wordWrap": "off"
   },
   "cSpell.userWords": [
@@ -131,7 +133,8 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.accessibilitySupport": "off",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.markdownlint": "explicit"
   },
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
