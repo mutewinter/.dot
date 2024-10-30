@@ -209,6 +209,16 @@
     "when": "terminalFocus && panelMaximized"
   },
   {
+    "command": "workbench.action.positionPanelRight",
+    "key": "f8",
+    "when": "panelPosition != 'right'"
+  },
+  {
+    "command": "workbench.action.positionPanelBottom",
+    "key": "f8",
+    "when": "panelPosition == 'right'"
+  },
+  {
     "command": "-workbench.action.toggleMaximizeEditorGroup",
     "key": "cmd+r cmd+m",
     "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
@@ -323,5 +333,10 @@
     "command": "workbench.action.focusActiveEditorGroup",
     "key": "alt+,",
     "when": "terminalFocus"
+  },
+  {
+    "command": "-editor.action.marker.nextInFiles",
+    "key": "f8",
+    "when": "editorFocus"
   }
 ]
