@@ -178,9 +178,35 @@
     "when": "editorFocus && auxiliaryBarVisible"
   },
   {
-    "command": "workbench.action.toggleMaximizedPanel",
+    "args": {
+      "commands": [
+        "workbench.action.positionPanelBottom",
+        {
+          "args": {
+            "command": "workbench.action.toggleMaximizedPanel",
+            // Delay needed or else focus happens too soon
+            "delay": 50
+          },
+          "command": "delayedcommand.run"
+        },
+        "workbench.action.terminal.focus"
+      ]
+    },
+    "command": "runCommands",
     "key": "alt+o",
-    "when": "terminalFocus"
+    "when": "terminalFocus && !panelMaximized"
+  },
+  {
+    "args": {
+      "commands": [
+        "workbench.action.positionPanelRight",
+        "workbench.action.toggleMaximizedPanel",
+        "workbench.action.terminal.focus"
+      ]
+    },
+    "command": "runCommands",
+    "key": "alt+o",
+    "when": "terminalFocus && panelMaximized"
   },
   {
     "command": "-workbench.action.toggleMaximizeEditorGroup",
