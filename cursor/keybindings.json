@@ -276,7 +276,7 @@
     "key": "f6"
   },
   {
-    "command": "workbench.action.openView",
+    "command": "workbench.action.openRecent",
     "key": "alt+i"
   },
   {
