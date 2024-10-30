@@ -239,6 +239,16 @@
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "key": "alt+h",
+    "when": "terminalFocus && panelMaximized && panelPosition == 'bottom'"
+  },
+  {
+    "command": "workbench.action.terminal.focusNextPane",
+    "key": "alt+l",
+    "when": "terminalFocus && panelMaximized && panelPosition == 'bottom'"
+  },
+  {
     "command": "-workbench.action.terminal.focusPreviousPane",
     "key": "alt+cmd+up",
     "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
