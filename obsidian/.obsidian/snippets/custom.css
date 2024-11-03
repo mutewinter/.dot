@@ -1,0 +1,80 @@
+:root {
+  --default-font: 'Menlo', monospace !important;
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="terminal"],
+.tag[href^="#terminal"]
+  {
+  background-color: rgb(0, 0, 0);
+  color: rgb(120, 120, 120);
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="obsidian"],
+.tag[href^="#obsidian"]
+  {
+  background-color: rgb(19, 0, 73);
+  color: rgb(163, 167, 251);
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="mac"],
+.tag[href^="#mac"]
+  {
+  background-color: rgb(200, 200, 200);
+  color: black;
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="vim"],
+.tag[href^="#vim"]
+  {
+  background-color: rgb(0, 100, 0);
+  color: rgb(0, 255, 0);
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="bug"],
+.tag[href^="#bug"]
+  {
+  background-color: rgb(100, 0, 0);
+  color: #f87171;
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="ai"],
+.tag[href^="#ai"]
+  {
+  background-color: #1E3F5B;
+  color: #7B9BCA;
+}
+
+/* Highlight the current line */
+.cm-active.cm-line {
+  background-color: #99999911;
+}
+
+/* Task size tags (green, blue, yellow, orange) */
+.cm-s-obsidian span.cm-hashtag[class$="S"],
+.tag[href^="#S"]
+  {
+  background-color: #46a758;
+  color: #c2f0c2;
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="M"],
+.tag[href^="#M"]
+  {
+  background-color: #0190ff;
+  color: #c2e6ff;
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="L"],
+.tag[href^="#L"]
+  {
+  background-color: #ffe62a;
+  color: #2d2305;
+}
+
+.cm-s-obsidian span.cm-hashtag[class$="XL"],
+.tag[href^="#XL"]
+  {
+  background-color: #ef5f01;
+  color: #ffe0c2;
+}
+

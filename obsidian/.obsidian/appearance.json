@@ -1,0 +1,13 @@
+{
+  "baseFontSize": 16,
+  "enabledCssSnippets": [
+    "custom"
+  ],
+  "cssTheme": "",
+  "accentColor": "#76bb40",
+  "theme": "system",
+  "interfaceFontFamily": "Menlo,SauceCodePro Nerd Font",
+  "textFontFamily": "Menlo,SauceCodePro Nerd Font",
+  "translucency": false,
+  "monospaceFontFamily": ""
+}

@@ -1,0 +1,51 @@
+{
+  "fileSortOrder": "byModifiedTime",
+  "vimMode": true,
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "spellcheck": true,
+  "useTab": false,
+  "showLineNumber": false,
+  "mobileToolbarCommands": [
+    "editor:delete-paragraph",
+    "insert-template",
+    "editor:cycle-list-checklist",
+    "editor:indent-list",
+    "editor:unindent-list",
+    "auto-card-link:auto-card-link-paste-and-enhance",
+    "insert-current-date",
+    "editor:undo",
+    "editor:redo",
+    "insert-current-time",
+    "editor:insert-wikilink",
+    "editor:insert-link",
+    "editor:set-heading",
+    "editor:swap-line-up",
+    "editor:swap-line-down",
+    "editor:attach-file",
+    "editor:toggle-bold",
+    "editor:toggle-highlight",
+    "editor:toggle-code",
+    "editor:toggle-blockquote",
+    "editor:insert-codeblock",
+    "editor:configure-toolbar",
+    "editor:paste"
+  ],
+  "mobilePullAction": "command-palette:open",
+  "tabSize": 4,
+  "attachmentFolderPath": "attachments",
+  "legacyEditor": false,
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 50
+  },
+  "defaultViewMode": "source",
+  "showInlineTitle": false,
+  "autoPairMarkdown": false,
+  "autoPairBrackets": false,
+  "userIgnoreFilters": [
+    "archive/"
+  ]
+}
