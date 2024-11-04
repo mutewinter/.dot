@@ -58,6 +58,10 @@ nmap ,nn :toggleLeftSidebar<CR>
 exmap revealActiveFile obcommand file-explorer:reveal-active-file
 nmap ,nf :revealActiveFile<CR>
 
+" Show bookmarks
+exmap showBookmarks obcommand bookmarks:open
+nmap ,nb :showBookmarks<CR>
+
 " Toggle right sidebar
 exmap toggleRightSidebar obcommand app:toggle-right-sidebar
 nmap <F7> :toggleRightSidebar<CR>
