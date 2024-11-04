@@ -5,6 +5,10 @@
     "editor.formatOnSave": true,
     "editor.wordWrap": "off"
   },
+  "[mdx]": {
+    // Prettier can cause MDX formatting to become invalid
+    "editor.formatOnSave": false
+  },
   "cSpell.userWords": [
     "aipreview",
     "Alacritty",
