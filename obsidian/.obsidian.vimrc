@@ -70,8 +70,7 @@ nmap <F7> :toggleRightSidebar<CR>
 " Search
 " ------
 
-" Open file
-" switcher:open
+" Open file (if shift-enter is not working)
 exmap openFile obcommand switcher:open
 nmap ,ff :openFile<CR>
 
