@@ -14,6 +14,13 @@ set obsidian_files \
 function mirror_obsidian_config
   # Get source and target directories from the arguments
   set src_dir $argv[1]
+
+  # If src_dir is not provided, exit
+  if test -z $src_dir
+    echo "Usage: mirror_obsidian_config <source_dir>"
+    return 1
+  end
+
   # Strip extra slashes from the end of the source directory
   set src_dir (string match -r '(.*)/' $src_dir)[2]
 
