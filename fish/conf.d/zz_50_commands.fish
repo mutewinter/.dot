@@ -1,4 +1,4 @@
-# Usage: mirror_obsidian_config <source_dir>
+# Usage: obsidian_config_sync <source_dir>
 
 # Shift the arguments to get the list of files
 set obsidian_files \
@@ -11,13 +11,13 @@ set obsidian_files \
   .obsidian/core-plugins.json \
   .obsidian/hotkeys.json
 
-function mirror_obsidian_config
+function obsidian_config_sync
   # Get source and target directories from the arguments
   set src_dir $argv[1]
 
   # If src_dir is not provided, exit
   if test -z $src_dir
-    echo "Usage: mirror_obsidian_config <source_dir>"
+    echo "Usage: obsidian_config_sync <source_dir>"
     return 1
   end
 
