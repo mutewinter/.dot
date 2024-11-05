@@ -3,8 +3,6 @@ gui:
   theme:
     selectedLineBgColor:
       - reverse
-    selectedRangeBgColor:
-      - reverse
   showIcons: true
 git:
   paging:
