@@ -25,6 +25,9 @@ vmap L $
 " Hat-tip http://vimbits.com/bits/11
 nmap Y y$
 
+" Yank entire file
+nmap gy mzgg"+yG`z
+
 " Fast scroll with arrow keys
 nmap <Up> 15gk
 nmap <Down> 15gj
