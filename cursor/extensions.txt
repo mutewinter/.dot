@@ -3,6 +3,7 @@ be5invis.vscode-custom-css
 bradlc.vscode-tailwindcss
 davidanson.vscode-markdownlint
 dbaeumer.vscode-eslint
+ellreka.tailwindcss-highlight
 esbenp.prettier-vscode
 fill-labs.dependi
 github.vscode-github-actions
@@ -13,10 +14,12 @@ kricsleo.vscode-package-json-inspector
 ms-vsliveshare.vsliveshare
 mtxr.sqltools
 mtxr.sqltools-driver-sqlite
+schoero.vscode-tailwindcss-syntax-highlighting
 siwatts.jellybeans-vim-theme
 sqreept.delayedcommand
 streetsidesoftware.code-spell-checker
 tompollak.lazygit-vscode
 tomrijndorp.find-it-faster
 usernamehw.errorlens
+vitest.explorer
 yoavbls.pretty-ts-errors
