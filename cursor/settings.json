@@ -155,6 +155,7 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "files.autoSave": "onFocusChange",
   "files.refactoring.autoSave": false,
   "find-it-faster.advanced.disableStartupChecks": true,
   "find-it-faster.general.batTheme": "Visual Studio Dark+",
