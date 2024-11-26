@@ -206,5 +206,6 @@
   },
   "workbench.colorTheme": "Jellybeans+",
   "workbench.editor.showTabs": "none",
-  "workbench.panel.defaultLocation": "right"
+  "workbench.panel.defaultLocation": "right",
+  "workbench.preferredDarkColorTheme": "Jellybeans+"
 }
