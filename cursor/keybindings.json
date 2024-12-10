@@ -209,6 +209,10 @@
     "when": "terminalFocus && panelMaximized"
   },
   {
+    "command": "workbench.action.quickSwitchWindow",
+    "key": "alt+n"
+  },
+  {
     "command": "workbench.action.positionPanelRight",
     "key": "f8",
     "when": "panelPosition != 'right'"
