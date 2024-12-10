@@ -210,5 +210,9 @@
   "workbench.colorTheme": "Jellybeans+",
   "workbench.editor.showTabs": "none",
   "workbench.panel.defaultLocation": "right",
-  "workbench.preferredDarkColorTheme": "Jellybeans+"
+  "workbench.preferredDarkColorTheme": "Jellybeans+",
+  "lazygit-vscode.autoMaximizeWindow": true,
+  "lazygit-vscode.autoHidePanel": true,
+  "terminal.integrated.shellIntegration.history": 1000,
+  "git.confirmSync": false
 }
