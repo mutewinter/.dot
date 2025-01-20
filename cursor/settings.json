@@ -192,6 +192,7 @@
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 15,
+  "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.tabs.enabled": false,
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
