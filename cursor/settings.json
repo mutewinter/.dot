@@ -9,6 +9,7 @@
     // Prettier can cause MDX formatting to become invalid
     "editor.formatOnSave": false
   },
+  "breadcrumbs.symbolPath": "off",
   "cSpell.userWords": [
     "aipreview",
     "Alacritty",
