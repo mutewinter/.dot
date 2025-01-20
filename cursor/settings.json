@@ -171,6 +171,8 @@
   "find-it-faster.general.killTerminalAfterUse": true,
   "find-it-faster.general.shellPathForTerminal": "/bin/bash",
   "find-it-faster.general.useTerminalInEditor": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "peacock.favoriteColors": [
     {
