@@ -298,8 +298,16 @@
     "when": "textInputFocus"
   },
   {
-    "command": "workbench.action.increaseViewWidth",
+    "command": "workbench.action.decreaseViewWidth",
     "key": "alt+left"
+  },
+  {
+    "command": "workbench.action.evenEditorWidths",
+    "key": "alt+="
+  },
+  {
+    "command": "workbench.action.increaseViewWidth",
+    "key": "alt+right"
   },
   {
     "command": "-workbench.action.editor.previousChange",
@@ -326,8 +334,12 @@
     "key": "f6"
   },
   {
-    "command": "workbench.action.openRecent",
+    "command": "workbench.action.switchWindow",
     "key": "alt+i"
+  },
+  {
+    "command": "workbench.action.openRecent",
+    "key": "alt+shift+i"
   },
   {
     "command": "-workbench.action.chat.open",
