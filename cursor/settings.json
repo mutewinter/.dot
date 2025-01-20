@@ -203,12 +203,13 @@
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 15,
+  "terminal.integrated.shellIntegration.history": 1000,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.tabs.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vscode_custom_css.imports": ["file://${userHome}/.dot/cursor/styles.css"],
   "window.commandCenter": false,
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "bottom",
   "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
     "editor.background": "#090909",
@@ -219,11 +220,9 @@
     "terminal.background": "#090909"
   },
   "workbench.colorTheme": "Jellybeans+",
+  "workbench.editor.enablePreview": false,
   "workbench.editor.showTabs": "none",
   "workbench.panel.defaultLocation": "right",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
-  "lazygit-vscode.autoMaximizeWindow": true,
-  "lazygit-vscode.autoHidePanel": true,
-  "terminal.integrated.shellIntegration.history": 1000,
-  "git.confirmSync": false
+  "workbench.sideBar.location": "right"
 }
