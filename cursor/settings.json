@@ -156,6 +156,7 @@
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 7,
   "editor.smoothScrolling": true,
+  "editor.snippetSuggestions": "none",
   "editor.tabSize": 2,
   "explorer.autoReveal": "focusNoScroll",
   "explorer.confirmDelete": false,
