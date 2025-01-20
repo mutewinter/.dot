@@ -45,7 +45,11 @@
       {"code": 8, "label": {"base": "e", "shifted": "E"}},
       {"code": 21, "label": {"base": "r", "shifted": "R"}},
       {"code": 23, "label": {"base": "t", "shifted": "T"}},
-      {"code": 43, "label": {"base": "Tab"}},
+      {
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
+      },
       {"code": 42, "label": {"base": {"full": "Backspace", "1u": "Bksp"}}},
       {"code": 44, "label": {"base": "Space"}},
       {"code": 40, "label": {"base": "Enter"}},
@@ -756,11 +760,7 @@
         "label": {"base": {"full": "Transparent", "1u": " "}},
         "categories": ["blanks"]
       },
-      {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
-      },
+      {"code": 43, "label": {"base": "Tab"}},
       {
         "code": 231,
         "label": {"base": {"full": "Command", "1u": "Cmd", "short": "Cm"}},
@@ -821,9 +821,9 @@
         "categories": ["modifier"]
       },
       {
-        "code": 225,
+        "code": 229,
         "label": {"base": "Shift"},
-        "location": "left",
+        "location": "right",
         "categories": ["modifier"]
       },
       {
