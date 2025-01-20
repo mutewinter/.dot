@@ -205,7 +205,6 @@
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.tabs.enabled": false,
-  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vscode_custom_css.imports": ["file://${userHome}/.dot/cursor/styles.css"],
   "window.commandCenter": false,
