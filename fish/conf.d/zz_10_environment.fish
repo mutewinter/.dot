@@ -4,6 +4,7 @@ end
 
 # What a world
 set -gx SCARF_ANALYTICS "false"
+set -gx DO_NOT_TRACK "1"
 
 set -gx HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
 
