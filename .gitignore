@@ -4,3 +4,4 @@ system_environment.sh
 fish/fish_variables
 fish/fish_history
 .aider*
+fish/conf.d/zz_60_system.fish
