@@ -10,6 +10,7 @@
     "editor.formatOnSave": false
   },
   "breadcrumbs.symbolPath": "off",
+  "cSpell.numSuggestions": 2,
   "cSpell.userWords": [
     "aipreview",
     "Alacritty",
