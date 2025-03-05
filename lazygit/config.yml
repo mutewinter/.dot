@@ -3,7 +3,7 @@ gui:
   theme:
     selectedLineBgColor:
       - reverse
-  showIcons: true
+  nerdFontsVersion: "3"
 git:
   paging:
     colorArg: always
