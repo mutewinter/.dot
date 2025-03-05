@@ -170,7 +170,7 @@
   "files.autoSave": "onFocusChange",
   "files.refactoring.autoSave": false,
   "find-it-faster.advanced.disableStartupChecks": true,
-  "find-it-faster.general.batTheme": "Visual Studio Dark+",
+  "find-it-faster.general.batTheme": "TwoDark",
   "find-it-faster.general.killTerminalAfterUse": true,
   "find-it-faster.general.shellPathForTerminal": "/bin/bash",
   "find-it-faster.general.useTerminalInEditor": true,
