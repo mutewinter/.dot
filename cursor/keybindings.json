@@ -2,6 +2,11 @@
 // Place your key bindings in this file to override the defaults
 [
   {
+    "command": "undo",
+    "key": "cmd+u",
+    "when": "editorTextFocus"
+  },
+  {
     "command": "-editor.action.nextMatchFindAction",
     "key": "f3",
     "when": "editorFocus"
@@ -386,5 +391,50 @@
     "command": "-editor.action.marker.nextInFiles",
     "key": "f8",
     "when": "editorFocus"
+  },
+  {
+    "command": "redo",
+    "key": "shift+cmd+u"
+  },
+  {
+    "command": "-redo",
+    "key": "shift+cmd+z"
+  },
+  {
+    "command": "-undo",
+    "key": "cmd+z"
+  },
+  {
+    "command": "-cursorUndo",
+    "key": "cmd+u",
+    "when": "textInputFocus"
+  },
+  {
+    "command": "-workbench.action.chat.startVoiceChat",
+    "key": "cmd+i",
+    "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress || chatIsEnabled && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress"
+  },
+  {
+    "command": "-workbench.action.chat.stopListeningAndSubmit",
+    "key": "cmd+i",
+    "when": "inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'view' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'view'"
+  },
+  {
+    "command": "-workbench.action.chat.holdToVoiceChatInChatView",
+    "key": "cmd+i",
+    "when": "chatIsEnabled && hasSpeechProvider && !chatSessionRequestInProgress && !editorFocus && !inChatInput && !inlineChatFocused && !notebookEditorFocused"
+  },
+  {
+    "command": "-editor.action.insertLineBefore",
+    "key": "shift+cmd+enter",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "shift+cmd+enter"
+  },
+  {
+    "command": "-workbench.action.quickOpen",
+    "key": "cmd+p"
   }
 ]
