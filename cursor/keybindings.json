@@ -141,7 +141,8 @@
   {
     "args": {
       "commands": [
-        "workbench.action.togglePanel",
+        "workbench.action.closePanel",
+        "workbench.action.closeSidebar",
         {
           "args": {
             "command": "workbench.action.focusActiveEditorGroup",
@@ -155,13 +156,69 @@
     // Toggle display of panel while maintaining focus on editor
     "command": "runCommands",
     "key": "alt+o",
-    "when": "editorFocus"
+    "when": "editorFocus && (panelVisible || sideBarVisible)"
+  },
+  {
+    "args": {
+      "commands": [
+        "workbench.action.closeSidebar",
+        {
+          "args": {
+            "command": "workbench.action.focusActiveEditorGroup",
+            // Delay needed or else focus happens too soon
+            "delay": 50
+          },
+          "command": "delayedcommand.run"
+        }
+      ]
+    },
+    "command": "runCommands",
+    "key": "alt+o",
+    "when": "editorFocus && !panelVisible && sideBarVisible"
+  },
+  {
+    "args": {
+      "commands": [
+        "workbench.action.closePanel",
+        {
+          "args": {
+            "command": "workbench.action.focusActiveEditorGroup",
+            // Delay needed or else focus happens too soon
+            "delay": 50
+          },
+          "command": "delayedcommand.run"
+        }
+      ]
+    },
+    "command": "runCommands",
+    "key": "alt+o",
+    "when": "editorFocus && panelVisible && !sideBarVisible"
   },
   {
     "args": {
       "commands": [
         "workbench.action.togglePanel",
+        "workbench.action.toggleSidebarVisibility",
+        {
+          "args": {
+            "command": "workbench.action.focusActiveEditorGroup",
+            // Delay needed or else focus happens too soon
+            "delay": 50
+          },
+          "command": "delayedcommand.run"
+        }
+      ]
+    },
+    "command": "runCommands",
+    "key": "alt+o",
+    "when": "editorFocus && !panelVisible && !sideBarVisible"
+  },
+  {
+    "args": {
+      "commands": [
+        "workbench.action.closePanel",
         "workbench.action.toggleAuxiliaryBar",
+        "workbench.action.closeSidebar",
         {
           "args": {
             "command": "workbench.action.focusActiveEditorGroup",
@@ -176,37 +233,6 @@
     "command": "runCommands",
     "key": "alt+o",
     "when": "editorFocus && auxiliaryBarVisible"
-  },
-  {
-    "args": {
-      "commands": [
-        "workbench.action.positionPanelBottom",
-        {
-          "args": {
-            "command": "workbench.action.toggleMaximizedPanel",
-            // Delay needed or else focus happens too soon
-            "delay": 50
-          },
-          "command": "delayedcommand.run"
-        },
-        "workbench.action.terminal.focus"
-      ]
-    },
-    "command": "runCommands",
-    "key": "alt+o",
-    "when": "terminalFocus && !panelMaximized"
-  },
-  {
-    "args": {
-      "commands": [
-        "workbench.action.positionPanelRight",
-        "workbench.action.toggleMaximizedPanel",
-        "workbench.action.terminal.focus"
-      ]
-    },
-    "command": "runCommands",
-    "key": "alt+o",
-    "when": "terminalFocus && panelMaximized"
   },
   {
     "command": "workbench.action.quickSwitchWindow",
