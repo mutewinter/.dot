@@ -200,6 +200,7 @@
     "**/node_modules": true,
     "**/yarn.lock": true
   },
+  "security.promptForLocalFileProtocolHandling": false,
   "sqltools.useNodeRuntime": true,
   "tailwindCSS.experimental.classRegex": [
     ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
