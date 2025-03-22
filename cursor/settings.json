@@ -252,5 +252,6 @@
   "workbench.editor.showTabs": "none",
   "workbench.panel.defaultLocation": "right",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "cursor.cpp.disabledLanguages": []
 }
