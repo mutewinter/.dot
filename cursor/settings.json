@@ -243,6 +243,8 @@
     "editorOverviewRuler.wordHighlightForeground": "#0000",
     "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
     "editorOverviewRuler.wordHighlightTextForeground": "#0000",
+    "minimap.background": "#0000002b",
+    "minimapSlider.background": "#ffffff30",
     "terminal.background": "#090909"
   },
   "workbench.colorTheme": "Jellybeans+",
