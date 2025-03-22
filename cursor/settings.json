@@ -203,7 +203,9 @@
   "security.promptForLocalFileProtocolHandling": false,
   "sqltools.useNodeRuntime": true,
   "tailwindCSS.experimental.classRegex": [
-    ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    //   ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+    // https://github.com/heroui-inc/tailwind-variants/issues/229
+    ["(`.*?`)", "(\".*?\")", "('.*?')"]
   ],
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
