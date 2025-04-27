@@ -9,6 +9,11 @@
     // Prettier can cause MDX formatting to become invalid
     "editor.formatOnSave": false
   },
+  "[typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always"
+    }
+  },
   "breadcrumbs.symbolPath": "off",
   "cSpell.numSuggestions": 2,
   "cSpell.userWords": [
