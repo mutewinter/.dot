@@ -164,7 +164,7 @@
   "editor.snippetSuggestions": "none",
   "editor.suggest.showWords": false,
   "editor.tabSize": 2,
-  "explorer.autoReveal": "focusNoScroll",
+  "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.experimental.affinity": {
