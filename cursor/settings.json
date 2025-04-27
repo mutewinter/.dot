@@ -194,6 +194,7 @@
       "value": "#3b4c15"
     }
   ],
+  "redhat.telemetry.enabled": false,
   "search.exclude": {
     "**/*.code-search": true,
     "**/.yarn/releases/*": true,
