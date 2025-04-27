@@ -1,8 +1,9 @@
 // vim: ft=jsonc
 {
   "[markdown]": {
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
+    "editor.defaultFormatter": null,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
     "editor.wordWrap": "off"
   },
   "[mdx]": {
