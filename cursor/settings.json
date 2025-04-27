@@ -136,6 +136,7 @@
   ],
   "chat.editor.fontSize": 15,
   "cursor.cmdk.useThemedDiffBackground": true,
+  "cursor.cpp.disabledLanguages": [],
   "debug.console.fontSize": 15,
   "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.accessibilitySupport": "off",
@@ -255,6 +256,5 @@
   "workbench.editor.showTabs": "none",
   "workbench.panel.defaultLocation": "right",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
-  "workbench.sideBar.location": "right",
-  "cursor.cpp.disabledLanguages": []
+  "workbench.sideBar.location": "right"
 }
