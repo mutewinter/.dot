@@ -116,3 +116,8 @@ task :cursor do
     end
   end
 end
+
+desc 'Run duti to set file associations'
+task :duti do
+  system 'duti duti.conf'
+end
