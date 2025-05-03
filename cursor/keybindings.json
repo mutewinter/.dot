@@ -346,14 +346,9 @@
     "when": "editorTextFocus && !textCompareEditorActive"
   },
   {
-    "command": "-workbench.action.debug.start",
+    "command": "workbench.action.debug.start",
     "key": "f5",
     "when": "debuggersAvailable && debugState == 'inactive'"
-  },
-  {
-    "command": "workbench.action.terminal.focusAtIndex2",
-    "key": "f5",
-    "when": "terminal.active"
   },
   {
     "command": "workbench.action.terminal.focusAtIndex3",
