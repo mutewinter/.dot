@@ -1,9 +1,9 @@
 // vim: ft=jsonc
 {
   "[markdown]": {
-    "editor.defaultFormatter": null,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": false,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.wordWrap": "off"
   },
   "[mdx]": {
