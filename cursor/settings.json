@@ -170,6 +170,8 @@
   "editor.snippetSuggestions": "none",
   "editor.suggest.showWords": false,
   "editor.tabSize": 2,
+  "emmet.showAbbreviationSuggestions": false,
+  "emmet.showExpandedAbbreviation": "never",
   "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
