@@ -15,6 +15,7 @@
       "source.fixAll": "always"
     }
   },
+  "biome.enabled": false,
   "breadcrumbs.symbolPath": "off",
   "colorize.decoration_type": "underline",
   "cSpell.numSuggestions": 2,
