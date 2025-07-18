@@ -206,8 +206,8 @@
   ],
   "redhat.telemetry.enabled": false,
   "search.exclude": {
-    "**/*.code-search": true,
     "**/.yarn/releases/*": true,
+    "**/*.code-search": true,
     "**/bower_components": true,
     "**/node_modules": true,
     "**/yarn.lock": true
