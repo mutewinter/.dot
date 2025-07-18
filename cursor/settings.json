@@ -16,6 +16,7 @@
     }
   },
   "breadcrumbs.symbolPath": "off",
+  "colorize.decoration_type": "underline",
   "cSpell.numSuggestions": 2,
   "cSpell.userWords": [
     "aipreview",
