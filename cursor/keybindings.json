@@ -244,16 +244,6 @@
     "key": "alt+n"
   },
   {
-    "command": "workbench.action.positionPanelRight",
-    "key": "f8",
-    "when": "panelPosition != 'right'"
-  },
-  {
-    "command": "workbench.action.positionPanelBottom",
-    "key": "f8",
-    "when": "panelPosition == 'right'"
-  },
-  {
     "command": "-workbench.action.toggleMaximizeEditorGroup",
     "key": "cmd+r cmd+m",
     "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
@@ -347,8 +337,23 @@
   },
   {
     "command": "workbench.action.debug.start",
-    "key": "f5",
+    "key": "f8",
     "when": "debuggersAvailable && debugState == 'inactive'"
+  },
+  {
+    "command": "workbench.action.debug.stop",
+    "key": "shift+f8",
+    "when": "inDebugMode && !focusedSessionIsAttach"
+  },
+  {
+    "command": "workbench.action.debug.restart",
+    "key": "shift+cmd+f8",
+    "when": "inDebugMode"
+  },
+  {
+    "command": "workbench.action.debug.continue",
+    "key": "f8",
+    "when": "debugState == 'stopped'"
   },
   {
     "command": "workbench.action.terminal.focusAtIndex3",
@@ -435,5 +440,82 @@
   {
     "command": "-workbench.action.quickOpen",
     "key": "cmd+p"
+  },
+  {
+    "command": "composerMode.agent",
+    "key": "cmd+i"
+  },
+  {
+    "command": "-workbench.action.debug.stop",
+    "key": "shift+f5",
+    "when": "inDebugMode && !focusedSessionIsAttach"
+  },
+  {
+    "command": "-workbench.action.debug.start",
+    "key": "f5",
+    "when": "debuggersAvailable && debugState == 'inactive'"
+  },
+  {
+    "command": "-workbench.action.debug.restart",
+    "key": "shift+cmd+f5",
+    "when": "inDebugMode"
+  },
+  {
+    "command": "-workbench.action.debug.continue",
+    "key": "f5",
+    "when": "debugState == 'stopped'"
+  },
+  {
+    "command": "workbench.action.tasks.runTask",
+    "key": "shift+cmd+r"
+  },
+  {
+    "command": "-testing.goToNextMessage",
+    "key": "alt+f8",
+    "when": "editorFocus && testing.isPeekVisible"
+  },
+  {
+    "command": "-testing.goToPreviousMessage",
+    "key": "shift+alt+f8",
+    "when": "editorFocus && testing.isPeekVisible"
+  },
+  {
+    "command": "-editor.action.marker.prevInFiles",
+    "key": "shift+f8",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-editor.action.marker.prev",
+    "key": "shift+alt+f8",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-editor.action.marker.next",
+    "key": "alt+f8",
+    "when": "editorFocus"
+  },
+  {
+    "command": "-editor.action.marker.this",
+    "key": "alt+cmd+f8",
+    "when": "editorFocus"
+  },
+  {
+    "command": "workbench.action.debug.run",
+    "key": "ctrl+f8",
+    "when": "debuggersAvailable && debugState != 'initializing'"
+  },
+  {
+    "command": "-workbench.action.debug.run",
+    "key": "ctrl+f5",
+    "when": "debuggersAvailable && debugState != 'initializing'"
+  },
+  {
+    "command": "workbench.action.debug.selectandstart",
+    "key": "shift+cmd+d"
+  },
+  {
+    "command": "-workbench.view.debug",
+    "key": "shift+cmd+d",
+    "when": "viewContainer.workbench.view.debug.enabled"
   }
 ]
