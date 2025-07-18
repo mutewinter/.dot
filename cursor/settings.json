@@ -144,7 +144,6 @@
     "youtube",
     "zustand"
   ],
-  "chat.editor.fontSize": 15,
   "cursor.cpp.disabledLanguages": [],
   "debug.console.fontSize": 15,
   "diffEditor.hideUnchangedRegions.enabled": true,
