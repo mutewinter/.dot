@@ -188,6 +188,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "json.schemaDownload.enable": true,
   "lazygit-vscode.autoMaximizeWindow": false,
   "peacock.favoriteColors": [
     {
