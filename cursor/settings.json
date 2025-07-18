@@ -144,6 +144,7 @@
     "youtube",
     "zustand"
   ],
+  "cursor.composer.shouldChimeAfterChatFinishes": true,
   "cursor.cpp.disabledLanguages": [],
   "debug.console.fontSize": 15,
   "diffEditor.hideUnchangedRegions.enabled": true,
