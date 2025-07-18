@@ -154,6 +154,7 @@
   "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.hideCursorInOverviewRuler": true,
+  "editor.inlayHints.maximumLength": 20,
   "editor.lineNumbers": "relative",
   "editor.links": false,
   "editor.minimap.enabled": true,
@@ -219,6 +220,11 @@
   "terminal.integrated.shellIntegration.history": 1000,
   "terminal.integrated.smoothScrolling": true,
   "terminal.integrated.tabs.enabled": false,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vscode_custom_css.imports": ["file://${userHome}/.dot/cursor/styles.css"],
   "window.commandCenter": false,
@@ -230,6 +236,7 @@
     "editor.lineHighlightBackground": "#ffffff0A",
     // Stop the overbearing highlight of entire strings
     "editor.wordHighlightBackground": "#00000000",
+    "editorInlayHint.foreground": "#525252",
     // Do our best to hide the overview ruler (because we hide the scrollbar)
     "editorOverviewRuler.addedForeground": "#0000",
     "editorOverviewRuler.background": "#0000",
