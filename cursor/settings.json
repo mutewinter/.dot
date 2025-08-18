@@ -275,7 +275,7 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 3,
-  "workbench.editor.showTabs": "none",
+  "workbench.editor.showTabs": "single",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
   "workbench.sideBar.location": "right"
 }
