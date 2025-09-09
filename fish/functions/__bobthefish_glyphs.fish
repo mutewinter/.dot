@@ -49,6 +49,9 @@ function __bobthefish_glyphs -S -d 'Define glyphs used by bobthefish'
   set -x git_minus_glyph      '-'
   set -x git_plus_minus_glyph '±'
 
+  # Fossil glyph (it reuses most of the git glyphs)
+  set -x fossil_glyph \U1F9B4 # Unicode bone emoji
+
   # Disable Powerline fonts (unless we're using nerd fonts instead)
   if [ "$theme_powerline_fonts" = "no" -a "$theme_nerd_fonts" != "yes" ]
     set private_glyph           \u29B8 ' '
@@ -83,6 +86,7 @@ function __bobthefish_glyphs -S -d 'Define glyphs used by bobthefish'
     set git_stashed_glyph    \uF0C6 '' # nf-fa-paperclip
     set git_untracked_glyph  \uF128 '' # nf-fa-question
     # set git_untracked_glyph  \uF141 '' # nf-fa-ellipsis_h
+    set fossil_glyph \UF00B9 # nf-md-bone
 
     set git_ahead_glyph      \uF47B # nf-oct-chevron_up
     set git_behind_glyph     \uF47C # nf-oct-chevron_down
@@ -95,5 +99,6 @@ function __bobthefish_glyphs -S -d 'Define glyphs used by bobthefish'
   # Avoid ambiguous glyphs
   if [ "$theme_avoid_ambiguous_glyphs" = "yes" ]
     set git_untracked_glyph '...'
+    set fossil_glyph '' # blank, for lack of a good fallback
   end
 end

@@ -30,7 +30,7 @@ function fish_mode_prompt -d 'bobthefish-optimized fish mode indicator'
         case insert
             set_color -b $color_vi_mode_insert
             echo -n ' I '
-        case replace_one replace-one
+        case replace replace_one replace-one
             set_color -b $color_vi_mode_insert
             echo -n ' R '
         case visual

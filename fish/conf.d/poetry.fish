@@ -1,1 +1,1 @@
-set -Ua fish_user_paths $HOME/.local/bin
+set -Ua fish_user_paths $HOME/.poetry/bin
