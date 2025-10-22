@@ -1,5 +1,14 @@
 // vim: ft=jsonc
 {
+  "[dockercompose]": {
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": false,
@@ -146,6 +155,7 @@
     "zustand"
   ],
   "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.composer.usageSummaryDisplay": "always",
   "cursor.cpp.disabledLanguages": [],
   "debug.console.fontSize": 15,
   "diffEditor.hideUnchangedRegions.enabled": true,
@@ -165,6 +175,9 @@
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
   "editor.minimap.size": "fit",
+  "editor.rulers": [
+    80
+  ],
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 7,
   "editor.smoothScrolling": true,
@@ -178,6 +191,10 @@
   "explorer.confirmDragAndDrop": false,
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
+  },
+  "files.associations": {
+    ".dev.vars": "shellscript",
+    ".dev.vars.example": "shellscript"
   },
   "files.autoSave": "onFocusChange",
   "files.refactoring.autoSave": false,
@@ -219,7 +236,11 @@
   "tailwindCSS.experimental.classRegex": [
     //   ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
     // https://github.com/heroui-inc/tailwind-variants/issues/229
-    ["(`.*?`)", "(\".*?\")", "('.*?')"]
+    [
+      "(`.*?`)",
+      "(\".*?\")",
+      "('.*?')"
+    ]
   ],
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
@@ -233,7 +254,9 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vscode_custom_css.imports": ["file://${userHome}/.dot/cursor/styles.css"],
+  "vscode_custom_css.imports": [
+    "file://${userHome}/.dot/cursor/styles.css"
+  ],
   "window.commandCenter": false,
   "workbench.activityBar.location": "bottom",
   "workbench.activityBar.orientation": "vertical",
@@ -277,5 +300,13 @@
   "workbench.editor.limit.value": 3,
   "workbench.editor.showTabs": "single",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "yaml.schemas": {
+    "https://json.schemastore.org/pnpm-workspace": [
+      "pnpm-workspace.yaml"
+    ],
+    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-issue-forms.json": [
+      ".github/ISSUE_TEMPLATE/**/*.yml"
+    ]
+  }
 }
