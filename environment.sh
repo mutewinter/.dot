@@ -28,17 +28,6 @@ fi
 # ---------------
 hostname
 
-if { hash tmux 2>/dev/null; } && ! { [ -n "$TMUX" ]; } then
-  if { tmux list-sessions > /dev/null 2>&1; } then
-    echo '\ntmux sessions'
-    echo '-------------'
-    tmux list-sessions -F " #{?session_attached,⚙, } #S"
-  else
-    echo '\nno tmux sessions'
-    echo '----------------'
-  fi
-fi
-
 # What a world
 export SCARF_ANALYTICS=false
 
