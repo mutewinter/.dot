@@ -165,7 +165,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.inlayHints.maximumLength": 20,
   "editor.lineNumbers": "relative",
