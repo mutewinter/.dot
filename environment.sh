@@ -9,13 +9,6 @@ if [ -f ~/.dot/aliases.sh ]; then
   source ~/.dot/aliases.sh
 fi
 
-# ---------
-# Functions
-# ---------
-if [ -f ~/.dot/functions.sh ]; then
-  source ~/.dot/functions.sh
-fi
-
 # -------------------------------------
 # System-Specific Environment Variables
 # -------------------------------------
@@ -27,9 +20,6 @@ fi
 # Startup Message
 # ---------------
 hostname
-
-# What a world
-export SCARF_ANALYTICS=false
 
 # Disable automatic upgrade of Homebrew packages
 export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
