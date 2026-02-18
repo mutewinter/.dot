@@ -517,5 +517,14 @@
     "command": "-workbench.view.debug",
     "key": "shift+cmd+d",
     "when": "viewContainer.workbench.view.debug.enabled"
+  },
+  {
+    "key": "f2",
+    "command": "-editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "f2",
+    "command": "workbench.action.showNextWindowTab"
   }
 ]
