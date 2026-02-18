@@ -19,141 +19,16 @@
     // Prettier can cause MDX formatting to become invalid
     "editor.formatOnSave": false
   },
-  "[typescript][typescriptreact]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll": "always"
-    }
-  },
+  // Disabled on 2026-01-26 and may remove for per-project settings
+  // "[typescript][typescriptreact]": {
+  //   "editor.codeActionsOnSave": {
+  //     "source.fixAll": "always"
+  //   }
+  // },
   "biome.enabled": false,
   "breadcrumbs.symbolPath": "off",
   "colorize.decoration_type": "underline",
   "cSpell.numSuggestions": 2,
-  "cSpell.userWords": [
-    "aipreview",
-    "Alacritty",
-    "Astro",
-    "asvetliakov",
-    "autoprefix",
-    "autosave",
-    "bigserial",
-    "bookmarklet",
-    "browserslist",
-    "callout",
-    "cloudflared",
-    "clsx",
-    "cocstatus",
-    "codegen",
-    "codemirror",
-    "concat",
-    "consola",
-    "coreutils",
-    "cupertino",
-    "dall",
-    "delayedcommand",
-    "Deno",
-    "deserialization",
-    "Dismissable",
-    "Dribbble",
-    "duti",
-    "esbenp",
-    "esbuild",
-    "esbuild's",
-    "exmap",
-    "graphql",
-    "headlessui",
-    "heroicons",
-    "hookform",
-    "hookz",
-    "hotspot",
-    "ILIKE",
-    "jotai",
-    "jsonb",
-    "karabiner",
-    "knip",
-    "lazygit",
-    "lcov",
-    "ldquo",
-    "lightgreen",
-    "localforage",
-    "lsquo",
-    "Menlo",
-    "minmax",
-    "mkdir",
-    "mutewinter",
-    "Neovim",
-    "nextjs",
-    "noopener",
-    "noreferrer",
-    "nvim",
-    "nvimrc",
-    "obcommand",
-    "openai",
-    "openrouter",
-    "outfile",
-    "overscroll",
-    "packagejson",
-    "pageview",
-    "pbcopy",
-    "PDFs",
-    "pgdown",
-    "pgup",
-    "Pixi",
-    "postbuild",
-    "Postgres",
-    "postgresql",
-    "rdquo",
-    "React's",
-    "repos",
-    "rsquo",
-    "scrollback",
-    "semibold",
-    "shadcn",
-    "Shopify",
-    "sindresorhus",
-    "skyblue",
-    "smallint",
-    "sourcecodepro",
-    "sourcemap",
-    "sparkline",
-    "sqltools",
-    "statelyai",
-    "stylelint",
-    "submodule",
-    "svgr",
-    "svgs",
-    "tailwindcss",
-    "tanstack",
-    "terminfo",
-    "todesktop",
-    "trivago",
-    "trpc",
-    "tsup",
-    "turbopack",
-    "typecheck",
-    "typewind",
-    "unmount",
-    "unmounting",
-    "unmounts",
-    "unoptimized",
-    "unstage",
-    "unstaged",
-    "unstyled",
-    "untracked",
-    "uuid",
-    "valibot",
-    "vercel",
-    "vimrc",
-    "vinxi",
-    "vite",
-    "vitejs",
-    "vitest",
-    "wasm",
-    "webhook",
-    "webhooks",
-    "xstate",
-    "youtube",
-    "zustand"
-  ],
   "cursor.composer.shouldChimeAfterChatFinishes": true,
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.cpp.disabledLanguages": [],
@@ -162,7 +37,6 @@
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "SauceCodePro Nerd Font, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "editor.formatOnSave": false,
@@ -175,9 +49,7 @@
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
   "editor.minimap.size": "fit",
-  "editor.rulers": [
-    80
-  ],
+  "editor.rulers": [80],
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 7,
   "editor.smoothScrolling": true,
@@ -189,9 +61,6 @@
   "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
   "files.associations": {
     ".dev.vars": "shellscript",
     ".dev.vars.example": "shellscript"
@@ -236,17 +105,17 @@
   "tailwindCSS.experimental.classRegex": [
     //   ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
     // https://github.com/heroui-inc/tailwind-variants/issues/229
-    [
-      "(`.*?`)",
-      "(\".*?\")",
-      "('.*?')"
-    ]
+    ["(`.*?`)", "(\".*?\")", "('.*?')"]
   ],
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.shellIntegration.history": 1000,
   "terminal.integrated.smoothScrolling": true,
+  // "terminal.integrated.automationProfile.osx": {
+  //   "path": "/bin/zsh",
+  //   "icon": "terminal-bash"
+  // },
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "typescript.inlayHints.enumMemberValues.enabled": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
@@ -254,12 +123,9 @@
   "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "vscode_custom_css.imports": [
-    "file://${userHome}/.dot/cursor/styles.css"
-  ],
+  "vscode_custom_css.imports": ["file://${userHome}/.dot/cursor/styles.css"],
   "window.commandCenter": false,
   "workbench.activityBar.location": "bottom",
-  "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
     "editor.background": "#090909",
     // Visible current line
@@ -289,8 +155,9 @@
     "editorOverviewRuler.wordHighlightForeground": "#0000",
     "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
     "editorOverviewRuler.wordHighlightTextForeground": "#0000",
-    "minimap.background": "#0000002b",
-    "minimapSlider.background": "#ffffff30",
+    "minimap.foregroundOpacity": "#000000aa",
+    "minimap.background": "#00000000",
+    "minimapSlider.background": "#ffffff20",
     "terminal.background": "#090909"
   },
   "workbench.colorTheme": "Jellybeans+",
@@ -298,15 +165,18 @@
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 3,
-  "workbench.editor.showTabs": "single",
+  "workbench.editor.showTabs": "none",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
   "workbench.sideBar.location": "right",
   "yaml.schemas": {
-    "https://json.schemastore.org/pnpm-workspace": [
-      "pnpm-workspace.yaml"
-    ],
+    "https://json.schemastore.org/pnpm-workspace": ["pnpm-workspace.yaml"],
     "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-issue-forms.json": [
       ".github/ISSUE_TEMPLATE/**/*.yml"
     ]
+  },
+  "cursor.inlineDiff.mode": "unified",
+  "cursor.composer.shouldAutoAcceptDiffs": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
