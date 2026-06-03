@@ -125,7 +125,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vscode_custom_css.imports": ["file://${userHome}/.dot/cursor/styles.css"],
   "window.commandCenter": false,
-  "workbench.activityBar.location": "bottom",
+  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editor.background": "#090909",
     // Visible current line
@@ -155,7 +155,7 @@
     "editorOverviewRuler.wordHighlightForeground": "#0000",
     "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
     "editorOverviewRuler.wordHighlightTextForeground": "#0000",
-    "minimap.foregroundOpacity": "#000000aa",
+    "minimap.foregroundOpacity": "#000000cc",
     "minimap.background": "#00000000",
     "minimapSlider.background": "#ffffff20",
     "terminal.background": "#090909"
@@ -179,4 +179,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
+  "extensions.autoUpdate": false,
+  "workbench.activityBar.orientation": "vertical",
 }
