@@ -6,3 +6,4 @@ oh-my-fish/plugin-brew
 oh-my-fish/plugin-rustup
 daltonsena/fish-poetry
 plttn/fish-eza
+g-plane/pnpm-shell-completion
