@@ -7,6 +7,7 @@ LAZYGIT = File.expand_path File.join %w{~ Library Application\ Support lazygit c
 CURSOR = File.expand_path File.join %w{~ Library Application\ Support Cursor User}
 FISH = File.expand_path File.join %w{~ .config fish}
 CLAUDE_SETTINGS = File.expand_path File.join %w{~ .claude settings.json}
+AGENTS_MD = File.expand_path File.join %w{~ .agents AGENTS.md}
 
 desc 'Create symlinks for files beginning with _ in home directory'
 task :link do
@@ -125,6 +126,30 @@ task :claude do
   else
     puts 'Making symlink for claude settings'
     File.symlink(File.expand_path('claude/settings.json'), CLAUDE_SETTINGS)
+  end
+end
+
+desc 'Create symlink for AGENTS.md'
+task :agents do
+  agents_dir = File.dirname AGENTS_MD
+  Dir.mkdir agents_dir unless File.exists? agents_dir
+
+  source = File.expand_path('_AGENTS.md')
+
+  {
+    AGENTS_MD => source,
+    File.expand_path('~/.claude/CLAUDE.md') => AGENTS_MD,
+    File.expand_path('~/.cursor/rules/personal.mdc') => AGENTS_MD,
+  }.each do |target, link_source|
+    parent = File.dirname(target)
+    if File.exists? target
+      puts "#{target} already exists, skipping"
+    elsif File.exists? parent
+      File.symlink(link_source, target)
+      puts "Made symlink #{target}"
+    else
+      puts "#{parent} does not exist, skipping #{target}"
+    end
   end
 end
 
