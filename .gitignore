@@ -1,7 +1,7 @@
 .DS_Store
 system_environment.sh
 *.log
-fish/fish_variables
-fish/fish_history
 .aider*
-fish/conf.d/zz_60_system.fish
+home/.config/fish/fish_variables
+home/.config/fish/fish_history
+home/.config/fish/conf.d/zz_60_system.fish
