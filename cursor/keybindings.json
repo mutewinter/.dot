@@ -2,146 +2,136 @@
 // Place your key bindings in this file to override the defaults
 [
   {
-    "command": "undo",
-    "key": "cmd+u",
-    "when": "editorTextFocus"
-  },
-  {
     "command": "-editor.action.nextMatchFindAction",
     "key": "f3",
-    "when": "editorFocus"
+    "when": "editorFocus",
   },
   {
     "command": "-workbench.action.terminal.findNext",
     "key": "f3",
-    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported",
   },
   {
     "command": "-list.find",
     "key": "f3",
-    "when": "listFocus && listSupportsFind"
+    "when": "listFocus && listSupportsFind",
   },
   {
     "command": "-list.find.replInputFocus",
     "key": "f3",
-    "when": "view == 'workbench.panel.repl.view'"
+    "when": "view == 'workbench.panel.repl.view'",
   },
   {
     "command": "-references-view.next",
     "key": "f4",
-    "when": "reference-list.hasResult && references-view.canNavigate"
+    "when": "reference-list.hasResult && references-view.canNavigate",
   },
   {
     "command": "-search.action.focusNextSearchResult",
     "key": "f4",
-    "when": "hasSearchResult || inSearchEditor"
+    "when": "hasSearchResult || inSearchEditor",
   },
   {
     "command": "-goToNextReference",
     "key": "f4",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
+    "when": "inReferenceSearchEditor || referenceSearchVisible",
   },
   {
     "command": "-workbench.action.terminal.focus",
     "key": "cmd+down",
-    "when": "accessibilityModeEnabled && accessibleViewOnLastLine && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewOnLastLine && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+    "when": "accessibilityModeEnabled && accessibleViewOnLastLine && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewOnLastLine && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'",
   },
   {
     "command": "workbench.action.focusActiveEditorGroup",
-    "key": "f3"
+    "key": "f3",
   },
   {
     "command": "-workbench.action.focusActiveEditorGroup",
     "key": "ctrl+escape",
-    "when": "terminalFocus"
+    "when": "terminalFocus",
   },
   {
     "command": "workbench.action.terminal.focusAtIndex1",
     "key": "f4",
-    "when": "terminal.active"
+    "when": "terminal.active",
   },
   {
     "command": "-workbench.action.terminal.toggleTerminal",
     "key": "ctrl+`",
-    "when": "terminal.active"
+    "when": "terminal.active",
   },
   {
     "command": "workbench.action.closeEditorsInGroup",
-    "key": "alt+w"
+    "key": "alt+w",
   },
   {
     "command": "-editor.action.accessibilityHelpConfigureKeybindings",
     "key": "alt+k",
-    "when": "accessibilityHelpIsShown && accessibleViewHasUnassignedKeybindings"
+    "when": "accessibilityHelpIsShown && accessibleViewHasUnassignedKeybindings",
   },
   {
     "command": "workbench.action.navigateUp",
     "key": "alt+k",
-    "when": "neovim.mode != 'cmdline'"
+    "when": "neovim.mode != 'cmdline'",
   },
   {
     "command": "-workbench.action.navigateUp",
     "key": "ctrl+w up",
-    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'",
   },
   {
     "command": "workbench.action.navigateDown",
     "key": "alt+j",
-    "when": "neovim.mode != 'cmdline'"
+    "when": "neovim.mode != 'cmdline'",
   },
   {
     "command": "-workbench.action.navigateDown",
     "key": "ctrl+w down",
-    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'",
   },
   {
     "command": "-editor.action.accessibilityHelpOpenHelpLink",
     "key": "alt+h",
-    "when": "accessibilityHelpIsShown"
+    "when": "accessibilityHelpIsShown",
   },
   {
     "command": "-testing.toggleTestingPeekHistory",
     "key": "alt+h",
-    "when": "testing.isPeekVisible"
+    "when": "testing.isPeekVisible",
   },
   {
     "command": "workbench.action.navigateLeft",
     "key": "alt+h",
-    "when": "neovim.mode != 'cmdline'"
+    "when": "neovim.mode != 'cmdline'",
   },
   {
     "command": "-workbench.action.navigateLeft",
     "key": "ctrl+w left",
-    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'",
   },
   {
     "command": "workbench.action.navigateRight",
     "key": "alt+l",
-    "when": "neovim.mode != 'cmdline'"
+    "when": "neovim.mode != 'cmdline'",
   },
   {
     "command": "-workbench.action.navigateRight",
     "key": "ctrl+w right",
-    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'",
   },
   {
     "command": "-editor.action.previousMatchFindAction",
     "key": "shift+enter",
-    "when": "editorFocus && findInputFocussed"
-  },
-  {
-    "command": "find-it-faster.findFiles",
-    "key": "shift+enter",
-    "when": "neovim.mode != 'insert'"
+    "when": "editorFocus && findInputFocussed",
   },
   {
     "command": "editor.action.triggerSuggest",
     "key": "shift+enter",
-    "when": "neovim.mode == 'insert'"
+    "when": "neovim.mode == 'insert'",
   },
   {
     "command": "-find-it-faster.findFiles",
-    "key": "shift+cmd+j"
+    "key": "shift+cmd+j",
   },
   {
     "args": {
@@ -152,16 +142,16 @@
           "args": {
             "command": "workbench.action.focusActiveEditorGroup",
             // Delay needed or else focus happens too soon
-            "delay": 50
+            "delay": 50,
           },
-          "command": "delayedcommand.run"
-        }
-      ]
+          "command": "delayedcommand.run",
+        },
+      ],
     },
     // Toggle display of panel while maintaining focus on editor
     "command": "runCommands",
     "key": "alt+o",
-    "when": "editorFocus && (panelVisible || sideBarVisible)"
+    "when": "editorFocus && (panelVisible || sideBarVisible)",
   },
   {
     "args": {
@@ -171,15 +161,15 @@
           "args": {
             "command": "workbench.action.focusActiveEditorGroup",
             // Delay needed or else focus happens too soon
-            "delay": 50
+            "delay": 50,
           },
-          "command": "delayedcommand.run"
-        }
-      ]
+          "command": "delayedcommand.run",
+        },
+      ],
     },
     "command": "runCommands",
     "key": "alt+o",
-    "when": "editorFocus && !panelVisible && sideBarVisible"
+    "when": "editorFocus && !panelVisible && sideBarVisible",
   },
   {
     "args": {
@@ -189,15 +179,15 @@
           "args": {
             "command": "workbench.action.focusActiveEditorGroup",
             // Delay needed or else focus happens too soon
-            "delay": 50
+            "delay": 50,
           },
-          "command": "delayedcommand.run"
-        }
-      ]
+          "command": "delayedcommand.run",
+        },
+      ],
     },
     "command": "runCommands",
     "key": "alt+o",
-    "when": "editorFocus && panelVisible && !sideBarVisible"
+    "when": "editorFocus && panelVisible && !sideBarVisible",
   },
   {
     "args": {
@@ -208,15 +198,15 @@
           "args": {
             "command": "workbench.action.focusActiveEditorGroup",
             // Delay needed or else focus happens too soon
-            "delay": 50
+            "delay": 50,
           },
-          "command": "delayedcommand.run"
-        }
-      ]
+          "command": "delayedcommand.run",
+        },
+      ],
     },
     "command": "runCommands",
     "key": "alt+o",
-    "when": "editorFocus && !panelVisible && !sideBarVisible"
+    "when": "editorFocus && !panelVisible && !sideBarVisible",
   },
   {
     "args": {
@@ -228,303 +218,316 @@
           "args": {
             "command": "workbench.action.focusActiveEditorGroup",
             // Delay needed or else focus happens too soon
-            "delay": 50
+            "delay": 50,
           },
-          "command": "delayedcommand.run"
-        }
-      ]
+          "command": "delayedcommand.run",
+        },
+      ],
     },
     // Toggle display of panel and auxiliary bar (AI chat) while maintaining focus on editor
     "command": "runCommands",
     "key": "alt+o",
-    "when": "editorFocus && auxiliaryBarVisible"
+    "when": "editorFocus && auxiliaryBarVisible",
   },
   {
     "command": "workbench.action.quickSwitchWindow",
-    "key": "alt+n"
+    "key": "alt+n",
   },
   {
     "command": "-workbench.action.toggleMaximizeEditorGroup",
     "key": "cmd+r cmd+m",
-    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups",
   },
   {
     "command": "workbench.action.terminal.focusNextPane",
     "key": "alt+j",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
   },
   {
     "command": "-workbench.action.terminal.focusNextPane",
     "key": "alt+cmd+down",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
   },
   {
     "command": "workbench.action.terminal.focusPreviousPane",
     "key": "alt+k",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
   },
   {
     "command": "workbench.action.terminal.focusPreviousPane",
     "key": "alt+h",
-    "when": "terminalFocus && panelMaximized && panelPosition == 'bottom'"
+    "when": "terminalFocus && panelMaximized && panelPosition == 'bottom'",
   },
   {
     "command": "workbench.action.terminal.focusNextPane",
     "key": "alt+l",
-    "when": "terminalFocus && panelMaximized && panelPosition == 'bottom'"
+    "when": "terminalFocus && panelMaximized && panelPosition == 'bottom'",
   },
   {
     "command": "-workbench.action.terminal.focusPreviousPane",
     "key": "alt+cmd+up",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
   },
   {
     "command": "workbench.action.terminal.split",
     "key": "ctrl+a h",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile",
   },
   {
     "command": "workbench.action.terminal.split",
     "key": "ctrl+a v",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile",
   },
   {
     "command": "-workbench.action.terminal.split",
     "key": "cmd+\\",
-    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile",
   },
   {
     "command": "-workbench.action.terminal.focusNextPane",
     "key": "alt+cmd+right",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
   },
   {
     "command": "-workbench.action.terminal.focusPreviousPane",
     "key": "alt+cmd+left",
-    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported",
   },
   {
     "command": "-breadcrumbs.focusPrevious",
     "key": "alt+left",
-    "when": "breadcrumbsActive && breadcrumbsVisible"
+    "when": "breadcrumbsActive && breadcrumbsVisible",
   },
   {
     "command": "-breadcrumbs.focusPreviousWithPicker",
     "key": "alt+left",
-    "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused"
+    "when": "breadcrumbsActive && breadcrumbsVisible && listFocus && !inputFocus && !treestickyScrollFocused",
   },
   {
     "command": "-cursorWordLeft",
     "key": "alt+left",
-    "when": "textInputFocus"
+    "when": "textInputFocus",
   },
   {
     "command": "workbench.action.decreaseViewWidth",
-    "key": "alt+left"
+    "key": "alt+left",
   },
   {
     "command": "workbench.action.evenEditorWidths",
-    "key": "alt+="
+    "key": "alt+=",
   },
   {
     "command": "workbench.action.increaseViewWidth",
-    "key": "alt+right"
+    "key": "alt+right",
   },
   {
     "command": "-workbench.action.editor.previousChange",
     "key": "shift+alt+f5",
-    "when": "editorTextFocus && !textCompareEditorActive"
+    "when": "editorTextFocus && !textCompareEditorActive",
   },
   {
     "command": "workbench.action.debug.start",
     "key": "f8",
-    "when": "debuggersAvailable && debugState == 'inactive'"
+    "when": "debuggersAvailable && debugState == 'inactive'",
   },
   {
     "command": "workbench.action.debug.stop",
     "key": "shift+f8",
-    "when": "inDebugMode && !focusedSessionIsAttach"
+    "when": "inDebugMode && !focusedSessionIsAttach",
   },
   {
     "command": "workbench.action.debug.restart",
     "key": "shift+cmd+f8",
-    "when": "inDebugMode"
+    "when": "inDebugMode",
   },
   {
     "command": "workbench.action.debug.continue",
     "key": "f8",
-    "when": "debugState == 'stopped'"
+    "when": "debugState == 'stopped'",
   },
   {
     "command": "workbench.action.terminal.focusAtIndex3",
     "key": "f6",
-    "when": "terminal.active"
+    "when": "terminal.active",
   },
   {
     "command": "-workbench.action.focusNextPart",
-    "key": "f6"
+    "key": "f6",
   },
   {
     "command": "workbench.action.switchWindow",
-    "key": "alt+i"
+    "key": "alt+i",
   },
   {
     "command": "workbench.action.openRecent",
-    "key": "alt+shift+i"
+    "key": "alt+shift+i",
   },
   {
     "command": "-workbench.action.chat.open",
-    "key": "ctrl+cmd+i"
+    "key": "ctrl+cmd+i",
   },
   {
     "command": "workbench.action.toggleAuxiliaryBar",
-    "key": "f7"
+    "key": "f7",
   },
   {
     "command": "workbench.action.terminal.focus",
     "key": "alt+,",
-    "when": "editorFocus"
+    "when": "editorFocus",
   },
   {
     // Focus the editor when terminal has focus
     "command": "workbench.action.focusActiveEditorGroup",
     "key": "alt+,",
-    "when": "terminalFocus"
+    "when": "terminalFocus",
   },
   {
     "command": "-editor.action.marker.nextInFiles",
     "key": "f8",
-    "when": "editorFocus"
+    "when": "editorFocus",
   },
   {
     "command": "redo",
-    "key": "shift+cmd+u"
+    "key": "shift+cmd+u",
   },
   {
     "command": "-redo",
-    "key": "shift+cmd+z"
+    "key": "shift+cmd+z",
   },
   {
     "command": "-undo",
-    "key": "cmd+z"
+    "key": "cmd+z",
   },
   {
     "command": "-cursorUndo",
     "key": "cmd+u",
-    "when": "textInputFocus"
+    "when": "textInputFocus",
   },
   {
     "command": "-workbench.action.chat.startVoiceChat",
     "key": "cmd+i",
-    "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress || chatIsEnabled && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress"
+    "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress || chatIsEnabled && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress",
   },
   {
     "command": "-workbench.action.chat.stopListeningAndSubmit",
     "key": "cmd+i",
-    "when": "inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'view' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'view'"
+    "when": "inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inChatInput && voiceChatInProgress && scopedVoiceChatInProgress == 'view' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'editor' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'inline' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'quick' || inlineChatFocused && voiceChatInProgress && scopedVoiceChatInProgress == 'view'",
   },
   {
     "command": "-workbench.action.chat.holdToVoiceChatInChatView",
     "key": "cmd+i",
-    "when": "chatIsEnabled && hasSpeechProvider && !chatSessionRequestInProgress && !editorFocus && !inChatInput && !inlineChatFocused && !notebookEditorFocused"
+    "when": "chatIsEnabled && hasSpeechProvider && !chatSessionRequestInProgress && !editorFocus && !inChatInput && !inlineChatFocused && !notebookEditorFocused",
   },
   {
     "command": "-editor.action.insertLineBefore",
     "key": "shift+cmd+enter",
-    "when": "editorTextFocus && !editorReadonly"
+    "when": "editorTextFocus && !editorReadonly",
   },
   {
     "command": "workbench.action.quickOpen",
-    "key": "shift+cmd+enter"
+    "key": "shift+cmd+enter",
   },
   {
     "command": "-workbench.action.quickOpen",
-    "key": "cmd+p"
+    "key": "cmd+p",
   },
   {
     "command": "composerMode.agent",
-    "key": "cmd+i"
+    "key": "cmd+i",
   },
   {
     "command": "-workbench.action.debug.stop",
     "key": "shift+f5",
-    "when": "inDebugMode && !focusedSessionIsAttach"
+    "when": "inDebugMode && !focusedSessionIsAttach",
   },
   {
     "command": "-workbench.action.debug.start",
     "key": "f5",
-    "when": "debuggersAvailable && debugState == 'inactive'"
+    "when": "debuggersAvailable && debugState == 'inactive'",
   },
   {
     "command": "-workbench.action.debug.restart",
     "key": "shift+cmd+f5",
-    "when": "inDebugMode"
+    "when": "inDebugMode",
   },
   {
     "command": "-workbench.action.debug.continue",
     "key": "f5",
-    "when": "debugState == 'stopped'"
+    "when": "debugState == 'stopped'",
   },
   {
     "command": "workbench.action.tasks.runTask",
-    "key": "shift+cmd+r"
+    "key": "shift+cmd+r",
   },
   {
     "command": "-testing.goToNextMessage",
     "key": "alt+f8",
-    "when": "editorFocus && testing.isPeekVisible"
+    "when": "editorFocus && testing.isPeekVisible",
   },
   {
     "command": "-testing.goToPreviousMessage",
     "key": "shift+alt+f8",
-    "when": "editorFocus && testing.isPeekVisible"
+    "when": "editorFocus && testing.isPeekVisible",
   },
   {
     "command": "-editor.action.marker.prevInFiles",
     "key": "shift+f8",
-    "when": "editorFocus"
+    "when": "editorFocus",
   },
   {
     "command": "-editor.action.marker.prev",
     "key": "shift+alt+f8",
-    "when": "editorFocus"
+    "when": "editorFocus",
   },
   {
     "command": "-editor.action.marker.next",
     "key": "alt+f8",
-    "when": "editorFocus"
+    "when": "editorFocus",
   },
   {
     "command": "-editor.action.marker.this",
     "key": "alt+cmd+f8",
-    "when": "editorFocus"
+    "when": "editorFocus",
   },
   {
     "command": "workbench.action.debug.run",
     "key": "ctrl+f8",
-    "when": "debuggersAvailable && debugState != 'initializing'"
+    "when": "debuggersAvailable && debugState != 'initializing'",
   },
   {
     "command": "-workbench.action.debug.run",
     "key": "ctrl+f5",
-    "when": "debuggersAvailable && debugState != 'initializing'"
+    "when": "debuggersAvailable && debugState != 'initializing'",
   },
   {
     "command": "workbench.action.debug.selectandstart",
-    "key": "shift+cmd+d"
+    "key": "shift+cmd+d",
   },
   {
     "command": "-workbench.view.debug",
     "key": "shift+cmd+d",
-    "when": "viewContainer.workbench.view.debug.enabled"
+    "when": "viewContainer.workbench.view.debug.enabled",
   },
   {
     "key": "f2",
     "command": "-editor.action.rename",
-    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly",
   },
   {
     "key": "f2",
-    "command": "workbench.action.showNextWindowTab"
-  }
+    "command": "workbench.action.showNextWindowTab",
+  },
+  {
+    "key": "cmd+u",
+    "command": "claudeVSCodeSidebar.focus",
+  },
+  {
+    "key": "cmd+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "editorFocus",
+  },
+  {
+    "key": "cmd+d",
+    "command": "chatgpt.openSidebar",
+  },
 ]
