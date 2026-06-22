@@ -4,4 +4,3 @@
 #
 # vim: set filetype=sh :
 
-alias ag="ag --smart-case"
