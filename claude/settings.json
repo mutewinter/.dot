@@ -1,0 +1,64 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(rg *)",
+      "Bash(cat *)",
+      "WebSearch"
+    ],
+    "defaultMode": "auto"
+  },
+  "model": "sonnet",
+  "enabledPlugins": {
+    "linear@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "notion@claude-plugins-official": true,
+    "pr-review-toolkit@claude-plugins-official": true
+  },
+  "theme": "dark",
+  "skillOverrides": {
+    "chrome-devtools": "user-invocable-only",
+    "find-skills": "user-invocable-only",
+    "framing-doc": "user-invocable-only",
+    "humanizer": "user-invocable-only",
+    "impeccable": "user-invocable-only",
+    "jscpd": "user-invocable-only",
+    "kickoff-doc": "user-invocable-only",
+    "motion": "user-invocable-only",
+    "seo": "user-invocable-only",
+    "shadcn": "user-invocable-only",
+    "shaping": "user-invocable-only",
+    "turborepo": "user-invocable-only",
+    "wide-events-logging": "user-invocable-only",
+    "wrangler": "user-invocable-only",
+    "xstate-v5": "user-invocable-only",
+    "brainstorming": "user-invocable-only",
+    "dispatching-parallel-agents": "user-invocable-only",
+    "executing-plans": "user-invocable-only",
+    "finishing-a-development-branch": "user-invocable-only",
+    "receiving-code-review": "user-invocable-only",
+    "requesting-code-review": "user-invocable-only",
+    "subagent-driven-development": "user-invocable-only",
+    "systematic-debugging": "user-invocable-only",
+    "test-driven-development": "user-invocable-only",
+    "using-git-worktrees": "user-invocable-only",
+    "using-superpowers": "user-invocable-only",
+    "verification-before-completion": "user-invocable-only",
+    "writing-plans": "user-invocable-only",
+    "writing-skills": "user-invocable-only",
+    "code-review": "user-invocable-only",
+    "fewer-permission-prompts": "user-invocable-only",
+    "init": "user-invocable-only",
+    "keybindings-help": "user-invocable-only",
+    "loop": "user-invocable-only",
+    "review": "user-invocable-only",
+    "run": "user-invocable-only",
+    "security-review": "user-invocable-only",
+    "simplify": "user-invocable-only",
+    "verify": "user-invocable-only"
+  }
+}

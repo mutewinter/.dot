@@ -6,6 +6,7 @@ KARABINER = File.expand_path File.join %w{~ .config karabiner karabiner.json}
 LAZYGIT = File.expand_path File.join %w{~ Library Application\ Support lazygit config.yml}
 CURSOR = File.expand_path File.join %w{~ Library Application\ Support Cursor User}
 FISH = File.expand_path File.join %w{~ .config fish}
+CLAUDE_SETTINGS = File.expand_path File.join %w{~ .claude settings.json}
 
 desc 'Create symlinks for files beginning with _ in home directory'
 task :link do
@@ -114,6 +115,16 @@ task :cursor do
       File.symlink(file_or_folder, File.join(CURSOR, file_or_folder_name))
       puts "Made symlink in cursor for #{file_or_folder_name}"
     end
+  end
+end
+
+desc 'Create symlink for Claude settings'
+task :claude do
+  if File.exists? CLAUDE_SETTINGS
+    puts "#{CLAUDE_SETTINGS} already exists, skipping"
+  else
+    puts 'Making symlink for claude settings'
+    File.symlink(File.expand_path('claude/settings.json'), CLAUDE_SETTINGS)
   end
 end
 
