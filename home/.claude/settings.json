@@ -12,15 +12,8 @@
     "defaultMode": "auto"
   },
   "model": "sonnet",
-  "enabledPlugins": {
-    "linear@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true,
-    "notion@claude-plugins-official": true,
-    "pr-review-toolkit@claude-plugins-official": true
-  },
-  "theme": "dark",
   "skillOverrides": {
+    "ai-sdk": "name-only",
     "chrome-devtools": "name-only",
     "find-skills": "user-invocable-only",
     "framing-doc": "user-invocable-only",
@@ -57,5 +50,10 @@
     "security-review": "name-only",
     "simplify": "name-only",
     "verify": "name-only"
-  }
+  },
+  "enabledPlugins": {
+    "linear@claude-plugins-official": true,
+    "notion@claude-plugins-official": true
+  },
+  "theme": "dark"
 }
