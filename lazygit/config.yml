@@ -11,6 +11,7 @@ git:
   skipHookPrefix: 'wip: '
   overrideGpg: true # prevents lazygit from spawning a separate process when using GPG
   parseEmoji: true # for use with https://gitmoji.dev
+  autoForwardBranches: none
 os:
   edit: cursor --reuse-window -- {{filename}}
   editAtLine: cursor --reuse-window --goto -- {{filename}}:{{line}}
