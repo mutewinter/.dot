@@ -4,20 +4,20 @@
     "editor.autoIndent": "advanced",
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.insertSpaces": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": false,
     "editor.formatOnSave": true,
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
   },
   "[mdx]": {
     // Prettier can cause MDX formatting to become invalid
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
   },
   // Disabled on 2026-01-26 and may remove for per-project settings
   // "[typescript][typescriptreact]": {
@@ -33,7 +33,7 @@
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.cpp.disabledLanguages": [],
   "debug.console.fontSize": 15,
-  "diffEditor.hideUnchangedRegions.enabled": true,
+  "debug.openDebug": "neverOpen",
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -41,10 +41,10 @@
   "editor.fontSize": 15,
   "editor.formatOnSave": false,
   "editor.hideCursorInOverviewRuler": true,
+  "editor.inlayHints.enabled": "off",
   "editor.inlayHints.maximumLength": 20,
   "editor.lineNumbers": "relative",
   "editor.links": false,
-  "editor.minimap.enabled": true,
   "editor.minimap.maxColumn": 80,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
@@ -63,7 +63,7 @@
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
     ".dev.vars": "shellscript",
-    ".dev.vars.example": "shellscript"
+    ".dev.vars.example": "shellscript",
   },
   "files.autoSave": "onFocusChange",
   "files.refactoring.autoSave": false,
@@ -73,7 +73,7 @@
   "find-it-faster.general.shellPathForTerminal": "/bin/bash",
   "find-it-faster.general.useTerminalInEditor": true,
   "fzf-picker.general.openCommand": "cursor -g",
-  "git.autofetch": true,
+  "git.autofetch": false,
   "git.confirmSync": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "json.schemaDownload.enable": true,
@@ -81,16 +81,16 @@
   "peacock.favoriteColors": [
     {
       "name": "Dark Yellow",
-      "value": "#281e07"
+      "value": "#281e07",
     },
     {
       "name": "Black",
-      "value": "#000000"
+      "value": "#000000",
     },
     {
       "name": "Dark Green",
-      "value": "#3b4c15"
-    }
+      "value": "#3b4c15",
+    },
   ],
   "redhat.telemetry.enabled": false,
   "search.exclude": {
@@ -98,14 +98,14 @@
     "**/*.code-search": true,
     "**/bower_components": true,
     "**/node_modules": true,
-    "**/yarn.lock": true
+    "**/yarn.lock": true,
   },
   "security.promptForLocalFileProtocolHandling": false,
   "sqltools.useNodeRuntime": true,
   "tailwindCSS.experimental.classRegex": [
     //   ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
     // https://github.com/heroui-inc/tailwind-variants/issues/229
-    ["(`.*?`)", "(\".*?\")", "('.*?')"]
+    ["(`.*?`)", "(\".*?\")", "('.*?')"],
   ],
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.enableMultiLinePasteWarning": "never",
@@ -158,7 +158,7 @@
     "minimap.foregroundOpacity": "#000000cc",
     "minimap.background": "#00000000",
     "minimapSlider.background": "#ffffff20",
-    "terminal.background": "#090909"
+    "terminal.background": "#090909",
   },
   "workbench.colorTheme": "Jellybeans+",
   "workbench.editor.enablePreview": false,
@@ -167,18 +167,27 @@
   "workbench.editor.limit.value": 3,
   "workbench.editor.showTabs": "none",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
-  "workbench.sideBar.location": "right",
   "yaml.schemas": {
     "https://json.schemastore.org/pnpm-workspace": ["pnpm-workspace.yaml"],
-    "https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-issue-forms.json": [
-      ".github/ISSUE_TEMPLATE/**/*.yml"
-    ]
+    "https://json.schemastore.org/github-issue-config": [
+      ".github/ISSUE_TEMPLATE/config.yml",
+    ],
   },
   "cursor.inlineDiff.mode": "unified",
   "cursor.composer.shouldAutoAcceptDiffs": false,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "editor.minimap.enabled": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "typescript.experimental.useTsgo": true,
+  "window.autoDetectColorScheme": false,
   "extensions.autoUpdate": false,
+  "cursor.composer.textSizeScale": 1.15,
   "workbench.activityBar.orientation": "vertical",
+  "claudeCode.preferredLocation": "sidebar",
+  "workbench.sideBar.location": "right",
+  "diffEditor.hideUnchangedRegions.enabled": true,
 }
