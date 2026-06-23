@@ -184,13 +184,14 @@
         "baseCode": 34
       },
       {
-        "code": 4873,
+        "code": 4327,
         "label": {
-          "hint": {"full": "Ctrl+Alt+Command+", "1u": "C+A+Cm+"},
-          "base": "f"
+          "hint": {"full": "Command+", "1u": "Cm+"},
+          "base": {"full": "Command", "1u": "Cmd", "short": "Cm"}
         },
-        "categories": ["with-modifiers", "ctrl", "alt", "gui"],
-        "baseCode": 9
+        "location": "right",
+        "categories": ["with-modifiers", "gui"],
+        "baseCode": 231
       },
       {
         "code": 224,
@@ -435,13 +436,10 @@
         "baseCode": 10
       },
       {
-        "code": 4905,
-        "label": {
-          "hint": {"full": "Ctrl+Alt+Command+", "1u": "C+A+Cm+"},
-          "base": "Esc"
-        },
-        "categories": ["with-modifiers", "ctrl", "alt", "gui"],
-        "baseCode": 41
+        "code": 4139,
+        "label": {"hint": {"full": "Command+", "1u": "Cm+"}, "base": "Tab"},
+        "categories": ["with-modifiers", "gui"],
+        "baseCode": 43
       },
       {
         "code": 227,
@@ -706,14 +704,16 @@
         "categories": ["blanks"]
       },
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
+        "code": 2844,
+        "label": {"hint": {"full": "Meh+", "1u": "M+"}, "base": "y"},
+        "categories": ["with-modifiers", "ctrl", "shift", "alt"],
+        "baseCode": 28
       },
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
+        "code": 2840,
+        "label": {"hint": {"full": "Meh+", "1u": "M+"}, "base": "u"},
+        "categories": ["with-modifiers", "ctrl", "shift", "alt"],
+        "baseCode": 24
       },
       {
         "code": 6924,
@@ -722,9 +722,10 @@
         "baseCode": 12
       },
       {
-        "code": 65535,
-        "label": {"base": {"full": "Transparent", "1u": " "}},
-        "categories": ["blanks"]
+        "code": 2834,
+        "label": {"hint": {"full": "Meh+", "1u": "M+"}, "base": "o"},
+        "categories": ["with-modifiers", "ctrl", "shift", "alt"],
+        "baseCode": 18
       },
       {
         "code": 65535,
@@ -788,10 +789,9 @@
         "categories": ["blanks"]
       },
       {
-        "code": 18637,
-        "legacyCode": 22733,
-        "label": {"base": {"full": "Play / pause", "1u": "⏯"}},
-        "categories": ["consumer"]
+        "code": 65535,
+        "label": {"base": {"full": "Transparent", "1u": " "}},
+        "categories": ["blanks"]
       },
       {"code": 77, "label": {"base": "End"}},
       {"code": 70, "label": {"base": {"full": "Print Screen", "1u": "PrSc"}}},
