@@ -32,6 +32,7 @@ symlink "$DOT/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 symlink "$DOT/_AGENTS.md" "$HOME/.agents/AGENTS.md"
 [ -d "$HOME/.claude" ]        && symlink "$HOME/.agents/AGENTS.md" "$HOME/.claude/CLAUDE.md"
 [ -d "$HOME/.cursor/rules" ]  && symlink "$HOME/.agents/AGENTS.md" "$HOME/.cursor/rules/personal.mdc"
+[ -d "$HOME/.codex" ]         && symlink "$HOME/.agents/AGENTS.md" "$HOME/.codex/AGENTS.md"
 
 # File associations (macOS)
 if command -v duti &>/dev/null; then
