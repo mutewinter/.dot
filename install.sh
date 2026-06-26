@@ -25,6 +25,11 @@ for f in keybindings.json settings.json snippets; do
   symlink "$DOT/cursor/$f" "$HOME/Library/Application Support/Cursor/User/$f"
 done
 
+# VS Code (shares cursor config)
+for f in keybindings.json settings.json snippets; do
+  symlink "$DOT/cursor/$f" "$HOME/Library/Application Support/Code/User/$f"
+done
+
 # Karabiner
 symlink "$DOT/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 
