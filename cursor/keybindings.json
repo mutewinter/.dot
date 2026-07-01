@@ -530,4 +530,8 @@
     "key": "cmd+d",
     "command": "chatgpt.openSidebar",
   },
+  {
+    "key": "cmd+u",
+    "command": "claudeVSCodeSidebarSecondary.focus"
+  },
 ]
