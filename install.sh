@@ -20,6 +20,9 @@ stow --dir="$DOT" --target="$HOME" home
 # Lazygit
 symlink "$DOT/lazygit/config.yml" "$HOME/Library/Application Support/lazygit/config.yml"
 
+# Hunk
+symlink "$DOT/hunk/config.toml" "$HOME/.config/hunk/config.toml"
+
 # Cursor
 for f in keybindings.json settings.json snippets; do
   symlink "$DOT/cursor/$f" "$HOME/Library/Application Support/Cursor/User/$f"
