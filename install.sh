@@ -33,6 +33,9 @@ done
 # Karabiner
 symlink "$DOT/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 
+# Ghostty
+symlink "$DOT/ghostty/config" "$HOME/.config/ghostty/config"
+
 # AGENTS.md chain
 symlink "$DOT/_AGENTS.md" "$HOME/.agents/AGENTS.md"
 [ -d "$HOME/.claude" ]        && symlink "$HOME/.agents/AGENTS.md" "$HOME/.claude/CLAUDE.md"
