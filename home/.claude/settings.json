@@ -61,6 +61,7 @@
   },
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
+    "figma@claude-plugins-official": true,
     "notion@claude-plugins-official": true
   },
   "theme": "dark"
