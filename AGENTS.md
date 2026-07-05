@@ -9,6 +9,7 @@ Personal macOS dotfiles managed via `install.sh` + GNU stow.
 - `cursor/` -- Cursor and VS Code shared config: `settings.json`, `keybindings.json`, `snippets/`, `styles.css`. Both editors symlink into this directory.
 - `_AGENTS.md` -- global agent/AI instructions. `install.sh` chains it to `~/.claude/CLAUDE.md`, `~/.cursor/rules/personal.mdc`, and `~/.codex/AGENTS.md`.
 - `AGENTS.md` (this file) -- repo-specific context. Symlinked to `CLAUDE.md` so Claude Code sees it when working here.
+- `skills/` -- agent skills, one subdirectory per skill with a `SKILL.md`. `install.sh` symlinks the whole folder to `~/.agents/skills`; per-agent skill dirs (e.g. `~/.claude/skills/*`) already symlink into `~/.agents/skills/*`, so they pick this up automatically.
 
 ## Conventions
 

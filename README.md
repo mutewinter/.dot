@@ -13,6 +13,7 @@ brew install stow fish fisher
 - **Cursor** → `~/Library/Application Support/Cursor/User/`
 - **Karabiner** → `~/.config/karabiner/karabiner.json`
 - **AGENTS.md** → `~/.agents/AGENTS.md`, `~/.claude/CLAUDE.md`, `~/.cursor/rules/personal.mdc`
+- **Skills** → `~/.agents/skills`
 - **File associations** → runs `duti duti.conf` if `duti` is installed
 
 ## Fish plugins

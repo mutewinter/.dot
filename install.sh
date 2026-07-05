@@ -45,6 +45,9 @@ symlink "$DOT/_AGENTS.md" "$HOME/.agents/AGENTS.md"
 [ -d "$HOME/.cursor/rules" ]  && symlink "$HOME/.agents/AGENTS.md" "$HOME/.cursor/rules/personal.mdc"
 [ -d "$HOME/.codex" ]         && symlink "$HOME/.agents/AGENTS.md" "$HOME/.codex/AGENTS.md"
 
+# Skills
+symlink "$DOT/skills" "$HOME/.agents/skills"
+
 # File associations (macOS)
 if command -v duti &>/dev/null; then
   duti "$DOT/duti.conf"
