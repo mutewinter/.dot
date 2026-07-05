@@ -6,17 +6,18 @@ gui:
   nerdFontsVersion: "3"
 git:
   pagers:
-    - pager: hunk pager
     - pager: delta --dark --paging=never
-    - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+    - colorArg: always
+      pager: hunk pager
+    # - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   skipHookPrefix: 'wip: '
   overrideGpg: true # prevents lazygit from spawning a separate process when using GPG
   parseEmoji: true # for use with https://gitmoji.dev
   autoForwardBranches: none
 os:
-  edit: cursor --reuse-window -- {{filename}}
-  editAtLine: cursor --reuse-window --goto -- {{filename}}:{{line}}
-  openDirInEditor: cursor -- {{dir}}
+  edit: code --reuse-window -- {{filename}}
+  editAtLine: code --reuse-window --goto -- {{filename}}:{{line}}
+  openDirInEditor: code -- {{dir}}
 keybinding:
   universal:
     undo: '<c-u>'
