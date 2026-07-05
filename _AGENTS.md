@@ -8,6 +8,11 @@ alwaysApply: true
 - I am an experienced programmer; prefer terse, information-dense descriptions of work completed.
 - Skip linting, type checking, etc. for trivial changes.
 
+## Before coding
+
+- State assumptions explicitly. If a request is ambiguous or has multiple interpretations, surface them and ask rather than guessing silently. Present tradeoffs and push back when warranted.
+- Turn vague asks into concrete, checkable success criteria before starting, then work toward them. On trivial tasks, use judgment and skip the ceremony.
+
 ## Code changes
 
 - Remove imports/variables/functions your changes made unused. Don't touch pre-existing dead code unless asked.
