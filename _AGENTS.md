@@ -29,6 +29,7 @@ Multiple agents may work in the same repo simultaneously.
 - Never run destructive operations (`git reset --hard`, `git restore`, `git checkout <file>`) without explicit written instruction.
 - Never revert or delete another agent's in-progress edits. Coordinate instead.
 - Never create new branches unless explicitly instructed.
+- Commit messages: `scope: description` (e.g. `dx: drop eslint --cache from lint scripts`). Scope is the package/feature/workflow touched, not a conventional-commit type — no `feat:`/`fix:`/`chore:`. Description: lowercase, no period, imperative, informative, ~72 char subject. Add a bullet-list body only when the subject alone is cryptic.
 
 ## Installed CLI Tools (macOS/arm64)
 
