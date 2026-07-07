@@ -17,6 +17,7 @@ alwaysApply: true
 
 - Remove imports/variables/functions your changes made unused. Don't touch pre-existing dead code unless asked.
 - Don't improve adjacent code, formatting, or comments. Every changed line should trace to the request.
+- Comments are stateless facts about the code, not narration of the conversation or edit session (no "changed X to Y", "per your request", "now we..."). Only write one when the why is non-obvious (invariant, gotcha, tradeoff); skip it if the code already makes it clear.
 
 ## Git
 
