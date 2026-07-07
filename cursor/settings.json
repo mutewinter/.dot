@@ -150,7 +150,7 @@
     "editorOverviewRuler.wordHighlightStrongForeground": "#0000",
     "editorOverviewRuler.wordHighlightTextForeground": "#0000",
     "minimap.foregroundOpacity": "#000000cc",
-    "minimap.background": "#00000000",
+    "minimap.background": "#090909ff",
     "minimapSlider.background": "#ffffff20",
     "terminal.background": "#090909",
   },
