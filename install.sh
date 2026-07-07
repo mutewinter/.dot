@@ -39,6 +39,9 @@ symlink "$DOT/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 # Ghostty
 symlink "$DOT/ghostty/config" "$HOME/.config/ghostty/config"
 
+# Raycast script commands
+symlink "$DOT/raycast/focus-electron.applescript" "$HOME/Documents/Raycast/focus-electron.applescript"
+
 # AGENTS.md chain
 symlink "$DOT/_AGENTS.md" "$HOME/.agents/AGENTS.md"
 [ -d "$HOME/.claude" ]        && symlink "$HOME/.agents/AGENTS.md" "$HOME/.claude/CLAUDE.md"
