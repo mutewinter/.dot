@@ -14,7 +14,19 @@ symlink() {
   fi
 }
 
+unstow_identical_files() {
+  local package="$1" target="$2" src rel dst
+  while IFS= read -r -d '' src; do
+    rel="${src#$package/}"
+    dst="$target/$rel"
+    if [ -f "$dst" ] && [ ! -L "$dst" ] && cmp -s "$src" "$dst"; then
+      rm "$dst"
+    fi
+  done < <(find "$package" -type f -print0)
+}
+
 # Stow home package (dotfiles + fish + claude settings)
+unstow_identical_files "$DOT/home" "$HOME"
 stow --dir="$DOT" --target="$HOME" home
 
 # Lazygit
