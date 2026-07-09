@@ -17,7 +17,8 @@ alwaysApply: true
 
 - Remove imports/variables/functions your changes made unused. Don't touch pre-existing dead code unless asked.
 - Don't improve adjacent code, formatting, or comments. Every changed line should trace to the request.
-- Comments are stateless facts about the code, not narration of the conversation or edit session (no "changed X to Y", "per your request", "now we..."). Only write one when the why is non-obvious (invariant, gotcha, tradeoff); skip it if the code already makes it clear.
+- Comment only when the *why* is non-obvious (rationale, invariant, gotcha, tradeoff). Don't restate what the code already says: a good comment adds precision or intuition the code can't express ("why, not what"), it doesn't narrate it. Prune redundant/obvious comments, but keep an existing "why" comment unless your change makes it wrong.
+- Write "timeless" comments: describe the code as it stands, for a reader who never saw a prior version. No edit-narration or version references ("changed X to Y", "per your request", "now/previously/no longer", "used to", "rather than/instead of the old X"). Those are "journal comments"; git already tracks history, and the why of a *change* belongs in the commit message, not the code. Quick test: if a comment only makes sense to someone who knows what the code used to be (or what you almost wrote instead), rewrite it as the positive reason.
 
 ## Git
 
