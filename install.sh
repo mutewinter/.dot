@@ -19,7 +19,7 @@ unstow_identical_files() {
   while IFS= read -r -d '' src; do
     rel="${src#$package/}"
     dst="$target/$rel"
-    if [ -f "$dst" ] && [ ! -L "$dst" ] && cmp -s "$src" "$dst"; then
+    if [ -f "$dst" ] && [ ! -L "$dst" ] && [ ! "$dst" -ef "$src" ] && cmp -s "$src" "$dst"; then
       rm "$dst"
     fi
   done < <(find "$package" -type f -print0)
