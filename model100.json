@@ -716,9 +716,9 @@
         "baseCode": 24
       },
       {
-        "code": 6924,
-        "label": {"hint": {"full": "Hyper+", "1u": "H+"}, "base": "i"},
-        "categories": ["with-modifiers", "ctrl", "shift", "alt", "gui"],
+        "code": 2828,
+        "label": {"hint": {"full": "Meh+", "1u": "M+"}, "base": "i"},
+        "categories": ["with-modifiers", "ctrl", "shift", "alt"],
         "baseCode": 12
       },
       {
