@@ -29,6 +29,15 @@ unstow_identical_files() {
 unstow_identical_files "$DOT/home" "$HOME"
 stow --dir="$DOT" --target="$HOME" home
 
+# fish-eza plugin: its alias option vars live in fish_variables, which is
+# gitignored (machine-local universal var store), so a fresh machine needs
+# the plugin's install event re-fired or every ll/la/etc. alias silently
+# falls back to bare eza with no flags.
+if command -v fish &>/dev/null && ! fish -c 'set -q EZA_STANDARD_OPTIONS' &>/dev/null; then
+  fish -c 'emit fish-eza_install' &>/dev/null
+  echo "fish-eza: initialized alias options"
+fi
+
 # Lazygit
 symlink "$DOT/lazygit/config.yml" "$HOME/Library/Application Support/lazygit/config.yml"
 
