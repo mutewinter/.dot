@@ -13,7 +13,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": false,
     "editor.formatOnSave": true,
-    "editor.wordWrap": "off",
   },
   "[mdx]": {
     // Prettier can cause MDX formatting to become invalid
@@ -56,6 +55,7 @@
   "editor.snippetSuggestions": "none",
   "editor.suggest.showWords": false,
   "editor.tabSize": 2,
+  "editor.wordWrap": "on",
   "emmet.showAbbreviationSuggestions": false,
   "emmet.showExpandedAbbreviation": "never",
   "explorer.autoReveal": false,
