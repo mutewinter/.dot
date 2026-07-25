@@ -32,6 +32,12 @@ Multiple agents may work in the same repo simultaneously.
 - Never create new branches unless explicitly instructed.
 - Commit messages: `scope: description` (e.g. `dx: drop eslint --cache from lint scripts`). Scope is the package/feature/workflow touched, not a conventional-commit type — no `feat:`/`fix:`/`chore:`. Description: lowercase, no period, imperative, informative, ~72 char subject. Add a bullet-list body only when the subject alone is cryptic.
 
+## Repo docs
+
+- Plans carry a `Status:` line and move to `completed/` when they land; don't delete them.
+- Docs are timeless: no branch names, PR-in-flight state, "CI is red as of <date>", or worktree-specific notes. If it stops being true the week after it's written, it belongs in a commit message.
+- Before rewording a doc, verify its claims against code. Version pins and command names are where drift concentrates.
+
 ## Installed CLI Tools (macOS/arm64)
 
 - rg (ripgrep):
