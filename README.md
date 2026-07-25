@@ -10,6 +10,7 @@ brew install stow fish fisher
 `install.sh` uses [stow](https://www.gnu.org/software/stow/) to symlink the `home/` package into `~`, then handles special-case paths:
 
 - **Lazygit** → `~/Library/Application Support/lazygit/config.yml`
+- **Codex** → `~/.codex/config.toml`, `~/.codex/config.json`, `~/.codex/keybindings.json`, `~/.codex/rules/default.rules`
 - **Cursor** → `~/Library/Application Support/Cursor/User/`
 - **Karabiner** → `~/.config/karabiner/karabiner.json`
 - **AGENTS.md** → `~/.agents/AGENTS.md`, `~/.claude/CLAUDE.md`, `~/.cursor/rules/personal.mdc`
@@ -23,6 +24,10 @@ Install Fish plugins after running `install.sh`:
 ```sh
 fisher update
 ```
+
+## Codex
+
+`codex/config.toml` is a curated, shareable subset of the live Codex config. Do not copy auth, sessions, caches, sqlite state, generated images, histories, marketplace timestamps, project trust state, hook trust state, or MCP tokens from `~/.codex`.
 
 ## tmux plugins
 

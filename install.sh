@@ -44,6 +44,12 @@ symlink "$DOT/lazygit/config.yml" "$HOME/Library/Application Support/lazygit/con
 # Hunk
 symlink "$DOT/hunk/config.toml" "$HOME/.config/hunk/config.toml"
 
+# Codex
+for f in config.toml config.json keybindings.json; do
+  symlink "$DOT/codex/$f" "$HOME/.codex/$f"
+done
+symlink "$DOT/codex/rules/default.rules" "$HOME/.codex/rules/default.rules"
+
 # Cursor
 for f in keybindings.json settings.json snippets; do
   symlink "$DOT/cursor/$f" "$HOME/Library/Application Support/Cursor/User/$f"
