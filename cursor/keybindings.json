@@ -234,6 +234,10 @@
     "key": "alt+n",
   },
   {
+    "command": "lazygit-vscode.toggle",
+    "key": "alt+g",
+  },
+  {
     "command": "-workbench.action.toggleMaximizeEditorGroup",
     "key": "cmd+r cmd+m",
     "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups",

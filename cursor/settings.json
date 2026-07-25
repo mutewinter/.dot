@@ -72,6 +72,12 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "json.schemaDownload.enable": true,
   "lazygit-vscode.autoMaximizeWindow": false,
+  // Extension defaults to hiding the secondary sidebar and never restores it
+  "lazygit-vscode.panels": {
+    "panel": "keep",
+    "secondarySidebar": "keep",
+    "sidebar": "keep",
+  },
   "peacock.favoriteColors": [
     {
       "name": "Dark Yellow",
@@ -102,6 +108,8 @@
     ["(`.*?`)", "(\".*?\")", "('.*?')"],
   ],
   "telemetry.telemetryLevel": "off",
+  // Let the toggle keybinding close lazygit from inside its own terminal
+  "terminal.integrated.commandsToSkipShell": ["lazygit-vscode.toggle"],
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.shellIntegration.history": 1000,
