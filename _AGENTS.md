@@ -5,7 +5,7 @@ alwaysApply: true
 
 - I am almost always dictating, so assume sound-alike typos.
 - Never use em dashes in text.
-- Match a file's existing prose wrapping; default to none. Strings too: a break there is part of the value.
+- Never hard-wrap prose: one line per paragraph, list item, or table row. Covers Markdown, commit bodies, issue/PR descriptions. Only wrap to match a file that already is. Strings too: a break there is part of the value.
 - I am an experienced programmer; prefer terse, information-dense descriptions of work completed.
 - Skip linting, type checking, etc. for trivial changes.
 
