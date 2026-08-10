@@ -4,19 +4,19 @@
     "editor.autoIndent": "advanced",
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.insertSpaces": true,
-    "editor.tabSize": 2,
+    "editor.tabSize": 2
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": false,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "[mdx]": {
     // Prettier can cause MDX formatting to become invalid
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   // Disabled on 2026-01-26 and may remove for per-project settings
   // "[typescript][typescriptreact]": {
@@ -63,7 +63,7 @@
   "explorer.confirmDragAndDrop": false,
   "files.associations": {
     ".dev.vars": "shellscript",
-    ".dev.vars.example": "shellscript",
+    ".dev.vars.example": "shellscript"
   },
   "files.autoSave": "onFocusChange",
   "files.refactoring.autoSave": false,
@@ -76,21 +76,21 @@
   "lazygit-vscode.panels": {
     "panel": "keep",
     "secondarySidebar": "keep",
-    "sidebar": "keep",
+    "sidebar": "keep"
   },
   "peacock.favoriteColors": [
     {
       "name": "Dark Yellow",
-      "value": "#281e07",
+      "value": "#281e07"
     },
     {
       "name": "Black",
-      "value": "#000000",
+      "value": "#000000"
     },
     {
       "name": "Dark Green",
-      "value": "#3b4c15",
-    },
+      "value": "#3b4c15"
+    }
   ],
   "redhat.telemetry.enabled": false,
   "search.exclude": {
@@ -98,14 +98,14 @@
     "**/*.code-search": true,
     "**/bower_components": true,
     "**/node_modules": true,
-    "**/yarn.lock": true,
+    "**/yarn.lock": true
   },
   "security.promptForLocalFileProtocolHandling": false,
   "sqltools.useNodeRuntime": true,
   "tailwindCSS.experimental.classRegex": [
     //   ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
     // https://github.com/heroui-inc/tailwind-variants/issues/229
-    ["(`.*?`)", "(\".*?\")", "('.*?')"],
+    ["(`.*?`)", "(\".*?\")", "('.*?')"]
   ],
   "telemetry.telemetryLevel": "off",
   // Let the toggle keybinding close lazygit from inside its own terminal
@@ -160,7 +160,7 @@
     "minimap.foregroundOpacity": "#000000cc",
     "minimap.background": "#090909ff",
     "minimapSlider.background": "#ffffff20",
-    "terminal.background": "#090909",
+    "terminal.background": "#090909"
   },
   "workbench.colorTheme": "Jellybeans+",
   "workbench.editor.enablePreview": false,
@@ -172,17 +172,17 @@
   "yaml.schemas": {
     "https://json.schemastore.org/pnpm-workspace": ["pnpm-workspace.yaml"],
     "https://json.schemastore.org/github-issue-config": [
-      ".github/ISSUE_TEMPLATE/config.yml",
-    ],
+      ".github/ISSUE_TEMPLATE/config.yml"
+    ]
   },
   "cursor.inlineDiff.mode": "unified",
   "cursor.composer.shouldAutoAcceptDiffs": false,
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.minimap.enabled": true,
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "typescript.experimental.useTsgo": true,
   "window.autoDetectColorScheme": false,
@@ -191,5 +191,5 @@
   "workbench.activityBar.orientation": "vertical",
   "claudeCode.preferredLocation": "panel",
   "workbench.sideBar.location": "right",
-  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.hideUnchangedRegions.enabled": true
 }
