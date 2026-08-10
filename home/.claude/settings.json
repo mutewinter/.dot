@@ -60,7 +60,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet",
   "skillOverrides": {
     "ai-sdk": "name-only",
     "chrome-devtools": "name-only",
