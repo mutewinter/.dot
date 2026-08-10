@@ -195,6 +195,14 @@
   "workbench.editor.showTabs": "none",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
   "workbench.sideBar.location": "right",
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml",
+  ],
   "yaml.schemas": {
     "https://json.schemastore.org/pnpm-workspace": ["pnpm-workspace.yaml"],
     "https://json.schemastore.org/github-issue-config": [
