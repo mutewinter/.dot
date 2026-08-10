@@ -75,7 +75,10 @@
   "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1,
+  },
   "files.associations": {
     ".dev.vars": "shellscript",
     ".dev.vars.example": "shellscript",
