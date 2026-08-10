@@ -196,6 +196,11 @@
   "workbench.editor.limit.perEditorGroup": true,
   "workbench.editor.limit.value": 3,
   "workbench.editor.showTabs": "none",
+  // Markdown Preview Enhanced registers its editor at "option" priority, so it
+  // only becomes the default for .md via an explicit association
+  "workbench.editorAssociations": {
+    "*.md": "markdown-preview-enhanced",
+  },
   "workbench.preferredDarkColorTheme": "Jellybeans+",
   "workbench.sideBar.location": "right",
   "yaml.schemas": {
