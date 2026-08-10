@@ -50,15 +50,17 @@ for f in config.toml config.json keybindings.json; do
 done
 symlink "$DOT/codex/rules/default.rules" "$HOME/.codex/rules/default.rules"
 
-# Cursor
+# VS Code
 for f in keybindings.json settings.json snippets; do
-  symlink "$DOT/cursor/$f" "$HOME/Library/Application Support/Cursor/User/$f"
+  symlink "$DOT/vscode/$f" "$HOME/Library/Application Support/Code/User/$f"
 done
 
-# VS Code (shares cursor config)
-for f in keybindings.json settings.json snippets; do
-  symlink "$DOT/cursor/$f" "$HOME/Library/Application Support/Code/User/$f"
-done
+# Cursor (shares VS Code config)
+if [ -d "$HOME/Library/Application Support/Cursor/User" ]; then
+  for f in keybindings.json settings.json snippets; do
+    symlink "$DOT/vscode/$f" "$HOME/Library/Application Support/Cursor/User/$f"
+  done
+fi
 
 # Karabiner
 symlink "$DOT/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"

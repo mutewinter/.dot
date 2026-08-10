@@ -11,7 +11,7 @@ brew install stow fish fisher
 
 - **Lazygit** → `~/Library/Application Support/lazygit/config.yml`
 - **Codex** → `~/.codex/config.toml`, `~/.codex/config.json`, `~/.codex/keybindings.json`, `~/.codex/rules/default.rules`
-- **Cursor** → `~/Library/Application Support/Cursor/User/`
+- **VS Code** → `~/Library/Application Support/Code/User/`, and `Cursor/User/` when Cursor is installed
 - **Karabiner** → `~/.config/karabiner/karabiner.json`
 - **AGENTS.md** → `~/.agents/AGENTS.md`, `~/.claude/CLAUDE.md`, `~/.cursor/rules/personal.mdc`
 - **Skills** → `~/.agents/skills`
