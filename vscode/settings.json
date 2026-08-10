@@ -93,8 +93,6 @@
   "githubPullRequests.fileListLayout": "tree",
   "githubPullRequests.hideViewedFiles": false,
   "githubPullRequests.pullBranch": "never",
-  "gitlens.ai.model": "vscode",
-  "gitlens.ai.vscode.model": "copilot:claude-sonnet-4.6",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "json.schemaDownload.enable": true,
   "lazygit-vscode.autoMaximizeWindow": false,
