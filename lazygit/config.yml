@@ -5,11 +5,11 @@ gui:
       - reverse
   nerdFontsVersion: "3"
 git:
-  pagers:
-    - pager: delta --dark --paging=never
+  diffRenderers:
+    - command: delta --dark --paging=never
     - colorArg: always
-      pager: hunk pager
-    # - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+      command: hunk pager
+      # - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
   skipHookPrefix: 'wip: '
   overrideGpg: true # prevents lazygit from spawning a separate process when using GPG
   parseEmoji: true # for use with https://gitmoji.dev
