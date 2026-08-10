@@ -32,6 +32,8 @@
   // },
   "biome.enabled": false,
   "breadcrumbs.symbolPath": "off",
+  "chat.viewSessions.orientation": "stacked",
+  "claudeCode.allowDangerouslySkipPermissions": true,
   "claudeCode.preferredLocation": "panel",
   "colorize.decoration_type": "underline",
   "cSpell.numSuggestions": 2,
