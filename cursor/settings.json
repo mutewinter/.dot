@@ -9,6 +9,9 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnPaste": false,
@@ -18,6 +21,9 @@
     // Prettier can cause MDX formatting to become invalid
     "editor.formatOnSave": false,
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
   // Disabled on 2026-01-26 and may remove for per-project settings
   // "[typescript][typescriptreact]": {
   //   "editor.codeActionsOnSave": {
@@ -26,13 +32,18 @@
   // },
   "biome.enabled": false,
   "breadcrumbs.symbolPath": "off",
+  "claudeCode.preferredLocation": "panel",
   "colorize.decoration_type": "underline",
   "cSpell.numSuggestions": 2,
+  "cursor.composer.shouldAutoAcceptDiffs": false,
   "cursor.composer.shouldChimeAfterChatFinishes": true,
+  "cursor.composer.textSizeScale": 1.15,
   "cursor.composer.usageSummaryDisplay": "always",
   "cursor.cpp.disabledLanguages": [],
+  "cursor.inlineDiff.mode": "unified",
   "debug.console.fontSize": 15,
   "debug.openDebug": "neverOpen",
+  "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -44,6 +55,7 @@
   "editor.inlayHints.maximumLength": 20,
   "editor.lineNumbers": "relative",
   "editor.links": false,
+  "editor.minimap.enabled": true,
   "editor.minimap.maxColumn": 80,
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
@@ -61,6 +73,7 @@
   "explorer.autoReveal": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "extensions.autoUpdate": false,
   "files.associations": {
     ".dev.vars": "shellscript",
     ".dev.vars.example": "shellscript",
@@ -119,6 +132,7 @@
   //   "icon": "terminal-bash"
   // },
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.experimental.useTsgo": true,
   "typescript.inlayHints.enumMemberValues.enabled": true,
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
   "typescript.inlayHints.parameterNames.enabled": "literals",
@@ -126,8 +140,10 @@
   "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vscode_custom_css.imports": ["file://${userHome}/.dot/cursor/styles.css"],
+  "window.autoDetectColorScheme": false,
   "window.commandCenter": false,
   "workbench.activityBar.location": "top",
+  "workbench.activityBar.orientation": "vertical",
   "workbench.colorCustomizations": {
     "editor.background": "#090909",
     // Visible current line
@@ -169,27 +185,11 @@
   "workbench.editor.limit.value": 3,
   "workbench.editor.showTabs": "none",
   "workbench.preferredDarkColorTheme": "Jellybeans+",
+  "workbench.sideBar.location": "right",
   "yaml.schemas": {
     "https://json.schemastore.org/pnpm-workspace": ["pnpm-workspace.yaml"],
     "https://json.schemastore.org/github-issue-config": [
       ".github/ISSUE_TEMPLATE/config.yml",
     ],
   },
-  "cursor.inlineDiff.mode": "unified",
-  "cursor.composer.shouldAutoAcceptDiffs": false,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
-  "editor.minimap.enabled": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
-  "typescript.experimental.useTsgo": true,
-  "window.autoDetectColorScheme": false,
-  "extensions.autoUpdate": false,
-  "cursor.composer.textSizeScale": 1.15,
-  "workbench.activityBar.orientation": "vertical",
-  "claudeCode.preferredLocation": "panel",
-  "workbench.sideBar.location": "right",
-  "diffEditor.hideUnchangedRegions.enabled": true,
 }
