@@ -199,6 +199,7 @@
   // Markdown Preview Enhanced registers its editor at "option" priority, so it
   // only becomes the default for .md via an explicit association
   "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
     "*.md": "markdown-preview-enhanced",
   },
   "workbench.preferredDarkColorTheme": "Jellybeans+",
