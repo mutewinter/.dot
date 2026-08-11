@@ -1,7 +1,4 @@
 anthropic.claude-code
-anysphere.cursorpyright
-anysphere.remote-containers
-anysphere.remote-ssh
 asvetliakov.vscode-neovim
 be5invis.vscode-custom-css
 bierner.lit-html
@@ -12,6 +9,7 @@ buster.ndjson-colorizer
 csstools.postcss
 davidanson.vscode-markdownlint
 dbaeumer.vscode-eslint
+dimitarnonov.jellybeans-theme
 ellreka.tailwindcss-highlight
 esbenp.prettier-vscode
 github.vscode-github-actions
@@ -26,13 +24,17 @@ motion.motion-vscode-extension
 mrmlnc.vscode-json5
 ms-python.debugpy
 ms-python.python
+ms-python.vscode-pylance
+ms-python.vscode-python-envs
 mtxr.sqltools
 mtxr.sqltools-driver-sqlite
 openai.chatgpt
+oxc.oxc-vscode
 pflannery.vscode-versionlens
 prisma.vscode-graphql
 redhat.vscode-yaml
 rohit-gohri.format-code-action
+shd101wyy.markdown-preview-enhanced
 siwatts.jellybeans-vim-theme
 sleistner.vscode-fileutils
 sqreept.delayedcommand
