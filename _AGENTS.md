@@ -5,6 +5,7 @@ alwaysApply: true
 
 - I am almost always dictating, so assume sound-alike typos.
 - Never use em dashes in text.
+- American English everywhere, including code, identifiers, test names, comments, commit messages, and PR or issue text: `behavior`, `honor`, `labeled`, `canceled`, `-ize` over `-ise`. Leave existing spelling alone in files you are not otherwise changing; fixing someone else's prose is unrelated churn.
 - Never hard-wrap prose: one line per paragraph, list item, or table row. Covers Markdown, commit bodies, issue/PR descriptions. Only wrap to match a file that already is. Strings too: a break there is part of the value.
 - I am an experienced programmer; prefer terse, information-dense descriptions of work completed.
 - Skip linting, type checking, etc. for trivial changes.
