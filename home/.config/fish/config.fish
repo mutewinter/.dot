@@ -13,3 +13,10 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
+# turbo
+# One filesystem cache shared by every checkout and worktree on this machine.
+# Absolute is required: a relative path resolves inside each repo, which is the
+# per-repo .turbo this replaces.
+set -gx TURBO_CACHE_DIR "$HOME/.cache/turbo"
+# turbo end
+
