@@ -35,3 +35,11 @@
 	hunk-header-style = file line-number syntax
 [rebase]
 	autoStash = true
+[merge]
+	conflictStyle = zdiff3
+[rerere]
+	autoupdate = false
+[fetch]
+	prune = true
+[push]
+	autoSetupRemote = true
