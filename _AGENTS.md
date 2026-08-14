@@ -11,6 +11,14 @@ alwaysApply: true
 - Skip linting, type checking, etc. for trivial changes.
 - State the assumptions you worked from, and push back when a request looks wrong.
 
+## Ending a turn
+
+- End with `**🚩 Needs you (N)**` only when something is genuinely waiting on me; omit it otherwise. One line per item: the decision, the default you already took, and what stays true if I never reply.
+- Only decisions go in it. Assumptions, verification gaps, and things I merely should know stay inline in the report.
+- Never follow an open item with reassurance. "Otherwise we're done" cancels everything above it. Sign off after the block, not before.
+- Don't leave "say the word", "if you want", or "your call" carrying the weight, since they read as courtesy rather than as a pending item. Either the item goes in the block, or drop the offer and just state what you did.
+- 🚩 appears there and nowhere else.
+
 ## Code changes
 
 - Remove imports/variables/functions your changes made unused. Don't touch pre-existing dead code unless asked.
