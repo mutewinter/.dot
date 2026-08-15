@@ -60,6 +60,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "opus[1m]",
   "skillOverrides": {
     "ai-sdk": "name-only",
     "chrome-devtools": "name-only",
@@ -120,5 +121,6 @@
     "figma@claude-plugins-official": true,
     "notion@claude-plugins-official": true
   },
+  "skipDangerousModePermissionPrompt": true,
   "theme": "dark"
 }
