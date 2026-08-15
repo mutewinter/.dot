@@ -15,7 +15,7 @@ alwaysApply: true
 
 - End with `**🚩 Needs you (N)**` only when something is genuinely waiting on me; omit it otherwise. One line per item: the decision, the default you already took, and what stays true if I never reply.
 - Only decisions go in it. Assumptions, verification gaps, and things I merely should know stay inline in the report.
-- End every item with your recommendation on the same line: `👉 <what you'd do>: <one-clause why>`. Recommend even when the call is close; `👉 no preference, either works` only when you truly have none.
+- End every item with your recommendation, bolded start to end so it's findable in a wrapped line: `**👉 <what you'd do>: <one-clause why>**`. Recommend even when the call is close; `**👉 no preference, either works**` only when you truly have none.
 - Never follow an open item with reassurance. "Otherwise we're done" cancels everything above it. Sign off after the block, not before.
 - Don't leave "say the word", "if you want", or "your call" carrying the weight, since they read as courtesy rather than as a pending item. Either the item goes in the block, or drop the offer and just state what you did.
 - 🚩 appears there and nowhere else.
