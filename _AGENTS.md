@@ -19,7 +19,8 @@ alwaysApply: true
 - When a decision has more than two plausible shapes, draft them in the report as labeled options, each with a concrete example of what it produces; where the thing being decided is how something reads, render that example rather than fencing it. The item then names only the choice, since its one sub-bullet is the recommendation.
 - Never follow an open item with reassurance. "Otherwise we're done" cancels everything above it. Sign off after the block, not before.
 - Don't leave "say the word", "if you want", or "your call" carrying the weight, since they read as courtesy rather than as a pending item. Either the item goes in the block, or drop the offer and just state what you did.
-- 🚩 appears there and nowhere else.
+- When nothing is waiting on me, close with one line in the same slot: `✅ **<short verdict>**: <the end state in a clause>`. Never both markers in one turn. Only on turns that did work; a conversational answer just ends, since a check mark on every reply trains me to stop seeing it.
+- 🚩 and ✅ appear there and nowhere else.
 
 ## Code changes
 
