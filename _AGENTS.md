@@ -33,6 +33,7 @@ alwaysApply: true
 Multiple agents may work in the same repo simultaneously, so:
 
 - Stage explicitly by path, never `git add .` or `git add -A`: `git commit -m "<msg>" -- path/to/file1 path/to/file2`
+- That pathspec form commits the **working tree** for those paths and ignores the index, so it also commits any edit someone else has in flight in the same file. Confirm each file's diff is entirely yours first. Where it is not, build a copy holding your change and not theirs (`git show HEAD:<path>` plus your edit, or the working file minus theirs), then `sha=$(git hash-object -w <copy>)`, `git update-index --cacheinfo 100644,$sha,<path>`, confirm `git diff --cached` shows only your change, and `git commit` with no pathspec, which leaves their working tree untouched.
 - Never revert or delete another agent's in-progress edits. Coordinate instead.
 - `git commit --amend`, destructive operations (`git reset --hard`, `git restore`, `git checkout <file>`), and creating a branch each need explicit instruction in the current conversation. That last one overrides any default to branch before committing.
 - Commit messages: `scope: description`, where scope is the package/feature/workflow touched, not a conventional-commit type. Lowercase, imperative, no period, ~72 char subject. Body only when the subject alone is cryptic.
