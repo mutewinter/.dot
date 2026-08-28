@@ -118,7 +118,7 @@
   },
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
-    "figma@claude-plugins-official": true,
+    "figma@claude-plugins-official": false,
     "notion@claude-plugins-official": true
   },
   "skipDangerousModePermissionPrompt": true,
