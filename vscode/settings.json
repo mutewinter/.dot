@@ -88,6 +88,9 @@
   "files.refactoring.autoSave": false,
   "git.autofetch": false,
   "git.confirmSync": false,
+  // Each worktree carries its own copy of a submodule, so detection multiplies
+  // one submodule into one Source Control repository per worktree
+  "git.detectSubmodules": false,
   "git.detectWorktrees": true,
   "git.openRepositoryInParentFolders": "always",
   "githubPullRequests.fileListLayout": "tree",
