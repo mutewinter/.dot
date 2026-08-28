@@ -116,11 +116,14 @@
     "simplify": "name-only",
     "verify": "name-only"
   },
+  "enableWorkflows": true,
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
     "figma@claude-plugins-official": false,
     "notion@claude-plugins-official": true
   },
+  "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
-  "theme": "dark"
+  "theme": "dark",
+  "tui": "fullscreen"
 }
