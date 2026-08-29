@@ -2,7 +2,8 @@
 system_environment.sh
 *.log
 .aider*
-home/.config/fish/fish_variables
+home/.config/fish/fish_variables*
 home/.config/fish/fish_history
 home/.config/fish/conf.d/zz_60_system.fish
 tmux/plugins/*
+skills/motion/
