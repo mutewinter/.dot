@@ -58,7 +58,7 @@
       "Bash(realpath *)",
       "Bash(date *)"
     ],
-    "defaultMode": "auto"
+    "defaultMode": "bypassPermissions"
   },
   "model": "opus[1m]",
   "skillOverrides": {
