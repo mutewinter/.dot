@@ -58,6 +58,8 @@ Three levels on top of the base card (`rounded-xl border border-border bg-card p
 <div class="rounded-xl border border-error-300 bg-error-50 p-5">…</div>
 ```
 
+Most sections need no card at all: SKILL.md's volume rule outranks every spelling here.
+
 ## Terminal block
 
 One dialect. Dark ground `bg-gray-950`, light text, gray prompt, status colors from the theme's 300 range (they read on dark).
@@ -67,6 +69,16 @@ One dialect. Dark ground `bg-gray-950`, light text, gray prompt, status colors f
 wire-format  <span class="text-warning-300">folder</span> · ready
 <span class="text-success-300">&#10003; 6 references resolved</span></pre></div>
 ```
+
+## Code excerpt
+
+Terminal output is a bare `<pre>` with hand-placed spans (above). Real code is `<pre><code class="language-x">` on the same dark surface; the template loads highlight.js automatically when such a block exists, so never hand-color code:
+
+```html
+<pre class="overflow-x-auto rounded-lg bg-gray-950 p-4 text-xs leading-6 text-gray-100"><code class="language-ts">const spy = new IntersectionObserver(onSee, { rootMargin: "-15% 0px -75% 0px" });</code></pre>
+```
+
+Name the language; auto-detection is a fallback, not a plan.
 
 ## Ledger opener (series rounds only)
 

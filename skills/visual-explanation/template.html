@@ -131,6 +131,23 @@
         }
       }
     </style>
+    <style>
+      /* highlight.js token colors on the dark code surface, matched to the
+         theme. The script at the end of the body loads highlight.js only when
+         a pre > code block exists. */
+      pre code.hljs {
+        background: transparent;
+        padding: 0;
+        color: var(--color-gray-100); /* code excerpts sit on the dark surface */
+      }
+      .hljs-comment, .hljs-quote { color: var(--color-gray-400); }
+      .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-built_in, .hljs-type { color: var(--color-brand-300); }
+      .hljs-string, .hljs-addition, .hljs-regexp { color: var(--color-success-300); }
+      .hljs-number, .hljs-attr, .hljs-attribute, .hljs-symbol, .hljs-meta { color: var(--color-warning-300); }
+      .hljs-title, .hljs-name, .hljs-section, .hljs-selector-id, .hljs-selector-class { color: var(--color-gray-100); }
+      .hljs-deletion { color: var(--color-error-300); }
+      .hljs-variable, .hljs-template-variable, .hljs-bullet { color: var(--color-gray-200); }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
@@ -174,14 +191,17 @@
       if (tocSections.length >= 4) {
         const toc = document.createElement("nav");
         toc.setAttribute("aria-label", "Sections");
-        toc.className = "fixed top-1/2 left-4 hidden w-44 -translate-y-1/2 min-[1560px]:block";
+        toc.className = "fixed top-1/2 left-3 hidden w-36 -translate-y-1/2 min-[1500px]:block";
         toc.innerHTML =
           "<ul class='space-y-0.5 border-l border-border'>" +
           tocSections
             .map((s) => {
               const h = s.querySelector("h2");
-              const label = h.dataset.short || h.textContent.trim();
-              return "<li><a href='#" + s.id + "' data-toc='" + s.id + "' class='block truncate border-l-2 border-transparent py-1 pl-3 text-[13px] text-muted-foreground hover:text-foreground'>" + label + "</a></li>";
+              const label = (h.dataset.short || h.textContent.trim())
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/'/g, "&#39;");
+              return "<li><a href='#" + s.id + "' data-toc='" + s.id + "' title='" + label + "' class='block truncate border-l-2 border-transparent py-1 pl-3 text-[13px] text-muted-foreground hover:text-foreground'>" + label + "</a></li>";
             })
             .join("") +
           "</ul>";
@@ -204,6 +224,16 @@
           s.style.scrollMarginTop = "1.5rem";
           spy.observe(s);
         });
+      }
+
+      // Syntax highlighting, loaded only when the page has code excerpts.
+      // Hand-colored terminal output stays a bare <pre> with spans; real code
+      // is <pre><code class="language-x"> and gets highlighted here.
+      if (document.querySelector("pre code")) {
+        const hl = document.createElement("script");
+        hl.src = "https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.11.1/highlight.min.js";
+        hl.onload = () => window.hljs && window.hljs.highlightAll();
+        document.head.appendChild(hl);
       }
     </script>
   </body>

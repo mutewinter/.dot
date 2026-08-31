@@ -6,9 +6,9 @@ The governing principle: vertical scroll is how the reader discovers what a page
 
 The template builds a left scrollspy sidebar on wide viewports from every `main > section[id]` that has an `h2`, and skips pages with fewer than four. You get it by writing real sections with ids, which the page wants anyway for anchors. `data-short="Label"` on an `h2` shortens its sidebar label; omitting ids on minor sections keeps them out. Do not build a second navigation on top of it.
 
-## details/summary: depth without gating
+## details/summary: use sparingly
 
-For evidence that supports the argument but does not carry it: full data tables, per-file listings, methodology. Two rules make it safe: the summary line states what is inside and the headline number the reader would want, so skipping is an informed choice; and nothing that changes a decision hides inside one.
+Field observation from real readers: collapsed regions go unnoticed entirely, even on a third read. Default to showing a trimmed version in the open: the top rows plus a count, with a sentence naming what was elided. Reach for details only for appendix-grade material near the end of the page, write the summary line to carry the payload's headline number, and accept that most readers will never open it; nothing that changes a decision goes inside one.
 
 ```html
 <details class="group rounded-xl border border-border bg-card shadow-sm">
