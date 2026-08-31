@@ -165,6 +165,46 @@
         encodeURIComponent(
           `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#171412"/><rect x="7" y="9" width="18" height="3.5" rx="1.75" fill="#ffffff"/><rect x="7" y="15" width="13" height="3.5" rx="1.75" fill="#ffffff" opacity="0.75"/><rect x="7" y="21" width="8" height="3.5" rx="1.75" fill="#ffffff" opacity="0.5"/></svg>`,
         );
+
+      // Sidebar TOC, built from main > section[id] h2s. Appears only on
+      // viewports wide enough that it cannot overlap the content column, and
+      // only on pages with enough sections to need orientation. data-short on
+      // an h2 shortens its label; a section without an id stays out.
+      const tocSections = [...document.querySelectorAll("main section[id]")].filter((s) => s.querySelector("h2"));
+      if (tocSections.length >= 4) {
+        const toc = document.createElement("nav");
+        toc.setAttribute("aria-label", "Sections");
+        toc.className = "fixed top-1/2 left-4 hidden w-44 -translate-y-1/2 min-[1560px]:block";
+        toc.innerHTML =
+          "<ul class='space-y-0.5 border-l border-border'>" +
+          tocSections
+            .map((s) => {
+              const h = s.querySelector("h2");
+              const label = h.dataset.short || h.textContent.trim();
+              return "<li><a href='#" + s.id + "' data-toc='" + s.id + "' class='block truncate border-l-2 border-transparent py-1 pl-3 text-[13px] text-muted-foreground hover:text-foreground'>" + label + "</a></li>";
+            })
+            .join("") +
+          "</ul>";
+        document.body.appendChild(toc);
+        const spy = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              toc.querySelectorAll("a").forEach((a) => {
+                const on = a.dataset.toc === e.target.id;
+                a.classList.toggle("border-brand-600", on);
+                a.classList.toggle("text-foreground", on);
+                a.classList.toggle("font-medium", on);
+              });
+            });
+          },
+          { rootMargin: "-15% 0px -75% 0px" },
+        );
+        tocSections.forEach((s) => {
+          s.style.scrollMarginTop = "1.5rem";
+          spy.observe(s);
+        });
+      }
     </script>
   </body>
 </html>
