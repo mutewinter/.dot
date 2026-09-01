@@ -28,8 +28,12 @@
 
       /* Studio's light theme, resolved from
          apps/studio/src/client/styles/globals.css. Regenerate with the command
-         in SKILL.md rather than editing by hand. */
-      @theme {
+         in SKILL.md rather than editing by hand.
+
+         `static` matters: without it Tailwind emits only the variables some
+         utility class on the page uses, so a var(--color-…) in generated SVG
+         can silently resolve to nothing and the fill falls back to black. */
+      @theme static {
         /* sync:start */
         --font-sans: "Work Sans", ui-sans-serif, system-ui, sans-serif;
         --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;

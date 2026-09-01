@@ -33,7 +33,7 @@ Every diagram: `viewBox`, full width with a minimum, inside a scroll wrapper, la
 </div>
 ```
 
-- **Colors**: `fill-*`/`stroke-*` utility classes (`fill-brand-500`, `stroke-border`, `fill-error-50 stroke-error-300`), or `style="fill: var(--color-…)"` in generated markup. Presentation attributes cannot resolve `var()`, and hardcoded hex is how diagrams drift off-theme.
+- **Colors**: `fill-*`/`stroke-*` utility classes (`fill-brand-500`, `stroke-border`, `fill-error-50 stroke-error-300`), or `style="fill: var(--color-…)"` in generated markup. Presentation attributes cannot resolve `var()`, and hardcoded hex is how diagrams drift off-theme. The template's `@theme static` keeps every token variable emitted; without it, a `var()` naming a token no utility class uses resolves to nothing and the fill falls back to SVG's initial black.
 - **Text**: `font-size` 10-12 with `font-family` set per text group; no wrapping exists in SVG, so keep labels to 2-4 words and let a caption under the figure carry sentences.
 - **Tones**: neutral boxes `fill-card stroke-border`; the failing/warning/succeeding step gets the 50-fill plus 300-stroke of its status color, with text in the same family's 700, mirroring the pill's 100/700 pairing.
 
