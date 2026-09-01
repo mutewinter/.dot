@@ -4,7 +4,7 @@ The governing principle: vertical scroll is how the reader discovers what a page
 
 ## Sidebar table of contents: automatic
 
-The template builds a left scrollspy sidebar on wide viewports from every `main > section[id]` that has an `h2`, and skips pages with fewer than four. You get it by writing real sections with ids, which the page wants anyway for anchors. `data-short="Label"` on an `h2` shortens its sidebar label; omitting ids on minor sections keeps them out. Do not build a second navigation on top of it.
+The template builds a left scrollspy sidebar on wide viewports from every `main > section[id]` that has an `h2`, and skips pages with fewer than four. You get it by writing real sections with ids, which the page wants anyway for anchors. `data-short="Label"` on an `h2` shortens its sidebar label; omitting ids on minor sections keeps them out. When one section runs to many screenfuls, `data-toc="Short label"` on its inner chunk headings adds indented sub-entries with automatic ids. Do not build a second navigation on top of it.
 
 ## details/summary: use sparingly
 

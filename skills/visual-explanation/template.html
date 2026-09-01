@@ -193,19 +193,27 @@
       // an h2 shortens its label; a section without an id stays out.
       const tocSections = [...document.querySelectorAll("main section[id]")].filter((s) => s.querySelector("h2"));
       if (tocSections.length >= 4) {
+        const escToc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/'/g, "&#39;");
         const toc = document.createElement("nav");
         toc.setAttribute("aria-label", "Sections");
         toc.className = "fixed top-1/2 left-3 hidden w-36 -translate-y-1/2 min-[1500px]:block";
         toc.innerHTML =
           "<ul class='space-y-0.5 border-l border-border'>" +
           tocSections
-            .map((s) => {
+            .map((s, si) => {
               const h = s.querySelector("h2");
-              const label = (h.dataset.short || h.textContent.trim())
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/'/g, "&#39;");
-              return "<li><a href='#" + s.id + "' data-toc='" + s.id + "' title='" + label + "' class='block truncate border-l-2 border-transparent py-1 pl-3 text-[13px] text-muted-foreground hover:text-foreground'>" + label + "</a></li>";
+              const label = escToc(h.dataset.short || h.textContent.trim());
+              let li = "<li><a href='#" + s.id + "' data-spy='" + s.id + "' title='" + label + "' class='block truncate border-l-2 border-transparent py-1 pl-3 text-[13px] text-muted-foreground hover:text-foreground'>" + label + "</a></li>";
+              // Elements marked data-toc="Short label" become indented
+              // sub-entries, for long sections whose inner chunks deserve
+              // direct jumps. They gain ids automatically.
+              [...s.querySelectorAll("[data-toc]")].forEach((el, i) => {
+                if (!el.id) el.id = s.id + "-toc-" + si + "-" + i;
+                el.style.scrollMarginTop = "1.5rem";
+                const sub = escToc(el.dataset.toc || el.textContent.trim());
+                li += "<li><a href='#" + el.id + "' title='" + sub + "' class='block truncate border-l-2 border-transparent py-0.5 pl-6 text-xs text-muted-foreground hover:text-foreground'>" + sub + "</a></li>";
+              });
+              return li;
             })
             .join("") +
           "</ul>";
@@ -214,8 +222,8 @@
           (entries) => {
             entries.forEach((e) => {
               if (!e.isIntersecting) return;
-              toc.querySelectorAll("a").forEach((a) => {
-                const on = a.dataset.toc === e.target.id;
+              toc.querySelectorAll("a[data-spy]").forEach((a) => {
+                const on = a.dataset.spy === e.target.id;
                 a.classList.toggle("border-brand-600", on);
                 a.classList.toggle("text-foreground", on);
                 a.classList.toggle("font-medium", on);
