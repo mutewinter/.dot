@@ -2,9 +2,33 @@
 
 The governing principle: vertical scroll is how the reader discovers what a page contains. Interaction that helps them orient (a sidebar that tracks position) or tuck away supporting depth (a labeled collapsible) earns its place; interaction that gates load-bearing content behind a click is a liability, because content the reader never clicks is content they never see.
 
+The second test, which killed two candidates in review: an interaction must give the reader something scrolling cannot. A reply assembled, state remembered, pixels compared, a figure enlarged: those earn their click. A stepper that narrates a diagram already visible, or a filter that dims a list short enough to scan, only re-presents information the reader has; cut those.
+
 ## Sidebar table of contents: automatic
 
-The template builds a left scrollspy sidebar on wide viewports from every `main > section[id]` that has an `h2`, and skips pages with fewer than four. You get it by writing real sections with ids, which the page wants anyway for anchors. `data-short="Label"` on an `h2` shortens its sidebar label; omitting ids on minor sections keeps them out. When one section runs to many screenfuls, `data-toc="Short label"` on its inner chunk headings adds indented sub-entries with automatic ids. Do not build a second navigation on top of it.
+The template builds a left scrollspy sidebar on wide viewports from every `main > section[id]` that has an `h2`, and skips pages with fewer than four. You get it by writing real sections with ids, which the page wants anyway for anchors. `data-short="Label"` on an `h2` shortens its sidebar label; omitting ids on minor sections keeps them out. When one section runs to many screenfuls, `data-toc="Short label"` on its inner chunk headings adds indented sub-entries with automatic ids. Below the sidebar's viewport threshold the template instead shows a small contents button, bottom left, that opens the same list as an overlay; both come free. Do not build a second navigation on top of them.
+
+## Answer form
+
+When the page needs decisions back from the reader, collect them as a form a non-technical reader can follow: they are answering questions, and the result is a reply they hand back to the agent. All of that is said in words on the page, not implied by affordances.
+
+- Each question lives where the reader forms the opinion, never gathered into a quiz at the end: a numbered card, the question in plain language, segmented option buttons, and a note that a second click clears the answer.
+- A reply bar appears at the bottom of the window once the first answer lands: progress ("2 of 3 answered"), the assembled reply in readable sentences built from option labels, one button labeled "Copy reply", and a line saying to paste it into the chat.
+- The page must read complete with the form untouched. The form is how the reply travels; it is never how the argument is made.
+
+Mechanics: option buttons with data attributes, one delegated click handler, sentences assembled from `data-reply` labels, `navigator.clipboard` with a select-the-text fallback. Zero dependencies.
+
+## Runbook ticks
+
+For a plan the reader executes over hours or days: a checkbox per item, a progress meter, and state in localStorage so the page remembers per browser. Number the steps when order matters, which in a runbook it usually does. Wrap every storage read and write in try/catch and render correctly with nothing stored; state never carries anything the page's argument depends on, and a reset control keeps a reused browser honest.
+
+## Real screenshots and the comparator
+
+When the subject is shipped UI or rendered output, capture the real thing into `assets/` beside the artifact and show pixels rather than prose (SKILL.md carries the convention). When two captures are a true before/after of the same region, overlay them with a drag divider: the after image in flow, the before image inside a width-clipped absolute wrapper whose inner img is sized to the container, a divider bar, and pointerdown/move setting the split. Label both sides on the image, and date the captures or re-shoot on revision.
+
+## Click to enlarge
+
+A figure legible at page width but better at full width gets a native `<dialog>`: a labeled button, `showModal()`, click or Esc closes, `backdrop:` tint via Tailwind. Ten lines, no dependencies, and the inline figure stays fully readable for whoever never clicks.
 
 ## details/summary: use sparingly
 
