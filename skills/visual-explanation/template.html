@@ -189,8 +189,9 @@
 
       // Orientation strip, built from main > section[id] h2s and shown at
       // every width: the document title, then the section names with the
-      // current one marked as the reader scrolls. It occupies the very top
-      // of the page from load and sticks without moving or resizing.
+      // current one marked by darker weight and a quiet underline. It
+      // occupies the very top of the page from load and sticks without
+      // moving or resizing.
       const tocSections = [...document.querySelectorAll("main section[id]")].filter((s) => s.querySelector("h2"));
       if (tocSections.length >= 4) {
         const escToc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/'/g, "&#39;");
@@ -201,42 +202,44 @@
           "<div class='mx-auto flex max-w-4xl items-center gap-x-3 px-5 text-xs sm:px-8'>" +
           "<span class='max-w-48 shrink-0 truncate py-2 font-semibold text-foreground'>" + escToc(heading ? heading.textContent.trim() : "") + "</span>" +
           "<span class='h-4 w-px shrink-0 bg-border'></span>" +
-          "<div data-strip class='flex gap-x-1 overflow-x-auto whitespace-nowrap'>" +
+          "<div data-strip class='flex gap-x-4 overflow-x-auto whitespace-nowrap'>" +
           tocSections
             .map((s) => {
               const h = s.querySelector("h2");
               const label = escToc(h.dataset.short || h.textContent.trim());
-              return "<a href='#" + s.id + "' data-spy='" + s.id + "' class='shrink-0 rounded-md px-2 py-2 text-muted-foreground'>" + label + "</a>";
+              return "<a href='#" + s.id + "' data-spy='" + s.id + "' class='shrink-0 border-b-2 border-transparent py-2 text-gray-600 hover:text-foreground'>" + label + "</a>";
             })
             .join("") +
           "</div></div>";
         document.body.prepend(tocStrip);
 
+        const markSpy = (id) => {
+          document.querySelectorAll("a[data-spy]").forEach((a) => {
+            const on = a.dataset.spy === id;
+            a.classList.toggle("border-foreground", on);
+            a.classList.toggle("border-transparent", !on);
+            a.classList.toggle("text-foreground", on);
+            a.classList.toggle("font-semibold", on);
+            a.classList.toggle("text-gray-600", !on);
+            if (on) {
+              const c = a.closest("[data-strip]");
+              c.scrollTo({ left: a.offsetLeft - c.offsetLeft - c.clientWidth / 2 + a.clientWidth / 2, behavior: "smooth" });
+            }
+          });
+        };
         const spy = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((e) => {
-              if (!e.isIntersecting) return;
-              document.querySelectorAll("a[data-spy]").forEach((a) => {
-                const on = a.dataset.spy === e.target.id;
-                a.classList.toggle("bg-brand-50", on);
-                a.classList.toggle("text-brand-800", on);
-                a.classList.toggle("font-semibold", on);
-                if (on) {
-                  const c = a.closest("[data-strip]");
-                  c.scrollTo({ left: a.offsetLeft - c.offsetLeft - c.clientWidth / 2 + a.clientWidth / 2, behavior: "smooth" });
-                }
-              });
-            });
-          },
+          (entries) => entries.forEach((e) => { if (e.isIntersecting) markSpy(e.target.id); }),
           { rootMargin: "-15% 0px -75% 0px" },
         );
         tocSections.forEach((s) => {
           s.style.scrollMarginTop = "3rem";
           spy.observe(s);
         });
-        // Mark the first section before any scroll happens.
-        const firstLink = tocStrip.querySelector("a[data-spy]");
-        firstLink.classList.add("bg-brand-50", "text-brand-800", "font-semibold");
+        // The spy alone never reaches a short final section; the page end does.
+        addEventListener("scroll", () => {
+          if (innerHeight + scrollY >= document.body.scrollHeight - 8) markSpy(tocSections[tocSections.length - 1].id);
+        }, { passive: true });
+        markSpy(tocSections[0].id);
       }
 
       // Syntax highlighting, loaded only when the page has code excerpts.

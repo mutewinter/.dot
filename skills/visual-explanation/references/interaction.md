@@ -6,14 +6,14 @@ The second test, which killed two candidates in review: an interaction must give
 
 ## Section orientation: automatic
 
-Orientation exists so the reader knows which document they are in, where they are, and what is coming; scrolling stays the interaction, so it must be visible, never tucked behind a button. The template builds one strip at every width from every `main > section[id]` that has an `h2` (fewer than four sections: nothing): the document title on the left, then the section names, the current one marked with a tinted pill strong enough to read as navigation, the strip scrolling itself to keep the mark in view. It occupies the very top of the page from the moment it loads, so sticking never moves or resizes it. Links work; visibility is the point. `data-short="Label"` on an `h2` shortens labels. Do not build a second navigation on top of it.
+Orientation exists so the reader knows which document they are in, where they are, and what is coming; scrolling stays the interaction, so it must be visible, never tucked behind a button. The template builds one strip at every width from every `main > section[id]` that has an `h2` (fewer than four sections: nothing): the document title on the left, then the section names, the current one marked by darker weight and a quiet underline, the strip scrolling itself to keep the mark in view; when the page is scrolled to its end, the last section takes the mark even if a taller neighbor is still on screen. It occupies the very top of the page from the moment it loads, so sticking never moves or resizes it. Links work; visibility is the point. `data-short="Label"` on an `h2` shortens labels. Do not build a second navigation on top of it.
 
 ## Answer form
 
 When the page needs decisions back from the reader, collect them as a form a non-technical reader can follow: they are answering questions, and the result is a reply they hand back to the agent. All of that is said in words on the page, not implied by affordances.
 
 - Each question lives where the reader forms the opinion, never gathered into a quiz at the end: a numbered card, the question in plain language, and the options joined into one segmented control (`inline-flex` bordered group, selected segment filled via `aria-pressed:` variants), so single-choice is legible before the first click. A second click on the active segment clears it. The what-happens-next explanation ("your answers build a reply at the bottom to paste back into the chat") lives on the first question card, not in the bar.
-- A reply bar floats centered at the bottom of the window once the first answer lands, animating up into view so the reader connects its appearance to their click. Everything sits together in one cluster: one numbered marker per question (filled when answered, outlined while pending, each an anchor jumping to its question), a short friendly label in the register of "Your reply for the agent" so a non-technical reader knows what the bar is, a quiet "Clear", and one button labeled "Copy reply". No prose previews; the wording stays terse, clear, and friendly.
+- A reply bar floats centered at the bottom of the window once the first answer lands, animating up into view so the reader connects its appearance to their click. Everything sits together in one cluster: one numbered marker per question (filled when answered, outlined while pending, each an anchor jumping to its question), a short neutral label ("Your reply"), never naming a specific agent, since these pages outlive whichever assistant made them, a quiet "Clear", and one button labeled "Copy reply". No prose previews; the wording stays terse, clear, and friendly.
 - What the button copies is not the preview: it is Markdown the receiving agent can parse, opening with a line naming the page and file, then a numbered list with each question's topic and the chosen option in bold, unanswered ones marked as such:
 
   ```markdown
@@ -42,7 +42,7 @@ This is the most intricate pattern in the skill, so copy the complete working ex
 <div data-reply-bar hidden class="pointer-events-none fixed inset-x-0 bottom-4 z-30 flex justify-center px-4 print:hidden">
   <div class="bar-inner pointer-events-auto flex max-w-full items-center gap-3 overflow-x-auto rounded-xl border border-border bg-card px-4 py-2.5 shadow-xl">
     <span data-reply-marks class="flex items-center gap-1.5"></span>
-    <span class="shrink-0 text-xs text-muted-foreground">Your reply for the agent</span>
+    <span class="shrink-0 text-xs text-muted-foreground">Your reply</span>
     <span class="h-4 w-px shrink-0 bg-border"></span>
     <button data-reply-clear class="shrink-0 text-xs text-muted-foreground hover:text-foreground">Clear</button>
     <button data-reply-copy class="shrink-0 rounded-md bg-primary px-3 py-1.5 text-sm font-medium whitespace-nowrap text-primary-foreground hover:opacity-90">Copy reply</button>
