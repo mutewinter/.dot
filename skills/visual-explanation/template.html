@@ -219,16 +219,16 @@
           "</ul>";
         document.body.appendChild(toc);
 
-        // Below the sidebar threshold, orientation moves to a slim sticky
-        // strip across the top: section names with the current one marked,
-        // visible at every width down to a phone. Scrolling is the
-        // interaction; the strip exists to be seen, not clicked.
+        // Below the sidebar threshold, orientation moves to a slim strip at
+        // the very top of the page, occupying the same spot from load: it
+        // sticks without ever moving or resizing. Section names, current one
+        // marked; the strip exists to be seen, scrolling stays the
+        // interaction.
         const tocStrip = document.createElement("nav");
         tocStrip.setAttribute("aria-label", "Sections");
-        tocStrip.className =
-          "sticky top-0 z-20 -mx-5 border-b border-border bg-background/95 px-5 backdrop-blur sm:-mx-8 sm:px-8 min-[1500px]:hidden print:hidden";
+        tocStrip.className = "sticky top-0 z-20 border-b border-border bg-background/95 backdrop-blur min-[1500px]:hidden print:hidden";
         tocStrip.innerHTML =
-          "<div data-strip class='flex gap-x-4 overflow-x-auto text-xs whitespace-nowrap'>" +
+          "<div data-strip class='mx-auto flex max-w-6xl gap-x-4 overflow-x-auto px-5 text-xs whitespace-nowrap sm:px-8'>" +
           tocSections
             .map((s) => {
               const h = s.querySelector("h2");
@@ -237,7 +237,7 @@
             })
             .join("") +
           "</div>";
-        document.querySelector("main").prepend(tocStrip);
+        document.body.prepend(tocStrip);
 
         const spy = new IntersectionObserver(
           (entries) => {
