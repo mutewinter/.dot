@@ -6,14 +6,14 @@ The second test, which killed two candidates in review: an interaction must give
 
 ## Section orientation: automatic
 
-The TOC exists so the reader knows where they are and what is coming; scrolling stays the interaction, so it must be visible, never tucked behind a button. The template builds it from every `main > section[id]` that has an `h2` (fewer than four sections: nothing), in two forms: at 1500px and wider, the left scrollspy sidebar; below that, down to a phone, a slim strip occupying the very top of the page from the moment it loads, so sticking never moves or resizes it. It shows the section names with the current one marked, horizontally scrolling itself to keep the mark in view. Links work in both, but visibility is the point. `data-short="Label"` on an `h2` shortens labels; `data-toc="Short label"` on inner chunk headings adds indented sidebar sub-entries (the strip stays top-level). Do not build a second navigation on top of them.
+Orientation exists so the reader knows which document they are in, where they are, and what is coming; scrolling stays the interaction, so it must be visible, never tucked behind a button. The template builds one strip at every width from every `main > section[id]` that has an `h2` (fewer than four sections: nothing): the document title on the left, then the section names, the current one marked with a tinted pill strong enough to read as navigation, the strip scrolling itself to keep the mark in view. It occupies the very top of the page from the moment it loads, so sticking never moves or resizes it. Links work; visibility is the point. `data-short="Label"` on an `h2` shortens labels. Do not build a second navigation on top of it.
 
 ## Answer form
 
 When the page needs decisions back from the reader, collect them as a form a non-technical reader can follow: they are answering questions, and the result is a reply they hand back to the agent. All of that is said in words on the page, not implied by affordances.
 
 - Each question lives where the reader forms the opinion, never gathered into a quiz at the end: a numbered card, the question in plain language, and the options joined into one segmented control (`inline-flex` bordered group, selected segment filled via `aria-pressed:` variants), so single-choice is legible before the first click. A second click on the active segment clears it. The what-happens-next explanation ("your answers build a reply at the bottom to paste back into the chat") lives on the first question card, not in the bar.
-- A reply bar appears at the bottom of the window once the first answer lands, and never wraps: one numbered marker per question (filled when answered, outlined while pending, each an anchor jumping to its question), a quiet "Clear", and one button labeled "Copy reply". The markers are the summary; what the reader wants from the bar is which answers are still pending, not prose.
+- A reply bar floats centered at the bottom of the window once the first answer lands, animating up into view so the reader connects its appearance to their click. Everything sits together in one cluster: one numbered marker per question (filled when answered, outlined while pending, each an anchor jumping to its question), a short friendly label in the register of "Your reply for the agent" so a non-technical reader knows what the bar is, a quiet "Clear", and one button labeled "Copy reply". No prose previews; the wording stays terse, clear, and friendly.
 - What the button copies is not the preview: it is Markdown the receiving agent can parse, opening with a line naming the page and file, then a numbered list with each question's topic and the chosen option in bold, unanswered ones marked as such:
 
   ```markdown
@@ -26,7 +26,67 @@ When the page needs decisions back from the reader, collect them as a form a non
 
 - The page must read complete with the form untouched. The form is how the reply travels; it is never how the argument is made.
 
-Mechanics: option buttons with data attributes, one delegated click handler, preview and Markdown both assembled from `data-topic` and `data-reply` labels, `navigator.clipboard` with a select-the-text fallback. Zero dependencies.
+This is the most intricate pattern in the skill, so copy the complete working example below and extend it rather than re-deriving the machinery; everything is driven by `data-q`/`data-topic`/`data-reply` attributes, and the styling of selected segments rides entirely on `aria-pressed:` variants.
+
+```html
+<div data-q="1" id="q1" data-topic="Form shape" class="mt-5 rounded-xl border-2 border-brand-200 bg-card p-5 shadow-sm">
+  <p class="text-xs font-medium tracking-[0.12em] text-brand-700 uppercase">Question 1 of 2</p>
+  <p class="mt-2 text-sm leading-6 font-medium">The question, in plain language?</p>
+  <p class="mt-1 text-sm leading-6 text-muted-foreground">Pick one; clicking it again clears it. Your answers build a reply at the bottom to copy and paste back into the chat.</p>
+  <div class="mt-3 inline-flex overflow-hidden rounded-lg border border-border" role="radiogroup">
+    <button data-opt data-reply="option one" aria-pressed="false" class="border-l border-border px-3.5 py-2 text-sm text-muted-foreground transition-colors first:border-l-0 hover:text-foreground aria-pressed:bg-brand-600 aria-pressed:text-white aria-pressed:hover:text-white">Option one</button>
+    <button data-opt data-reply="option two" aria-pressed="false" class="border-l border-border px-3.5 py-2 text-sm text-muted-foreground transition-colors first:border-l-0 hover:text-foreground aria-pressed:bg-brand-600 aria-pressed:text-white aria-pressed:hover:text-white">Option two</button>
+  </div>
+</div>
+
+<div data-reply-bar hidden class="pointer-events-none fixed inset-x-0 bottom-4 z-30 flex justify-center px-4 print:hidden">
+  <div class="bar-inner pointer-events-auto flex max-w-full items-center gap-3 overflow-x-auto rounded-xl border border-border bg-card px-4 py-2.5 shadow-xl">
+    <span data-reply-marks class="flex items-center gap-1.5"></span>
+    <span class="shrink-0 text-xs text-muted-foreground">Your reply for the agent</span>
+    <span class="h-4 w-px shrink-0 bg-border"></span>
+    <button data-reply-clear class="shrink-0 text-xs text-muted-foreground hover:text-foreground">Clear</button>
+    <button data-reply-copy class="shrink-0 rounded-md bg-primary px-3 py-1.5 text-sm font-medium whitespace-nowrap text-primary-foreground hover:opacity-90">Copy reply</button>
+  </div>
+</div>
+
+<script>
+  (() => {
+    document.head.insertAdjacentHTML("beforeend", "<style>@keyframes bar-rise{from{transform:translateY(14px);opacity:0}}[data-reply-bar]:not([hidden]) .bar-inner{animation:bar-rise .3s ease}</style>");
+    const qs = [...document.querySelectorAll("[data-q]")];
+    const bar = document.querySelector("[data-reply-bar]");
+    const state = {};
+    const render = () => {
+      const answered = qs.filter((q) => state[q.dataset.q]).length;
+      bar.hidden = answered === 0;
+      document.querySelector("main").style.paddingBottom = answered ? "4.5rem" : "";
+      document.querySelector("[data-reply-marks]").innerHTML = qs
+        .map((q, i) => {
+          const a = state[q.dataset.q];
+          return "<a href='#" + q.id + "' title='" + q.dataset.topic + (a ? ": " + a : " · pending") + "' class='flex size-6 items-center justify-center rounded-full font-mono text-[11px] " + (a ? "bg-brand-600 text-white" : "border border-border text-muted-foreground") + "'>" + (i + 1) + "</a>";
+        })
+        .join("");
+      qs.forEach((q) => q.querySelectorAll("[data-opt]").forEach((btn) => btn.setAttribute("aria-pressed", state[q.dataset.q] === btn.dataset.reply ? "true" : "false")));
+    };
+    qs.forEach((q) => {
+      q.style.scrollMarginTop = "3rem";
+      q.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-opt]");
+        if (!btn) return;
+        state[q.dataset.q] = state[q.dataset.q] === btn.dataset.reply ? undefined : btn.dataset.reply;
+        render();
+      });
+    });
+    document.querySelector("[data-reply-clear]").addEventListener("click", () => { qs.forEach((q) => (state[q.dataset.q] = undefined)); render(); });
+    const buildReply = () =>
+      'Answers from "PAGE TITLE" (FILENAME.html):\n\n' +
+      qs.map((q, i) => i + 1 + ". " + q.dataset.topic + ": " + (state[q.dataset.q] ? "**" + state[q.dataset.q] + "**" : "_unanswered_")).join("\n");
+    document.querySelector("[data-reply-copy]").addEventListener("click", () => {
+      const btn = document.querySelector("[data-reply-copy]");
+      if (navigator.clipboard) navigator.clipboard.writeText(buildReply()).then(() => { btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy reply"), 1200); }).catch(() => {});
+    });
+  })();
+</script>
+```
 
 ## Runbook ticks
 

@@ -8,7 +8,7 @@ Canonical spellings for the elements nearly every explanation uses. Each is a st
 <h2 class="text-xl font-semibold tracking-[-0.02em]" data-short="Short label">What the section answers</h2>
 ```
 
-`data-short` feeds the sidebar TOC when the full heading runs long; omit it otherwise.
+`data-short` feeds the orientation strip when the full heading runs long; omit it otherwise.
 
 ## Kicker label
 
@@ -82,7 +82,7 @@ Name the language; auto-detection is a fallback, not a plan.
 
 ## Ledger opener (series rounds only)
 
-Sits first, wrapped like any titled section so the sidebar picks it up. The middle column's label flexes with the round: "Changed this round" after a reversal, "Deciding this round" when the round exists to make a call.
+Sits first, wrapped like any titled section so the orientation strip picks it up. The middle column's label flexes with the round: "Changed this round" after a reversal, "Deciding this round" when the round exists to make a call.
 
 ```html
 <section id="ledger" class="mt-10">
