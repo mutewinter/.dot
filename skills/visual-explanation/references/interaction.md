@@ -13,7 +13,7 @@ Orientation exists so the reader knows which document they are in, where they ar
 When the page needs decisions back from the reader, collect them as a form a non-technical reader can follow: they are answering questions, and the result is a reply they hand back to the agent. All of that is said in words on the page, not implied by affordances.
 
 - Each question lives where the reader forms the opinion, never gathered into a quiz at the end: a numbered card, the question in plain language, and the options joined into one segmented control (`inline-flex` bordered group, selected segment filled via `aria-pressed:` variants), so single-choice is legible before the first click. A second click on the active segment clears it. The what-happens-next explanation ("your answers build a reply at the bottom to paste back into the chat") lives on the first question card, not in the bar.
-- A reply bar floats centered at the bottom of the window once the first answer lands, animating up into view so the reader connects its appearance to their click. A one-line caption above the controls says what the widget is, a descriptor rather than an instruction, in the register of "The reply this page is building from your answers"; never name a specific agent, since these pages outlive whichever assistant made them. Under the caption: one numbered marker per question (filled when answered, outlined while pending, each an anchor jumping to its question) and one button labeled "Copy reply". No Clear control and no prose previews; re-clicking an active segment already clears that answer.
+- A reply bar floats centered at the bottom of the window once the first answer lands, animating up into view so the reader connects its appearance to their click. A one-line caption above the controls says what the widget is, a descriptor rather than an instruction, in the register of "Your answers to this page's questions"; never name a specific agent, since these pages outlive whichever assistant made them. Under the caption: one numbered marker per question (filled when answered, outlined while pending, each an anchor jumping to its question) and one button labeled "Copy reply". No Clear control and no prose previews; re-clicking an active segment already clears that answer.
 - What the button copies is not the preview: it is Markdown the receiving agent can parse, opening with a line naming the page and file, then a numbered list with each question's topic and the chosen option in bold, unanswered ones marked as such:
 
   ```markdown
@@ -41,7 +41,7 @@ This is the most intricate pattern in the skill, so copy the complete working ex
 
 <div data-reply-bar hidden class="pointer-events-none fixed inset-x-0 bottom-4 z-30 flex justify-center px-4 print:hidden">
   <div class="bar-inner pointer-events-auto rounded-xl border border-border bg-card px-4 py-3 shadow-xl">
-    <p class="text-xs leading-4 text-muted-foreground">The reply this page is building from your answers</p>
+    <p class="text-xs leading-4 text-muted-foreground">Your answers to this page's questions</p>
     <div class="mt-2 flex items-center justify-between gap-4">
       <span data-reply-marks class="flex items-center gap-1.5"></span>
       <button data-reply-copy class="shrink-0 rounded-md bg-primary px-3 py-1.5 text-sm font-medium whitespace-nowrap text-primary-foreground hover:opacity-90">Copy reply</button>
