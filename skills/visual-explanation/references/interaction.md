@@ -14,14 +14,16 @@ When the page needs decisions back from the reader, collect them as a form a non
 
 - Each question lives where the reader forms the opinion, never gathered into a quiz at the end: a numbered card, the question in plain language, and the options joined into one segmented control (`inline-flex` bordered group, selected segment filled via `aria-pressed:` variants), so single-choice is legible before the first click. A second click on the active segment clears it. The what-happens-next explanation ("your answers build a reply at the bottom to paste back into the chat") lives on the first question card, not in the bar.
 - A reply bar floats centered at the bottom of the window once the first answer lands, animating up into view so the reader connects its appearance to their click. A one-line caption above the controls says what the widget is, a descriptor rather than an instruction, in the register of "Your answers to this page's questions"; never name a specific agent, since these pages outlive whichever assistant made them. Under the caption: one numbered marker per question (filled when answered, outlined while pending, each an anchor jumping to its question) and one button labeled "Copy reply". No Clear control and no prose previews; re-clicking an active segment already clears that answer.
-- What the button copies is not the preview: it is Markdown the receiving agent can parse, opening with a line naming the page and file, then a numbered list with each question's topic and the chosen option in bold, unanswered ones marked as such:
+- What the button copies is Markdown shaped as a QA transcript: a line naming the page and file, then each question quoted verbatim from the page (the element marked `data-question`) with the chosen option as its answer, unanswered ones marked as such:
 
   ```markdown
   Answers from "The answer form, spelled out" (2026-09-01-answer-form-round-two.html):
 
-  1. Form shape: **ship it like this**
-  2. Runbook numbering: **leave it to the agent**
-  3. Contents button: _unanswered_
+  1. **Q:** Is this form shape clear enough to ship?
+     **A:** Ship it like this
+
+  2. **Q:** Should runbook steps be numbered by default?
+     **A:** _unanswered_
   ```
 
 - The page must read complete with the form untouched. The form is how the reply travels; it is never how the argument is made.
@@ -31,7 +33,7 @@ This is the most intricate pattern in the skill, so copy the complete working ex
 ```html
 <div data-q="1" id="q1" data-topic="Form shape" class="mt-5 rounded-xl border-2 border-brand-200 bg-card p-5 shadow-sm">
   <p class="text-xs font-medium tracking-[0.12em] text-brand-700 uppercase">Question 1 of 2</p>
-  <p class="mt-2 text-sm leading-6 font-medium">The question, in plain language?</p>
+  <p data-question class="mt-2 text-sm leading-6 font-medium">The question, in plain language?</p>
   <p class="mt-1 text-sm leading-6 text-muted-foreground">Pick one; clicking it again clears it. Your answers build a reply at the bottom to copy and paste back into the chat.</p>
   <div class="mt-3 inline-flex overflow-hidden rounded-lg border border-border" role="radiogroup">
     <button data-opt data-reply="option one" aria-pressed="false" class="border-l border-border px-3.5 py-2 text-sm text-muted-foreground transition-colors first:border-l-0 hover:text-foreground aria-pressed:bg-brand-600 aria-pressed:text-white aria-pressed:hover:text-white">Option one</button>
@@ -78,7 +80,7 @@ This is the most intricate pattern in the skill, so copy the complete working ex
     });
     const buildReply = () =>
       'Answers from "PAGE TITLE" (FILENAME.html):\n\n' +
-      qs.map((q, i) => i + 1 + ". " + q.dataset.topic + ": " + (state[q.dataset.q] ? "**" + state[q.dataset.q] + "**" : "_unanswered_")).join("\n");
+      qs.map((q, i) => i + 1 + ". **Q:** " + q.querySelector("[data-question]").textContent.trim() + "\n   **A:** " + (state[q.dataset.q] || "_unanswered_")).join("\n\n");
     document.querySelector("[data-reply-copy]").addEventListener("click", () => {
       const btn = document.querySelector("[data-reply-copy]");
       if (navigator.clipboard) navigator.clipboard.writeText(buildReply()).then(() => { btn.textContent = "Copied"; setTimeout(() => (btn.textContent = "Copy reply"), 1200); }).catch(() => {});
