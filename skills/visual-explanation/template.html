@@ -218,6 +218,26 @@
             .join("") +
           "</ul>";
         document.body.appendChild(toc);
+
+        // Below the sidebar threshold the same list lives behind a small
+        // contents button, bottom left, so narrower windows keep navigation.
+        const tocFab = document.createElement("div");
+        tocFab.className = "fixed bottom-4 left-4 z-20 min-[1500px]:hidden print:hidden";
+        const tocPanel = document.createElement("div");
+        tocPanel.hidden = true;
+        tocPanel.className = "absolute bottom-12 left-0 max-h-[60vh] w-64 overflow-y-auto rounded-xl border border-border bg-card p-3 shadow-xl";
+        tocPanel.appendChild(toc.firstElementChild.cloneNode(true));
+        const tocBtn = document.createElement("button");
+        tocBtn.setAttribute("aria-label", "Sections");
+        tocBtn.className = "flex size-10 items-center justify-center rounded-full border border-border bg-card shadow-xl hover:border-brand-400";
+        tocBtn.innerHTML = "<i class='ph ph-list-bullets text-lg'></i>";
+        tocBtn.addEventListener("click", () => (tocPanel.hidden = !tocPanel.hidden));
+        tocPanel.addEventListener("click", (e) => { if (e.target.closest("a")) tocPanel.hidden = true; });
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape") tocPanel.hidden = true; });
+        tocFab.appendChild(tocPanel);
+        tocFab.appendChild(tocBtn);
+        document.body.appendChild(tocFab);
+
         const spy = new IntersectionObserver(
           (entries) => {
             entries.forEach((e) => {
