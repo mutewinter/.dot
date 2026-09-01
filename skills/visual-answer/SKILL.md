@@ -1,9 +1,9 @@
 ---
-name: visual-explanation
-description: Create a tailored, single-file HTML visual explanation of a complex question, code change, architecture, plan, incident, comparison, workflow, or product behavior. Use when the user asks to visualize work, make something easier to understand, explain changes visually, produce an interactive technical artifact, or invokes this skill for a richer answer than prose alone.
+name: visual-answer
+description: When the user says "visual answer" (or the older "visual explanation", or asks for a question answered or work explained visually), they mean this specific skill; invoke it rather than improvising a format. It creates a tailored, single-file HTML page answering a complex question about a code change, architecture, plan, incident, comparison, workflow, decision, or product behavior, with diagrams, evidence, and forms the reader answers on the page.
 ---
 
-# Visual explanation
+# Visual answer
 
 Create one HTML artifact whose form follows the question. This is a flexible explanatory canvas, not a fixed report, wireframe, slide deck, or exhaustive diff viewer.
 
