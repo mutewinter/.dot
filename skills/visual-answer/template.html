@@ -128,6 +128,27 @@
       }
     </style>
     <style>
+      /* The strip scrolls itself, and a scrollbar flashing in and out over the
+         top of the page while you read is pure distraction. Fades stand in for
+         it, and only when there is actually more strip than fits. */
+      [data-strip] {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      [data-strip]::-webkit-scrollbar {
+        display: none;
+      }
+      [data-strip][data-overflow="both"] {
+        mask-image: linear-gradient(90deg, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+      }
+      [data-strip][data-overflow="end"] {
+        mask-image: linear-gradient(90deg, #000 calc(100% - 20px), transparent 100%);
+      }
+      [data-strip][data-overflow="start"] {
+        mask-image: linear-gradient(90deg, transparent 0, #000 20px);
+      }
+    </style>
+    <style>
       @media print {
         * {
           print-color-adjust: exact;
@@ -179,12 +200,18 @@
         document.title = `${heading.textContent.trim()} · Visual answer`;
       }
 
-      // Stacked bars on near-black. Wireframes use a green square with a
-      // version digit, so a row of tabs separates into the two kinds on sight.
+      // Stacked bars on near-black. The shortest bar takes a color derived
+      // from data-thread, so several pages from one conversation are the same
+      // color in a row of open tabs, and a different conversation is not.
+      const thread = document.querySelector("[data-thread]")?.dataset.thread ?? "";
+      let hue = 0;
+      for (const ch of thread) hue = (hue * 31 + ch.charCodeAt(0)) % 360;
+      const accent = thread ? `hsl(${hue} 58% 45%)` : "#ffffff";
+      const accentOpacity = thread ? "1" : "0.5";
       document.querySelector("#favicon").href =
         "data:image/svg+xml," +
         encodeURIComponent(
-          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#171412"/><rect x="7" y="9" width="18" height="3.5" rx="1.75" fill="#ffffff"/><rect x="7" y="15" width="13" height="3.5" rx="1.75" fill="#ffffff" opacity="0.75"/><rect x="7" y="21" width="8" height="3.5" rx="1.75" fill="#ffffff" opacity="0.5"/></svg>`,
+          `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#171412"/><rect x="7" y="9" width="18" height="3.5" rx="1.75" fill="#ffffff"/><rect x="7" y="15" width="13" height="3.5" rx="1.75" fill="#ffffff" opacity="0.75"/><rect x="7" y="21" width="8" height="3.5" rx="1.75" fill="${accent}" opacity="${accentOpacity}"/></svg>`,
         );
 
       // Orientation strip, built from main > section[id] h2s and shown at
@@ -212,6 +239,17 @@
             .join("") +
           "</div></div>";
         document.body.prepend(tocStrip);
+
+        const strip = tocStrip.querySelector("[data-strip]");
+        const markEdges = () => {
+          const more = strip.scrollWidth - strip.clientWidth;
+          const atStart = strip.scrollLeft < 4;
+          const atEnd = strip.scrollLeft > more - 4;
+          strip.dataset.overflow = more < 4 ? "none" : atStart ? "end" : atEnd ? "start" : "both";
+        };
+        strip.addEventListener("scroll", markEdges, { passive: true });
+        addEventListener("resize", markEdges);
+        markEdges();
 
         const markSpy = (id) => {
           document.querySelectorAll("a[data-spy]").forEach((a) => {

@@ -50,3 +50,7 @@ Multiple agents may work in the same repo simultaneously, so:
 
 - **Never pass `-r`.** rg is always recursive; `-r` means `--replace`, so `rg -rn` silently rewrites every match to the letter `n` and exits 0. If output looks garbled or truncated, check for `-r`.
 - Globs are `-g '*.tsx'`. `-t tsx` is not a valid rg type (`-t ts` is), and `--include`/`--exclude` are GNU grep flags that do not exist here.
+
+## Visual answers
+
+- Do not open a finished visual answer in a browser on this machine. A viewer app watches the folder and shows new pages on its own, so opening one only adds a tab. Return the path as usual.
