@@ -19,6 +19,14 @@ The artifact is the primary reading surface. The reader often skips the conversa
 6. When the explanation shows real product UI or rendered output, prefer captured images over redrawn approximations: land them in an `assets/` directory beside the artifact and reference them relatively. They render when the page opens as a file in the browser, not in app preview panes, and they are snapshots, so date them or re-shoot on revision.
 7. Return a direct link to the HTML file and a one-sentence description of what it explains.
 
+## Title it with its subject
+
+Name the page after what it is about, and stop there: `Feedback knowledge base`, `1.6.9 test plan`, `Wayfair session post-mortem`, `PR 102 merge behavior`. A noun phrase, the way you would name a folder.
+
+The finding, the verdict and the argument go in the thesis paragraph directly beneath the title, which is where they already read well. Do not put them in the title, and never append them to the subject as a clause: `The block was never a rate limit` and `Feedback knowledge base: Notion, not a repo` both read beautifully to whoever just finished the page and are unrecognizable to the same person a week later. A list of such titles cannot be skimmed at all, because every line has a different shape and none of them names a subject.
+
+The filename is that subject, dated: `YYYY-MM-DD-<subject>.html`. When a later round sharpens what the page is really about, rename the title and the file together; a better name later is worth more than a stable one.
+
 ## Keep the latitude
 
 There are no required sections, length, navigation, number of panels, or interactions. Do not automatically add background, a table of contents, a quiz, metrics, or a file-by-file walkthrough. Lead with the answer and prefer selective depth over exhaustive coverage.
@@ -54,7 +62,7 @@ Four rules that apply even without reading the references:
 
 ## When the artifact is one of a series
 
-A design conversation often wants several artifacts, one per round, each a new file rather than an edit to the last. A few things earn their place in that mode and nowhere else:
+A design conversation often returns to the same subject. Whether a later round edits the existing page or writes a new one is yours to judge: editing keeps one name for a subject that is still moving, and a new page earns its place when the decision changed enough that the earlier round is worth keeping beside it. A few things earn their place in this mode and nowhere else:
 
 - **Open with a settled-versus-cut ledger.** A compact grid of what is now decided and what has been dropped, so the reader confirms the shared state before reading the argument. It replaces recapping the previous artifact in prose.
 - **Say plainly when you are reversing your own earlier recommendation, and on what new information.** A revision that quietly changes position makes the reader re-derive which version they are holding.
