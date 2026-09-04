@@ -45,6 +45,54 @@ On a dark banner: `bg-amber-400/20 text-amber-300` is the established flag-pill 
 
 Swap `bg-gray-900` for `bg-brand-600`/`bg-error-500`/`bg-success-700` when the step itself carries status.
 
+## Icon-led list
+
+For a list of short nouns or one-clause claims the reader scans rather than reads. One Phosphor regular icon per row, as a landmark, never two and never an emoji. Brand tone for the focal list, gray for a supporting one.
+
+```html
+<ul class="space-y-2 text-sm">
+  <li class="flex items-center gap-2.5"><i class="ph ph-folder-open text-lg text-brand-700"></i>The workspace folder</li>
+</ul>
+```
+
+When the row is a bold label and a clause, align the icon to the first line: `items-start` on the row, `mt-1` on the icon.
+
+```html
+<li class="flex items-start gap-3 text-sm leading-6"><i class="ph ph-hand-palm mt-1 text-lg text-brand-700"></i><span><strong>Restraint.</strong> No walls of text.</span></li>
+```
+
+## Icon chips
+
+A field of labeled things to scan in any order: what a system captures, what a page covers, the inputs to a decision. Each chip is one icon and two to four words; the icon's tone marks the group, so a page can carry two or three fields without a heading between every row.
+
+```html
+<div class="flex flex-wrap gap-2">
+  <span class="flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-sm"><i class="ph ph-browser text-base text-brand-700"></i>Pages viewed</span>
+</div>
+```
+
+## Paired columns
+
+Two positions on one subject, one card per subject, for a disagreement or a before-and-after. The kicker names the subject; the sides are labeled inline so each half reads as a sentence, and the second side takes the brand tone when it is the author's.
+
+```html
+<div class="rounded-xl border border-border bg-card p-4 shadow-sm">
+  <p class="text-xs font-medium tracking-[0.12em] text-muted-foreground uppercase">Projects</p>
+  <div class="mt-2 grid gap-4 text-sm leading-6 sm:grid-cols-2">
+    <p><span class="font-semibold">Neil</span> · durable bodies of work. Keep them.</p>
+    <p><span class="font-semibold text-brand-700">Me</span> · groups of reachable things. Nearly the same.</p>
+  </div>
+</div>
+```
+
+## Bare numbered list
+
+For claims the reader will say out loud: tenets, rules, a plan's steps. The step circle and the sentence are the whole row. A gray explainer after each line reads as a hedge and doubles the scan cost; put the detail in a section below and link the number to it.
+
+```html
+<li class="flex gap-3"><span class="flex size-7 shrink-0 items-center justify-center rounded-full bg-gray-900 font-mono text-xs text-white">1</span><span class="text-[15px] leading-7 font-medium">One agent, and you never take turns with it.</span></li>
+```
+
 ## Emphasis cards
 
 Three levels on top of the base card (`rounded-xl border border-border bg-card p-5 shadow-sm`):

@@ -33,6 +33,8 @@ There are no required sections, length, navigation, number of panels, or interac
 
 If three consecutive sections are coming out as prose lists, stop and reshape them into a diagram, sequence, table, or ledger. Long runs of text-shaped content are the single most common reader complaint with these artifacts.
 
+Give the reader landmarks. A Phosphor regular icon at the head of each row turns a list into something the eye can jump around in, and a field of icon chips does the same for a set of things with no order; both beat a bare bullet and both beat an emoji. One icon per row, never two, and the same tone across a group so the tone carries the grouping. The spellings are in `references/patterns.md`.
+
 Vary the volume. The bordered card is the focal layer, not the default wrapper: sections that support rather than decide can sit directly on the page background with tighter type and no chrome. Reserve toned fills, colored borders, and status color for the few elements carrying the verdict; when every panel is a card and every card is loud, nothing reads as important.
 
 Respect the column. `main` is deliberately modest (`max-w-4xl`): these pages are read on laptops, and long lines defeat scanning. Structural elements (cards, grids, tables, figures) span the column; prose paragraphs cap near `max-w-3xl` for measure; wide tables and diagrams scroll inside their own overflow container rather than widening the page. Do not widen `main`, and do not leave blocks stranded at assorted widths.
