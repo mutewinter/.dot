@@ -391,10 +391,6 @@
     "when": "editorFocus",
   },
   {
-    "command": "redo",
-    "key": "shift+cmd+u",
-  },
-  {
     "command": "-redo",
     "key": "shift+cmd+z",
   },
@@ -537,5 +533,28 @@
   {
     "key": "cmd+u",
     "command": "claudeVSCodeSidebarSecondary.focus"
+  },
+  {
+    "key": "shift+cmd+u",
+    "command": "-workbench.action.output.toggleOutput",
+    "when": "workbench.panel.output.active"
+  },
+  {
+    "key": "shift+cmd+u",
+    "command": "prStatus:github.focus"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-markdown.togglePreview",
+    "when": "!terminalFocus && activeCustomEditorId == 'vscode.markdown.preview.editor' || editorFocus && !notebookEditorFocused && !terminalFocus && resourceLangId =~ /^(markdown|prompt|instructions|chatagent|skill)$/"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-notebook.cell.pasteAbove",
+    "when": "notebookEditorFocused && !inputFocus"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "pr.markFileAsViewed"
   },
 ]
