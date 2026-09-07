@@ -30,4 +30,4 @@ font-size = 15
 
 window-width = 80
 window-height = 24
-window-decoration = false
+window-decoration = true
