@@ -48,6 +48,7 @@
   "debug.console.fontSize": 15,
   "debug.openDebug": "neverOpen",
   "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.renderSideBySide": false,
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "solid",
   "editor.cursorSmoothCaretAnimation": "on",
