@@ -171,6 +171,65 @@ Close pages whose claims rest on gathered evidence with provenance: what was rea
 
 Illustrative or invented content is disclosed twice: a warning-toned kicker up top and a sentence here.
 
+## Full-bleed row
+
+For content that **is** the argument rather than illustrating it: a row of captured screens being compared, a matrix whose point is seeing every cell at once. Breaks out of `main`'s column without widening `main`, so the prose around it keeps its measure.
+
+```html
+<div class="relative left-1/2 w-[92vw] max-w-[132rem] -translate-x-1/2">
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">…</div>
+</div>
+```
+
+`92vw` rather than `100vw` keeps a margin and avoids the horizontal scrollbar a full-viewport child causes on Windows. Cap it: past about `132rem` a row stops reading as one thing. Use it for a handful of blocks on a page, never as the default wrapper -- a page where everything is full-bleed has no column left to break out of.
+
+## Comparison gallery
+
+N renders of the same brief, one per candidate, each captioned with what to look at. The caption does the work: a bare grid of screenshots asks the reader to find the difference themselves, which they will not.
+
+```html
+<figure>
+  <button type="button" class="block w-full cursor-zoom-in" data-full="./assets/x.png" data-label="Model &middot; poster">
+    <img src="./assets/x.png" alt="…" class="w-full rounded-lg border border-border transition hover:brightness-95" loading="lazy" />
+  </button>
+  <figcaption class="mt-2 text-xs leading-5 text-muted-foreground">
+    <strong class="text-foreground">Model name</strong>
+    <span class="ml-2 rounded-full bg-success-100 px-2 py-0.5 text-[10px] font-semibold text-success-700">my pick</span><br />
+    What is good or wrong about this one, in a clause or two.
+  </figcaption>
+</figure>
+```
+
+Three rules. Mark the winner and the defective one with a `border-2` in `success` or `error` and a pill, so the eye lands before it reads. Say plainly that the ranking is your judgement and only the counted things were counted. And `loading="lazy"` on every image past the first row, because these pages run to tens of megabytes.
+
+Pair it with the click-to-enlarge dialog in `references/interaction.md` whenever the grid is dense enough that a tile is smaller than the thing it shows.
+
+## Capturing an artifact
+
+Rendering a real output beats describing it, and the rendering is where the claim and the thing come apart -- so look at every capture before writing a caption about it.
+
+```bash
+qlmanage -t -s 1200 -o . file.pptx        # Office, PDF, most macOS-previewable types; first page only
+chrome --headless --disable-gpu --screenshot=out.png \
+  --window-size=1280,1400 --hide-scrollbars "file://$PWD/page.html"
+```
+
+The trap: **the capture window is the image size**, so a window wider than the content leaves a white band down the side of every tile, and it is invisible until the grid is assembled. Read the SVG's `viewBox` or the page's own width and shoot at exactly that. For a long page, shoot tall and say in the caption that it is the first screen.
+
+`--virtual-time-budget=9000` gives a page with a CDN stylesheet time to compile before the shutter; without it a Tailwind page captures unstyled.
+
+## Retraction
+
+When a later round overturns something an earlier page recommended, say so where the reader will hit it, not in a footnote. The value of a series is that its reversals are legible.
+
+```html
+<div class="rounded-xl border-l-4 border-error-500 bg-card p-5 shadow-sm">
+  <p class="text-sm leading-6"><strong>What I got wrong.</strong> The claim as it was made, then what the new evidence is, then what it changes. No hedging about how it was defensible at the time.</p>
+</div>
+```
+
+Distinguish the two kinds, because they cost the reader differently: a **reversal** (new evidence, different answer) and an **overstatement** (right direction, wrong absolute -- "never" that turned out to be "21% of the time"). Name which it is.
+
 ## Coach marks
 
 Commentary about a depicted thing (a slide, a UI, a transcript) sits outside the depicted surface in a visibly different voice, so content and annotation never blur:
