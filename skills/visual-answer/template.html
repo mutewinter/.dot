@@ -134,6 +134,7 @@
       [data-strip] {
         scrollbar-width: none;
         -ms-overflow-style: none;
+        overflow-y: hidden;
       }
       [data-strip]::-webkit-scrollbar {
         display: none;
@@ -209,6 +210,12 @@
         white-space: pre-wrap;
         overflow-wrap: break-word;
         overflow-x: auto;
+        /* Never vertically, or the wheel gets spent here. A horizontal
+           scrollbar steals height from the content box, which leaves the
+           block scrollable down by exactly the scrollbar's height, and a
+           reader scrolling past it stops instead. Only bites with a mouse
+           attached, since overlay scrollbars take no space. */
+        overflow-y: hidden;
       }
       main [data-wrap="off"] pre,
       main pre[data-wrap="off"] {

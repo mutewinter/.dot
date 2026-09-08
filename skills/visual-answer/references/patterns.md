@@ -195,7 +195,13 @@ Two steps out, both supplied by the template and both centered on the column. Th
 
 Put it on the block that needs the room, never on the `<section>`, or the heading and intro drift out of line with every other heading on the page. Both steps cap at `92vw` rather than `100vw`, which keeps a margin and avoids the horizontal scrollbar a full-viewport child causes on Windows. Use them for a handful of blocks on a page, never as the default wrapper -- a page where everything is wide has no column left to break out of.
 
-Prefer either step over a horizontal scroller. A wheel over an `overflow-x-auto` region gets caught by it and the page stops scrolling down, which reads as the page being broken. Widen, wrap, or reflow into a grid first; keep the scroller for content that genuinely cannot be narrowed.
+Prefer either step over a horizontal scroller, and where one is unavoidable, always pair the classes:
+
+```html
+<div data-width="wide" class="mt-6 overflow-x-auto overflow-y-hidden">…</div>
+```
+
+`overflow-x-auto` alone computes `overflow-y` to `auto` as well. A horizontal scrollbar then steals its own height from the content box, which leaves the block scrollable downward by exactly that much, and a reader scrolling past it spends the gesture there and thinks the page is stuck. It only bites with a mouse attached, because overlay scrollbars take no space, which is why it survives every check made on a trackpad. The template already pins this down for `<pre>` and the orientation strip; a table wrapper is yours to spell.
 
 ## Comparison gallery
 
