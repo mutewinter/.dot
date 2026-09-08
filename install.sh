@@ -68,6 +68,9 @@ symlink "$DOT/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
 # Ghostty
 symlink "$DOT/ghostty/config" "$HOME/.config/ghostty/config"
 
+# Herdr
+symlink "$DOT/herdr/config.toml" "$HOME/.config/herdr/config.toml"
+
 # Raycast script commands
 symlink "$DOT/raycast/focus-electron.applescript" "$HOME/Documents/Raycast/focus-electron.applescript"
 
