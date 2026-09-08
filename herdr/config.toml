@@ -1,15 +1,7 @@
-# Keybindings ported from ../home/.tmux.conf
-#
-# Herdr's tab is tmux's window, and Herdr's workspace is tmux's session.
-# Where a tmux binding and a Herdr default both make sense, the action lists
-# both. `herdr --default-config` prints everything available.
-#
-# Herdr has to survive running inside tmux, which shapes every binding here.
-# tmux claims its `bind -n` chords before an inner app sees them, so anything
-# on alt+, ctrl+left, ctrl+right, or F3-F8 reaches Herdr only when it runs
-# standalone; nested, tmux answers with its own equivalent of the same action.
-# What always reaches Herdr is prefix+ chords, since the two prefixes differ,
-# and the ctrl+alt family, which tmux leaves alone.
+# Near-default Herdr config. Keybindings are Herdr's own rather than a port of
+# ../home/.tmux.conf; `herdr --default-config` prints everything available.
+# Worth knowing from the defaults: prefix is ctrl+b, prefix+v and prefix+minus
+# split, prefix+h/j/k/l focus panes, and prefix+b toggles the sidebar.
 
 [theme]
 # Inherit the outer terminal's palette so panes match the jellybeans colors
@@ -19,79 +11,14 @@ name = "terminal"
 [theme.custom]
 accent = "#97bedc"
 
-[keys]
-# Herdr's own default, left alone so it stays clear of tmux's ctrl+a. Nested,
-# tmux passes ctrl+b through untouched and both multiplexers stay reachable.
-prefix = "ctrl+b"
-
-# Prefix mode. tmux's `bind r` reloads, so resize mode takes the shift slot
-# that reload_config vacated.
-reload_config = "prefix+r"
-resize_mode = "prefix+shift+r"
-
-# `bind n new-window` and `bind N new-session`. prefix+n is the new tab rather
-# than the next one, so next_tab moves to the ctrl+alt family the Herdr
-# keyboard docs vet as collision-free.
-new_tab = ["prefix+n", "prefix+c"]
-next_tab = "ctrl+alt+]"
-previous_tab = ["prefix+p", "ctrl+alt+["]
-rename_tab = ["prefix+comma", "prefix+shift+t"]
-close_tab = ["prefix+ampersand", "prefix+shift+x"]
-switch_tab = "prefix+1..9"
-
-# `bind -n C-Left/C-Right swap-window`
-move_tab_previous = "ctrl+left"
-move_tab_next = "ctrl+right"
-
-# `bind v split-window -h` and `bind h split-window -v`. Claiming prefix+h for
-# the stacked split costs focus_pane_left its default, so all four directions
-# move to direct ctrl+alt chords and stay symmetric.
-split_vertical = "prefix+v"
-split_horizontal = ["prefix+h", "prefix+minus"]
-focus_pane_left = "ctrl+alt+h"
-focus_pane_down = "ctrl+alt+j"
-focus_pane_up = "ctrl+alt+k"
-focus_pane_right = "ctrl+alt+l"
-
-# `bind -n M-,` select-pane -l
-last_pane = "alt+comma"
-
-# `bind -nr M-o resize-pane -Z`
-zoom = ["prefix+z", "alt+o"]
-
-# `bind -nr M-Up/Down/Left/Right resize-pane`, which resizes without first
-# entering resize mode.
-resize_pane_left = "alt+left"
-resize_pane_down = "alt+down"
-resize_pane_up = "alt+up"
-resize_pane_right = "alt+right"
-
-# `bind -n M-v copy-mode`. Herdr's copy mode is already vi-style: v or Space
-# selects, y or Enter yanks, q or Esc leaves.
-copy_mode = ["prefix+[", "alt+v"]
-
-# `bind -n M-i choose-tree`
-goto = ["prefix+g", "alt+i"]
-
-# tmux detaches on prefix+d
-detach = ["prefix+d", "prefix+q"]
-
-# tmux's `bind C-a send-prefix` needs no equivalent here: Herdr reserves a
-# doubled prefix to send one literal ctrl+b to the focused pane.
-
 [ui]
-# tmux draws splitters between panes with no frame around the outside.
-pane_outer_borders = false
-pane_gaps = false
-
-# Mirrors the tmux status-right: zoom flag, date, 12-hour clock, hostname.
+# Zoom flag, date, 12-hour clock, and hostname at the right edge of the tab bar.
 tab_bar_right = [
   { type = "zoom" },
   { type = "datetime", format = "%Y-%m-%d %l:%M%p" },
   { type = "hostname" },
 ]
 tab_bar_right_separator = "  "
-agent_panel_sort = "spaces"
 
 # Claude Code writes its own session summary to the terminal title, so the agent
 # rows show it. Every other agent keeps the two-row default.
