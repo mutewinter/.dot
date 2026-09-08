@@ -195,6 +195,8 @@ Two steps out, both supplied by the template and both centered on the column. Th
 
 Put it on the block that needs the room, never on the `<section>`, or the heading and intro drift out of line with every other heading on the page. Both steps cap at `92vw` rather than `100vw`, which keeps a margin and avoids the horizontal scrollbar a full-viewport child causes on Windows. Use them for a handful of blocks on a page, never as the default wrapper -- a page where everything is wide has no column left to break out of.
 
+Prefer either step over a horizontal scroller. A wheel over an `overflow-x-auto` region gets caught by it and the page stops scrolling down, which reads as the page being broken. Widen, wrap, or reflow into a grid first; keep the scroller for content that genuinely cannot be narrowed.
+
 ## Comparison gallery
 
 N renders of the same brief, one per candidate, each captioned with what to look at. The caption does the work: a bare grid of screenshots asks the reader to find the difference themselves, which they will not.
@@ -229,6 +231,8 @@ chrome --headless --disable-gpu --screenshot=out.png \
 The trap: **the capture window is the image size**, so a window wider than the content leaves a white band down the side of every tile, and it is invisible until the grid is assembled. Read the SVG's `viewBox` or the page's own width and shoot at exactly that. For a long page, shoot tall and say in the caption that it is the first screen.
 
 `--virtual-time-budget=9000` gives a page with a CDN stylesheet time to compile before the shutter; without it a Tailwind page captures unstyled.
+
+Land every asset at its native resolution and let CSS scale it down. A file downscaled on the way in is fine in the grid and useless the moment the reader opens it to read what it shows, which is the whole reason it is on the page.
 
 ## Retraction
 
