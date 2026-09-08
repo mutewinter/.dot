@@ -128,6 +128,12 @@ Terminal output is a bare `<pre>` with hand-placed spans (above). Real code is `
 
 Name the language; auto-detection is a fallback, not a plan.
 
+## What both blocks get for free
+
+Every `<pre>` on the page, in either dialect, is given a Copy button and a Wrap toggle in its top-right corner, revealed on hover. Never build your own; never leave a long line to run off the right edge on the theory that the reader will scroll.
+
+Blocks wrap by default, and the toggle returns one block to one line per line. Wrapping is right for the prose-shaped lines these pages mostly carry, and wrong for anything whose columns line up, so start those unwrapped with `data-wrap="off"` on the `<pre>`: an ASCII diagram, a box drawing, a table of aligned output. That is the only case where the author decides; everything else takes the default.
+
 ## Ledger opener (series rounds only)
 
 Sits first, wrapped like any titled section so the orientation strip picks it up. The middle column's label flexes with the round: "Changed this round" after a reversal, "Deciding this round" when the round exists to make a call.
