@@ -41,6 +41,28 @@ Every diagram: `viewBox`, full width with a minimum, inside a scroll wrapper, la
 
 Lanes are horizontal bands (`rect` at full width, `fill-muted` at low opacity, lane label at the left edge); actors sit in lanes; time flows left to right with marker arrows for messages. Number the arrows with small circles in the step-circle idiom (`fill-gray-900`, white 10px mono text) and put the narration in a matching ordered list beside or below the figure rather than cramming clauses into the SVG.
 
+## Parallel routes
+
+When one thing arrives by several routes, stack the routes rather than generalizing them into one diagram with a table of variants underneath. HTML, not SVG: a left-to-right chain of chips needs no coordinates.
+
+```html
+<div class="mt-6 space-y-3">
+  <!-- one row per route, emitted from an array; never hand-repeat these -->
+  <div class="grid grid-cols-[9rem_1fr] items-center gap-4">
+    <p class="text-xs font-medium text-muted-foreground">Email to hello@</p>
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs">
+      <span class="rounded-md border border-border bg-card px-2 py-1">lands in the shared inbox</span>
+      <i class="ph ph-arrow-right text-gray-400"></i>
+      <span class="rounded-md border border-border bg-card px-2 py-1">we answer it there</span>
+      <i class="ph ph-arrow-right text-gray-400"></i>
+      <span class="rounded-md border border-brand-200 bg-brand-25 px-2 py-1">an agent files it</span>
+    </div>
+  </div>
+</div>
+```
+
+Every row takes the identical shape, because the repetition is what makes the shared structure visible and the one differing step obvious. Tone only that differing step; a row where every chip is colored compares against nothing. Four or five routes is the useful range, and the reader tracing each one end to end is the point, so resist folding two similar routes together.
+
 ## Generated geometry
 
 When positions derive from data (rings, fans, trees, timelines), compute them in a small script emitting into an empty `<svg>`, exactly like the chart recipes. Radial layouts, evenly spaced fans, and proportional timelines are ten-line loops; hand-placing them is where overlap bugs come from.

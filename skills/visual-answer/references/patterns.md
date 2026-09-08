@@ -165,6 +165,19 @@ One card per open decision. The handle is plain words naming the subject; the ch
 </div>
 ```
 
+## Quoting someone
+
+The distillation is the line, the quote is the support under it. Never the other way round, and never the quote alone.
+
+```html
+<figure class="mt-4 border-l-2 border-border pl-4">
+  <p class="text-sm leading-6"><strong>Horizontal scrollers eat the wheel.</strong> Scrolling past one stops the page.</p>
+  <blockquote class="mt-1 text-xs leading-5 text-muted-foreground">&ldquo;my mouse wheel gets trapped on the horizontal rows&rdquo; &middot; Sep 2</blockquote>
+</figure>
+```
+
+Clip the quote to the fragment that carries the point and mark the clip with an ellipsis; a paragraph of someone's own words pasted whole is the least-read element on the page, however well it argues. Where many of these stack, they are a table, and the distillation is the first column.
+
 ## Evidence footer
 
 Close pages whose claims rest on gathered evidence with provenance: what was read, how counts were made, what is verbatim versus inferred.
