@@ -341,7 +341,14 @@
             .map((s) => {
               const h = s.querySelector("h2");
               const label = escToc(h.dataset.short || h.textContent.trim());
-              return "<a href='#" + s.id + "' data-spy='" + s.id + "' class='shrink-0 border-b-2 border-transparent py-2 text-gray-600 hover:text-foreground'>" + label + "</a>";
+              // A section mark on the h2 is mirrored here, so one authoring act
+              // marks the section in both places and the two cannot drift.
+              const mark = h.querySelector("i[class*='ph-']");
+              const glyph = mark
+                ? [...mark.classList].filter((c) => /^ph(-[a-z0-9-]+)?$/.test(c)).join(" ")
+                : "";
+              const icon = glyph ? "<i class='" + glyph + " text-sm'></i>" : "";
+              return "<a href='#" + s.id + "' data-spy='" + s.id + "' class='flex shrink-0 items-center gap-1.5 border-b-2 border-transparent py-2 text-gray-600 hover:text-foreground'>" + icon + label + "</a>";
             })
             .join("") +
           "</div></div>";

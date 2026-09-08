@@ -8,7 +8,17 @@ Canonical spellings for the elements nearly every explanation uses. Each is a st
 <h2 class="text-xl font-semibold tracking-[-0.02em]" data-short="Short label">What the section answers</h2>
 ```
 
-`data-short` feeds the orientation strip when the full heading runs long; omit it otherwise.
+`data-short` feeds the orientation strip when the full heading runs long; omit it otherwise. The heading states the section's finding rather than naming its topic, since it is the line most likely to be the only one read.
+
+To mark the sections, put a Phosphor icon first inside the `h2`. The strip mirrors it automatically, so this is the only place it is written:
+
+```html
+<h2 class="flex items-baseline gap-2 text-xl font-semibold tracking-[-0.02em]" data-short="The pattern">
+  <i class="ph ph-repeat shrink-0 text-lg text-gray-400"></i>Eleven reactions that keep coming back
+</h2>
+```
+
+`gap-2` and `items-baseline` sit the glyph on the heading's baseline; `text-gray-400` keeps it a landmark rather than a second piece of emphasis competing with the words. Mark every section or none. The icon names the section's subject, never its genre, which is the difference between a landmark and decoration.
 
 ## Kicker label
 

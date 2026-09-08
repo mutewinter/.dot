@@ -37,6 +37,8 @@ Give the reader landmarks. A Phosphor regular icon at the head of each row turns
 
 An icon is a landmark, never the content. A card whose body is an icon in a rounded square standing in for a category is the house style of generated slop; show the thing the card is about instead, at whatever size it takes to be legible.
 
+Sections can carry a mark of their own: a Phosphor icon as the first child of the `h2`, which the orientation strip mirrors automatically, so one authoring act marks the section in both places and they cannot drift. Use them on every section or on none, never on some. The icon has to name the section's actual subject and never its genre, which is the whole difference between a landmark and decoration: a repeat arrow on a section about things that keep recurring earns its place, while a lightbulb on ideas, a gear on settings, or a rocket on anything is what makes a page read as generated. The spelling is in `references/patterns.md`.
+
 Vary the volume. The bordered card is the focal layer, not the default wrapper: sections that support rather than decide can sit directly on the page background with tighter type and no chrome. Reserve toned fills, colored borders, and status color for the few elements carrying the verdict; when every panel is a card and every card is loud, nothing reads as important.
 
 Respect the column, and know when to leave it. `main` is deliberately modest (`max-w-4xl`): these pages are read on laptops, and long lines defeat scanning, so prose paragraphs cap near `max-w-3xl` for measure and structural elements span the column. Never widen `main` itself, and never leave blocks stranded at assorted widths.
