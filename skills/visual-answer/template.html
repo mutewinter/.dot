@@ -149,6 +149,30 @@
       }
     </style>
     <style>
+      /* Two ways out of main's column, for the blocks that need more room
+         than a measure meant for sentences. `wide` is the everyday one: a
+         dense table, a matrix, a comparison whose columns are being squeezed.
+         `full` is for content that is the argument rather than illustrating
+         it. Both center on the column, so the prose around them keeps its
+         measure and the page still reads as one document.
+
+         92vw rather than 100vw keeps a margin and avoids the horizontal
+         scrollbar a full-viewport child causes on Windows. Both are capped:
+         past its cap a row stops reading as one thing. */
+      [data-width="wide"],
+      [data-width="full"] {
+        position: relative;
+        left: 50%;
+        translate: -50%;
+      }
+      [data-width="wide"] {
+        width: min(76rem, 92vw);
+      }
+      [data-width="full"] {
+        width: min(132rem, 92vw);
+      }
+    </style>
+    <style>
       @media print {
         * {
           print-color-adjust: exact;

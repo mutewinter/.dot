@@ -177,17 +177,23 @@ Close pages whose claims rest on gathered evidence with provenance: what was rea
 
 Illustrative or invented content is disclosed twice: a warning-toned kicker up top and a sentence here.
 
-## Full-bleed row
+## Leaving the column
 
-For content that **is** the argument rather than illustrating it: a row of captured screens being compared, a matrix whose point is seeing every cell at once. Breaks out of `main`'s column without widening `main`, so the prose around it keeps its measure.
+Two steps out, both supplied by the template and both centered on the column. The attribute is the whole spelling; nothing else on the element positions it.
 
 ```html
-<div class="relative left-1/2 w-[92vw] max-w-[132rem] -translate-x-1/2">
+<!-- wide, ~76rem: the everyday step. Dense tables, matrices, comparisons. -->
+<div data-width="wide" class="mt-6 overflow-x-auto">
+  <table class="w-full text-left text-sm">…</table>
+</div>
+
+<!-- full, up to 132rem: content that is the argument rather than illustrating it. -->
+<div data-width="full">
   <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5">…</div>
 </div>
 ```
 
-`92vw` rather than `100vw` keeps a margin and avoids the horizontal scrollbar a full-viewport child causes on Windows. Cap it: past about `132rem` a row stops reading as one thing. Use it for a handful of blocks on a page, never as the default wrapper -- a page where everything is full-bleed has no column left to break out of.
+Put it on the block that needs the room, never on the `<section>`, or the heading and intro drift out of line with every other heading on the page. Both steps cap at `92vw` rather than `100vw`, which keeps a margin and avoids the horizontal scrollbar a full-viewport child causes on Windows. Use them for a handful of blocks on a page, never as the default wrapper -- a page where everything is wide has no column left to break out of.
 
 ## Comparison gallery
 
