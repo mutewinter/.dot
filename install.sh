@@ -71,6 +71,13 @@ symlink "$DOT/ghostty/config" "$HOME/.config/ghostty/config"
 # Herdr
 symlink "$DOT/herdr/config.toml" "$HOME/.config/herdr/config.toml"
 
+# The SessionStart hook registered in ../home/.claude/settings.json runs a
+# script Herdr generates and owns, so it isn't in this repo. Reinstalling
+# writes the script back and leaves the already-registered hook alone.
+if command -v herdr &>/dev/null && [ -d "$HOME/.claude" ]; then
+  herdr integration install claude
+fi
+
 # Raycast script commands
 symlink "$DOT/raycast/focus-electron.applescript" "$HOME/Documents/Raycast/focus-electron.applescript"
 
