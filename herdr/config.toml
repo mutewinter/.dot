@@ -10,6 +10,14 @@ split_horizontal = ["prefix+h", "prefix+minus"]
 # tmux detaches on prefix+d; Herdr's own default is prefix+q.
 detach = ["prefix+d", "prefix+q"]
 
+# Prefixless pane focus, matching how tmux's `bind -n` chords felt. alt+h and
+# alt+l shadow fish's man-page and list-token bindings, which ../home/.tmux.conf
+# already shadowed inside tmux. prefix+j/k/l keep working alongside.
+focus_pane_left = "alt+h"
+focus_pane_down = ["prefix+j", "alt+j"]
+focus_pane_up = ["prefix+k", "alt+k"]
+focus_pane_right = ["prefix+l", "alt+l"]
+
 # `bind -nr M-o resize-pane -Z`. Needs macos-option-as-alt in ../ghostty/config,
 # and reaches Herdr only when it is not running inside tmux, which binds M-o.
 zoom = ["prefix+z", "alt+o"]
