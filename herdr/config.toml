@@ -1,7 +1,22 @@
-# Near-default Herdr config. Keybindings are Herdr's own rather than a port of
-# ../home/.tmux.conf; `herdr --default-config` prints everything available.
-# Worth knowing from the defaults: prefix is ctrl+b, prefix+v and prefix+minus
-# split, prefix+h/j/k/l focus panes, and prefix+b toggles the sidebar.
+# Near-default Herdr config. Only the handful of ../home/.tmux.conf chords that
+# are already muscle memory are ported; everything else stays on Herdr's own
+# defaults, which `herdr --default-config` prints in full.
+
+[keys]
+# `bind h split-window -v`. This is Herdr's focus_pane_left by default, given up
+# because the hjkl pane focus goes unused here. prefix+j/k/l still focus.
+split_horizontal = ["prefix+h", "prefix+minus"]
+
+# tmux detaches on prefix+d; Herdr's own default is prefix+q.
+detach = ["prefix+d", "prefix+q"]
+
+# `bind -nr M-o resize-pane -Z`. Needs macos-option-as-alt in ../ghostty/config,
+# and reaches Herdr only when it is not running inside tmux, which binds M-o.
+zoom = ["prefix+z", "alt+o"]
+
+# `bind -n M-i choose-tree`. Navigate mode is the closest equivalent: it walks
+# workspaces and panes, with the same tmux caveats as alt+o above.
+goto = ["prefix+g", "alt+i"]
 
 [theme]
 # Inherit the outer terminal's palette so panes match the jellybeans colors
