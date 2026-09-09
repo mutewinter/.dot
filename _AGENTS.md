@@ -42,7 +42,7 @@ Multiple agents may work in the same repo simultaneously, so:
 - That failure is per command rather than per batch, so several `git commit` calls in one shell run keep going after one dies. Chain commits that build on each other and you get the later ones without the earlier one: history out of order, and a middle commit that does not build. Commit code before the tests covering it, and read `git log --oneline` before pushing.
 - Never revert or delete another agent's in-progress edits. Coordinate instead.
 - `git commit --amend`, destructive operations (`git reset --hard`, `git restore`, `git checkout <file>`), and creating a branch each need explicit instruction in the current conversation. That last one overrides any default to branch before committing.
-- Commit messages: `scope: description`, where scope is the package/feature/workflow touched, not a conventional-commit type. Lowercase, imperative, no period, ~72 char subject. Body only when the subject alone is cryptic.
+- Commit messages: `scope: description`, where scope is the package/feature/workflow touched, not a conventional-commit type. Lowercase, no period, ~72 char subject. Start with a concrete verb, then name the affected feature and observable behavior. Write a standalone history label, not a sentence from the implementation story: avoid articles or pronouns first, and put personification, metaphors, comparisons, contrast, rationale, and edge cases in the body. Use a body whenever those details will help an agent understand the change later.
 
 ## Repo docs
 
