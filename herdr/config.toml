@@ -26,11 +26,6 @@ zoom = ["prefix+z", "alt+o"]
 # workspaces and panes, with the same tmux caveats as alt+o above.
 goto = ["prefix+g", "alt+i"]
 
-# Jump to a sidebar agent row from any pane, prefixless like the chords above.
-# The panel stays grouped by space rather than by attention, so these indexes
-# hold still between glances.
-focus_agent = "alt+1..9"
-
 [theme]
 # Inherit the outer terminal's palette so panes match the jellybeans colors
 # in ../ghostty/config rather than shipping a second palette.
