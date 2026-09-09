@@ -70,6 +70,9 @@ symlink "$DOT/ghostty/config" "$HOME/.config/ghostty/config"
 
 # Herdr
 symlink "$DOT/herdr/config.toml" "$HOME/.config/herdr/config.toml"
+# Herdr resolves relative sound paths from the real ~/.config/herdr, not through
+# the config symlink, so the sounds directory needs its own link.
+symlink "$DOT/herdr/sounds" "$HOME/.config/herdr/sounds"
 
 # The SessionStart hook registered in ../home/.claude/settings.json runs a
 # script Herdr generates and owns, so it isn't in this repo. Reinstalling

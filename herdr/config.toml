@@ -57,3 +57,10 @@ tab_bar_right_separator = "  "
 # rows show it. Every other agent keeps the two-row default.
 [ui.sidebar.agents.rows_by_agent]
 claude = [["state_icon", "workspace", "tab"], ["terminal_title_stripped"], ["agent"]]
+
+# Too many agents finish at once for a completion chime to carry information, so
+# a silent file mutes those while the needs-input sound stays audible. Herdr has
+# no per-notification toggle, and it resolves this path from ~/.config/herdr,
+# which ../install.sh points at ./sounds.
+[ui.sound]
+done_path = "sounds/silence.mp3"
