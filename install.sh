@@ -74,11 +74,12 @@ symlink "$DOT/herdr/config.toml" "$HOME/.config/herdr/config.toml"
 # the config symlink, so the sounds directory needs its own link.
 symlink "$DOT/herdr/sounds" "$HOME/.config/herdr/sounds"
 
-# The SessionStart hook registered in ../home/.claude/settings.json runs a
-# script Herdr generates and owns, so it isn't in this repo. Reinstalling
-# writes the script back and leaves the already-registered hook alone.
-if command -v herdr &>/dev/null && [ -d "$HOME/.claude" ]; then
-  herdr integration install claude
+# The SessionStart hooks that report agent sessions to Herdr run scripts Herdr
+# generates and owns, so they aren't in this repo. Reinstalling writes them back
+# and leaves the already-registered hooks alone.
+if command -v herdr &>/dev/null; then
+  [ -d "$HOME/.claude" ] && herdr integration install claude
+  [ -d "$HOME/.codex" ]  && herdr integration install codex
 fi
 
 # Raycast script commands
