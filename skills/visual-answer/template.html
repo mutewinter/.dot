@@ -182,21 +182,40 @@
       }
     </style>
     <style>
-      /* highlight.js token colors on the dark code surface, matched to the
-         theme. The script at the end of the body loads highlight.js only when
-         a pre > code block exists. */
+      /* highlight.js token colors, matched to the theme and chosen against the
+         surface the block actually sits on. The script at the end of the body
+         loads highlight.js only when a pre > code block exists, and stamps
+         data-surface on each block from the measured background.
+
+         Which palette applies is not the author's to remember. The dark
+         surface is opt-in (`bg-gray-950` on the pre, or on a wrapper), so a
+         <pre> written without it sits on the page's own background, and a
+         palette that assumed dark unconditionally rendered that block
+         near-white on white: unreadable, and invisible to whoever wrote it,
+         since the text is there and selectable. Light is therefore the
+         default, matching what data-surface reports for an unstyled block, and
+         the dark palette applies only where the background really is dark. */
       pre code.hljs {
         background: transparent;
         padding: 0;
-        color: var(--color-gray-100); /* code excerpts sit on the dark surface */
+        color: var(--color-gray-900);
       }
-      .hljs-comment, .hljs-quote { color: var(--color-gray-400); }
-      .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-built_in, .hljs-type { color: var(--color-brand-300); }
-      .hljs-string, .hljs-addition, .hljs-regexp { color: var(--color-success-300); }
-      .hljs-number, .hljs-attr, .hljs-attribute, .hljs-symbol, .hljs-meta { color: var(--color-warning-300); }
-      .hljs-title, .hljs-name, .hljs-section, .hljs-selector-id, .hljs-selector-class { color: var(--color-gray-100); }
-      .hljs-deletion { color: var(--color-error-300); }
-      .hljs-variable, .hljs-template-variable, .hljs-bullet { color: var(--color-gray-200); }
+      .hljs-comment, .hljs-quote { color: var(--color-gray-500); }
+      .hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-built_in, .hljs-type { color: var(--color-brand-700); }
+      .hljs-string, .hljs-addition, .hljs-regexp { color: var(--color-success-700); }
+      .hljs-number, .hljs-attr, .hljs-attribute, .hljs-symbol, .hljs-meta { color: var(--color-brown-700); }
+      .hljs-title, .hljs-name, .hljs-section, .hljs-selector-id, .hljs-selector-class { color: var(--color-gray-900); }
+      .hljs-deletion { color: var(--color-error-700); }
+      .hljs-variable, .hljs-template-variable, .hljs-bullet { color: var(--color-gray-700); }
+
+      [data-code-block][data-surface="dark"] pre code.hljs { color: var(--color-gray-100); }
+      [data-code-block][data-surface="dark"] .hljs-comment, [data-code-block][data-surface="dark"] .hljs-quote { color: var(--color-gray-400); }
+      [data-code-block][data-surface="dark"] .hljs-keyword, [data-code-block][data-surface="dark"] .hljs-selector-tag, [data-code-block][data-surface="dark"] .hljs-literal, [data-code-block][data-surface="dark"] .hljs-built_in, [data-code-block][data-surface="dark"] .hljs-type { color: var(--color-brand-300); }
+      [data-code-block][data-surface="dark"] .hljs-string, [data-code-block][data-surface="dark"] .hljs-addition, [data-code-block][data-surface="dark"] .hljs-regexp { color: var(--color-success-300); }
+      [data-code-block][data-surface="dark"] .hljs-number, [data-code-block][data-surface="dark"] .hljs-attr, [data-code-block][data-surface="dark"] .hljs-attribute, [data-code-block][data-surface="dark"] .hljs-symbol, [data-code-block][data-surface="dark"] .hljs-meta { color: var(--color-warning-300); }
+      [data-code-block][data-surface="dark"] .hljs-title, [data-code-block][data-surface="dark"] .hljs-name, [data-code-block][data-surface="dark"] .hljs-section, [data-code-block][data-surface="dark"] .hljs-selector-id, [data-code-block][data-surface="dark"] .hljs-selector-class { color: var(--color-gray-100); }
+      [data-code-block][data-surface="dark"] .hljs-deletion { color: var(--color-error-300); }
+      [data-code-block][data-surface="dark"] .hljs-variable, [data-code-block][data-surface="dark"] .hljs-template-variable, [data-code-block][data-surface="dark"] .hljs-bullet { color: var(--color-gray-200); }
     </style>
     <style>
       /* Code and terminal blocks wrap by default: these pages are read at
@@ -224,6 +243,19 @@
       }
       [data-code-block] {
         position: relative;
+      }
+      /* A <pre> that reached the page carrying no surface of its own still
+         reads as a block rather than as loose monospace in the margin. Only
+         where the measured background is light and the pre is the surface, so
+         the dark dialects are untouched, and inside :where() so any class the
+         author did put on it wins. */
+      :where([data-code-block][data-surface="light"] > pre) {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background: var(--color-muted);
+        padding: 0.875rem 1rem;
+        font-size: 0.8125rem;
+        line-height: 1.6;
       }
       [data-code-tools] {
         position: absolute;

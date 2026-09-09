@@ -138,6 +138,8 @@ Terminal output is a bare `<pre>` with hand-placed spans (above). Real code is `
 
 Name the language; auto-detection is a fallback, not a plan.
 
+The dark surface is a choice rather than a requirement. A `<pre>` written without those classes renders as a light block, bordered and readable, with the token palette that suits it: the template picks the palette from the background it measures, so forgetting the classes costs the house look and never legibility.
+
 ## What both blocks get for free
 
 Every `<pre>` on the page, in either dialect, is given a Copy button and a Wrap toggle in its top-right corner, revealed on hover. Never build your own; never leave a long line to run off the right edge on the theory that the reader will scroll.
