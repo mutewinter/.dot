@@ -48,10 +48,20 @@ tab_bar_right = [
 ]
 tab_bar_right_separator = "  "
 
-# Claude Code writes its own session summary to the terminal title, so the agent
-# rows show it. Every other agent keeps the two-row default.
-[ui.sidebar.agents.rows_by_agent]
-claude = [["state_icon", "workspace", "tab"], ["terminal_title_stripped"], ["agent"]]
+# Claude Code and Codex both write a session summary to the terminal title, so
+# it leads the row and the space follows it. The tab token is left out because
+# prompt_new_tab_name above generates bare numbers, which read like a shortcut
+# and are not one. Herdr drops a row whose tokens all resolve to nothing, so an
+# agent that sets no title costs no height.
+#
+# Herdr styles by token kind rather than by row, so the title arrives dim and the
+# space bold; the inline styles swap that emphasis. Foreground colors stay
+# unset so the terminal palette above still supplies them.
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", { token = "terminal_title_stripped", bold = true, dim = false }],
+  [{ token = "workspace", bold = false, dim = true }, "agent"],
+]
 
 # Too many agents finish at once for a completion chime to carry information, so
 # a silent file mutes those while the needs-input sound stays audible. Herdr has
