@@ -31,3 +31,16 @@ font-size = 15
 window-width = 80
 window-height = 24
 window-decoration = true
+
+# Option sends ESC-prefixed sequences instead of composing Unicode, so <M-x> and
+# friends reach the shell and nvim. Alacritty gets this from explicit
+# Alt+<key> -> <key> bindings; Ghostty needs the one switch.
+macos-option-as-alt = true
+
+# Selecting text lands it on the system clipboard. Ghostty's default `true`
+# targets the selection clipboard, which macOS does not have.
+# copy-on-select = clipboard
+
+# Distinguish Shift/Ctrl+Enter from a plain Enter for apps that read CSI u.
+# keybind = shift+enter=text:\x1b[13;2u
+# keybind = ctrl+enter=text:\x1b[13;5u
