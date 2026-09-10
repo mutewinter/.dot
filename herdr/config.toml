@@ -40,13 +40,10 @@ accent = "#97bedc"
 # Claude's own session title anyway.
 prompt_new_tab_name = false
 
-# Zoom flag, date, 12-hour clock, and hostname at the right edge of the tab bar.
-tab_bar_right = [
-  { type = "zoom" },
-  { type = "datetime", format = "%Y-%m-%d %l:%M%p" },
-  { type = "hostname" },
-]
-tab_bar_right_separator = "  "
+# Only the zoom flag sits at the right edge of the tab bar. The clock and
+# hostname went back to the tabs, which need the width more than a second copy
+# of what the menu bar already shows.
+tab_bar_right = [{ type = "zoom" }]
 
 # Claude Code and Codex both write a session summary to the terminal title, so
 # it leads the row and the space follows it. The tab token is left out because
