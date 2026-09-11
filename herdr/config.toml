@@ -26,6 +26,23 @@ zoom = ["prefix+z", "alt+o"]
 # workspaces and panes, with the same tmux caveats as alt+o above.
 goto = ["prefix+g", "alt+i"]
 
+# Lazygit over the focused pane instead of parked in a tab of its own. A popup is
+# session-modal and leaves the tab layout alone, so it closes back to the pane it
+# covered. The tabs it replaces were reachable by number only while a space stayed
+# small: Herdr numbers tabs by creation and never reuses one, so the lazygit tab
+# here is number 1 in three spaces and number 51 in instrument-orchestrator, past
+# anything switch_tab's prefix+1..9 can reach.
+#
+# Prefixless like the alt chords above, with the same tmux caveat as alt+o. The
+# popup runs nearly full screen because nothing behind it is worth reading while
+# lazygit is open; the margin is there to keep it legible as an overlay.
+[[keys.command]]
+key = "alt+g"
+type = "popup"
+command = "lazygit"
+width = "95%"
+height = "95%"
+
 [theme]
 # Inherit the outer terminal's palette so panes match the jellybeans colors
 # in ../ghostty/config rather than shipping a second palette.
