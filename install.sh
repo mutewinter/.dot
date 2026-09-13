@@ -2,16 +2,49 @@
 set -e
 
 DOT="$(cd "$(dirname "$0")" && pwd)"
+NL=$'\n'
 
+# Managed paths this run could not claim, reported together once everything else
+# has been linked. Collecting them beats failing on the first one: the rest of
+# the install still has value, and a single list at the end survives the scroll.
+unclaimed=()
+
+# An app that writes its own config before the first install owns that path
+# forever, because ln refuses to clobber it. Nothing here replaces a file this
+# repo did not write, since that config is the only copy of whatever state the
+# app keeps in it. The path is named instead, loudly enough to act on.
 symlink() {
   local src="$1" dst="$2"
   mkdir -p "$(dirname "$dst")"
-  if [ -e "$dst" ] || [ -L "$dst" ]; then
-    echo "exists, skipping: $dst"
+  if [ ! -e "$src" ]; then
+    unclaimed+=("$src is missing from this repo${NL}    wanted by: $dst")
+    echo "NO SOURCE: $src"
+  elif [ "$dst" -ef "$src" ]; then
+    echo "ok: $dst"
+  elif [ -L "$dst" ]; then
+    unclaimed+=("$dst -> $(readlink "$dst")${NL}    want: $src")
+    echo "WRONG TARGET: $dst -> $(readlink "$dst")"
+  elif [ -e "$dst" ]; then
+    unclaimed+=("$dst is a real $([ -d "$dst" ] && echo directory || echo file)${NL}    want: $src")
+    echo "NOT A SYMLINK: $dst"
   else
     ln -s "$src" "$dst"
     echo "linked: $dst"
   fi
+}
+
+report_unclaimed() {
+  if [ ${#unclaimed[@]} -eq 0 ]; then
+    return 0
+  fi
+  echo
+  echo "${#unclaimed[@]} path(s) are not linked to this repo, so edits here do not reach them:"
+  local entry
+  for entry in "${unclaimed[@]}"; do
+    echo "  $entry"
+  done
+  echo
+  echo "Back up each one, delete it, and re-run this script to claim the path."
 }
 
 unstow_identical_files() {
@@ -108,3 +141,5 @@ fi
 if command -v duti &>/dev/null; then
   duti "$DOT/duti.conf"
 fi
+
+report_unclaimed
