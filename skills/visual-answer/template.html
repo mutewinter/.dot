@@ -23,9 +23,15 @@
       rel="stylesheet"
       type="text/css"
     />
+    <!-- No import of tailwindcss opens this block, on purpose. Chrome's preload
+         scanner reads inline style text for imports before it honors the
+         element's type and fetches the name relative to the page, a 404 in
+         every viewer's console. The browser build adds the import itself when
+         the block carries none, judged by a plain substring search of the whole
+         block with comments included, so the at-rule may not be spelled
+         anywhere inside the style element or the framework silently goes
+         unloaded. -->
     <style type="text/tailwindcss">
-      @import "tailwindcss";
-
       /* Studio's light theme, resolved from
          apps/studio/src/client/styles/globals.css. Regenerate with the command
          in SKILL.md rather than editing by hand.
@@ -312,7 +318,7 @@
         }
       }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js"></script>
   </head>
 
   <body class="bg-background font-sans text-foreground antialiased">

@@ -1,6 +1,6 @@
 ---
 name: visual-answer
-description: When the user says "visual answer" or asks for a question answered or work explained visually, they mean this exact skill; invoke it rather than improvising a format. Also use it unprompted whenever a concept, change, plan, or result is complex enough to benefit from a visual treatment; err on that side, since a reader is never sad to receive one. It creates a tailored, single-file HTML page with diagrams, evidence, and forms the reader answers on the page, covering code changes, architecture, plans, incidents, comparisons, decisions, and product behavior.
+description: Use when the user says "visual answer" or asks for a question answered or work explained visually.
 ---
 
 # Visual answer
