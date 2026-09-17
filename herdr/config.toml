@@ -1,3 +1,4 @@
+onboarding = false
 # Near-default Herdr config. Only the handful of ../home/.tmux.conf chords that
 # are already muscle memory are ported; everything else stays on Herdr's own
 # defaults, which `herdr --default-config` prints in full.
