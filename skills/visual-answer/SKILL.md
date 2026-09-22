@@ -93,7 +93,7 @@ A design conversation often returns to the same subject. Whether a later round e
 
 ## Embedding a wireframe
 
-This section applies only where a `product-wireframe` skill is available. When the explanation needs to show product UI, build it once with that skill and embed that file, rather than redrawing the same frames inline. Hand-rolled UI in an explanation drifts from the app on details the kit already gets right, and building it twice is paid for twice.
+When the explanation needs to show product UI, build it once with `create-page`'s wireframe template, using the project's `.agents/wireframe-kit/` where one exists, and embed that file, rather than redrawing the same frames inline. Hand-rolled UI in an explanation drifts from the app on details the kit already gets right, and building it twice is paid for twice.
 
 Embed with `srcdoc`, carrying the whole wireframe document escaped into the attribute:
 
@@ -123,10 +123,4 @@ After writing, a placeholder grep (`TITLE|THESIS|Build the explanation here`) is
 
 A page built out of captured images is the exception, and one render at a wide viewport is expected rather than merely allowed. Every claim on such a page is a claim about a picture, the grid is assembled from files rather than authored, and the failures are only visible once it is: a white band down every tile from a capture window wider than its content, a caption attached to the wrong render, a row that wraps to two at the width the reader uses. That is one screenshot, looked at, then fixed.
 
-Beyond those, do not take screenshots, test multiple widths, run theme synchronization, audit the content, or iterate on visual details unless the user explicitly asks or the creation step reported a concrete error. Do not knowingly include secrets or private operational data.
-
-Where the `product-wireframe` skill is vendored into the repository, its theme synchronizer is maintenance tooling for changes to the template or the product theme, not part of ordinary artifact creation:
-
-```bash
-node .agents/skills/product-wireframe/scripts/sync-theme.ts --check
-```
+Beyond those, do not take screenshots, test multiple widths, audit the content, or iterate on visual details unless the user explicitly asks or the creation step reported a concrete error. Do not knowingly include secrets or private operational data.
