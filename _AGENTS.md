@@ -58,4 +58,4 @@ Multiple agents may work in the same repo simultaneously, so:
 ## Visual answers and wireframes
 
 - Do not open a finished visual answer or wireframe in a browser on this machine. A viewer app watches both folders and shows new pages on its own, so opening one only adds a tab. Return the path as usual.
-- Wireframes: draw with `create-page`'s wireframe template (plus the repo's `.agents/wireframe-kit/` when it has one) and write them to `~/wireframes/YYYY-MM-DD-<topic>.html`, never into a repository.
+- Wireframes: draw with `create-page`'s wireframe template (plus the repo's `.agents/wireframe-kit/` when it has one) and write them to `~/wireframes/YYYY-MM-DD-<surface>-<variant>.html`, never into a repository. Name them by the part of the product and what this take tries, as that template says, never a coined phrase.
