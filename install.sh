@@ -152,6 +152,13 @@ if [ -d "$HOME/.claude/skills" ]; then
   done
 fi
 
+# Visual answers and wireframes live in iCloud Drive; agents write to ~/<name>.
+pages="$HOME/Library/Mobile Documents/com~apple~CloudDocs/HTML Pages"
+if [ -d "$pages" ]; then
+  symlink "$pages/Visual Answers" "$HOME/visual-answers"
+  symlink "$pages/Wireframes" "$HOME/wireframes"
+fi
+
 # File associations (macOS)
 if command -v duti &>/dev/null; then
   duti "$DOT/duti.conf"
