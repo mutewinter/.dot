@@ -102,7 +102,6 @@ symlink "$DOT/karabiner" "$HOME/.config/karabiner"
 # LinearMouse, linked by directory for the same reason as Karabiner
 symlink "$DOT/linearmouse" "$HOME/.config/linearmouse"
 
-
 # Ghostty
 symlink "$DOT/ghostty/config" "$HOME/.config/ghostty/config"
 
@@ -150,6 +149,21 @@ fi
 # File associations (macOS)
 if command -v duti &>/dev/null; then
   duti "$DOT/duti.conf"
+fi
+
+# Fast key repeat with no accent popup on hold. Takes effect after logging out.
+defaults write -g KeyRepeat -int 2
+defaults write -g InitialKeyRepeat -int 25
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Keyboard layout for the Model 100. Copied rather than linked because macOS
+# does not reliably load layouts through a symlink. Enable it afterwards in
+# System Settings > Keyboard > Input Sources.
+layout="US without Meta Unicode.bundle"
+if [ ! -d "$HOME/Library/Keyboard Layouts/$layout" ]; then
+  mkdir -p "$HOME/Library/Keyboard Layouts"
+  cp -R "$DOT/$layout" "$HOME/Library/Keyboard Layouts/"
+  echo "copied: $layout (log out, then add it in Input Sources)"
 fi
 
 report_unclaimed
