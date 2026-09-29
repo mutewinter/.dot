@@ -8,8 +8,12 @@ end
 
 # pnpm
 set -gx PNPM_HOME "$HOME/Library/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+# pnpm 12 links bins and its runtime shims into $PNPM_HOME/bin; older installs
+# put them directly in $PNPM_HOME.
+for dir in "$PNPM_HOME" "$PNPM_HOME/bin"
+  if not string match -q -- $dir $PATH
+    set -gx PATH $dir $PATH
+  end
 end
 # pnpm end
 
