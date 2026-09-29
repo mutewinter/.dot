@@ -60,7 +60,6 @@
     ],
     "defaultMode": "bypassPermissions"
   },
-  "model": "opus[1m]",
   "skillOverrides": {
     "ai-sdk": "name-only",
     "explain-diff-html": "name-only",
@@ -110,11 +109,25 @@
     "simplify": "name-only",
     "verify": "name-only"
   },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^(startup|resume|clear|compact|fork)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/mytop/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
   "enableWorkflows": true,
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
-    "figma@claude-plugins-official": false,
-    "notion@claude-plugins-official": true
+    "figma@claude-plugins-official": true,
+    "notion@claude-plugins-official": false
   },
   "effortLevel": "xhigh",
   "tui": "fullscreen",
@@ -123,5 +136,5 @@
   "theme": "dark",
   "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "hooks": {"SessionStart":[{"matcher":"*","hooks":[{"type":"command","command":"bash '/Users/mytop/.claude/hooks/herdr-agent-state.sh' session","timeout":10}]}]}
+  "model": "opus[1m]"
 }
