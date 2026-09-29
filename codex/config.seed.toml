@@ -1,0 +1,28 @@
+# Starting point for ~/.codex/config.toml. install.sh copies it only when that
+# file is missing; Codex owns the file afterwards and fills it with machine state
+# (trusted projects, plugin sources, hook hashes, tokens).
+model = "gpt-6-astra"
+model_reasoning_effort = "low"
+personality = "pragmatic"
+service_tier = "default"
+approval_policy = "on-request"
+approvals_reviewer = "guardian_subagent"
+sandbox_mode = "workspace-write"
+
+[features]
+hooks = true
+js_repl = false
+memories = true
+
+[memories]
+generate_memories = true
+use_memories = true
+
+[desktop]
+ambient-suggestions-enabled = false
+codeFontSize = 12
+mac-menu-bar-enabled = false
+dictationDictionary = [ "Ryann", "PNPM", "Instrument", "Quests" ]
+followUpQueueMode = "queue"
+show-context-window-usage = true
+conversationDetailMode = "STEPS_PROSE"

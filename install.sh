@@ -78,10 +78,13 @@ symlink "$DOT/lazygit/config.yml" "$HOME/Library/Application Support/lazygit/con
 symlink "$DOT/hunk/config.toml" "$HOME/.config/hunk/config.toml"
 
 # Codex
-for f in config.toml keybindings.json; do
-  symlink "$DOT/codex/$f" "$HOME/.codex/$f"
-done
+symlink "$DOT/codex/keybindings.json" "$HOME/.codex/keybindings.json"
 symlink "$DOT/codex/rules" "$HOME/.codex/rules"
+# Codex rewrites config.toml with machine state, so it is seeded, not linked.
+if [ ! -e "$HOME/.codex/config.toml" ]; then
+  cp "$DOT/codex/config.seed.toml" "$HOME/.codex/config.toml"
+  echo "seeded: $HOME/.codex/config.toml"
+fi
 
 # VS Code
 for f in keybindings.json settings.json snippets; do
