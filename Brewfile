@@ -1,120 +1,69 @@
 # vim: set filetype=ruby :
-tap "bvaisvil/zenith"
-tap "cloudflare/cloudflare"
-tap "helix-editor/helix"
-tap "homebrew/bundle"
-tap "homebrew/services"
-tap "lucagrulla/tap"
-tap "ms-jpq/sad"
-tap "oven-sh/bun"
-tap "schniz/tap"
-tap "stripe/stripe-cli"
-brew "ansifilter"
-brew "python-setuptools"
-brew "awscli"
-brew "libssh2"
-brew "bat"
-brew "btop"
-brew "glib"
-brew "cairo"
-brew "cloudflared"
-brew "cmake"
-brew "code-minimap"
-brew "coreutils"
-brew "duckdb"
-brew "dust"
-brew "duti"
-brew "eza"
+
+# Agents reach for these constantly
+brew "coreutils" # timeout
 brew "fd"
-brew "unbound"
-brew "gnutls"
-brew "harfbuzz"
-brew "libass"
-brew "pango"
-brew "srt"
 brew "ffmpeg"
-brew "fish"
-brew "fnm"
-brew "node"
-brew "fx"
-brew "fzf"
 brew "gh"
 brew "git"
-brew "git-delta"
-brew "git-lfs"
-brew "gnu-sed"
-brew "gnupg"
-brew "go"
-brew "gobject-introspection"
-brew "guile"
-brew "helix"
-brew "herdr"
-brew "lua"
-brew "highlight"
-brew "htop"
 brew "imagemagick"
-brew "jless"
 brew "jq"
-brew "jupyterlab"
-brew "krb5"
-brew "lazydocker"
-brew "lazygit"
-brew "luarocks"
-brew "protobuf"
-brew "mosh"
-brew "tree-sitter"
-brew "neovim"
-brew "nghttp2"
-brew "pgformatter"
-brew "pnpm"
-brew "postgresql@14"
-brew "pulumi"
-brew "pyenv"
-brew "tcl-tk"
-brew "python@3.8"
+brew "poppler" # pdftotext
 brew "ripgrep"
-brew "rustup"
-brew "s3cmd"
-brew "sqlite-analyzer"
-brew "syncthing"
-brew "terminal-notifier"
-brew "tmux"
-brew "tokei"
 brew "uv"
-brew "viu"
-brew "wget"
-brew "xplr"
-brew "yarn", link: false
-brew "yt-dlp"
-brew "zsh"
-brew "bvaisvil/zenith/zenith"
-brew "lucagrulla/tap/cw"
-brew "ms-jpq/sad/sad"
-brew "oven-sh/bun/bun"
-brew "stripe/stripe-cli/stripe"
-cask "alacritty"
-cask "amethyst"
-cask "balenaetcher"
-cask "bambu-studio"
-cask "boltai"
-cask "chrysalis"
-cask "cryptomator"
-cask "fastrawviewer"
-cask "font-sauce-code-pro-nerd-font"
-cask "krita"
+
+# Named by the dotfiles
+brew "bat" # fzf.fish previews
+brew "duti" # install.sh
+brew "eza" # fish-eza
+brew "fish"
+brew "fzf" # fzf.fish
+brew "git-delta" # .gitconfig pager
+brew "git-lfs" # .gitconfig filter
+brew "herdr"
+brew "hunk"
+brew "lazygit"
+brew "mas" # mas lines below
+brew "neovim"
+brew "stow" # install.sh
+
+# Apps configured in this repo
+cask "font-sauce-code-pro-nerd-font" # ghostty
+cask "ghostty"
+cask "karabiner-elements"
 cask "linearmouse"
-cask "lm-studio"
-cask "obsidian"
-cask "ollama"
-cask "pika"
-cask "plex"
-cask "plex-media-server"
-cask "powerpanel"
 cask "raycast"
-cask "screen-studio"
-cask "scroll-reverser"
-cask "slack"
-cask "ukelele"
 cask "visual-studio-code"
-cask "yaak"
+
+# Apps opened in the last three months
+cask "1password"
+cask "bambu-studio"
+cask "chatgpt"
+cask "claude"
+cask "codexbar"
+cask "figma"
+cask "google-chrome"
+cask "handy"
+cask "imageoptim"
+cask "obsidian"
+cask "qlmarkdown"
+cask "shottr"
+cask "slack"
+cask "tella"
+cask "thaw"
+cask "utm"
 cask "zed"
+
+# App Store, needs a signed-in App Store account
+mas "1Blocker", id: 1365531024
+mas "1Password for Safari", id: 1569813296
+mas "2Do", id: 477670270
+mas "ColorSlurp", id: 1287239339
+mas "Craft", id: 1487937127
+mas "Drafts", id: 1435957248
+mas "Fantastical", id: 975937182
+mas "Gifski", id: 1351639930
+mas "GoodLinks", id: 1474335294
+mas "Just Press Record", id: 1033342465
+mas "Reeder", id: 1529448980
+mas "Vimari", id: 1480933944
