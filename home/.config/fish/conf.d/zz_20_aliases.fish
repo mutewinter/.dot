@@ -2,6 +2,9 @@
 abbr v $EDITOR
 abbr vim $EDITOR
 
+# Codex CLI
+alias codex='codex --dangerously-bypass-approvals-and-sandbox'
+
 # Git
 abbr g git
 abbr ga git add
