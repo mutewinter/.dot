@@ -50,7 +50,6 @@ cask "qlmarkdown"
 cask "shottr"
 cask "slack"
 cask "tella"
-cask "thaw"
 cask "utm"
 cask "zed"
 
@@ -58,7 +57,6 @@ cask "zed"
 mas "1Blocker", id: 1365531024
 mas "1Password for Safari", id: 1569813296
 mas "2Do", id: 477670270
-mas "ColorSlurp", id: 1287239339
 mas "Craft", id: 1487937127
 mas "Drafts", id: 1435957248
 mas "Fantastical", id: 975937182
@@ -66,4 +64,3 @@ mas "Gifski", id: 1351639930
 mas "GoodLinks", id: 1474335294
 mas "Just Press Record", id: 1033342465
 mas "Reeder", id: 1529448980
-mas "Vimari", id: 1480933944
