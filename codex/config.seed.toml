@@ -1,7 +1,7 @@
 # Starting point for ~/.codex/config.toml. install.sh copies it only when that
 # file is missing; Codex owns the file afterwards and fills it with machine state
 # (trusted projects, plugin sources, hook hashes, tokens).
-model = "gpt-6-astra"
+model = "gpt-6.1-sol"
 model_reasoning_effort = "low"
 personality = "pragmatic"
 service_tier = "default"
