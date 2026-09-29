@@ -1,0 +1,10 @@
+[
+  {
+    "command": "globalDictationToggle",
+    "key": null
+  },
+  {
+    "command": "openAvatarOverlay",
+    "key": null
+  }
+]
