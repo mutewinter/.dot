@@ -17,6 +17,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+# Stores $HOME as ~ so committed files never name the machine's user, and
+# restores it on checkout for tools like herdr that write absolute paths.
+[filter "homedir"]
+	clean = sed \"s|$HOME/|~/|g\"
+	smudge = sed \"s|'~/|'$HOME/|g\"
 [core]
 	pager = delta
 [interactive]
