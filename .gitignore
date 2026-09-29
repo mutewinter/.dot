@@ -8,3 +8,4 @@ home/.config/fish/conf.d/zz_60_system.fish
 home/.config/fish/completions/copilot.fish
 tmux/plugins/*
 skills/motion/
+skills/create-page
