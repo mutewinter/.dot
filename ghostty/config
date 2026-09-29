@@ -31,8 +31,7 @@ window-height = 24
 window-decoration = true
 
 # Option sends ESC-prefixed sequences instead of composing Unicode, so <M-x> and
-# friends reach the shell and nvim. Alacritty gets this from explicit
-# Alt+<key> -> <key> bindings; Ghostty needs the one switch.
+# friends reach the shell and nvim.
 macos-option-as-alt = true
 
 # Selecting text lands it on the system clipboard. Ghostty's default `true`
