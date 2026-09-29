@@ -60,6 +60,9 @@ unstow_identical_files() {
 
 # Stow home package (dotfiles + fish + claude settings)
 unstow_identical_files "$DOT/home" "$HOME"
+# stow links a whole directory when the target is missing, which on a fresh
+# machine would send everything Claude Code and other apps write into this repo.
+mkdir -p "$HOME/.claude" "$HOME/.config"
 stow --dir="$DOT" --target="$HOME" home
 
 # fish-eza plugin: its alias option vars live in fish_variables, which is
