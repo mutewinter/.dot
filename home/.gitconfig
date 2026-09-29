@@ -1,7 +1,7 @@
 [user]
 	name = Jeremy Mack
 	email = mutewinter@users.noreply.github.com
-	signingkey = 698EFAA1322BD49E92A28D27798E0A2DF0A7B636
+	signingkey = ~/.ssh/id_ed25519.pub
 [pull]
 	rebase = true
 [alias]
@@ -9,7 +9,7 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg2
+	format = ssh
 [init]
 	defaultBranch = main
 [filter "lfs"]
