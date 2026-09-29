@@ -159,6 +159,16 @@ defaults write -g KeyRepeat -int 2
 defaults write -g InitialKeyRepeat -int 25
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+# Stay awake on power so agents keep running behind a locked screen: the
+# display sleeps and the screen saver locks it, but the system never sleeps.
+defaults -currentHost write com.apple.screensaver idleTime -int 1200
+if [ "$(pmset -g custom | awk '$1 == "sleep" { print $2; exit }')" != 0 ]; then
+  echo "power: run 'sudo pmset -c sleep 0 displaysleep 30 disksleep 0' so the system never sleeps on power"
+fi
+if ! sysadminctl -screenLock status 2>&1 | grep -q immediate; then
+  echo "lock: run 'sysadminctl -screenLock immediate -password -' to require the password right after the screen saver"
+fi
+
 # Keyboard layout for the Model 100. Copied rather than linked because macOS
 # does not reliably load layouts through a symlink. Enable it afterwards in
 # System Settings > Keyboard > Input Sources.
