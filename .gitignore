@@ -9,3 +9,4 @@ home/.config/fish/completions/copilot.fish
 tmux/plugins/*
 skills/motion/
 skills/create-page
+karabiner/automatic_backups/

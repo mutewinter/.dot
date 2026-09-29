@@ -95,8 +95,13 @@ if [ -d "$HOME/Library/Application Support/Cursor/User" ]; then
   done
 fi
 
-# Karabiner
-symlink "$DOT/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
+# Karabiner saves by replacing karabiner.json, which turns a file symlink back
+# into a real file, so the whole directory is linked as its docs recommend.
+symlink "$DOT/karabiner" "$HOME/.config/karabiner"
+
+# LinearMouse, linked by directory for the same reason as Karabiner
+symlink "$DOT/linearmouse" "$HOME/.config/linearmouse"
+
 
 # Ghostty
 symlink "$DOT/ghostty/config" "$HOME/.config/ghostty/config"
