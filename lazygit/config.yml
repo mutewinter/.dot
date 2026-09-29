@@ -7,6 +7,8 @@ gui:
 git:
   diffRenderers:
     - command: delta --dark --paging=never
+    - command: delta --dark --paging=never --side-by-side
+      name: delta side-by-side
     - colorArg: always
       command: hunk pager
       # - pager: delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
@@ -22,3 +24,9 @@ keybinding:
   universal:
     undo: '<c-u>'
     redo: '<c-z>'
+customCommands:
+  - key: V
+    context: files
+    description: View file contents
+    command: bat --paging=always {{.SelectedFile.Name | quote}}
+    output: terminal
