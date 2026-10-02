@@ -202,6 +202,9 @@ defaults import com.apple.symbolichotkeys "$DOT/macos/symbolichotkeys.plist"
 # App shortcuts: ⌘P saves as PDF in every app's print dialog.
 defaults write -g NSUserKeyEquivalents -dict-add "Save as PDF…" "@p"
 
+# Typing, Dock, Finder, and trackpad settings
+"$DOT/macos/defaults.sh"
+
 # Stay awake on power so agents keep running behind a locked screen: the
 # display sleeps and the screen saver locks it, but the system never sleeps.
 defaults -currentHost write com.apple.screensaver idleTime -int 1200
