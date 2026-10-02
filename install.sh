@@ -5,6 +5,8 @@ DOT="$(cd "$(dirname "$0")" && pwd)"
 # Config that must not be public (names, personal prompts) lives in iCloud
 # Drive, laid out like this repo, and app scripts read it when present.
 export DOT_PRIVATE="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dotfiles"
+# Keyboard profile (desktop or laptop) for app scripts that set hotkeys.
+export DOT_PROFILE="$("$DOT/macos/profile.sh")"
 NL=$'\n'
 
 # Managed paths this run could not claim, reported together once everything else

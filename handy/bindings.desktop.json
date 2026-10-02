@@ -1,0 +1,5 @@
+{
+  "cancel": "ctrl_left+option_left+shift_left+command_left+8",
+  "transcribe": "ctrl_left+option_left+shift_left+i",
+  "transcribe_with_post_process": "ctrl_left+option_left+shift_left+o"
+}

@@ -7,29 +7,6 @@
   "auto_submit": false,
   "auto_submit_key": "enter",
   "autostart_enabled": true,
-  "bindings": {
-    "cancel": {
-      "current_binding": "ctrl_left+option_left+shift_left+command_left+8",
-      "default_binding": "escape",
-      "description": "Cancels the current recording.",
-      "id": "cancel",
-      "name": "Cancel"
-    },
-    "transcribe": {
-      "current_binding": "ctrl_left+option_left+shift_left+i",
-      "default_binding": "option+space",
-      "description": "Converts your speech into text.",
-      "id": "transcribe",
-      "name": "Transcribe"
-    },
-    "transcribe_with_post_process": {
-      "current_binding": "ctrl_left+option_left+shift_left+o",
-      "default_binding": "option+shift+space",
-      "description": "Converts your speech into text and applies AI post-processing.",
-      "id": "transcribe_with_post_process",
-      "name": "Transcribe with Post-Processing"
-    }
-  },
   "clipboard_handling": "dont_modify",
   "custom_filler_words": null,
   "custom_words": [],

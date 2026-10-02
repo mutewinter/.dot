@@ -1,0 +1,5 @@
+{
+  "cancel": "option_right+shift_left+i",
+  "transcribe": "option_right+i",
+  "transcribe_with_post_process": "option_right+o"
+}

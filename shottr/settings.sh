@@ -12,9 +12,21 @@ if pgrep -xq Shottr; then running=1; pkill -x Shottr; sleep 1; fi
 
 mkdir -p "$HOME/Documents/Screenshots"
 defaults write $d defaultFolder -string "$HOME/Documents/Screenshots"
-defaults write $d 'KeyboardShortcuts_area' -string '{"carbonModifiers":6400,"carbonKeyCode":21}'
-defaults write $d 'KeyboardShortcuts_fullscreen' -string '{"carbonModifiers":6400,"carbonKeyCode":20}'
-defaults write $d 'KeyboardShortcuts_ocr' -bool false
+
+# Hotkeys follow the keyboard profile (see macos/profile.sh). Desktop: ctrl-opt-cmd
+# 3/4 and no OCR key. Laptop: shift-cmd 3/4, which the system shortcuts free up,
+# and ctrl-opt-cmd O for OCR.
+DOT="$(cd "$(dirname "$0")/.." && pwd)"
+if [ "${DOT_PROFILE:-$("$DOT/macos/profile.sh")}" = laptop ]; then
+  defaults write $d 'KeyboardShortcuts_area' -string '{"carbonModifiers":768,"carbonKeyCode":21}'
+  defaults write $d 'KeyboardShortcuts_fullscreen' -string '{"carbonModifiers":768,"carbonKeyCode":20}'
+  defaults write $d 'KeyboardShortcuts_ocr' -string '{"carbonModifiers":6400,"carbonKeyCode":31}'
+else
+  defaults write $d 'KeyboardShortcuts_area' -string '{"carbonModifiers":6400,"carbonKeyCode":21}'
+  defaults write $d 'KeyboardShortcuts_fullscreen' -string '{"carbonModifiers":6400,"carbonKeyCode":20}'
+  defaults write $d 'KeyboardShortcuts_ocr' -bool false
+fi
+
 defaults write $d 'Shottr.ObjImage: size' -string '0'
 defaults write $d 'Shottr.ObjSpotlight: shape' -string 'rect'
 defaults write $d 'Shottr.ObjSpotlight: size' -string '3'

@@ -9,6 +9,7 @@ store="$HOME/Library/Application Support/com.pais.handy/settings_store.json"
 : "${DOT_PRIVATE:=$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dotfiles}"
 prompt="$DOT_PRIVATE/handy/cleanup-prompt.md"
 prompt_id="prompt_1775231818128"
+profile="${DOT_PROFILE:-$("$DOT/macos/profile.sh")}"
 
 if [ ! -f "$store" ]; then
   echo "handy: no settings store yet; open Handy once, then re-run"
@@ -26,15 +27,17 @@ if [ ! -f "$prompt" ]; then
 fi
 
 out="$(mktemp)"
-jq --slurpfile s "$DOT/handy/settings.json" --rawfile p "$prompt" --arg id "$prompt_id" '
+jq --slurpfile s "$DOT/handy/settings.json" --slurpfile b "$DOT/handy/bindings.$profile.json" \
+  --rawfile p "$prompt" --arg id "$prompt_id" '
   (.settings.post_process_prompts // [] | map(select(.id == $id))) as $installed
   | .settings *= $s[0]
+  | .settings.bindings |= with_entries(.value.current_binding = ($b[0][.key] // .value.current_binding))
   | .settings.post_process_prompts += (
       if ($p | length) > 0
       then [{id: $id, name: "Clean Up Transcript", prompt: ($p | sub("\n+$"; ""))}]
       else $installed end)
 ' "$store" > "$out"
 mv "$out" "$store"
-echo "handy: settings applied"
+echo "handy: settings applied ($profile hotkeys)"
 
 if [ "$running" = 1 ]; then open -a Handy; fi
