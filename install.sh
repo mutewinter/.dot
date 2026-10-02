@@ -2,6 +2,9 @@
 set -e
 
 DOT="$(cd "$(dirname "$0")" && pwd)"
+# Config that must not be public (names, personal prompts) lives in iCloud
+# Drive, laid out like this repo, and app scripts read it when present.
+export DOT_PRIVATE="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dotfiles"
 NL=$'\n'
 
 # Managed paths this run could not claim, reported together once everything else
@@ -127,6 +130,9 @@ fi
 
 # Shottr
 [ -d /Applications/Shottr.app ] && "$DOT/shottr/settings.sh"
+
+# Handy
+[ -d /Applications/Handy.app ] && "$DOT/handy/settings.sh"
 
 # Raycast script commands
 symlink "$DOT/raycast/focus-electron.applescript" "$HOME/Documents/Raycast/focus-electron.applescript"
