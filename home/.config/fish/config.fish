@@ -1,5 +1,13 @@
 set -U fish_autosuggestion_enabled 1
 
+# Homebrew
+# /etc/paths.d/homebrew puts /opt/homebrew/bin after /usr/bin on login, and the
+# brew plugin skips paths already present, so Apple's git and friends would win.
+if test -d /opt/homebrew/bin
+  fish_add_path -gmP /opt/homebrew/bin /opt/homebrew/sbin
+end
+# Homebrew end
+
 # ~/.local/bin
 if not string match -q -- "$HOME/.local/bin" $PATH
   set -gx PATH "$HOME/.local/bin" $PATH
