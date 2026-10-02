@@ -47,12 +47,12 @@ cask "google-chrome"
 cask "handy"
 cask "imageoptim"
 cask "obsidian"
+cask "proxyman"
 cask "qlmarkdown"
 cask "shottr"
 cask "slack"
 cask "tella"
 cask "utm"
-cask "zed"
 
 # App Store, needs a signed-in App Store account
 mas "1Blocker", id: 1365531024
