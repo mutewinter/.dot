@@ -128,6 +128,20 @@ if command -v herdr &>/dev/null; then
   [ -d "$HOME/.codex" ]  && herdr integration install codex
 fi
 
+# SSH hosts shared by every machine live in the private folder; each machine's
+# ~/.ssh/config keeps only its own settings and includes them.
+if [ -f "$DOT_PRIVATE/ssh/config" ]; then
+  ssh_include="Include \"${DOT_PRIVATE/#$HOME/~}/ssh/config\""
+  if ! grep -qxF "$ssh_include" "$HOME/.ssh/config" 2>/dev/null; then
+    mkdir -p "$HOME/.ssh"
+    tmp="$(mktemp)"
+    { echo "$ssh_include"; echo; cat "$HOME/.ssh/config" 2>/dev/null || true; } > "$tmp"
+    mv "$tmp" "$HOME/.ssh/config"
+    chmod 600 "$HOME/.ssh/config"
+    echo "ssh: included shared hosts"
+  fi
+fi
+
 # Shottr
 [ -d /Applications/Shottr.app ] && "$DOT/shottr/settings.sh"
 
