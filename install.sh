@@ -125,6 +125,9 @@ if command -v herdr &>/dev/null; then
   [ -d "$HOME/.codex" ]  && herdr integration install codex
 fi
 
+# Shottr
+[ -d /Applications/Shottr.app ] && "$DOT/shottr/settings.sh"
+
 # Raycast script commands
 symlink "$DOT/raycast/focus-electron.applescript" "$HOME/Documents/Raycast/focus-electron.applescript"
 
