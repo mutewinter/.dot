@@ -26,6 +26,7 @@ brew "lazygit"
 brew "mas" # mas lines below
 brew "neovim"
 brew "stow" # install.sh
+brew "tree-sitter-cli" # nvim-treesitter parser builds
 
 # Apps configured in this repo
 cask "font-sauce-code-pro-nerd-font" # ghostty
