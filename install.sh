@@ -169,6 +169,14 @@ defaults write -g KeyRepeat -int 2
 defaults write -g InitialKeyRepeat -int 25
 defaults write -g ApplePressAndHoldEnabled -bool false
 
+# System shortcuts (Keyboard > Keyboard Shortcuts), imported whole so the
+# disabled defaults and remaps match across machines. activateSettings applies
+# them without logging out.
+defaults import com.apple.symbolichotkeys "$DOT/macos/symbolichotkeys.plist"
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+# App shortcuts: ⌘P saves as PDF in every app's print dialog.
+defaults write -g NSUserKeyEquivalents -dict-add "Save as PDF…" "@p"
+
 # Stay awake on power so agents keep running behind a locked screen: the
 # display sleeps and the screen saver locks it, but the system never sleeps.
 defaults -currentHost write com.apple.screensaver idleTime -int 1200
