@@ -107,7 +107,22 @@
     "run": "name-only",
     "security-review": "name-only",
     "simplify": "name-only",
-    "verify": "name-only"
+    "verify": "name-only",
+    "anthropic-skills:built-in-browser": "name-only",
+    "anthropic-skills:chrome-browser": "name-only",
+    "anthropic-skills:computer-use": "name-only",
+    "anthropic-skills:deep-research": "name-only",
+    "anthropic-skills:docs": "name-only",
+    "anthropic-skills:docx": "name-only",
+    "anthropic-skills:google-workspace": "name-only",
+    "anthropic-skills:import-memory": "name-only",
+    "anthropic-skills:morning": "name-only",
+    "anthropic-skills:pdf": "name-only",
+    "anthropic-skills:pptx": "name-only",
+    "anthropic-skills:skill-creator": "name-only",
+    "anthropic-skills:xlsx": "name-only",
+    "prefix-conflict-demo": "off",
+    "no-ai-slop": "name-only"
   },
   "hooks": {
     "SessionStart": [
@@ -126,7 +141,7 @@
   "enableWorkflows": true,
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
-    "figma@claude-plugins-official": true,
+    "figma@claude-plugins-official": false,
     "notion@claude-plugins-official": false
   },
   "effortLevel": "xhigh",
