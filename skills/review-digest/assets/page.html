@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<style>
+:root{--bg:#f7f6f4;--fg:#1c1917;--strong:#0c0a09;--text:#292524;--muted:#6f6862;--faint:#a29b95;--line:#e7e5e4;--rule:#d7d3d0;--card:#fff;--hover:#f5f5f4;--panel:#fafaf9;--code:#f2f1ef;--accent:#0e7869;--accent-bg:#e6efec;--add:#1f7a3d;--del:#b4324f;--chip:#f2f1ef;--chip-fg:#57534e;--shadow:0 1px 2px rgb(10 13 18/.04),0 0 0 1px rgb(10 13 18/.05)}
+@media (prefers-color-scheme:dark){:root{--bg:#141210;--fg:#e4e1dd;--strong:#f0edea;--text:#d0ccc7;--muted:#9a938c;--faint:#6f6862;--line:#2a2623;--rule:#3a3531;--card:#1b1816;--hover:#221f1c;--panel:#171513;--code:#26221f;--accent:#76b3a6;--accent-bg:#14302b;--add:#7cc48d;--del:#e0909f;--chip:#26221f;--chip-fg:#bdb7b0;--shadow:0 0 0 1px rgb(255 255 255/.04)}}
+*{box-sizing:border-box}
+html{scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+code,.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:.86em}
+code{background:var(--code);padding:.05em .3em;border-radius:4px}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0;text-align:left}
+.ph{line-height:1}
+.wrap{max-width:1320px;margin:0 auto;padding:0 28px 50vh}
+.plus{color:var(--add)}.minus{color:var(--del)}
+/* top nav */
+nav.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .in{max-width:1320px;margin:0 auto;padding:0 28px;display:flex;gap:2px;align-items:center;overflow-x:auto;scrollbar-width:none;height:46px}
+nav.top .t{font-weight:600;color:var(--strong);margin-right:16px;white-space:nowrap}
+nav.top a{display:inline-flex;gap:6px;align-items:center;white-space:nowrap;color:var(--muted);padding:5px 10px;border-radius:8px;font-size:13px}
+nav.top a .ph{font-size:15px}
+nav.top a:hover{color:var(--strong);background:var(--hover);text-decoration:none}
+nav.top a.cur{color:var(--strong);background:var(--card);box-shadow:var(--shadow);font-weight:600}
+nav.top a.cur .ph{color:var(--accent)}
+/* head */
+.head{padding:34px 0 8px}
+h1{font-size:28px;letter-spacing:-.02em;margin:0 0 8px;color:var(--strong)}
+.sum{color:var(--muted);margin:0;max-width:82ch;font-size:15px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:var(--muted);margin:12px 0 0;font-variant-numeric:tabular-nums}
+.meta span{display:inline-flex;gap:5px;align-items:center}.meta .ph{color:var(--faint);font-size:14px}
+/* tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;margin:26px 0 0}
+.tile{display:flex;flex-direction:column;background:var(--card);border-radius:14px;padding:14px 16px;color:var(--text);box-shadow:var(--shadow);transition:transform .12s,box-shadow .12s}
+.tile:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow),0 6px 16px -8px rgb(0 0 0/.25)}
+.tile .hd{display:flex;gap:10px;align-items:center}
+.ic{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--accent-bg);color:var(--accent);font-size:17px;flex:none}
+.tile b{font-size:14.5px;color:var(--strong)}
+.tile .g{color:var(--muted);font-size:12.5px;margin:8px 0 10px;line-height:1.45}
+.tile .n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;margin-top:auto}
+.tile .n b{font-size:12px;color:var(--text)}
+.folders{display:flex;flex-direction:column;gap:3px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.dir{display:inline-flex;gap:5px;align-items:center;font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:11px;color:var(--chip-fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.dir .ph{color:var(--faint);font-size:13px;flex:none}
+.dirs{display:flex;flex-wrap:wrap;gap:3px 14px;min-width:0}
+.file{display:inline-flex;align-items:baseline;gap:0;font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;color:var(--text)}
+.file .pa{color:var(--faint)}.file .nm{color:var(--text)}
+.files{display:flex;flex-wrap:wrap;gap:3px 16px;min-width:0}
+.tile .files,.stack{display:flex;flex-direction:column;gap:3px}
+.sline{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--text);min-width:0;width:100%}.sline>span{flex:1;min-width:0}.sline .ph{color:var(--faint);flex:none}.sline span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sline i{font-style:normal;color:var(--faint);font-size:11px;margin-left:auto}
+.minis{display:flex;flex-wrap:wrap;gap:3px 16px;min-width:0}.minis .sref i,.sref i{font-style:normal;color:var(--faint);font-size:11px}
+.when{display:inline-flex;gap:5px;align-items:center;white-space:nowrap}.when .ph{color:var(--faint)}
+.sesschips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 4px}
+.schip{display:inline-flex;gap:6px;align-items:center;font-size:12px;color:var(--text);background:var(--card);box-shadow:var(--shadow);border-radius:99px;padding:3px 10px}
+.schip:hover{text-decoration:none;color:var(--strong)}.schip i{color:var(--faint);font-style:normal;font-size:11px}
+table.sessions{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+.sessions th{text-align:left;font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);padding:10px 12px;border-bottom:1px solid var(--line)}
+.sessions td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.sessions tr:last-child td{border-bottom:0}.sessions tr:target td{background:var(--accent-bg)}
+.sessions .ti b{color:var(--strong);font-weight:600}.sessions .ti div{color:var(--muted);font-size:12px}
+.sessions .m{color:var(--muted);font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sessions .cons{display:flex;gap:4px;color:var(--accent);font-size:16px}
+.tblwrap{overflow-x:auto}
+/* concern sections */
+section.concern{margin:56px 0 0}
+section.concern>header{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--rule);margin-bottom:14px}
+section.concern header .ic{width:38px;height:38px;font-size:21px;border-radius:11px}
+section.concern h2{font-size:21px;letter-spacing:-.01em;margin:0;color:var(--strong)}
+section.concern .gist{color:var(--muted);margin:1px 0 0}
+.tot{margin-left:auto;text-align:right;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tot b{color:var(--text)}
+/* cards */
+.card{background:var(--card);border-radius:14px;padding:14px 18px 8px;margin:12px 0;box-shadow:var(--shadow)}
+.card .top{display:flex;gap:10px 14px;align-items:baseline;flex-wrap:wrap}
+.card h3{font-size:15px;margin:0;flex:1;min-width:220px;color:var(--strong)}
+.card .stat{font-size:12px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.card .line{color:var(--muted);margin:3px 0 0}
+.card .in{display:flex;gap:8px;align-items:baseline;margin:8px 0 8px}
+.lab{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);white-space:nowrap}
+.btn{display:inline-flex;gap:5px;align-items:center;font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:2px 9px;background:var(--card);white-space:nowrap}
+.btn .ph{font-size:13px}
+.btn:hover{color:var(--strong);border-color:var(--rule)}
+/* commit rows */
+.commits{border-top:1px solid var(--line)}
+.c{border-bottom:1px solid var(--line)}.c:last-child{border-bottom:0}
+.row{display:grid;grid-template-columns:48px 82px minmax(0,1fr) minmax(0,240px) 96px;gap:12px;align-items:baseline;padding:6px 4px;margin:0 -4px;font-size:13px;cursor:pointer;border-radius:6px}
+.row:hover{background:var(--hover)}
+.row .d{color:var(--faint);font-size:12px;font-variant-numeric:tabular-nums}
+.row .sha{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:11.5px}
+.row .s{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+.row .n{font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.row .rf{min-width:0;display:flex;gap:10px;overflow:hidden}.sref{display:inline-flex;gap:5px;align-items:center;min-width:0;font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sref .ph{color:var(--faint);flex:none}.sref:hover{color:var(--strong);text-decoration:none}
+@media (max-width:1100px){.row{grid-template-columns:48px 82px minmax(0,1fr) 96px}.row .rf{display:none}}
+.scope{display:inline-block;font-size:11px;line-height:17px;color:var(--chip-fg);background:var(--chip);border-radius:5px;padding:0 6px;margin-right:4px;vertical-align:1px}
+.c.open .row{background:var(--hover)}.c.open .row .s{white-space:normal}
+/* expanded commit */
+.more{margin:4px 0 12px;padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;font-size:13px}
+.sess{padding-bottom:10px;margin-bottom:12px;border-bottom:1px solid var(--line)}
+.sess .l1{display:flex;gap:10px;align-items:center}.sess .l1 .ttl{flex:1;min-width:0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.sess .l2{display:flex;flex-wrap:wrap;gap:3px 14px;font-size:12px;color:var(--muted);margin-top:4px;padding-left:22px}
+.sess .ai{font-size:12px;color:var(--muted)}
+.sess b{color:var(--strong);font-weight:600;font-size:12.5px}
+.sess .l2 span,.sess .l1 .ttl>span{display:inline-flex;gap:5px;align-items:center}.sess .ph{color:var(--faint);font-size:14px}
+.sess .sp{flex:1}
+.asked{display:flex;gap:8px;color:var(--muted);font-size:12.5px;margin:0 0 12px;max-width:90ch}
+.asked .ph{color:var(--faint);font-size:15px;flex:none;margin-top:2px}
+.asked .t{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.asked.full .t{-webkit-line-clamp:unset}
+.asked button{color:var(--accent);font-size:12px;white-space:nowrap;align-self:flex-end}
+.body{max-width:86ch;line-height:1.6;color:var(--text)}.body p{margin:0 0 9px}.body ul{margin:0 0 9px;padding-left:18px}.body li{margin:2px 0}
+.tr{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:3px 14px;margin:4px 0 10px;font-size:12.5px;max-width:90ch}.tr dt{color:var(--faint)}.tr dd{margin:0}
+.foot{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;font-size:12px;color:var(--muted);padding-top:10px;margin-top:4px;border-top:1px solid var(--line)}
+.foot .sp{flex:1}
+/* uncovered */
+.rest{margin:18px 0 0}
+.rest .top{display:flex;gap:12px;align-items:baseline;margin:0 0 6px}
+.rest h4{margin:0;font-size:13.5px;flex:1;color:var(--strong);display:flex;gap:6px;align-items:center}
+.rest h4 .ph{color:var(--faint)}
+details.others>summary{cursor:pointer;color:var(--muted);font-size:13px;padding:8px 0 4px;list-style:none;display:flex;gap:6px;align-items:center}
+details.others>summary::-webkit-details-marker{display:none}
+details.others>summary:hover{color:var(--strong)}details[open].others>summary .ph{transform:rotate(90deg)}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--strong);color:var(--bg);padding:7px 14px;border-radius:9px;font-size:12.5px;opacity:0;transition:opacity .2s;pointer-events:none}.toast.on{opacity:1}
+@media (max-width:720px){.sess .l2{padding-left:0}.wrap,nav.top .in{padding-left:16px;padding-right:16px}.row{grid-template-columns:44px minmax(0,1fr) auto}.row .sha{display:none}}
+</style>
+</head>
+<body>
+<nav class="top"><div class="in" id="nav"><span class="t">__TITLE__</span></div></nav>
+<div class="wrap" id="main"><div class="head"><h1>__TITLE__</h1></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const D = __DATA__;
+const REPO = D.repo ? "https://github.com/" + D.repo : null;
+const RANGE = `${D.title} (${D.range.base.slice(0, 9)}..${D.range.head.slice(0, 9)})`;
+const ICON = Object.fromEntries(D.concerns.map(c => [c.id, c.icon || "circle"]));
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const inl = t => esc(t).replace(/`([^`]+)`/g, "<code>$1</code>");
+const fmt = n => n.toLocaleString("en-US");
+const ic = n => `<i class="ph ph-${n}"></i>`;
+const day = s => new Date(s.length === 10 ? s + "T12:00:00Z" : s).toLocaleDateString("en-US", {month: "short", day: "numeric", timeZone: "UTC"});
+const C = Object.entries(D.commits).map(([sha, v]) => ({sha, ...v}));
+const BY = Object.fromEntries(C.map(c => [c.sha, c]));
+D.concerns.forEach(con => { con.topics.forEach(d => d.con = con); con.n_commits = C.filter(c => c.c === con.id).length; });
+function toast(t) { const el = document.getElementById("toast"); el.textContent = t; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 2600); }
+const P = [];
+function copyBtn(label, icon, text, msg) { P.push([text, msg]); return `<button class="btn" onclick="event.stopPropagation();navigator.clipboard?.writeText(P[${P.length - 1}][0]).then(()=>toast(P[${P.length - 1}][1]),()=>toast('Copy blocked by the browser'))">${ic(icon)}${label}</button>`; }
+const ASKED = "Prompt copied. Paste it into an agent and add your question.";
+function split(subject) {
+  const m = subject.match(/^([\w.\-]+(?:\s*,\s*[\w.\-]+)*):\s+(.*)$/);
+  const scopes = m ? m[1].split(/\s*,\s*/) : [], rest = m ? m[2] : subject;
+  return [scopes, rest.charAt(0).toUpperCase() + rest.slice(1)];
+}
+const sz = (a, r) => `<span class="plus">+${fmt(a)}</span> <span class="minus">−${fmt(r)}</span>`;
+const total = cs => [cs.reduce((s, c) => s + c.a, 0), cs.reduce((s, c) => s + c.r, 0)];
+function fileTag(p, l) {
+  const parts = p.split("/"), nm = parts.pop(), pa = parts.slice(-2).join("/");
+  return `<span class="file" title="${esc(p)}${l != null ? ` · ${fmt(l)} lines` : ""}">${pa ? `<span class="pa">${esc(pa)}/</span>` : ""}<span class="nm">${esc(nm)}</span></span>`;
+}
+function dates(cs) {
+  const ds = cs.map(c => c.d).sort(); if (!ds.length) return "";
+  const a = day(ds[0]), b = day(ds[ds.length - 1]);
+  return `<span class="when">${ic("calendar-blank")}${a === b ? a : `${a} to ${b}`}</span>`;
+}
+function sessChips(cs, n) {
+  const ss = sessionsOf(cs).slice(0, n);
+  return ss.length ? `<span class="minis">${ss.map(([sid, k]) => `<a class="sref" href="#s-${sid}">${ic("chat-circle-text")}${esc(D.sessions[sid].title || "Untitled session")}${cs.length > 1 ? `<i>${k}</i>` : ""}</a>`).join("")}</span>` : `<span class="sref">no session found</span>`;
+}
+function sessionsOf(cs) {
+  const n = {}; cs.forEach(c => { if (c.sid) n[c.sid] = (n[c.sid] || 0) + 1; });
+  return Object.entries(n).sort((a, b) => b[1] - a[1]);
+}
+function reflow(body) {
+  const lines = body.split("\n"), trailers = [], out = [];
+  let i = lines.length - 1;
+  while (i >= 0 && /^[A-Z][\w-]+: \S/.test(lines[i])) trailers.unshift(lines[i--]);
+  if (trailers.length && i >= 0 && lines[i].trim() !== "") { trailers.length = 0; i = lines.length - 1; }
+  const text = lines.slice(0, i + 1).join("\n").trim();
+  for (const para of text.split(/\n\s*\n/)) {
+    const ls = para.split("\n");
+    if (ls.every(l => /^\s*([-*]|\d+\.)\s/.test(l) || /^\s{2,}\S/.test(l))) {
+      const items = []; ls.forEach(l => /^\s*([-*]|\d+\.)\s/.test(l) ? items.push(l.replace(/^\s*([-*]|\d+\.)\s/, "")) : items[items.length - 1] += " " + l.trim());
+      out.push(`<ul>${items.map(x => `<li>${inl(x)}</li>`).join("")}</ul>`);
+    } else out.push(`<p>${inl(ls.map(l => l.trim()).join(" "))}</p>`);
+  }
+  const tr = trailers.length ? `<dl class="tr">${trailers.map(t => { const k = t.indexOf(":"); return `<dt>${esc(t.slice(0, k))}</dt><dd>${inl(t.slice(k + 1).trim())}</dd>`; }).join("")}</dl>` : "";
+  return `<div class="body">${out.join("")}</div>${tr}`;
+}
+function span(a, b) {
+  const m = Math.round((new Date(b) - new Date(a)) / 6e4);
+  return m < 60 ? `${m} min` : m < 1440 ? `${Math.floor(m / 60)} h ${m % 60} min` : `${day(a)} to ${day(b)}`;
+}
+function session(c) {
+  const s = c.sid && D.sessions[c.sid];
+  if (!s) return `<div class="sess">${ic("chat-circle-slash")}<span>No Claude Code session found for this commit</span></div>`;
+  const when = (new Date(s.last) - new Date(s.first)) < 864e5 ? `${day(s.first)}, ${span(s.first, s.last)}` : span(s.first, s.last);
+  return `<div class="sess"><div class="l1"><span class="ttl"><span>${ic("chat-circle-text")}<b>${esc(s.title || "Untitled session")}</b></span>${s.ai && s.ai !== s.title ? `<span class="ai">${esc(s.ai)}</span>` : ""}</span>
+    <a class="btn" href="#s-${c.sid}" onclick="event.stopPropagation()">${ic("list")}All its commits</a>${copyBtn("Resume", "arrow-counter-clockwise", `claude --resume ${c.sid}`, "Resume command copied. Run it from the session's checkout.")}</div>
+    <div class="l2">${s.branch ? `<span>${ic("git-branch")}${esc(s.branch)}</span>` : ""}${s.dir ? `<span>${ic("folder-open")}${esc(s.dir)}</span>` : ""}<span>${ic("clock")}${when}</span>${s.model ? `<span>${ic("cpu")}${esc(s.model.replace(/^claude-/, ""))}</span>` : ""}<span>${ic("chat-text")}${s.prompts} prompts</span><span>${ic("git-commit")}${s.commits} commits in this range</span></div></div>`;
+}
+function commit(c) {
+  const [scopes, text] = split(c.s);
+  return `<div class="c" id="x-${c.sha}"><div class="row" onclick="toggle('${c.sha}', event)"><span class="d">${day(c.d)}</span>${REPO ? `<a class="sha" target="_blank" href="${REPO}/commit/${c.sha}" title="Open on GitHub">${c.sha.slice(0, 9)}</a>` : `<span class="sha">${c.sha.slice(0, 9)}</span>`}<span class="s" title="${esc(c.s)}">${scopes.map(x => `<span class="scope">${esc(x)}</span>`).join("")}${esc(text)}</span><span class="rf">${c.sid && D.sessions[c.sid] ? `<a class="sref" href="#s-${c.sid}" title="${esc(D.sessions[c.sid].ai || D.sessions[c.sid].title)}">${ic("chat-circle-text")}${esc(D.sessions[c.sid].title || "Untitled session")}</a>` : ""}</span><span class="n">${sz(c.a, c.r)}</span></div></div>`;
+}
+function toggle(sha, e) {
+  if (e.target.closest("a,button")) return;
+  const el = document.getElementById("x-" + sha);
+  if (el.classList.toggle("open")) {
+    const c = BY[sha];
+    el.insertAdjacentHTML("beforeend", `<div class="more">${session(c)}
+      ${c.ask ? `<div class="asked">${ic("quotes")}<span class="t">${esc(c.ask)}${c.ask.length >= 280 ? "…" : ""}</span>${c.ask.length > 160 ? `<button onclick="this.parentElement.classList.toggle('full');this.textContent=this.parentElement.classList.contains('full')?'less':'more'">more</button>` : ""}</div>` : ""}
+      ${c.b ? reflow(c.b) : `<p class="body" style="color:var(--faint);margin:0 0 8px">No commit body.</p>`}
+      <div class="foot"><span class="files">${c.fl.map(([p, a, r]) => fileTag(p, a + r)).join("")}${c.f > c.fl.length ? `<span class="file"><span class="pa">and ${c.f - c.fl.length} more</span></span>` : ""}</span><span class="sp"></span><span>${c.f} ${c.f === 1 ? "file" : "files"} · ${sz(c.a, c.r)}</span>${REPO ? `<a target="_blank" href="${REPO}/commit/${sha}">Open on GitHub</a>` : `<span class="mono">${sha.slice(0, 12)}</span>`}</div></div>`);
+  } else el.querySelector(".more")?.remove();
+}
+function openAll(id, btn) {
+  const rows = [...document.getElementById(id).querySelectorAll(".c")];
+  const anyClosed = rows.some(r => !r.classList.contains("open"));
+  rows.forEach(r => { if (r.classList.contains("open") !== anyClosed) toggle(r.id.slice(2), {target: r}); });
+  btn.innerHTML = anyClosed ? `${ic("arrows-in-simple")}Collapse` : `${ic("arrows-out-simple")}Expand all`;
+}
+function card(d, i) {
+  const cs = d.shas.map(s => BY[s]).filter(Boolean).sort((a, b) => a.d.localeCompare(b.d));
+  const [a, r] = total(cs), id = "k-" + d.con.id + i;
+  return `<article class="card"><div class="top"><h3>${esc(d.head)}</h3>${cs.length ? `<span class="stat">${dates(cs)} · ${cs.length} ${cs.length === 1 ? "commit" : "commits"} · ${sz(a, r)}</span>` : ""}
+    ${cs.length > 1 ? `<button class="btn" onclick="openAll('${id}', this)">${ic("arrows-out-simple")}Expand all</button>` : ""}
+    ${copyBtn("Ask an agent", "chat-circle-dots", `Reviewing ${RANGE}, ${d.con.name}: "${d.head}".\n\nSummary: ${d.line}${d.note ? `\n\n${d.note}` : ""}\n\nCommits: ${d.shas.map(s => s.slice(0, 9)).join(", ") || "none cited"}\n\nCheck this against the code and the sessions that made it, then answer: `, ASKED)}</div>
+    <p class="line">${inl(d.line)}</p>
+    ${cs.length ? `<div class="in"><span class="lab">Sessions</span>${sessChips(cs, 3)}</div><div class="commits" id="${id}">${cs.map(commit).join("")}</div>` : ""}</article>`;
+}
+function render() {
+  P.length = 0;
+  const [A, R] = total(C);
+  let h = `<div class="head"><h1>${esc(D.title)}</h1><p class="sum">${esc(D.summary)}</p>
+    <div class="meta"><span>${ic("git-commit")}${fmt(C.length)} commits</span><span>${sz(A, R)} lines</span><span>${ic("calendar-blank")}${D.range.first === D.range.last ? day(D.range.first) : `${day(D.range.first)} to ${day(D.range.last)}`}</span>
+    <span>${ic("chat-circle-text")}<a href="#sessions">${Object.keys(D.sessions).length} Claude Code sessions</a></span>${D.range.grep ? `<span>${ic("funnel")}subjects matching <code>${esc(D.range.grep)}</code></span>` : ""}<span class="mono">${D.range.base.slice(0, 9)}..${D.range.head.slice(0, 9)}</span></div></div>`;
+  h += `<div class="tiles">${D.concerns.map(con => { const l = C.filter(c => c.c === con.id), [a, r] = total(l);
+    return `<a class="tile" href="#c-${con.id}"><div class="hd"><span class="ic">${ic(ICON[con.id])}</span><b>${esc(con.name)}</b></div><div class="g">${esc(con.gist)}</div>
+      <div class="n"><b>${fmt(l.length)}</b> commits · ${sz(a, r)}<br>${dates(l)}</div><div class="folders"><span class="lab">Main sessions</span>${sessionsOf(l).slice(0, 3).map(([sid, n]) => `<span class="sline">${ic("chat-circle-text")}<span>${esc(D.sessions[sid].title || "Untitled session")}</span><i>${n}</i></span>`).join("") || `<span class="sline"><span>No sessions found</span></span>`}</div></a>`; }).join("")}</div>`;
+  for (const con of D.concerns) {
+    const list = C.filter(c => c.c === con.id), [a, r] = total(list);
+    const other = list.filter(c => !c.cited).sort((x, y) => (y.a + y.r) - (x.a + x.r)), top = other.slice(0, 6);
+    h += `<section class="concern" id="c-${con.id}"><header><span class="ic">${ic(ICON[con.id])}</span><div><h2>${esc(con.name)}</h2><p class="gist">${esc(con.gist)}</p></div><div class="tot"><b>${fmt(list.length)}</b> commits · ${sz(a, r)} lines<br>${dates(list)}</div></header>
+      <div class="sesschips"><span class="lab" style="align-self:center;margin-right:2px">Main sessions</span>${sessionsOf(list).slice(0, 5).map(([sid, n]) => `<a class="schip" href="#s-${sid}">${ic("chat-circle-text")}${esc(D.sessions[sid].title || "Untitled")}<i>${n}</i></a>`).join("")}</div>
+      ${con.topics.map(card).join("")}
+      ${other.length ? `<div class="rest"><div class="top"><h4>${ic("magnifying-glass")}${fmt(other.length)} more commits, biggest first</h4>${copyBtn("Ask an agent what these did", "chat-circle-dots", `Reviewing ${RANGE}, ${con.name}. These commits are not covered by the summaries above:\n\n${top.map(c => `${c.sha.slice(0, 9)} ${c.s}`).join("\n")}\n\nRead them and the sessions that made them. In a few lines each, say what they changed and whether any of them made a decision I should know about. `, ASKED)}</div>
+        <div class="card"><div class="in"><span class="lab">Sessions</span>${sessChips(other, 4)}</div><div class="commits">${top.map(commit).join("")}</div>
+        ${other.length > top.length ? `<details class="others"><summary>${ic("caret-right")}The other ${fmt(other.length - top.length)}, newest first</summary><div class="commits">${other.slice(top.length).sort((x, y) => y.d.localeCompare(x.d)).map(commit).join("")}</div></details>` : ""}</div></div>` : ""}
+      </section>`;
+  }
+  const SS = Object.entries(D.sessions).filter(([, x]) => x.commits).sort((a, b) => b[1].commits - a[1].commits);
+  const consOf = sid => [...new Set(C.filter(c => c.sid === sid).map(c => c.c))];
+  const srow = ([sid, x]) => `<tr id="s-${sid}"><td class="ti"><b>${esc(x.title || "Untitled session")}</b>${x.ai && x.ai !== x.title ? `<div>${esc(x.ai)}</div>` : ""}</td>
+    <td class="m">${ic("git-branch")} ${esc(x.branch)}<br>${ic("folder-open")} ${esc(x.dir)}</td><td class="m">${(new Date(x.last) - new Date(x.first)) < 864e5 ? `${day(x.first)}, ${span(x.first, x.last)}` : span(x.first, x.last)}<br>${esc((x.model || "").replace(/^claude-/, ""))}</td>
+    <td class="m">${x.commits} commits<br>${x.prompts} prompts</td><td><span class="cons">${consOf(sid).map(id => `<a href="#c-${id}" title="${esc(D.concerns.find(k => k.id === id).name)}">${ic(ICON[id])}</a>`).join("")}</span></td>
+    <td>${copyBtn("Resume", "arrow-counter-clockwise", `claude --resume ${sid}`, "Resume command copied. Run it from the session's checkout.")}</td></tr>`;
+  h += `<section class="concern" id="sessions"><header><span class="ic">${ic("chat-circle-text")}</span><div><h2>Sessions</h2><p class="gist">The Claude Code sessions that made these commits, most commits first. The icons say which concerns each one touched.</p></div><div class="tot"><b>${SS.length}</b> sessions<br>${fmt(C.filter(c => c.sid).length)} of ${fmt(C.length)} commits traced</div></header>
+    <div class="tblwrap"><table class="sessions"><thead><tr><th>Session</th><th>Where</th><th>When</th><th>Size</th><th>Concerns</th><th></th></tr></thead><tbody>${SS.slice(0, 30).map(srow).join("")}</tbody></table></div>
+    ${SS.length > 30 ? `<details class="others"><summary>${ic("caret-right")}The other ${SS.length - 30} sessions</summary><div class="tblwrap"><table class="sessions"><tbody>${SS.slice(30).map(srow).join("")}</tbody></table></div></details>` : ""}</section>`;
+  document.getElementById("main").innerHTML = h;
+  document.getElementById("nav").innerHTML = `<span class="t">${esc(D.title)}</span>` + D.concerns.map(con => `<a href="#c-${con.id}" data-id="c-${con.id}">${ic(ICON[con.id])}${esc(con.name)}</a>`).join("") + `<a href="#sessions" data-id="sessions">${ic("chat-circle-text")}Sessions</a>`;
+  const links = [...document.querySelectorAll("nav.top a")];
+  const spy = () => {
+    let cur = null;
+    for (const s of document.querySelectorAll("section.concern")) if (s.getBoundingClientRect().top < 120) cur = s.id;
+    links.forEach(x => x.classList.toggle("cur", x.dataset.id === cur));
+    const on = links.find(x => x.dataset.id === cur);
+    if (on) { const n = on.parentElement, rr = on.getBoundingClientRect(), nr = n.getBoundingClientRect(); if (rr.left < nr.left || rr.right > nr.right) n.scrollLeft += rr.left - nr.left - 40; }
+  };
+  addEventListener("scroll", spy, {passive: true}); spy();
+}
+render();
+</script>
+</body>
+</html>

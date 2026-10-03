@@ -1,12 +1,18 @@
 #!/usr/bin/env python3
 """Collect the facts a review digest is built from.
 
-Usage: collect.py <base> <head> [--repo PATH] [--out DIR] [--no-transcripts]
+Usage: collect.py <base> <head> [--repo PATH] [--out DIR] [--grep REGEX] [--no-transcripts]
 
 Writes <out>/collect.json (everything) and <out>/summary.md (what an agent
 reads first to propose groups). Commits are base..head without merges, so for
 a merge commit M pass base=M^1 head=M and the merged branch's commits are the
-ones listed.
+ones listed. --grep keeps only commits whose subject matches, for a digest of
+one subject inside a range.
+
+Each commit joined to a session gets `sid`, and collect.json carries a
+`sessions` map with what the transcript says about each: the title the user
+gave it, the AI title, branch, checkout, first and last timestamps, model and
+prompt count.
 """
 
 import argparse
@@ -241,6 +247,39 @@ def join_transcripts(commits, roots):
     return joined
 
 
+def session_meta(path):
+    t = {"custom": "", "ai": "", "branch": defaultdict(int), "cwd": defaultdict(int), "model": defaultdict(int), "first": None, "last": None, "prompts": 0}
+    with open(path, encoding="utf-8", errors="replace") as fh:
+        for raw in fh:
+            try:
+                e = json.loads(raw)
+            except json.JSONDecodeError:
+                continue
+            ty = e.get("type")
+            if ty == "custom-title":
+                t["custom"] = e.get("customTitle") or t["custom"]
+            elif ty == "ai-title":
+                t["ai"] = e.get("aiTitle") or t["ai"]
+            ts = e.get("timestamp")
+            if ts:
+                t["first"] = t["first"] or ts
+                t["last"] = ts
+            if e.get("gitBranch"):
+                t["branch"][e["gitBranch"]] += 1
+            if e.get("cwd"):
+                t["cwd"][e["cwd"]] += 1
+            m = e.get("message") or {}
+            if ty == "assistant" and isinstance(m.get("model"), str) and not m["model"].startswith("<"):
+                t["model"][m["model"]] += 1
+            text = human_text(e)
+            if text:
+                t["prompts"] += 1
+                t.setdefault("opening", " ".join(text.split())[:80])
+    top = lambda d: max(d, key=d.get) if d else ""
+    return {"title": t["custom"] or t["ai"] or (t.get("opening") and f"“{t['opening']}”") or "", "ai": t["ai"] if t["custom"] else "", "branch": top(t["branch"]), "dir": os.path.basename(top(t["cwd"])),
+            "first": t["first"], "last": t["last"], "model": top(t["model"]), "prompts": t["prompts"]}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("base")
@@ -248,6 +287,7 @@ def main():
     ap.add_argument("--repo", default=".")
     ap.add_argument("--out", default=None)
     ap.add_argument("--no-transcripts", action="store_true")
+    ap.add_argument("--grep", help="keep only commits whose subject matches this regex")
     ap.add_argument("--transcripts", default=str(Path.home() / ".claude/projects"))
     args = ap.parse_args()
 
@@ -258,7 +298,13 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
 
     commits = collect_commits(repo, base, head)
+    if args.grep:
+        rx = re.compile(args.grep)
+        commits = [c for c in commits if rx.search(c["subject"])]
     files = collect_files(repo, base, head)
+    if args.grep:
+        touched = {p for c in commits for _, _, p in c["files"]}
+        files = [f for f in files if f["path"] in touched]
     source_paths = [f["path"] for f in files if f["kind"] == "source" and f["status"] != "D" and re.search(r"\.[cm]?[jt]sx?$", f["path"])]
     exports = {}
     for i in range(0, len(source_paths), 200):
@@ -269,8 +315,16 @@ def main():
     deps = dependency_changes(repo, base, head, files)
 
     joined = {} if args.no_transcripts else join_transcripts(commits, [args.transcripts])
+    sessions = {}
     for c in commits:
         c["sessions"] = joined.get(c["short"], [])
+        if c["sessions"]:
+            path = c["sessions"][0]["transcript"]
+            sid = Path(path).stem
+            if sid not in sessions:
+                sessions[sid] = {**session_meta(path), "commits": 0}
+            sessions[sid]["commits"] += 1
+            c["sid"] = sid
 
     areas = defaultdict(lambda: {"files": 0, "add": 0, "del": 0, "kinds": defaultdict(int), "signals": defaultdict(int), "new_files": 0, "commits": set()})
     file_area = {}
@@ -299,7 +353,7 @@ def main():
     data = {
         "repo": repo, "base": base, "head": head,
         "stats": {"commits": len(commits), "files": len(files), "add": total_add, "del": total_del, "commits_with_session": joined_count},
-        "areas": area_list, "dependencies": deps, "files": files, "commits": commits,
+        "areas": area_list, "dependencies": deps, "files": files, "commits": commits, "sessions": sessions, "grep": args.grep,
     }
     (out / "collect.json").write_text(json.dumps(data, indent=1))
 
