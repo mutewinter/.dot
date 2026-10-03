@@ -108,7 +108,8 @@ fi
 
 # Karabiner saves by replacing karabiner.json, which turns a file symlink back
 # into a real file, so the whole directory is linked as its docs recommend.
-symlink "$DOT/karabiner" "$HOME/.config/karabiner"
+# Laptops use the built-in keys as they are, so only the desktop runs it.
+[ "$DOT_PROFILE" = desktop ] && symlink "$DOT/karabiner" "$HOME/.config/karabiner"
 
 # LinearMouse, linked by directory for the same reason as Karabiner
 symlink "$DOT/linearmouse" "$HOME/.config/linearmouse"
@@ -123,11 +124,22 @@ symlink "$DOT/herdr/config.toml" "$HOME/.config/herdr/config.toml"
 symlink "$DOT/herdr/sounds" "$HOME/.config/herdr/sounds"
 
 # The SessionStart hooks that report agent sessions to Herdr run scripts Herdr
-# generates and owns, so they aren't in this repo. Reinstalling writes them back
-# and leaves the already-registered hooks alone.
+# generates and owns, so they aren't in this repo. Reinstalling writes them back.
+# Herdr only recognizes its Claude hook by absolute path, so it registers a
+# second copy beside the committed $HOME one on every run; that copy is dropped,
+# written through the settings symlink so the link survives.
 if command -v herdr &>/dev/null; then
-  [ -d "$HOME/.claude" ] && herdr integration install claude
-  [ -d "$HOME/.codex" ]  && herdr integration install codex
+  if [ -d "$HOME/.claude" ]; then
+    herdr integration install claude
+    claude_settings="$HOME/.claude/settings.json"
+    deduped="$(jq --indent 2 '
+      if .hooks.SessionStart then
+        .hooks.SessionStart |= map(select(any(.hooks[].command;
+          contains("herdr-agent-state.sh") and (contains("$HOME") | not)) | not))
+      else . end' "$claude_settings")"
+    printf '%s\n' "$deduped" > "$claude_settings"
+  fi
+  [ -d "$HOME/.codex" ] && herdr integration install codex
 fi
 
 # SSH hosts shared by every machine live in the private folder; each machine's
@@ -207,8 +219,9 @@ defaults write -g NSUserKeyEquivalents -dict-add "Save as PDF…" "@p"
 
 # Stay awake on power so agents keep running behind a locked screen: the
 # display sleeps and the screen saver locks it, but the system never sleeps.
+# Laptops keep their default sleep.
 defaults -currentHost write com.apple.screensaver idleTime -int 1200
-if [ "$(pmset -g custom | awk '$1 == "sleep" { print $2; exit }')" != 0 ]; then
+if [ "$DOT_PROFILE" = desktop ] && [ "$(pmset -g custom | awk '$1 == "sleep" { print $2; exit }')" != 0 ]; then
   echo "power: run 'sudo pmset -c sleep 0 displaysleep 30 disksleep 0' so the system never sleeps on power"
 fi
 if ! sysadminctl -screenLock status 2>&1 | grep -q immediate; then
