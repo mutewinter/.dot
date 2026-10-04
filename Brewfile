@@ -11,6 +11,7 @@ brew "imagemagick"
 brew "jq"
 brew "poppler" # pdftotext
 brew "ripgrep"
+brew "stripe-cli" # instrument internal pnpm stripe:listen
 brew "uv"
 
 # Named by the dotfiles
