@@ -236,9 +236,9 @@ defaults write -g NSUserKeyEquivalents -dict-add "Save as PDF…" "@p"
 "$DOT/macos/defaults.sh"
 
 # Stay awake on power so agents keep running behind a locked screen: the
-# display sleeps and the screen saver locks it, but the system never sleeps.
-# Laptops keep their default sleep.
-defaults -currentHost write com.apple.screensaver idleTime -int 1200
+# screen saver locks it at 29 minutes, the display sleeps a minute later as a
+# warning, and the system never sleeps. Laptops keep their default sleep.
+defaults -currentHost write com.apple.screensaver idleTime -int 1740
 if [ "$DOT_PROFILE" = desktop ] && [ "$(pmset -g custom | awk '$1 == "sleep" { print $2; exit }')" != 0 ]; then
   echo "power: run 'sudo pmset -c sleep 0 displaysleep 30 disksleep 0' so the system never sleeps on power"
 fi
