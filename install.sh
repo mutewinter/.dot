@@ -79,6 +79,18 @@ if command -v fish &>/dev/null && ! fish -c 'set -q EZA_STANDARD_OPTIONS' &>/dev
   echo "fish-eza: initialized alias options"
 fi
 
+# pnpm-shell-completion plugin: the committed completions/pnpm.fish calls a
+# binary the plugin's install event downloads to ~/.local/bin, so a fresh
+# machine errors on every pnpm completion until it is fetched. Only the binary
+# is fetched, since the event would also rewrite the committed completion file.
+if [ ! -x "$HOME/.local/bin/pnpm-shell-completion" ]; then
+  psc_zip="$(mktemp)"
+  curl -fsSL "https://github.com/g-plane/pnpm-shell-completion/releases/latest/download/pnpm-shell-completion_$([ "$(uname -m)" = arm64 ] && echo aarch64 || echo x86_64)-apple-darwin.zip" -o "$psc_zip"
+  unzip -oq "$psc_zip" pnpm-shell-completion -d "$HOME/.local/bin"
+  rm "$psc_zip"
+  echo "pnpm-shell-completion: installed binary"
+fi
+
 # Lazygit
 symlink "$DOT/lazygit/config.yml" "$HOME/Library/Application Support/lazygit/config.yml"
 
