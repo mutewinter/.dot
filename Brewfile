@@ -1,6 +1,7 @@
 # vim: set filetype=ruby :
 
 # Agents reach for these constantly
+brew "actionlint" # instrument check:actions skips without it
 brew "coreutils" # timeout
 brew "fd"
 brew "ffmpeg"
@@ -30,7 +31,9 @@ brew "stow" # install.sh
 brew "tree-sitter-cli" # nvim-treesitter parser builds
 
 # Run by hand
+brew "dust" # disk usage tree
 brew "mole" # mo: disk cleanup
+brew "wget"
 
 # Apps configured in this repo
 cask "font-sauce-code-pro-nerd-font" # ghostty
