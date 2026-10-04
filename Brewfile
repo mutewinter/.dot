@@ -29,6 +29,9 @@ brew "neovim"
 brew "stow" # install.sh
 brew "tree-sitter-cli" # nvim-treesitter parser builds
 
+# Run by hand
+brew "mole" # mo: disk cleanup
+
 # Apps configured in this repo
 cask "font-sauce-code-pro-nerd-font" # ghostty
 cask "ghostty"
