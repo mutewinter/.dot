@@ -4,6 +4,7 @@ gui:
     selectedLineBgColor:
       - reverse
   nerdFontsVersion: "3"
+  showRootItemInFileTree: false # the root row selects every file, so its diff spans the whole changeset
 git:
   diffRenderers:
     - command: delta --dark --paging=never
