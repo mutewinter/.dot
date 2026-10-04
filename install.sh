@@ -234,6 +234,13 @@ if ! sysadminctl -screenLock status 2>&1 | grep -q immediate; then
   echo "lock: run 'sysadminctl -screenLock immediate -password -' to require the password right after the screen saver"
 fi
 
+# Desktop brightness stays manual: automatic brightness on external displays
+# has frozen the whole system. CoreBrightness only takes the change from
+# System Settings, so this can only point at it.
+if [ "$DOT_PROFILE" = desktop ] && system_profiler SPDisplaysDataType 2>/dev/null | grep -q 'Automatically Adjust Brightness: Yes'; then
+  echo "brightness: turn off 'Automatically adjust brightness' for each display in System Settings > Displays"
+fi
+
 # Keyboard layout for the Model 100. Copied rather than linked because macOS
 # does not reliably load layouts through a symlink. Enable it afterwards in
 # System Settings > Keyboard > Input Sources.
