@@ -14,6 +14,7 @@ brew "uv"
 
 # Named by the dotfiles
 brew "bat" # fzf.fish previews
+brew "displayplacer" # install.sh, desktop display arrangement
 brew "duti" # install.sh
 brew "eza" # fish-eza
 brew "fish"

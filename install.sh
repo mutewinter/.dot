@@ -162,6 +162,12 @@ fi
 # Handy
 [ -d /Applications/Handy.app ] && "$DOT/handy/settings.sh"
 
+# Display arrangement for the desktop's two Studio Displays. The script names
+# the screens by serial, so it lives in the private folder.
+if [ "$DOT_PROFILE" = desktop ] && command -v displayplacer &>/dev/null && [ -x "$DOT_PRIVATE/displays/studio-displays.sh" ]; then
+  "$DOT_PRIVATE/displays/studio-displays.sh"
+fi
+
 # Raycast script commands
 symlink "$DOT/raycast/focus-electron.applescript" "$HOME/Documents/Raycast/focus-electron.applescript"
 
