@@ -28,11 +28,6 @@
 	diffFilter = delta --color-only --features=interactive
 [delta]
 	features = decorations
-	# Diff tints from the Jellybeans palette in ghostty/config and hunk/config.toml
-	minus-style = syntax "#260d10"
-	minus-emph-style = syntax "#392121"
-	plus-style = syntax "#0e1f0e"
-	plus-emph-style = syntax "#162921"
 [delta "interactive"]
 	keep-plus-minus-markers = false
 [delta "decorations"]
