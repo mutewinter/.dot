@@ -8,6 +8,12 @@ set -gx DO_NOT_TRACK "1"
 
 set -gx HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK 1
 
+# Herdr panes set TERM_PROGRAM=herdr, which Claude Code's hyperlink allowlist
+# does not name, so it prints links as plain text. Herdr renders OSC 8 itself.
+if set -q HERDR_ENV
+  set -gx FORCE_HYPERLINK 1
+end
+
 # Via https://github.com/paulirish/dotfiles/blob/main/fish/config.fish
 # highlighting inside manpages and elsewhere
 set -gx LESS_TERMCAP_mb \e'[01;31m'       # begin blinking
