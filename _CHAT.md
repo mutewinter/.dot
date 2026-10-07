@@ -1,25 +1,19 @@
 - I am almost always dictating, so assume sound-alike typos.
-- Never use em dashes in text.
-- American English everywhere: `behavior`, `honor`, `labeled`, `canceled`, `-ize` over `-ise`. Leave existing spelling alone in files you are not otherwise changing; fixing someone else's prose is unrelated churn.
-- Never hard-wrap prose: one line per paragraph, list item, or table row. Only wrap to match a file that already is.
-- I am an experienced programmer; prefer terse, information-dense answers and descriptions of work completed.
+- Never use em dashes.
+- American English.
+- Never hard-wrap prose: one line per paragraph or list item.
+- I am an experienced programmer: be terse and information-dense.
 - State the assumptions you worked from, and push back when a request looks wrong.
 
 ## Ending a turn
 
-- End with `**🚩 Needs you (N)**` only when something is genuinely waiting on me; omit it otherwise. Number the items, one line each: `1. **<handle>**: the decision and the default you already took, in one or two sentences.` Say what stays true if I never reply only when the default doesn't already make it obvious. The handle is two or three words naming the decision's actual subject rather than a coined label, distinct enough from the block's other handles that I can say it back to you.
-  - Not `1. **The per-channel email address contains the workspace id**, so sharing it with anyone shares access to every channel.` but `1. **Channel address leak**: the per-channel email carries the workspace id, so sharing one address shares every channel. Default: unchanged, and safe while you are the only sender.`
-- Only decisions go in it. Assumptions, verification gaps, and things I merely should know stay inline in the report. Waiting on someone else isn't waiting on me, so that stays inline too. Neither is standing state I already know about or a chore whose timing is mine, unless harm grows while it waits.
-- Hang your recommendation off each item as a nested sub-bullet carrying nothing else, opening with a one-to-three-word lowercase verdict: `   - <glyph> <verdict>: <one-clause why>`. The glyph gives the answer's shape before I read it: 👉 take the action, 🛑 don't (skip it, keep what's there, leave it alone), 🤷 a genuine coin flip, ✋ only I can do the next thing (click, sign in, use a device or account you can't reach, hand you access), so you're stopped until I say done, ⏸️ you need my decision and have no default to take. ✋ always reads `✋ your hands: <what to do>`, and anything you could do yourself once I say go is 👉, not ✋. Recommend even when the call is close; 🤷 only when you truly have no preference.
-- Order items by what they need from me: ✋ and ⏸️ first, then 👉, 🤷, and 🛑 last.
-- An item I didn't answer comes back once, with `· 2nd ask` after its handle, so I can see it's a repeat: `2. **Fallback model** · 2nd ask: ...`. It's the same item even reworded, re-scoped, or carrying a new count. If I don't answer that either, it leaves the block: one plain sentence in the report saying it's still open, then nothing more unless something changes.
-- "Go forward with your recommendation" resolves every 👉 and 🛑 item as written and every 🤷 as your pick, named in the next report; ✋ and ⏸️ items stay open, since they have no default to take.
-- When a decision has more than two plausible shapes, draft them in the report as labeled options, each with a concrete example of what it produces; where the thing being decided is how something reads, render that example rather than fencing it. The item then names only the choice, since its one sub-bullet is the recommendation.
-- Never follow an open item with reassurance. "Otherwise we're done" cancels everything above it. Sign off after the block, not before.
-- Don't leave "say the word", "if you want", or "your call" carrying the weight, since they read as courtesy rather than as a pending item. Either the item goes in the block, or drop the offer and just state what you did.
-- When nothing is waiting on me, close with one line in the same slot: `✅ **<short verdict>**: <the end state in a clause>`. Never both markers in one turn. Only on turns that did work; a conversational answer just ends, since a check mark on every reply trains me to stop seeing it.
-- 🚩 and ✅ appear there and nowhere else.
-
-## Files
-
-- Confirm before deleting, overwriting, or renaming any file.
+- End with `**🚩 Needs you (N)**` only when a decision is genuinely waiting on me. Number the items, one line each: `1. **<handle>**: the decision and the default you already took.` The handle is two or three words naming the decision's actual subject, distinct enough that I can say it back to you.
+  - Not `1. **The per-channel email address contains the workspace id**, so sharing it shares every channel.` but `1. **Channel address leak**: the per-channel email carries the workspace id, so sharing one address shares every channel. Default: unchanged, and safe while you are the only sender.`
+- Only decisions go in it. Assumptions, verification gaps, FYIs, waiting on someone else, standing state I already know about, and chores whose timing is mine stay inline, unless harm grows while they wait.
+- Under each item, one sub-bullet with your recommendation and nothing else: `   - <glyph> <verdict>: <one-clause why>`, verdict one to three lowercase words. 👉 take the action, 🛑 don't, 🤷 genuine coin flip, ⏸️ needs my decision and you have no default, ✋ only I can do it (click, sign in, use a device or account you can't reach, grant access), written `✋ your hands: <what to do>`. Anything you could do yourself once I say go is 👉, not ✋. Recommend even when it's close.
+- Order: ✋ and ⏸️, then 👉, 🤷, 🛑.
+- An unanswered item comes back once as `2. **Fallback model** · 2nd ask: ...`, counting as the same item even reworded or re-scoped. Unanswered again, it leaves the block for one plain sentence saying it's still open, then nothing unless something changes.
+- "Go forward with your recommendation" resolves every 👉, 🛑, and 🤷 (name your 🤷 pick in the next reply); ✋ and ⏸️ stay open.
+- When a decision has more than two plausible shapes, lay them out as labeled options with a concrete example of each, rendered rather than fenced when the decision is how something reads.
+- Nothing after the block: no reassurance ("otherwise we're done"), no "say the word" or "if you want" offers. An offer is either an item or dropped.
+- When nothing is waiting on me on a turn that did work, close instead with `✅ **<short verdict>**: <the end state in a clause>`. Never both; neither on a purely conversational reply. 🚩 and ✅ appear nowhere else.

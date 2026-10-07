@@ -4,62 +4,50 @@ alwaysApply: true
 ---
 
 - I am almost always dictating, so assume sound-alike typos.
-- Never use em dashes in text.
-- American English everywhere, including code, identifiers, test names, comments, commit messages, and PR or issue text: `behavior`, `honor`, `labeled`, `canceled`, `-ize` over `-ise`. Leave existing spelling alone in files you are not otherwise changing; fixing someone else's prose is unrelated churn.
-- Never hard-wrap prose: one line per paragraph, list item, or table row. Covers Markdown and issue/PR descriptions. Commit bodies are exempt: wrap them or not. Only wrap to match a file that already is. Strings too: a break there is part of the value.
-- I am an experienced programmer; prefer terse, information-dense descriptions of work completed.
-- Skip linting, type checking, etc. for trivial changes.
+- Never use em dashes.
+- American English everywhere, code and commit messages included (`behavior`, `canceled`, `-ize`). Don't respell files you aren't otherwise changing.
+- Never hard-wrap prose (Markdown, PR and issue text): one line per paragraph or list item, unless the file already wraps. Commit bodies are exempt.
+- I am an experienced programmer: be terse and information-dense. Skip linting and type checks for trivial changes.
 - State the assumptions you worked from, and push back when a request looks wrong.
 
 ## Ending a turn
 
-- End with `**🚩 Needs you (N)**` only when something is genuinely waiting on me; omit it otherwise. Number the items, one line each: `1. **<handle>**: the decision and the default you already took, in one or two sentences.` Say what stays true if I never reply only when the default doesn't already make it obvious. The handle is two or three words naming the decision's actual subject rather than a coined label, distinct enough from the block's other handles that I can say it back to you.
-  - Not `1. **The per-channel email address contains the workspace id**, so sharing it with anyone shares access to every channel.` but `1. **Channel address leak**: the per-channel email carries the workspace id, so sharing one address shares every channel. Default: unchanged, and safe while you are the only sender.`
-- Only decisions go in it. Assumptions, verification gaps, and things I merely should know stay inline in the report. Waiting on a build, CI, or someone else isn't waiting on me, so that stays inline too. Neither is standing state I already know about or a chore whose timing is mine, above all landing work: uncommitted, unpushed, unmerged, or undeployed work is never an item and needs no mention, since I land work on my own cadence. The exception is harm that grows while it waits, such as production serving a wrong answer until the fix ships.
-- Hang your recommendation off each item as a nested sub-bullet carrying nothing else, opening with a one-to-three-word lowercase verdict: `   - <glyph> <verdict>: <one-clause why>`. The glyph gives the answer's shape before I read it: 👉 take the action, 🛑 don't (skip it, keep what's there, leave it alone), 🤷 a genuine coin flip, ✋ only I can do the next thing (click, authenticate, use a device you can't reach, hand you access), so you're stopped until I say done, ⏸️ you need my decision and have no default to take. ✋ always reads `✋ your hands: <what to do>`, and anything you could do yourself once I say go is 👉, not ✋. Recommend even when the call is close; 🤷 only when you truly have no preference.
-- Order items by what they need from me: ✋ and ⏸️ first, then 👉, 🤷, and 🛑 last.
-- An item I didn't answer comes back once, with `· 2nd ask` after its handle, so I can see it's a repeat: `2. **Fallback model** · 2nd ask: ...`. It's the same item even reworded, re-scoped, or carrying a new count. If I don't answer that either, it leaves the block: one plain sentence in the report saying it's still open, then nothing more unless something changes.
-- "Go forward with your recommendation" resolves every 👉 and 🛑 item as written and every 🤷 as your pick, named in the next report; ✋ and ⏸️ items stay open, since they have no default to take.
-- When a decision has more than two plausible shapes, draft them in the report as labeled options, each with a concrete example of what it produces; where the thing being decided is how something reads, render that example rather than fencing it. The item then names only the choice, since its one sub-bullet is the recommendation.
-- Never follow an open item with reassurance. "Otherwise we're done" cancels everything above it. Sign off after the block, not before.
-- Don't leave "say the word", "if you want", or "your call" carrying the weight, since they read as courtesy rather than as a pending item. Either the item goes in the block, or drop the offer and just state what you did.
-- When nothing is waiting on me, close with one line in the same slot: `✅ **<short verdict>**: <the end state in a clause>`. Never both markers in one turn. Only on turns that did work; a conversational answer just ends, since a check mark on every reply trains me to stop seeing it.
-- 🚩 and ✅ appear there and nowhere else.
+- End with `**🚩 Needs you (N)**` only when a decision is genuinely waiting on me. Number the items, one line each: `1. **<handle>**: the decision and the default you already took.` The handle is two or three words naming the decision's actual subject, distinct enough that I can say it back to you.
+  - Not `1. **The per-channel email address contains the workspace id**, so sharing it shares every channel.` but `1. **Channel address leak**: the per-channel email carries the workspace id, so sharing one address shares every channel. Default: unchanged, and safe while you are the only sender.`
+- Only decisions go in it. Assumptions, verification gaps, FYIs, and waiting on a build, CI, or someone else stay inline. So does standing state I already know about or a chore whose timing is mine, above all landing work: uncommitted, unpushed, unmerged, or undeployed work is never an item and needs no mention, unless harm grows while it waits (production serving a wrong answer).
+- Under each item, one sub-bullet with your recommendation and nothing else: `   - <glyph> <verdict>: <one-clause why>`, verdict one to three lowercase words. 👉 take the action, 🛑 don't, 🤷 genuine coin flip, ⏸️ needs my decision and you have no default, ✋ only I can do it (click, authenticate, use a device you can't reach, grant access), written `✋ your hands: <what to do>`. Anything you could do yourself once I say go is 👉, not ✋. Recommend even when it's close.
+- Order: ✋ and ⏸️, then 👉, 🤷, 🛑.
+- An unanswered item comes back once as `2. **Fallback model** · 2nd ask: ...`, counting as the same item even reworded or re-scoped. Unanswered again, it leaves the block for one plain sentence saying it's still open, then nothing unless something changes.
+- "Go forward with your recommendation" resolves every 👉, 🛑, and 🤷 (name your 🤷 pick in the next report); ✋ and ⏸️ stay open.
+- When a decision has more than two plausible shapes, lay them out in the report as labeled options with a concrete example of each, rendered rather than fenced when the decision is how something reads.
+- Nothing after the block: no reassurance ("otherwise we're done"), no "say the word" or "if you want" offers. An offer is either an item or dropped.
+- When nothing is waiting on me on a turn that did work, close instead with `✅ **<short verdict>**: <the end state in a clause>`. Never both; neither on a purely conversational reply. 🚩 and ✅ appear nowhere else.
 
 ## Code changes
 
-- Remove imports/variables/functions your changes made unused. Don't touch pre-existing dead code unless asked.
-- Don't improve adjacent code, formatting, or comments. Every changed line should trace to the request.
-- Comments describe the code as it stands, for a reader who never saw a prior version. No edit-narration or version references ("changed X to Y", "now/previously/no longer", "used to", "instead of the old X"): git tracks history, and the why of a change belongs in the commit message.
+- Every changed line traces to the request: no adjacent cleanup, and remove only what your change made unused.
+- Comments describe the code as it stands. No edit narration ("changed X to Y", "now", "no longer", "instead of the old X"); history and rationale belong in the commit message.
 
 ## Git
 
-Multiple agents may work in the same repo simultaneously, so:
+Other agents may be editing the same repo at the same time.
 
-- Stage explicitly by path, never `git add .` or `git add -A`: `git commit -m "<msg>" -- path/to/file1 path/to/file2`
-- That pathspec form commits the **working tree** for those paths and ignores the index, so it also commits any edit someone else has in flight in the same file. Confirm each file's diff is entirely yours first. Where it is not, build a copy holding your change and not theirs (`git show HEAD:<path>` plus your edit, or the working file minus theirs), then `sha=$(git hash-object -w <copy>)`, `git update-index --cacheinfo 100644,$sha,<path>`, confirm `git diff --cached` shows only your change, and `git commit` with no pathspec, which leaves their working tree untouched.
-- The pathspec form only matches files git already tracks, so a commit including a **new** file dies on `pathspec '<path>' did not match any file(s) known to git` and commits nothing. For those, `git add` the exact paths, confirm `git diff --cached --name-only` lists only yours, then `git commit -m "<msg>"` with no pathspec. Adding by exact path is not `git add .`; the rule above is about never sweeping up paths you did not name.
-- That failure is per command rather than per batch, so several `git commit` calls in one shell run keep going after one dies. Chain commits that build on each other and you get the later ones without the earlier one: history out of order, and a middle commit that does not build. Commit code before the tests covering it, and read `git log --oneline` before pushing.
-- Never revert or delete another agent's in-progress edits. Coordinate instead.
-- `git commit --amend`, destructive operations (`git reset --hard`, `git restore`, `git checkout <file>`), and creating a branch each need explicit instruction in the current conversation. That last one overrides any default to branch before committing.
-- Commit messages: `scope: description`, where scope is the package/feature/workflow touched, not a conventional-commit type. Lowercase, no period, ~72 char subject. Start with a concrete verb, then name the affected feature and observable behavior. Write a standalone history label, not a sentence from the implementation story: avoid articles or pronouns first, and put personification, metaphors, comparisons, contrast, rationale, and edge cases in the body. Use a body whenever those details will help an agent understand the change later.
+- Never `git add .` or `-A`. Commit by path: `git commit -m "<msg>" -- <paths>`. That commits the working tree for those paths, so first confirm each file's diff is entirely yours. If one isn't, stage only your change (`git hash-object -w` a copy holding just your edit, `git update-index --cacheinfo 100644,<sha>,<path>`), confirm `git diff --cached`, and `git commit` without a pathspec.
+- New files aren't matched by a pathspec: `git add` their exact paths, confirm `git diff --cached --name-only`, then commit without a pathspec.
+- A failed `git commit` doesn't stop the next one in the same shell run, so chain dependent commits with `&&` and read `git log --oneline` before pushing.
+- Never revert or delete another agent's in-progress edits.
+- Amending, `reset --hard`, `restore`, `checkout <file>`, and creating a branch each need my explicit say-so in this conversation.
+- Messages: `scope: description`, scope being the package or feature touched (not a conventional-commit type). Lowercase, no period, ~72 chars, opening with a concrete verb and naming the observable behavior. Rationale, comparisons, and edge cases go in a body.
 
 ## Repo docs
 
-- Plans carry a `Status:` line and move to `completed/` when they land; don't delete them.
-- Docs are timeless: no branch names, PR-in-flight state, "CI is red as of <date>", or worktree-specific notes. If it stops being true the week after it's written, it belongs in a commit message.
-- Before rewording a doc, verify its claims against code. Version pins and command names are where drift concentrates.
+- Docs are timeless: no branch names, in-flight PR state, or dated status. If it stops being true next week, it belongs in a commit message.
+- Before rewording a doc, verify its claims against code; version pins and command names drift.
+- Plans carry a `Status:` line and move to `completed/` when they land.
 
-## rg (ripgrep) footguns
+## Tools and machine
 
-- **Never pass `-r`.** rg is always recursive; `-r` means `--replace`, so `rg -rn` silently rewrites every match to the letter `n` and exits 0. If output looks garbled or truncated, check for `-r`.
-- Globs are `-g '*.tsx'`. `-t tsx` is not a valid rg type (`-t ts` is), and `--include`/`--exclude` are GNU grep flags that do not exist here.
-
-## Visual answers and wireframes
-
-- Do not open a finished visual answer or wireframe in a browser on this machine. A viewer app watches both folders and shows new pages on its own, so opening one only adds a tab. Return the path as usual.
-- Wireframes: draw with the `wireframe` skill (`~/code/instrument/skills/skills/wireframe`, installed as `~/.agents/skills/wireframe`), plus the repo's `.agents/wireframe-kit/` when it has one, and write them to `~/wireframes/YYYY-MM-DD-<surface>-<variant>.html`, never into a repository. Name them by the part of the product and what this take tries, as that skill says, never a coined phrase.
-
-## Other machines
-
-- Other machines on the home network are reachable over SSH. Before using one, read `~/Library/Mobile Documents/com~apple~CloudDocs/Dotfiles/agents/hosts.md` for what each is for and which aliases to use.
+- rg: never pass `-r` (it means `--replace`, so `rg -rn` rewrites every match to `n`). Globs are `-g '*.tsx'`; `--include` doesn't exist.
+- Never open a finished visual answer or wireframe in a browser; a viewer app picks them up. Return the path.
+- Wireframes: use the `wireframe` skill (plus the repo's `.agents/wireframe-kit/` if present) and write to `~/wireframes/YYYY-MM-DD-<surface>-<variant>.html`, never into a repo.
+- Other machines on the home network are reachable over SSH; read `~/Library/Mobile Documents/com~apple~CloudDocs/Dotfiles/agents/hosts.md` before using one.
