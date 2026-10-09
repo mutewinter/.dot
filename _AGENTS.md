@@ -32,12 +32,12 @@ alwaysApply: true
 
 Other agents may be editing the same repo at the same time.
 
-- Never `git add .` or `-A`. Commit by path: `git commit -m "<msg>" -- <paths>`. That commits the working tree for those paths, so first confirm each file's diff is entirely yours. If one isn't, stage only your change (`git hash-object -w` a copy holding just your edit, `git update-index --cacheinfo 100644,<sha>,<path>`), confirm `git diff --cached`, and `git commit` without a pathspec.
-- New files aren't matched by a pathspec: `git add` their exact paths, confirm `git diff --cached --name-only`, then commit without a pathspec.
+- Never `git add .` or `-A`. Commit by path: `git commit -F <msgfile> -- <paths>`. That commits the working tree for those paths, so first confirm each file's diff is entirely yours.
+- Anything else (a new file, a file that also holds someone else's edits) goes through a private index, since anything staged in the shared one lands in another session's commit: `export GIT_INDEX_FILE=$(mktemp -d)/index && git read-tree HEAD`, then `git update-index --add <path>` per whole file, or `--cacheinfo 100644,$(git hash-object -w <copy with only your edit>),<path>` for part of one. Confirm `git diff --cached`, `git commit -F <msgfile>`, `unset GIT_INDEX_FILE`, then `git reset -q -- <paths>` (index only) so the shared index stops holding the old versions, which the next commit from it would restore.
 - A failed `git commit` doesn't stop the next one in the same shell run, so chain dependent commits with `&&` and read `git log --oneline` before pushing.
 - Never revert or delete another agent's in-progress edits.
 - Amending, `reset --hard`, `restore`, `checkout <file>`, and creating a branch each need my explicit say-so in this conversation.
-- Messages: `scope: description`, scope being the package or feature touched (not a conventional-commit type). Lowercase, no period, ~72 chars, opening with a concrete verb and naming the observable behavior. Rationale, comparisons, and edge cases go in a body.
+- Messages: `scope: description`, scope being the package or feature touched (not a conventional-commit type). Lowercase, no period, ~72 chars, opening with a concrete verb and naming the observable behavior. Rationale, comparisons, and edge cases go in a body. Write the message to a file and pass `-F <file>`: a heredoc inside a chained or `\`-continued command can lose the subject line.
 
 ## Repo docs
 
