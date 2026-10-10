@@ -195,7 +195,7 @@ symlink "$DOT/skills" "$HOME/.agents/skills"
 # Skills sourced from another checkout on this machine. Linking them into
 # skills/ puts them under ~/.agents/skills and the Claude mirror below like any
 # other skill; the links are gitignored since their targets are local paths.
-[ -d "$HOME/code/instrument/skills/skills/create-page" ] && symlink "$HOME/code/instrument/skills/skills/create-page" "$DOT/skills/create-page"
+[ -d "$HOME/code/instrument/skills/skills/instrument-page" ] && symlink "$HOME/code/instrument/skills/skills/instrument-page" "$DOT/skills/instrument-page"
 
 # Claude reads skills from ~/.claude/skills, not ~/.agents/skills, so mirror
 # each one in individually rather than symlinking the directory itself --
