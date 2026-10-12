@@ -13,6 +13,8 @@
 # @raycast.author Jeremy Mack
 # @raycast.authorURL https://x.com/mutewinter
 
-if application "Electron" is running then
-    tell application "Electron" to activate
-end if
+# The dev build is a renamed Electron.app: its process is still "Electron", so match the displayed name.
+tell application "System Events"
+    set devApps to every process whose displayed name is "Instrument (Dev)"
+    if devApps is not {} then set frontmost of item 1 of devApps to true
+end tell
