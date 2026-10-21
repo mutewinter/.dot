@@ -10,3 +10,5 @@ tmux/plugins/*
 skills/motion/
 skills/instrument-page
 karabiner/automatic_backups/
+herdr/.config.toml.gpui-lock
+skills/herdr-gpui-browser/
