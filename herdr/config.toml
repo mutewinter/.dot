@@ -91,3 +91,4 @@ rows = [
 [ui.sound]
 done_path = "sounds/silence.mp3"
 request_path = "sounds/silence.mp3"
+enabled = false
