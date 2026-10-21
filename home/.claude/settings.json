@@ -142,14 +142,19 @@
   "enabledPlugins": {
     "linear@claude-plugins-official": true,
     "figma@claude-plugins-official": false,
-    "notion@claude-plugins-official": false
+    "slack@anthropic-plugin-directory": true,
+    "notion@anthropic-plugin-directory": true
   },
   "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "medium"
+    }
+  },
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
   "theme": "dark",
   "inputNeededNotifEnabled": true,
-  "agentPushNotifEnabled": true,
-  "model": "opus[1m]"
+  "agentPushNotifEnabled": true
 }
