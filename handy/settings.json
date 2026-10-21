@@ -124,7 +124,7 @@
   ],
   "post_process_selected_prompt_id": "prompt_1775231818128",
   "recording_retention_period": "preserve_limit",
-  "reliable_paste": false,
+  "reliable_paste": true,
   "selected_language": "auto",
   "selected_model": "handy-computer/parakeet-unified-en-0.6b-gguf/parakeet-unified-en-0.6b-Q8_0.gguf",
   "shortcut_activation": "toggle",
