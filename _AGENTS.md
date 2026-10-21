@@ -55,4 +55,5 @@ Other agents may be editing the same repo at the same time.
 - rg: never pass `-r` (it means `--replace`, so `rg -rn` rewrites every match to `n`). Globs are `-g '*.tsx'`; `--include` doesn't exist.
 - Never open a finished visual answer or wireframe in a browser; a viewer app picks them up. Return the path.
 - Wireframes: use the `wireframe` skill (plus the repo's `.agents/wireframe-kit/` if present) and write to `~/wireframes/YYYY-MM-DD-<surface>-<variant>.html`, never into a repo.
+- Instrument pages: write them to `~/visual-answers/`, never into a repo or only a scratchpad, named by the date and then a short identifying name: `2026-10-16-chat-search-over-chat-md.html`.
 - Other machines on the home network are reachable over SSH; read `~/Library/Mobile Documents/com~apple~CloudDocs/Dotfiles/agents/hosts.md` before using one.
