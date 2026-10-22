@@ -21,12 +21,7 @@ Say the range, the commit count, and the line counts in the report's first line.
 
 ## When the repo keeps a review ledger
 
-A repo with `docs/reviews/` records every review there: what range it read and what came of each finding. Its `README.md` is the format and overrides this skill's file layout and location. Then:
-
-- **Start where the last review stopped.** `rg "^Reviewed:" docs/reviews` lists the ranges already read. Narrow the range to code changed since (`git log <head>..HEAD -- <paths>`) unless the user asks for a full read.
-- **Keep the readers blind.** Subagents that hunt for findings get the code and `REVIEW.md`, never the ledger, commit trailers or decision records, so what they find isn't anchored on what earlier reviews said.
-- **Check history at verification.** For each surviving finding, read the ledger's `Status: declined` entries with the same root cause, the `Rejected:` and `Commits-to:` trailers of the commits that last wrote the cited lines (`git log -L <start>,<end>:<path>`), and `docs/decisions/`. Drop a finding that reverses one, or report it naming the record and why its reason no longer holds.
-- **Write the ledger file** in `docs/reviews/`, uncommitted, every finding `open`, instead of the root report. When the user declines a finding in the session, set its status and reason there before the session ends.
+A repo with `docs/reviews/` records every review there. Its `README.md` is the procedure (where to start, keeping readers blind, the history check at verification) and the file format, and it overrides this skill's file layout and location.
 
 ## Read the repo's own calibration first
 
