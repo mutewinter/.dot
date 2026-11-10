@@ -51,7 +51,7 @@ Other agents may be editing the same repo at the same time.
 
 - Docs are timeless: no branch names, in-flight PR state, or dated status. If it stops being true next week, it belongs in a commit message.
 - Before rewording a doc, verify its claims against code; version pins and command names drift.
-- Plans carry a `Status:` line and move to `completed/` when they land.
+- Plans carry a `Status:` line, updated in the change that lands the work; follow the repo's own convention for where finished plans go.
 
 ## Tools and machine
 
