@@ -61,4 +61,5 @@ Other agents may be editing the same repo at the same time.
 - Anything that puts a window up takes my focus and can move my Spaces. Use `open -g`, and ask before launching an app that would come to the front.
 - Wireframes: use the `wireframe` skill (plus the repo's `.agents/wireframe-kit/` if present) and write to `~/wireframes/YYYY-MM-DD-<surface>-<variant>.html`, never into a repo.
 - Instrument pages, which is what I mean by "visual answer": write them to `~/visual-answers/`, never into a repo or only a scratchpad, named by the date and then a short identifying name: `2026-10-16-chat-search-over-chat-md.html`.
+- Worktrees: when `$WORKTREE_ROOT` is set, a manual `git worktree add` targets `"$WORKTREE_ROOT/<repo>/<name>"` (quoted: the path may hold spaces), and Claude Code's own worktrees land there through the `WorktreeCreate` hook. Unset, use the tool's default location.
 - Other machines on the home network are reachable over SSH; read `~/Library/Mobile Documents/com~apple~CloudDocs/Dotfiles/agents/hosts.md` before using one.
